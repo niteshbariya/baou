@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TET / TAT / GPSC Class-2 ગણિત પદ્ધતિશાસ્ત્ર (તબક્કો - ૧૧ | પ્રશ્ન ૪૫૧ થી ૫૦૦ — ભવ્ય પૂર્ણાહુતિ)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+            --header-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
+            --card-gradient: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 50%, #fdf2f8 100%);
+            --bg-color: #f1f5f9;
+            --container-bg: #ffffff;
+            --text-color: #0f172a;
+            --heading-color: #1e3a8a;
+            --subheading-color: #64748b;
+            --border-color: #cbd5e1;
+            --card-border: #e2e8f0;
+            --option-bg: #f8fafc;
+            --option-hover: #ede9fe;
+            --option-border: #cbd5e1;
+            --badge-bg: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            --correct-bg: #ecfdf5;
+            --correct-border: #34d399;
+            --correct-text: #065f46;
+            --wrong-bg: #fff1f2;
+            --wrong-border: #fb7185;
+            --wrong-text: #9f1239;
+            --exp-box-bg: #f8fafc;
+            --input-bg: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.12), 0 8px 10px -6px rgba(30, 58, 138, 0.08);
+            
+            --color-answered: #10b981;
+            --color-flagged: #f59e0b;
+            --color-unanswered: #94a3b8;
+            --color-current: #2563eb;
+        }
+
+        body.dark-mode {
+            --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #ec4899 100%);
+            --header-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            --card-gradient: linear-gradient(135deg, #1e1b4b 0%, #1e293b 50%, #0f172a 100%);
+            --bg-color: #030712;
+            --container-bg: #0b1329;
+            --text-color: #f8fafc;
+            --heading-color: #93c5fd;
+            --subheading-color: #94a3b8;
+            --border-color: #334155;
+            --card-border: #1e293b;
+            --option-bg: #1e293b;
+            --option-hover: #2e1065;
+            --option-border: #475569;
+            --badge-bg: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --correct-bg: #064e3b;
+            --correct-border: #059669;
+            --correct-text: #a7f3d0;
+            --wrong-bg: #881337;
+            --wrong-border: #e11d48;
+            --wrong-text: #fecdd3;
+            --exp-box-bg: #0f172a;
+            --input-bg: #1e293b;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            font-family: 'Noto Sans Gujarati', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            padding: 14px; 
+            display: flex; 
+            justify-content: center; 
+            transition: all 0.3s ease;
+            min-height: 100vh;
+        }
+
+        .container { 
+            background-color: var(--container-bg); 
+            max-width: 1000px; 
+            width: 100%; 
+            border-radius: 18px; 
+            box-shadow: var(--shadow); 
+            padding: 24px; 
+            position: relative;
+            border: 1.5px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 6px; }
+            .container { padding: 14px; border-radius: 12px; }
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-pill {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 800;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn {
+            background: var(--option-bg);
+            color: var(--text-color);
+            border: 1.5px solid var(--border-color);
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 20px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .theme-toggle-btn:hover {
+            transform: scale(1.04);
+            border-color: #3b82f6;
+        }
+
+        .banner-title {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 900;
+            margin: 5px 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .banner-sub {
+            color: var(--subheading-color);
+            text-align: center;
+            font-size: 13.5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        #loginScreen {
+            max-width: 480px;
+            margin: 15px auto;
+            background: var(--card-gradient);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1.5px solid var(--border-color);
+        }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-weight: 700; margin-bottom: 6px; font-size: 13.5px; color: var(--heading-color); }
+        input[type="text"], input[type="tel"], input[type="email"] { 
+            width: 100%; 
+            padding: 11px 14px; 
+            border: 1.5px solid var(--border-color); 
+            border-radius: 8px; 
+            font-size: 14.5px; 
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        input:focus { outline: none; border-color: #2563eb; }
+
+        .btn-gradient { 
+            background: var(--primary-gradient); 
+            color: white; 
+            border: none; 
+            padding: 12px 18px; 
+            font-size: 15px; 
+            font-weight: 800; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            width: 100%; 
+            transition: all 0.25s; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            font-family: inherit;
+        }
+        .btn-gradient:hover { opacity: 0.95; transform: translateY(-1.5px); }
+        .btn-gradient:disabled { background: #94a3b8; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        .otp-box { 
+            background: var(--container-bg); 
+            border: 2px dashed #3b82f6; 
+            padding: 16px; 
+            border-radius: 10px; 
+            margin-top: 16px; 
+            display: none; 
+            text-align: center;
+        }
+
+        .quiz-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .quiz-main-card {
+            background: var(--container-bg);
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .quiz-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1.5px solid var(--border-color); 
+            padding-bottom: 12px; 
+            margin-bottom: 18px; 
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .timer-badge { 
+            font-size: 15px; 
+            font-weight: 800; 
+            color: #ef4444; 
+            background: #fee2e2;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        body.dark-mode .timer-badge { background: #450a0a; color: #fca5a5; }
+
+        .unit-badge { 
+            display: inline-block; 
+            background: var(--badge-bg); 
+            color: white; 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 12px; 
+            font-weight: 700; 
+            margin-bottom: 14px; 
+        }
+
+        .question-text {
+            font-size: 18px;
+            line-height: 1.65;
+            margin-bottom: 22px;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .option-label { 
+            display: flex;
+            align-items: center;
+            background: var(--option-bg); 
+            padding: 14px 18px; 
+            margin-bottom: 12px; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            line-height: 1.5; 
+            border: 1.5px solid var(--option-border); 
+            transition: all 0.2s;
+            font-size: 15.5px;
+        }
+        .option-label:hover { 
+            background: var(--option-hover); 
+            border-color: #3b82f6;
+            transform: translateX(4px);
+        }
+        .option-label input[type="radio"] {
+            margin-right: 14px;
+            transform: scale(1.25);
+            accent-color: #2563eb;
+            cursor: pointer;
+        }
+
+        .quiz-actions-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1.5px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .nav-buttons-group {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-prev, .btn-next, .btn-flag {
+            padding: 10px 18px;
+            font-size: 14.5px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: inherit;
+        }
+        .btn-prev { background: #64748b; color: white; }
+        .btn-prev:hover { background: #475569; }
+        .btn-next { background: var(--primary-gradient); color: white; }
+        .btn-next:hover { opacity: 0.95; }
+
+        .btn-flag {
+            background: #fef3c7;
+            color: #b45309;
+            border: 1.5px solid #f59e0b;
+        }
+        body.dark-mode .btn-flag {
+            background: #451a03;
+            color: #fde68a;
+            border-color: #d97706;
+        }
+        .btn-flag.active-flag {
+            background: #f59e0b;
+            color: white;
+            border-color: #b45309;
+        }
+
+        .palette-bottom-card {
+            background: var(--card-gradient);
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .palette-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--heading-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .legend-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 12px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-dot { width: 11px; height: 11px; border-radius: 50%; }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+            gap: 8px;
+            max-height: 250px;
+            overflow-y: auto;
+            padding: 6px 4px;
+        }
+        .q-pill {
+            padding: 8px 0;
+            border-radius: 7px;
+            font-size: 12.5px;
+            font-weight: 800;
+            text-align: center;
+            cursor: pointer;
+            border: 1.5px solid var(--border-color);
+            background: var(--container-bg);
+            color: var(--text-color);
+            transition: all 0.15s ease;
+            position: relative;
+        }
+        .q-pill:hover { transform: scale(1.08); z-index: 2; }
+        .q-pill.status-current {
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 2.5px #2563eb;
+            font-weight: 900;
+        }
+        .q-pill.status-answered {
+            background: #10b981 !important;
+            color: white !important;
+            border-color: #059669 !important;
+        }
+        .q-pill.status-flagged {
+            background: #f59e0b !important;
+            color: white !important;
+            border-color: #d97706 !important;
+        }
+        .q-pill.status-flagged::after {
+            content: '🚩';
+            position: absolute;
+            top: -6px;
+            right: -3px;
+            font-size: 9px;
+        }
+
+        .result-summary-card {
+            background: var(--card-gradient);
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .score-pill {
+            display: inline-block;
+            font-size: 32px;
+            font-weight: 900;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 6px 0;
+        }
+
+        .res-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 14px;
+        }
+        @media (max-width: 600px) {
+            .res-stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .res-stat-box {
+            padding: 8px;
+            border-radius: 8px;
+            font-weight: 700;
+            color: white;
+            font-size: 12px;
+        }
+
+        .result-tabs-nav {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        .res-tab-btn {
+            padding: 9px 16px;
+            font-size: 13.5px;
+            font-weight: 800;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1.5px solid var(--border-color);
+            background: var(--option-bg);
+            color: var(--text-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .res-tab-btn:hover { border-color: #2563eb; }
+        .res-tab-btn.active-tab {
+            background: var(--primary-gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        .review-item {
+            padding: 16px;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            border: 1.5px solid var(--card-border);
+            transition: all 0.2s;
+            background: var(--container-bg);
+        }
+        .review-item.is-correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+            color: var(--correct-text);
+        }
+        .review-item.is-wrong {
+            background-color: var(--wrong-bg);
+            border-color: var(--wrong-border);
+            color: var(--wrong-text);
+        }
+
+        .exp-box {
+            background: var(--exp-box-bg);
+            color: var(--text-color);
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 13.5px;
+            line-height: 1.5;
+            border-left: 4px solid #2563eb;
+        }
+
+        .blank-q-card {
+            background: var(--container-bg);
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+
+        .msg-box {
+            display: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .msg-error { background-color: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+        .msg-info { background-color: #dcfce7; color: #166534; border: 1px solid #4ade80; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header-top">
+        <span class="tag-pill"><i class="fa-solid fa-graduation-cap"></i> TET / TAT / GPSC Class-2: ગણિત પદ્ધતિશાસ્ત્ર (ES-112)</span>
+        <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleDarkMode()">
+            <i class="fa-solid fa-moon"></i> ડાર્ક મોડ
+        </button>
+    </header>
+
+    <div id="noticeMsg" class="msg-box"></div>
+
+    <!-- ૧. પ્રવેશ અને OTP સ્ક્રીન -->
+    <section id="loginScreen">
+        <div style="text-align: center; margin-bottom: 18px;">
+            <div style="font-size: 32px; color: #2563eb; margin-bottom: 4px;"><i class="fa-solid fa-square-root-variable"></i></div>
+            <h1 class="banner-title" style="font-size: 20px;">TET / TAT / GPSC Class-2 ગણિત પદ્ધતિશાસ્ત્ર</h1>
+            <p class="banner-sub" style="margin-bottom: 10px;">તબક્કો - ૧૧ : ઉચ્ચ કઠિનતામૂલ્ય (HOT) પ્રશ્નોત્તરી (પ્રશ્ન ૪૫૧ થી ૫૦૦ — ભવ્ય પૂર્ણાહુતિ)</p>
+        </div>
+
+        <div class="form-group">
+            <label for="name">👤 પૂરું નામ:</label>
+            <input type="text" id="name" placeholder="તમારું પૂરું નામ દાખલ કરો">
+        </div>
+        <div class="form-group">
+            <label for="phone">📱 મોબાઇલ નંબર:</label>
+            <input type="tel" id="phone" placeholder="૧૦ અંકનો સાચો મોબાઇલ નંબર" maxlength="10">
+        </div>
+        <div class="form-group">
+            <label for="email">📧 ઇમેઇલ આઇડી:</label>
+            <input type="email" id="email" placeholder="તમારું સાચું ઈમેઈલ આઈડી લખો">
+        </div>
+
+        <button id="getOtpBtn" class="btn-gradient" onclick="requestOTP()">
+            <i class="fa-solid fa-paper-plane"></i> OTP મેળવો અને આગળ વધો
+        </button>
+
+        <div id="otpContainer" class="otp-box">
+            <p style="margin: 0 0 10px 0; color: var(--heading-color); font-weight: 700; font-size: 13px;">
+                📩 આપના ઈમેઈલ પર ૪ અંકનો સુરક્ષિત OTP મોકલવામાં આવ્યો છે:
+            </p>
+            <div class="form-group" style="max-width: 200px; margin: 0 auto 12px auto;">
+                <input type="text" id="otpInput" placeholder="૪ અંક OTP" maxlength="4" style="text-align: center; font-size: 20px; letter-spacing: 5px; font-weight: 800;">
+            </div>
+            <button id="verifyBtn" class="btn-gradient" onclick="verifyAndStart()" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                <i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો
+            </button>
+        </div>
+    </section>
+
+    <!-- ૨. મોક ટેસ્ટ સ્ક્રીન -->
+    <section id="quizScreen" style="display: none;">
+        <div class="quiz-layout">
+            <div class="quiz-main-card">
+                <div>
+                    <div class="quiz-header">
+                        <div>
+                            <span id="qProgress" style="font-weight: 800; font-size: 16px; color: var(--heading-color);">પ્રશ્ન ૪૫૧ / ૫૦૦</span>
+                        </div>
+                        <div class="timer-badge">
+                            <i class="fa-regular fa-clock"></i> <span id="timerDisplay">૦૦:૦૦</span>
+                        </div>
+                    </div>
+                    <div class="question-box">
+                        <div id="unitBadge" class="unit-badge"></div>
+                        <div id="questionText" class="question-text"></div>
+                        <div id="optionsContainer"></div>
+                    </div>
+                </div>
+
+                <div class="quiz-actions-bar">
+                    <button id="flagBtn" class="btn-flag" onclick="toggleFlagCurrentQuestion()">
+                        <i class="fa-regular fa-bookmark"></i> Flag (રિવ્યુ માટે)
+                    </button>
+                    <div class="nav-buttons-group">
+                        <button id="prevBtn" class="btn-prev" onclick="prevQuestion()"><i class="fa-solid fa-arrow-left"></i> પાછળ</button>
+                        <button id="nextBtn" class="btn-next" onclick="nextQuestion()">આગળ <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="palette-bottom-card">
+                <div class="palette-title">
+                    <span><i class="fa-solid fa-table-cells"></i> પ્રશ્ન પેલેટ (૪૫૧ થી ૫૦૦ ની સ્થિતિ)</span>
+                    <span id="answeredCountBadge" style="font-size: 12px; background: #10b981; color: white; padding: 4px 10px; border-radius: 12px;">0 / 50 પૂર્ણ</span>
+                </div>
+
+                <div class="legend-grid">
+                    <div class="legend-item"><div class="legend-dot" style="background:#10b981;"></div> જવાબ આપેલ</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b;"></div> Flag / રિવ્યુ</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#94a3b8;"></div> બાકી પ્રશ્ન</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#2563eb;"></div> ચાલુ પ્રશ્ન</div>
+                </div>
+
+                <div class="palette-grid" id="questionGridContainer"></div>
+
+                <div style="text-align: right; margin-top: 6px;">
+                    <button class="btn-gradient" onclick="confirmSubmitQuiz()" style="max-width: 280px; margin-left: auto; background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); padding: 11px 18px; font-size: 14.5px;">
+                        <i class="fa-solid fa-circle-check"></i> કસોટી સબમિટ કરો
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ૩. પરિણામ સ્ક્રીન -->
+    <section id="resultScreen" style="display: none;">
+        <div class="result-summary-card">
+            <h2 style="color: var(--heading-color); font-size: 20px; font-weight: 900; margin-bottom: 6px;">
+                🎉 કસોટી મૂલ્યાંકન અહેવાલ
+            </h2>
+            <p style="margin: 3px 0; font-size: 14px;"><strong>પરીક્ષાર્થી:</strong> <span id="resName"></span> | <strong>સંપર્ક:</strong> <span id="resPhone"></span></p>
+            <p style="margin: 3px 0; font-size: 13px; color: var(--subheading-color);"><strong>વિષય:</strong> ES-112 ગણિતનું અધ્યાપન (BAOU) | ૫૦૦ પ્રશ્નો શ્રેણી (તબક્કો - ૧૧ | પ્રશ્ન ૪૫૧ થી ૫૦૦ — ભવ્ય પૂર્ણાહુતિ)</p>
+            
+            <div class="score-pill" id="resScore">0 / 50</div>
+            <div style="font-size: 17px; font-weight: 800; color: #10b981;" id="resPercent">0%</div>
+
+            <div class="res-stats-grid">
+                <div class="res-stat-box" style="background:#10b981;">
+                    <div>સાચા ઉત્તર</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resCorrectCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#ef4444;">
+                    <div>ખોટા ઉત્તર</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resWrongCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#f59e0b;">
+                    <div>રિવ્યુ/Flagged</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resFlagCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#2563eb;">
+                    <div>લીધેલો સમય</div>
+                    <div style="font-size: 15px; font-weight: 900; margin-top: 2px;" id="resTime">00:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-tabs-nav">
+            <button class="res-tab-btn active-tab" id="tabBtnWrong" onclick="switchResultTab('wrong')">
+                <i class="fa-solid fa-triangle-exclamation" style="color: #ef4444;"></i> ❌ માત્ર ખોટા પડેલા પ્રશ્નો
+            </button>
+            <button class="res-tab-btn" id="tabBtnAnswers" onclick="switchResultTab('answers')">
+                <i class="fa-solid fa-square-check" style="color: #10b981;"></i> 📋 ઉત્તરવહી & સમજૂતી
+            </button>
+            <button class="res-tab-btn" id="tabBtnBlank" onclick="switchResultTab('blank')">
+                <i class="fa-solid fa-file-lines" style="color: #2563eb;"></i> 📝 મૂળ પ્રશ્નપત્ર (પ્રેક્ટિસ)
+            </button>
+        </div>
+
+        <div id="tabContentWrong">
+            <div id="wrongQuestionsList"></div>
+        </div>
+
+        <div id="tabContentAnswers" style="display: none;">
+            <div id="allAnswersList"></div>
+        </div>
+
+        <div id="tabContentBlank" style="display: none;">
+            <div id="blankQuestionsList"></div>
+        </div>
+    </section>
+</div>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz-khogtnFjvjzRuv_ieBYJfx0TAxluM9OfoXlf72h9Yce14rdQu9_Xbmx3fnprk5Q30g/exec";
+
+// ૫૦ HOTS પ્રશ્નોનો સંપૂર્ણ ડેટાસેટ (પ્રશ્ન ક્રમાંક ૪૫૧ થી ૫૦૦ — ભવ્ય પૂર્ણાહુતિ) [es112mathsmethodpart11.docx]
+const START_Q_NUM = 451;
+const questions = [
+  {
+    "q": "પ્રશ્ન 451. ગણિત શિક્ષણમાં 'સૂક્ષ્મ અધ્યાપન' (Microteaching) દરમિયાન તાલીમાર્થી જ્યારે 'વિષયાભિમુખ કૌશલ્ય' માં પૂર્વજ્ઞાન આધારિત પ્રશ્નો પૂછે છે, ત્યારે છેલ્લો પ્રશ્ન હંમેશા કેવો હોવો જોઈએ?",
+    "options": [
+      "ખૂબ સરળ પ્રશ્ન જેનો જવાબ બધાને આવડતો હોય.",
+      "સમસ્યાત્મક પ્રશ્ન (Problematic Question) — જેનો ઉત્તર મેળવવા માટે વિદ્યાર્થીઓમાં ઉત્સુકતા અને નવા વિષય તરફ કુદરતી પ્રવેશ રચાય.",
+      "પાઠ્યપુસ્તકના સ્વાધ્યાયનો છેલ્લો દાખલો.",
+      "ગણિતની વ્યાખ્યા."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૪ : આદર્શ પાઠ આયોજન & એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "સમસ્યાત્મક પ્રશ્ન વર્ગખંડમાં જ્ઞાનાત્મક અસંતુલન (Cognitive Disequilibrium) પેદા કરે છે, જે શિક્ષકને હેતુકથન કરવાની અને પાઠ શરૂ કરવાની આદર્શ શૈક્ષણિક તક પૂરી પાડે છે."
+  },
+  {
+    "q": "પ્રશ્ન 452. ગણિતના શિક્ષક જ્યારે વર્ગખંડમાં પાઠ આયોજનના વિષય નિરૂપણમાં 'અપૂર્ણાંકોના સરવાળા' (1/2 + 1/3) શીખવતી વખતે વિદ્યાર્થી 2/5 (અંશનો અંશમાં અને છેદનો છેદમાં સરવાળો) કરે છે, ત્યારે આ કયા પ્રકારની સંકલ્પનાત્મક ક્ષતિ ગણાય?",
+    "options": [
+      "માત્ર ગણન ભૂલ.",
+      "પૂર્ણાંક સંખ્યાઓના સરવાળાના નિયમનું અપૂર્ણાંક પર અતિ-સામાન્યીકરણ (Over-generalization of Whole Number Addition).",
+      "દ્રષ્ટિ દોષ.",
+      "આળસ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૨ : સ્વરૂપ & એકમ-૧૪ : નિદાનાત્મક અધ્યાપન",
+    "exp": "વિદ્યાર્થી પૂર્ણાંક સંખ્યાઓની જેમ અંશ અને છેદને સ્વતંત્ર પૂર્ણાંકો સમજી સીધો સરવાળો કરે છે. આ ક્ષતિ નિવારવા લ.સા.અ. અને સમાન છેદવાળા અપૂર્ણાંકનું મૂર્ત નિદર્શન અનિવાર્ય છે."
+  },
+  {
+    "q": "પ્રશ્ન 453. ગણિત શિક્ષણમાં 'આંતરરાષ્ટ્રીય સ્તરે પ્રચલિત પાસ્કલ ત્રિકોણ' (Pascal's Triangle) માં સમાવિષ્ટ ગુણધર્મો સંદર્ભે કયું વિધાન સાચું છે?",
+    "options": [
+      "તે માત્ર ત્રિકોણ દોરવા માટે છે.",
+      "તે દ્વિપદી વિસ્તરણના સહગુણકો (Binomial Coefficients), સંચય (nCr), ફિબોનાકી સંખ્યાઓ અને સંભાવનાની ગણતરીઓનું અદ્ભુત સંયોજન દર્શાવે છે.",
+      "તે માત્ર સરવાળા માટે છે.",
+      "તેનો કોઈ બીજગાણિતિક ઉપયોગ નથી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : મહત્વ & એકમ-૪ : અનુબંધ",
+    "exp": "પાસ્કલ ત્રિકોણની દરેક હરોળ (a+b)^n ના વિસ્તરણના સહગુણકો આપે છે અને તેના ત્રાંસા સરવાળા ફિબોનાકી શ્રેણી રચે છે, જે ગણિતનું બહુ-શાખીય સુંદર માળખું છે."
+  },
+  {
+    "q": "પ્રશ્ન 454. ગણિત શિક્ષણમાં 'સહસંબંધ' (Correlation) સ્થાપતી વખતે 'આબોહવા પરિવર્તન અને હવામાન વિજ્ઞાન' (Meteorology) માં ગણિતનું કયું વિષયાંગ સર્વોચ્ચ ભૂમિકા ભજવે છે?",
+    "options": [
+      "માત્ર સામાન્ય બાદબાકી.",
+      "સંભાવનાશાસ્ત્ર, બહુચલ વિકલન સમીકરણો (Differential Equations) અને સુપર કમ્પ્યુટિંગ આધારિત ગાણિતિક મોડેલિંગ.",
+      "માત્ર વર્તુળ દોરવું.",
+      "ઇતિહાસ વાંચવો."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : મહત્વ & એકમ-૪ : અનુબંધ",
+    "exp": "વાવાઝોડાની ગતિ, વરસાદની આગાહી અને તાપમાનના ફેરફારો નેવિયર-સ્ટોક્સ સમીકરણો અને આંકડાશાસ્ત્રીય સંભાવના મોડેલો દ્વારા જ શક્ય બને છે."
+  },
+  {
+    "q": "પ્રશ્ન 455. ગણિતના શિક્ષક જ્યારે વર્ગખંડમાં પાઠ આયોજનના વિષય નિરૂપણમાં 'સમસ્યા ઉકેલ' શીખવતી વખતે 'કોયડાની ભાષાંતર ક્ષમતા' (Translational Ability) તપાસે છે, ત્યારે તેનો અર્થ શો થાય?",
+    "options": [
+      "અંગ્રેજીનું ગુજરાતીમાં ભાષાંતર કરવું.",
+      "વ્યવહારિક પરિસ્થિતિના ભાષાકીય વિધાનોનું બીજગાણિતિક સંકેતો અને ગાણિતિક સમીકરણોમાં ચોક્કસ રૂપાંતર કરવું.",
+      "માત્ર હિન્દી શીખવવું.",
+      "સૂત્રો ગોખવા."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૨ : ગણિતનું સ્વરૂપ & એકમ-૭ : વર્તન પરિવર્તન",
+    "exp": "શાબ્દિક રકમને ગાણિતિક પરિભાષામાં (દા.ત. 'પિતાની ઉંમર પુત્ર કરતાં બમણી છે' -> y = 2x) ઢાળવાની ક્ષમતા એ ગણિત શિક્ષણનો મુખ્ય જ્ઞાનાત્મક હેતુ છે."
+  },
+  {
+    "q": "પ્રશ્ન 456. ગણિત પ્રયોગશાળામાં 'સમચતુષ્કોણનું ક્ષેત્રફળ' A = 1/2 (d1 x d2) સાબિત કરવા માટે કઈ પ્રાયોગિક રચના સૌથી શ્રેષ્ઠ બને છે?",
+    "options": [
+      "સામાન્ય દોરી.",
+      "સમચતુષ્કોણને તેના બે લંબ વિકર્ણો દ્વારા ૪ એકરૂપ કાટકોણ ત્રિકોણોમાં વિભાજિત કરી તેને લંબચોરસ સ્વરૂપે ગોઠવવાની પ્રવૃત્તિ.",
+      "કાગળ બાળવો.",
+      "સામાન્ય ચોક."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : પદ્ધતિઓ & એકમ-૧૨ : પ્રયોગશાળા",
+    "exp": "ચાર કાટકોણ ત્રિકોણો મળીને d1 લંબાઈ અને d2/2 પહોળાઈ ધરાવતો લંબચોરસ રચે છે, જેથી કુલ ક્ષેત્રફળ 1/2(d1 x d2) થાય તે પ્રત્યક્ષ સાબિત થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 457. ગણિત શિક્ષણમાં 'સૂક્ષ્મ અધ્યાપન' (Microteaching) દરમિયાન 'શિક્ષકનું પ્રશ્ન પ્રવાહિતા કૌશલ્ય' તપાસતી વખતે 'પડઘા પ્રશ્નો' (Echo Questions) પૂછવા એ કેવો દોષ ગણાય?",
+    "options": [
+      "ઉત્તમ પ્રશ્ન.",
+      "ગંભીર શિક્ષણ દોષ — જ્યાં શિક્ષક વિદ્યાર્થીના ઉત્તરને જ ફરીથી પ્રશ્ન બનાવીને પુનરાવર્તિત કરે છે, જે સમય બગાડે છે અને વિચારશક્તિને ઉત્તેજિત કરતો નથી.",
+      "વૈજ્ઞાનિક પદ્ધતિ.",
+      "સામાન્ય બાબત."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "પડઘા પ્રશ્નો વર્ગખંડમાં વિચારપ્રક્રિયા આગળ ધપાવવાને બદલે એક જ જગ્યાએ અટકાવી રાખે છે, જેથી પ્રશિક્ષણાર્થી શિક્ષકે આ ટેવ તાત્કાલિક સુધારવી પડે છે."
+  },
+  {
+    "q": "પ્રશ્ન 458. ગણિત કસોટીમાં 'પ્રશ્નની વિભેદન શક્તિ' (Discrimination Power) જો શૂન્ય (0.00) આવે, તો તેનો સાચો અર્થ શો થાય?",
+    "options": [
+      "પ્રશ્ન અતિ ઉત્કૃષ્ટ છે.",
+      "ઉચ્ચ સિદ્ધિવાળા (તેજસ્વી) અને નિમ્ન સિદ્ધિવાળા (નબળા) બંને જૂથના સમાન સંખ્યાના વિદ્યાર્થીઓએ સાચો (અથવા ખોટો) ઉત્તર આપ્યો છે, માટે તે કોઈ ભેદરેખા રચી શકતો નથી.",
+      "બધા જ નાપાસ થયા.",
+      "પરીક્ષા રદ થઈ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "શૂન્ય વિભેદન શક્તિ ધરાવતો પ્રશ્ન કસોટીના હેતુ માટે નકામો છે કારણ કે તે તેજસ્વી અને સામાન્ય બાળકો વચ્ચે કોઈ ભેદ પારખી શકતો નથી."
+  },
+  {
+    "q": "પ્રશ્ન 459. ગણિત શિક્ષણમાં 'સહસંબંધ' (Correlation) સ્થાપતી વખતે 'ચિત્રકળા અને ફોટોગ્રાફી' માં 'સમપ્રમાણતા અને પ્રમાણમાપ' (Scale and Symmetry) નો અભાવ હોય તો કયો કલાત્મક દોષ ઊભો થાય?",
+    "options": [
+      "ચિત્ર સુંદર દેખાય.",
+      "ચિત્ર અવાસ્તવિક, બેડોળ અને કદરૂપું લાગે છે (દા.ત. શરીરના અંગો કે મકાનની બારીઓ પ્રમાણમાપ વગરની વિકૃત દેખાય છે).",
+      "રંગો સારા લાગે.",
+      "કોઈ અસર થતી નથી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૩ : કલાત્મક મૂલ્ય & એકમ-૪ : અનુબંધ",
+    "exp": "પુસ્તકના પાના ૧૮ મુજબ ચિત્રકળા, શિલ્પ અને ફોટોગ્રાફીમાં સમરૂપતા અને સપ્રમાણતા જેવા ગાણિતિક ખ્યાલો જ કલાકૃતિને વાસ્તવિકતા અને સૌંદર્ય બક્ષે છે."
+  },
+  {
+    "q": "પ્રશ્ન 460. ગણિતના શિક્ષક જ્યારે વર્ગખંડમાં પાઠ આયોજનના વિષય નિરૂપણમાં 'વિકર્ણ દ્વારા બહુકોણના ત્રિકોણોમાં વિભાજન' શીખવી (n-2) x 180° સૂત્ર તારવે છે, ત્યારે કયું શિક્ષણસૂત્ર ચરિતાર્થ થાય છે?",
+    "options": [
+      "અમૂર્તથી મૂર્ત.",
+      "વિશેષ પરથી સામાન્ય પર જવું (Particular to General).",
+      "સંકુલથી સરળ તરફ.",
+      "અજ્ઞાતથી જ્ઞાત તરફ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૯ : ગણિત શિક્ષણના સૂત્રો & એકમ-૧૧ : પદ્ધતિઓ",
+    "exp": "ચતુષ્કોણમાં ૨ ત્રિકોણ (૨ x ૧૮૦°), પંચકોણમાં ૩ ત્રિકોણ (૩ x ૧૮૦°) વગેરે વિશિષ્ટ ઉદાહરણો પરથી n બાજુવાળા બહુકોણ માટે (n-2) x 180° સામાન્ય નિયમ સ્થાપિત થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 461. ગણિત પ્રયોગશાળામાં 'અપૂર્ણાંક પટ્ટીઓ' (Fraction Strips) દ્વારા ૧/૨, ૧/૪ અને ૧/૮ ની સરખામણી કરતી વખતે વિદ્યાર્થી કયો ગાણિતિક નિયમ મૂર્ત સ્વરૂપે સમજે છે?",
+    "options": [
+      "અંશ વધે તો કિંમત ઘટે.",
+      "જ્યારે અંશ સમાન (૧) હોય ત્યારે છેદ જેમ મોટો તેમ અપૂર્ણાંકનું વાસ્તવિક મૂલ્ય નાનું થાય છે (1/2 > 1/4 > 1/8).",
+      "છેદ મોટો હોય તે અપૂર્ણાંક હંમેશા મોટો હોય.",
+      "બધા અપૂર્ણાંકો સમાન છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો અને ગણિત પ્રયોગશાળા",
+    "exp": "પટ્ટીઓની લંબાઈ પ્રત્યક્ષ જોઈને બાળક સમજે છે કે પૂર્ણના ૨ ભાગ કરતાં ૮ ભાગમાં વહેંચાયેલો ટુકડો ઘણો નાનો હોય છે, જેથી તેની ભ્રમણા દૂર થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 462. ગણિત શિક્ષણમાં 'સૂક્ષ્મ અધ્યાપન' (Microteaching) દરમિયાન 'શિક્ષકનું ઉત્તેજના પરિવર્તન કૌશલ્ય' માં 'વિરામ' (Pausing) નો સહેતુક ઉપયોગ શા માટે કરવામાં આવે છે?",
+    "options": [
+      "શિક્ષક થાકી ગયા હોય એટલે.",
+      "મહત્ત્વપૂર્ણ ગાણિતિક વિધાન કે પ્રશ્ન પૂછ્યા બાદ અચાનક ૨-૩ સેકન્ડનું મૌન ધારણ કરવાથી વિદ્યાર્થીઓમાં જિજ્ઞાસા ચરમસીમાએ પહોંચે છે અને ધ્યાન પુનઃ કેન્દ્રિત થાય છે.",
+      "વર્ગ ભૂલી જવા માટે.",
+      "સમય પસાર કરવા."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "સતત બોલવા કરતાં યોગ્ય સ્થાને લીધેલો વિરામ (Pause) વર્ગખંડમાં નાટ્યાત્મક ઉત્સુકતા પેદા કરે છે અને વિદ્યાર્થીઓને વિચારવાનો અનિવાર્ય સમય આપે છે."
+  },
+  {
+    "q": "પ્રશ્ન 463. ગણિત કસોટીમાં 'પ્રશ્નોની સંરચના' કરતી વખતે 'અસ્પષ્ટ અને સૂચક પ્રશ્નો' (Ambiguous and Leading Questions) નો સમાવેશ કરવાથી કસોટીના કયા ગુણધર્મને સૌથી મોટું નુકસાન થાય છે?",
+    "options": [
+      "કસોટી સુંદર બને છે.",
+      "કસોટીની યથાર્થતા (Validity) અને વિશ્વસનીયતા (Reliability) બંને ગંભીર રીતે જોખમાય છે.",
+      "વિદ્યાર્થીઓ રાજી થાય છે.",
+      "સમય બચે છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "સૂચક પ્રશ્નો સાચી સમજ માપતા નથી અને અસ્પષ્ટ પ્રશ્નો પરીક્ષકના પક્ષપાતને વધારે છે, જેથી કસોટીનું માપન અપ્રમાણભૂત બની જાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 464. ગણિત શિક્ષણમાં 'સહસંબંધ' (Correlation) સ્થાપતી વખતે 'આધુનિક ગૂગલ સર્ચ એન્જિન' (Google Search Engine) નો પેજરૅન્ક અલ્ગોરિધમ (PageRank Algorithm) ગણિતના કયા વિષયાંગ પર કાર્ય કરે છે?",
+    "options": [
+      "માત્ર સરવાળા.",
+      "માર્કોવ ચેઇન્સ (Markov Chains), સંભાવના અને શ્રેણિકના આઇગન વેલ્યુ-આઇગન વેક્ટર્સ (Eigenvalues and Eigenvectors in Matrix Algebra).",
+      "ત્રિકોણમિતિ.",
+      "સામાન્ય બાદબાકી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : મહત્વ & એકમ-૪ : અનુબંધ",
+    "exp": "ગૂગલનું સમગ્ર સર્ચ એન્જિન કરોડો વેબપેજીસના વિશાળ મેટ્રિક્સ અને સંભાવનાશાસ્ત્રના ઉચ્ચ ગાણિતિક મોડેલ પર જ સૌથી પ્રસ્તુત પરિણામો ફિલ્ટર કરે છે."
+  },
+  {
+    "q": "પ્રશ્ન 465. ગણિતના શિક્ષક જ્યારે વર્ગખંડમાં પાઠ આયોજનના વિષય નિરૂપણમાં 'નિત્યસમ અને સમીકરણ' વચ્ચેનો ભેદ ચકાસવા વિદ્યાર્થીઓ સમક્ષ x² - 4 = (x-2)(x+2) મૂકે છે, ત્યારે વિદ્યાર્થી તેને શું જાહેર કરશે?",
+    "options": [
+      "માત્ર સમીકરણ.",
+      "નિત્યસમ (Identity) — કારણ કે x ની કોઈપણ વાસ્તવિક કિંમત મૂકતાં ડાબી બાજુ અને જમણી બાજુ હંમેશા સમાન જ રહે છે.",
+      "ખોટું વિધાન.",
+      "માત્ર આંકડો."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : સંકલ્પના & એકમ-૧૪ : આયોજન",
+    "exp": "નિત્યસમ એ સાર્વત્રિક સમતા છે જે ચલની પ્રત્યેક કિંમત માટે સત્ય હોય છે, જ્યારે સમીકરણ માત્ર તેના ઉકેલગણની ચોક્કસ કિંમતો માટે જ સંતુષ્ટ થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 466. ગણિત પ્રયોગશાળામાં 'વર્તુળના સ્પર્શક અને સ્પર્શબિંદુમાંથી દોરેલી ત્રિજ્યા' વચ્ચેનો ખૂણો માપતી વખતે વિદ્યાર્થીઓ કયું ભૌમિતિક સત્ય પ્રત્યક્ષ અનુભવે છે?",
+    "options": [
+      "ખૂણો ૬૦° થાય છે.",
+      "સ્પર્શબિંદુ આગળ ત્રિજ્યા અને સ્પર્શક પરસ્પર હંમેશા લંબ (૯૦° કાટખૂણો) જ બનાવે છે.",
+      "ખૂણો ૪૫° થાય છે.",
+      "કોઈ ખૂણો બનતો નથી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : પદ્ધતિઓ & એકમ-૧૨ : પ્રયોગશાળા",
+    "exp": "કોણમાપકથી માપીને બાળક જુએ છે કે સ્પર્શક પર કેન્દ્રમાંથી દોરેલું ન્યૂનતમ અંતર એ લંબ અંતર જ હોય છે, જે પ્રમેયનું અદ્ભુત પ્રાયોગિક સત્યાપન આપે છે."
+  },
+  {
+    "q": "પ્રશ્ન 467. ગણિત શિક્ષણમાં 'સૂક્ષ્મ અધ્યાપન' (Microteaching) દરમિયાન 'વિદ્યાર્થી પ્રશ્ન પૂછે ત્યારે શિક્ષક તેનો ઉત્તર સીધો આપવાને બદલે વર્ગના અન્ય વિદ્યાર્થી તરફ વાળે છે', ત્યારે કયું કૌશલ્ય સાકાર થાય છે?",
+    "options": [
+      "જવાબ છુપાવવો.",
+      "પ્રશ્ન પુનઃદિશાસૂચન / પુનઃવિતરણ (Redirection of Question) — જેથી વર્ગના અન્ય બાળકો વિચારવા પ્રેરાય અને સહિયારી આંતરક્રિયા વધે.",
+      "વિષય બદલવો.",
+      "શિક્ષકનું અજ્ઞાન."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર (પ્રશ્ન કૌશલ્ય)",
+    "exp": "રીડાયરેક્શન વર્ગખંડને શિક્ષક-કેન્દ્રીમાંથી વિદ્યાર્થી-સહભાગી બનાવે છે; બાળકો એકબીજાના જવાબોમાંથી શીખવા પ્રેરાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 468. ગણિત કસોટીમાં 'પ્રશ્નોની વસ્તુલક્ષિતા' (Objectivity) સુનિશ્ચિત કરવા માટે ગણિતના પ્રશ્નપત્ર સાથે કયું પરિશિષ્ટ હોવું અનિવાર્ય છે?",
+    "options": [
+      "પુસ્તકનું કવર પેજ.",
+      "વિગતવાર મોડેલ ઉત્તરો અને પ્રત્યેક પગથિયાંના ગુણ દર્શાવતી સચોટ 'ગુણાંકન યોજના' (Marking Scheme / Scoring Key).",
+      "માત્ર પ્રશ્નોની યાદી.",
+      "શાળાનું સરનામું."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "ગુણાંકન યોજના પરીક્ષકના અંગત પક્ષપાતને નિયંત્રિત કરે છે અને નિર્ધારિત કરે છે કે કયા ચોક્કસ સૂત્ર, પગથિયાં કે એકમ માટે કેટલા અંક ફાળવવા."
+  },
+  {
+    "q": "પ્રશ્ન 469. ગણિત શિક્ષણમાં 'સહસંબંધ' (Correlation) સ્થાપતી વખતે 'ઇલેક્ટ્રોનિક્સ અને સ્માર્ટફોન' ની ટચસ્ક્રીન ગણિતના કયા વિષયાંગ પર આધારિત છે?",
+    "options": [
+      "સામાન્ય સરવાળા.",
+      "કાર્તેઝીય યામ ભૂમિતિ (X-Y Coordinates - સ્ક્રીન પર આંગળી અડતાં જ સ્પર્શબિંદુના યામ નક્કી કરી કમાન્ડ આપવો).",
+      "માત્ર વર્તુળનો પરિઘ.",
+      "ઇતિહાસ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૪ : ગણિત શિક્ષણમાં અનુબંધ & એકમ-૧ : મહત્વ",
+    "exp": "સ્માર્ટફોનની ટચસ્ક્રીન એ યામ ભૂમિતિનું જીવંત ઉદાહરણ છે; સ્ક્રીન પરનો પ્રત્યેક પિક્સેલ ચોક્કસ (X, Y) બિંદુ તરીકે ગણતરી પામે છે."
+  },
+  {
+    "q": "પ્રશ્ન 470. ગણિતના શિક્ષક જ્યારે વર્ગખંડમાં પાઠ આયોજનના વિષય નિરૂપણમાં 'વિદ્યાર્થીઓને ગણિતના પ્રમેયો ગોખવાને બદલે કાપકૂપ અને સાધનોથી સાબિત કરાવે છે', ત્યારે કયો સર્વોચ્ચ શૈક્ષણિક હેતુ સિદ્ધ થાય છે?",
+    "options": [
+      "સમય પસાર કરવો.",
+      "અમૂર્ત ગાણિતિક વિચારોનું મૂર્તિકરણ, કાયમી જ્ઞાન પ્રાપ્તિ અને ગોખણપટ્ટીનો કાયમી અંત.",
+      "પુસ્તક ફાડી નાખવું.",
+      "શિક્ષકનું કામ વધારવું."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૨ : સ્વરૂપ & એકમ-૧૧ : પદ્ધતિઓ",
+    "exp": "સ્વાનુભવથી મેળવેલું જ્ઞાન મગજમાં ક્યારેય ભૂલાતું નથી; આ NCF-2005 ના ભાર વિનાના ભણતર અને સર્જનાત્મક ગણિતનો આત્મા છે."
+  },
+  {
+    "q": "પ્રશ્ન 471. ગણિત પ્રયોગશાળામાં 'સમઘનના વિકર્ણની લંબાઈ' d = √3 a સાબિત કરવા માટે કયા ત્રિ-પરિમાણીય સાધનનો ઉપયોગ સૌથી ઉત્તમ નીવડે છે?",
+    "options": [
+      "સાદો કાગળ.",
+      "તારનું બનેલું પારદર્શક સમઘન માળખું (Wireframe Cube) જેમાં સામસામેના ખૂણાઓને જોડતી ત્રાંસી રંગીન દોરી બાંધેલી હોય.",
+      "ગોળાકાર દડો.",
+      "સામાન્ય સ્કેલ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો અને ગણિત પ્રયોગશાળા",
+    "exp": "પારદર્શક વાયરફ્રેમમાં વિદ્યાર્થી પાયાના ચોરસનો વિકર્ણ (√2 a) અને ઊંચાઈ (a) મળીને બનતા કાટકોણ ત્રિકોણ પરથી √3 a પ્રત્યક્ષ જોઈ શકે છે."
+  },
+  {
+    "q": "પ્રશ્ન 472. ગણિત શિક્ષણમાં 'સૂક્ષ્મ અધ્યાપન' (Microteaching) દરમિયાન 'શિક્ષકનું પ્રશ્ન કૌશલ્ય' ત્યારે સર્વોચ્ચ કક્ષાનું ગણાય જ્યારે પ્રશ્નો બ્લૂમના કયા સ્તરને સ્પર્શતા હોય?",
+    "options": [
+      "માત્ર પ્રત્યાહ્વાન (જ્ઞાન).",
+      "વિશ્લેષણ, મૂલ્યાંકન અને સર્જનાત્મક ઉકેલ (Higher Order Thinking - HOT questions).",
+      "માત્ર હા કે ના.",
+      "પુસ્તકની વ્યાખ્યાઓ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર & એકમ-૫ : વર્તનક્ષેત્રો",
+    "exp": "ઉચ્ચ કક્ષાના પ્રશ્નો વિદ્યાર્થીમાં ગહન ચિંતન અને તાર્કિક ક્ષમતા ખીલવે છે, જે પ્રશ્ન કૌશલ્યની વાસ્તવિક પરાકાષ્ઠા છે."
+  },
+  {
+    "q": "પ્રશ્ન 473. ગણિત કસોટીમાં 'પ્રશ્નપત્ર નિર્માણ' વખતે જો શિક્ષક બ્લુપ્રિન્ટ વગર મનસ્વી રીતે પ્રશ્નો કાઢે, તો પ્રશ્નપત્રમાં કયો ગંભીર શૈક્ષણિક દોષ પેદા થાય છે?",
+    "options": [
+      "પ્રશ્નપત્ર ખૂબ સુંદર બને છે.",
+      "અમુક પ્રકરણો કે હેતુઓ તરફ વધુ પડતો પક્ષપાત થાય છે, અન્ય મહત્ત્વના એકમો ચૂકાઈ જાય છે અને કસોટી અસંતુલિત તથા અપ્રમાણભૂત બને છે.",
+      "બધા બાળકો પાસ થઈ જાય છે.",
+      "સમય બચે છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "બ્લુપ્રિન્ટ વગરનું પેપર શિક્ષકના વ્યક્તિગત ગમા-અણગમા પર આધારિત બની જાય છે, જેથી સમગ્ર અભ્યાસક્રમની સમાન અને ન્યાયી ચકાસણી થતી નથી."
+  },
+  {
+    "q": "પ્રશ્ન 474. ગણિત શિક્ષણમાં 'સહસંબંધ' (Correlation) સ્થાપતી વખતે 'આધુનિક ક્રિપ્ટોગ્રાફી અને સાયબર સિક્યોરિટી' (Cyber Security) માં બેંકના પાસવર્ડ સુરક્ષિત રાખવા ગણિતના કયા વિષયાંગનો ઉપયોગ થાય છે?",
+    "options": [
+      "સામાન્ય સરવાળા.",
+      "વિશાળ અવિભાજ્ય સંખ્યાઓ (Prime Numbers) નું ગુણન અને મોડ્યુલર અંકગણિત (RSA Encryption Algorithm).",
+      "ત્રિકોણમિતિ.",
+      "માત્ર ભૂમિતિ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : મહત્વ & એકમ-૪ : અનુબંધ",
+    "exp": "ઓનલાઈન બેંકિંગ અને ડિજિટલ સિક્યોરિટીમાં ૨૦૦-૩૦૦ અંકની અવિભાજ્ય સંખ્યાઓનું અંકગણિત વપરાય છે જેને સુપર કમ્પ્યુટર પણ સરળતાથી ક્રેક કરી શકતું નથી."
+  },
+  {
+    "q": "પ્રશ્ન 475. ગણિતના શિક્ષક જ્યારે વર્ગખંડમાં પાઠ આયોજનના વિષય નિરૂપણમાં 'સમસ્યા ઉકેલ' કરાવતી વખતે વિદ્યાર્થીઓને 'તાળો મેળવવાની પ્રક્રિયા' માં સમીકરણની બંને બાજુ સમાન આવે છે તે બતાવે છે, ત્યારે કયો માનસિક સંતોષ મળે છે?",
+    "options": [
+      "આળસનો સંતોષ.",
+      "ગાણિતિક સત્યની નિર્વિવાદ ખાતરી અને પોતાની સ્વાયત્ત સિદ્ધિનો અલૌકિક આનંદ.",
+      "સમય બગાડવાનો સંતોષ.",
+      "કોઈ સંતોષ નથી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૨ : ગણિતનું સ્વરૂપ & એકમ-૩ : મૂલ્યો",
+    "exp": "પુસ્તકના પાના ૧૨-૧૩ મુજબ જ્યારે ડાબી બાજુ = જમણી બાજુ સાબિત થાય છે ત્યારે વિદ્યાર્થીને પોતાની શોધ પર ગર્વ થાય છે અને થાક અદૃશ્ય થઈ જાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 476. ગણિત પ્રયોગશાળામાં 'વર્તુળના કેન્દ્ર આગળ બનતો ખૂણો એ તે જ ચાપ વડે પરિઘ પરના બિંદુ આગળ બનતા ખૂણા કરતાં બમણો હોય છે' તે સાબિત કરવા કયું પ્રાયોગિક સાધન વપરાય છે?",
+    "options": [
+      "સાદી લાકડી.",
+      "અંશાંકિત વર્તુળ બોર્ડ (Circular Protractor Board) જેમાં રબરબેન્ડ ભરાવી કેન્દ્ર અને પરિઘ આગળ ખૂણા બનાવી સીધા જ માપી શકાય.",
+      "સામાન્ય પથ્થર.",
+      "સામાન્ય ચોક."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : પદ્ધતિઓ & એકમ-૧૨ : પ્રયોગશાળા",
+    "exp": "પરિઘ પર ૪૦° નો ખૂણો હોય ત્યારે કેન્દ્ર આગળ બરાબર ૮૦° માપ પ્રત્યક્ષ જોઈને વિદ્યાર્થી પ્રમેયની સાબિતી પોતાની આંખે સ્વીકારે છે."
+  },
+  {
+    "q": "પ્રશ્ન 477. ગણિત શિક્ષણમાં 'સૂક્ષ્મ અધ્યાપન' (Microteaching) દરમિયાન 'કૌશલ્ય સાતત્ય' (Skill Fluency) ત્યારે જ સિદ્ધ થાય જ્યારે તાલીમાર્થી:",
+    "options": [
+      "માત્ર સિદ્ધાંતો વાંચી લે.",
+      "કૌશલ્યના તમામ ઘટકોનું નિર્ધારિત સમયમાં સહજતાથી, ક્ષતિરહિત અને આત્મવિશ્વાસપૂર્વક સંચાલન કરી શકે.",
+      "વિદ્યાર્થીઓને હોમવર્ક આપી દે.",
+      "શાંત ઊભો રહે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "કૌશલ્ય ત્યારે જ હસ્તગત થયું કહેવાય જ્યારે તેનું પ્રયોજન કૃત્રિમ ન લાગતાં શિક્ષકના કુદરતી અધ્યાપન વર્તનનો સહજ ભાગ બની જાય."
+  },
+  {
+    "q": "પ્રશ્ન 478. ગણિત કસોટીમાં 'નિદાનાત્મક મૂલ્યાંકન' (Diagnostic Assessment) દ્વારા ઓળખાયેલી ક્ષતિઓ સુધારવા માટે શિક્ષકે કયા પ્રકારનું સાહિત્ય તૈયાર કરવું જોઈએ?",
+    "options": [
+      "માત્ર સામાન્ય પ્રશ્નપત્રો.",
+      "સ્વ-અધ્યયન ઉપચારાત્મક મોડ્યુલ્સ (Remedial Self-learning Modules), ચિત્રાત્મક કાર્યપત્રકો અને ક્રમિક મહાવરા કસોટીઓ.",
+      "દંડ પત્રકો.",
+      "માત્ર પરિણામ પત્રકો."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૮ : ગણિત મંડળ & એકમ-૧૪ : ઉપચારકાર્ય",
+    "exp": "પુસ્તકના પાના ૨૫ મુજબ ગણિતમાં નબળા વિદ્યાર્થીઓ માટે વિશિષ્ટ માર્ગદર્શક ગાણિતિક સાહિત્ય તૈયાર કરવું એ આદર્શ ગણિત શિક્ષક અને મંડળની મુખ્ય ફરજ છે."
+  },
+  {
+    "q": "પ્રશ્ન 479. ગણિત શિક્ષણમાં 'સહસંબંધ' (Correlation) સ્થાપતી વખતે 'આધુનિક જીપીએસ નેવિગેશન' (GPS Navigation in Mobile) પૃથ્વી પર આપણું સ્થાન નક્કી કરવા ગણિતના કયા સિદ્ધાંતનો ઉપયોગ કરે છે?",
+    "options": [
+      "સામાન્ય સરવાળા.",
+      "ત્રિ-પક્ષીય ભૌમિતિક ત્રિકોણમિતિ અને ગોલીય યામ પદ્ધતિ (Trilateration / Geometric Triangulation from Satellites).",
+      "માત્ર ભાગાકાર.",
+      "સામાન્ય સ્કેલ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : મહત્વ & એકમ-૪ : અનુબંધ",
+    "exp": "ઓછામાં ઓછા ૪ ઉપગ્રહોમાંથી આવતા સિગ્નલોના અંતરના ગોળાઓ જ્યાં પરસ્પર છેદે તે બિંદુ ત્રિ-પરિમાણીય ભૂમિતિ દ્વારા આપણું ચોક્કસ સ્થાન દર્શાવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 480. ગણિતના શિક્ષક જ્યારે વર્ગખંડમાં પાઠ આયોજનના વિષય નિરૂપણમાં 'વિદ્યાર્થીઓને ગણિતના ઇતિહાસના પ્રસંગો' (જેમ કે રામાનુજનનો ટેક્સી નંબર ૧૭૨૯) સંભળાવે છે, ત્યારે કયો હેતુ સિદ્ધ થાય છે?",
+    "options": [
+      "સમય પસાર કરવો.",
+      "ગણિત પ્રત્યે આશ્ચર્ય, રસ અને ભાવનાત્મક લગાવ (Interest and Appreciation) કેળવવો.",
+      "પરીક્ષા રદ કરવી.",
+      "વાર્તાઓ રચવી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૩ : સાંસ્કૃતિક મૂલ્ય & એકમ-૭ : રસ અને કદર",
+    "exp": "૧૭૨૯ એ બે ઘનના સરવાળા તરીકે બે જુદી જુદી રીતે દર્શાવી શકાતી સૌથી નાની સંખ્યા છે (1³+12³ = 9³+10³); આવા પ્રસંગો બાળકના મનમાં ગણિત માટે અસીમ રસ જગાડે છે."
+  },
+  {
+    "q": "પ્રશ્ન 481. ગણિત પ્રયોગશાળામાં 'કાટકોણ ત્રિકોણની બાજુઓ' ૩, ૪ અને ૫ સેમી હોય ત્યારે તેના અંતર્વર્તુળની ત્રિજ્યા (Inradius) પ્રાયોગિક રીતે કેટલી મળે છે?",
+    "options": [
+      "૫ સેમી.",
+      "૧ સેમી (r = (a+b-c)/2 = (3+4-5)/2 = 1 cm).",
+      "૨ સેમી.",
+      "૦ સેમી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : પદ્ધતિઓ & એકમ-૧૨ : પ્રયોગશાળા",
+    "exp": "કાટકોણ ત્રિકોણમાં અંતર્વર્તુળ દોરીને માપતાં તેની ત્રિજ્યા બરાબર ૧ સેમી મળે છે, જે ભૂમિતિના સુંદર પ્રાયોગિક સૂત્રની ચકાસણી કરે છે."
+  },
+  {
+    "q": "પ્રશ્ન 482. ગણિત શિક્ષણમાં 'સૂક્ષ્મ અધ્યાપન' (Microteaching) દરમિયાન 'કૌશલ્ય મૂલ્યાંકન' કરતી વખતે રેટિંગ સ્કેલ (Rating Scale) પર ૭ માંથી ૭ અંક ક્યારે અપાય?",
+    "options": [
+      "શિક્ષક સુંદર દેખાતા હોય ત્યારે.",
+      "જ્યારે તાલીમાર્થીએ કૌશલ્યના તમામ ઘટકોનું નિર્દોષ, સમયબદ્ધ, પ્રભાવશાળી અને આદર્શ સંચાલન કર્યું હોય.",
+      "મિત્રતા ખાતર.",
+      "ક્યારેય ન અપાય."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "પ્રમાણભૂત રેટિંગ સ્કેલમાં સર્વોચ્ચ અંક કૌશલ્યની સંપૂર્ણ નિપુણતા (Mastery Level) દર્શાવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 483. ગણિત કસોટીમાં 'પ્રશ્નપત્રનું કઠિનતા મૂલ્ય સંતુલન' જો સામાન્ય સંભાવના વક્ર (NPC - Normal Probability Curve) જેવું હોય, તો તેનો ગ્રાફ કેવો દેખાય?",
+    "options": [
+      "સીધી સપાટ રેખા.",
+      "ઘંટાકાર (Bell-shaped) — જ્યાં મધ્યમ કઠિનતાવાળા પ્રશ્નો મહત્તમ મધ્યમાં હોય અને ખૂબ સહેલા તથા ખૂબ અઘરા પ્રશ્નો બંને છેડે સપ્રમાણ ઓછા હોય.",
+      "ઊંધો ત્રિકોણ.",
+      "વર્તુળાકાર."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "આદર્શ માનક કસોટીનું કઠિનતા વિતરણ હંમેશા બેલ શેપ (ઘંટાકાર) હોય છે જે સમગ્ર વસ્તીના તમામ બૌદ્ધિક સ્તરોને સમાન ન્યાય આપે છે."
+  },
+  {
+    "q": "પ્રશ્ન 484. ગણિત શિક્ષણમાં 'સહસંબંધ' (Correlation) સ્થાપતી વખતે 'આધુનિક રોબોટિક્સ' (Robotics) માં રોબોટના હાથનું હલનચલન ગણિતના કયા વિષયાંગ પર નિયંત્રિત થાય છે?",
+    "options": [
+      "માત્ર સામાન્ય ગુણાકાર.",
+      "ઇનવર્સ કાઇનેમેટિક્સ (Inverse Kinematics), ત્રિકોણમિતિ અને શ્રેણિક પરિભ્રમણ (Matrix Transformations).",
+      "સામાન્ય બાદબાકી.",
+      "ઇતિહાસ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : મહત્વ & એકમ-૪ : અનુબંધ",
+    "exp": "રોબોટના સાંધાઓ કયા ખૂણે વળશે જેથી તેનો હાથ ચોક્કસ વસ્તુ પકડી શકે તે સમગ્ર ગણતરી ત્રિકોણમિતિ અને વેક્ટર અલ્જીબ્રા દ્વારા જ થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 485. ગણિતના શિક્ષક જ્યારે વર્ગખંડમાં પાઠ આયોજનના વિષય નિરૂપણમાં 'વિદ્યાર્થીઓને ગણિતના કોયડા ઉકેલવાની સ્વતંત્રતા' આપે છે, ત્યારે કયો સિદ્ધાંત સિદ્ધ થાય છે?",
+    "options": [
+      "શિક્ષકની આળસ.",
+      "અધ્યેતા-સ્વાયત્તતા અને ક્રિયા દ્વારા અધ્યયનનો સિદ્ધાંત (Principle of Learner Autonomy and Learning by Doing).",
+      "સમય બગાડવો.",
+      "અરાજકતા."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૨ : ગણિતનું સ્વરૂપ (સિદ્ધાંતો)",
+    "exp": "પુસ્તકના પાના ૯ મુજબ જે પદ્ધતિમાં વિદ્યાર્થી જાતે સક્રિય રહે તે જ પદ્ધતિ સફળ થાય છે; સ્વાયત્તતા બાળકમાં મૌલિક ચિંતન ખીલવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 486. ગણિત પ્રયોગશાળામાં 'ચક્રીય ચતુષ્કોણના સામસામેના ખૂણા પૂરક (સરવાળો ૧૮૦°) હોય છે' તે સાબિત કરવા કઈ પ્રાયોગિક પ્રવૃત્તિ થાય છે?",
+    "options": [
+      "કાગળ ફાડવો.",
+      "વર્તુળમાં અંકિત ચતુષ્કોણના સામસામેના ખૂણા કાપીને પાસપાસે ગોઠવતાં સરળકોણ / સુરેખા (૧૮૦°) રચે છે તે પ્રત્યક્ષ ચકાસવું.",
+      "કાગળ બાળવો.",
+      "સામાન્ય ચોક."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : પદ્ધતિઓ & એકમ-૧૨ : પ્રયોગશાળા",
+    "exp": "બે ખૂણા મળીને સીધી રેખા બનાવે છે તે જોતાં જ ચક્રીય ચતુષ્કોણના પ્રમેયની સત્યતા બાળક પોતાની આંખે સ્વીકારી લે છે."
+  },
+  {
+    "q": "પ્રશ્ન 487. ગણિત શિક્ષણમાં 'સૂક્ષ્મ અધ્યાપન' (Microteaching) દરમિયાન 'પ્રશ્ન પૂછવાની ઝડપ' (Pace of Questioning) કેવી હોવી જોઈએ?",
+    "options": [
+      "મશીનગનની જેમ ઝડપી.",
+      "સંતુલિત અને માપસરની — જેમાં પ્રશ્ન સ્પષ્ટ બોલાય, વિદ્યાર્થીને માનસિક પ્રક્રિયા માટે ૫-૧૦ સેકન્ડનો વિરામ (Wait time) મળે અને પછી જ ઉત્તર લેવાય.",
+      "ખૂબ જ ધીમી કે ઊંઘ આવી જાય તેવી.",
+      "કોઈ પ્રશ્ન ન પૂછવો."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "શિક્ષણમાં 'વેઇટ ટાઇમ' (વિચારવાનો સમય) અનિવાર્ય છે; પૂરતો સમય મળવાથી નબળા અને સરેરાશ બાળકો પણ સચોટ તાર્કિક ઉત્તર આપી શકે છે."
+  },
+  {
+    "q": "પ્રશ્ન 488. ગણિત કસોટીમાં 'પ્રશ્નપત્રની વિશ્વસનીયતા' કસોટીની લંબાઈ (પ્રશ્નોની સંખ્યા) વધારવાથી શું થાય છે?",
+    "options": [
+      "વિશ્વસનીયતા ઘટે છે.",
+      "વિશ્વસનીયતા વધે છે (સ્પીયરમેન-બ્રાઉન પ્રોફેસી સૂત્ર મુજબ જેમ પ્રશ્નો વધે તેમ નમૂનારૂપ માપન વ્યાપક બને છે).",
+      "કોઈ ફેર પડતો નથી.",
+      "કસોટી રદ થાય છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "જ્યારે કસોટીમાં પ્રશ્નોની સંખ્યા વધે છે ત્યારે આકસ્મિક ભૂલો કે તુક્કાઓની અસર ઘટે છે અને માપન વધુ સ્થિર અને વિશ્વસનીય બને છે."
+  },
+  {
+    "q": "પ્રશ્ન 489. ગણિત શિક્ષણમાં 'સહસંબંધ' (Correlation) સ્થાપતી વખતે 'આધુનિક બ્લોકચેઇન અને ક્રિપ્ટોકરન્સી' (Blockchain Technology) ગણિતના કયા ગાણિતિક ખ્યાલ પર સુરક્ષિત છે?",
+    "options": [
+      "સામાન્ય સરવાળા.",
+      "ક્રિપ્ટોગ્રાફિક હેશ ફંક્શન્સ (Cryptographic Hash Functions - SHA-256) અને એલિપ્ટીક કર્વ ભૂમિતિ (Elliptic Curve Cryptography).",
+      "માત્ર ભાગાકાર.",
+      "સામાન્ય ચોક."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : મહત્વ & એકમ-૪ : અનુબંધ",
+    "exp": "બ્લોકચેઇનની અપરિવર્તનીય સુરક્ષા ગાણિતિક વન-વે હેશ ફંક્શન્સ પર નિર્ભર છે જે ગણિતનું આધુનિક નાણાકીય ટેકનોલોજી સાથેનું સર્વોચ્ચ જોડાણ છે."
+  },
+  {
+    "q": "પ્રશ્ન 490. ગણિતના શિક્ષક જ્યારે વર્ગખંડમાં પાઠ આયોજનના વિષય નિરૂપણમાં 'વિદ્યાર્થીઓને ગણિત પ્રયોગશાળામાં સ્વનિર્મિત સાધનો બનાવવા' પ્રોત્સાહિત કરે છે, ત્યારે કયો સિદ્ધાંત ચરિતાર્થ થાય છે?",
+    "options": [
+      "માત્ર કાગળકામ.",
+      "રચનાવાદ અને સર્જનાત્મક આનંદનો સિદ્ધાંત (Principle of Constructivism and Creative Joy).",
+      "સમય બગાડવો.",
+      "શાળાનો ખર્ચ વધારવો."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૨ : સ્વરૂપ & એકમ-૮ : ગણિત મંડળ",
+    "exp": "પુસ્તકના પાના ૨૫ મુજબ જ્યારે વિદ્યાર્થી પોતાના હાથે બનાવેલું સાધન પોતાના નામ સાથે લેબમાં જુએ છે ત્યારે તેનો આત્મવિશ્વાસ અને શીખવાનો ઉત્સાહ ચરમસીમાએ પહોંચે છે."
+  },
+  {
+    "q": "પ્રશ્ન 491. ગણિત પ્રયોગશાળામાં 'શંકુ અને નળાકારની વક્રસપાટીનું ક્ષેત્રફળ' કાપકૂપ દ્વારા સમજાવતી વખતે શંકુની વક્રસપાટીને ખોલતાં તે કયો સમતલીય આકાર બને છે?",
+    "options": [
+      "ચોરસ.",
+      "વર્તુળનો ત્રિજ્યાખંડ (Sector of a Circle) — જેની ત્રિજ્યા શંકુની તિર્યક ઊંચાઈ (l) અને ચાપની લંબાઈ પાયાનો પરિઘ (2πr) બને છે.",
+      "લંબચોરસ.",
+      "ત્રિકોણ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : પદ્ધતિઓ & એકમ-૧૨ : પ્રયોગશાળા",
+    "exp": "શંકુને કાપીને પાથરતાં ત્રિજ્યાખંડ બને છે જેનું ક્ષેત્રફળ 1/2 x ચાપ x ત્રિજ્યા = 1/2 x (2πr) x l = πrl સાહજિક રીતે સાબિત થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 492. ગણિત શિક્ષણમાં 'સૂક્ષ્મ અધ્યાપન' (Microteaching) દરમિયાન 'કૌશલ્ય અભ્યાસ' નું આખરી લક્ષ્ય શું હોય છે?",
+    "options": [
+      "માત્ર પ્રમાણપત્ર મેળવવું.",
+      "શિક્ષકના શિક્ષણ વર્તનમાં કાયમી સકારાત્મક પરિવર્તન લાવી વાસ્તવિક વર્ગખંડમાં પ્રત્યેક બાળકના અધ્યયનને રસપ્રદ અને પ્રભાવશાળી બનાવવું.",
+      "પરીક્ષા પાસ કરવી.",
+      "વ્યાખ્યાન આપવું."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "સૂક્ષ્મ શિક્ષણ એ સાધન છે અને ઉત્તમ વર્ગખંડ શિક્ષણ એ સાધ્ય છે; શિક્ષકનું રૂપાંતરણ જ બાળકના ભાવી ઘડતરનો પાયો બને છે."
+  },
+  {
+    "q": "પ્રશ્ન 493. ગણિત કસોટીમાં 'પ્રશ્નપત્રની આદર્શ રચના' માં કઠિનતા મૂલ્ય અને વિભેદન શક્તિ બંને ઉત્કૃષ્ટ હોય તેવો પ્રશ્ન કયો ગણાય?",
+    "options": [
+      "જેનો ઉત્તર કોઈને ન આવડે.",
+      "જેનું કઠિનતા મૂલ્ય આશરે ૦.૫૦ (૫૦%) હોય અને વિભેદન શક્તિ +૦.૪૦ કરતાં વધુ ધનાત્મક હોય.",
+      "જેનો ઉત્તર બધાને આવડે.",
+      "ઋણ વિભેદનવાળો પ્રશ્ન."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "સાયકોમેટ્રિક્સ અનુસાર ૫૦% કઠિનતા અને ઊંચી ધનાત્મક વિભેદન શક્તિ ધરાવતો પ્રશ્ન કસોટીનો 'ગોલ્ડ સ્ટાન્ડર્ડ' ગણાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 494. ગણિત શિક્ષણમાં 'સહસંબંધ' (Correlation) સ્થાપતી વખતે 'આધુનિક જીનોમિક્સ અને ડીએનએ સંશોધન' (Genomics and DNA) માં ગણિતનું કયું વિષયાંગ અનિવાર્ય છે?",
+    "options": [
+      "સામાન્ય સરવાળા.",
+      "બાયો-ઇન્ફોર્મેટિક્સ, સંયોજનશાસ્ત્ર (Combinatorics - 4 બેઝ પેર ATGC ની ગોઠવણી) અને આંકડાશાસ્ત્રીય અલ્ગોરિધમ્સ.",
+      "સામાન્ય બાદબાકી.",
+      "માત્ર ત્રિકોણ દોરવા."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : મહત્વ & એકમ-૪ : અનુબંધ",
+    "exp": "માનવ ડીએનએના અબજો બેઝ પેર્સનું વિશ્લેષણ અને રોગોની આગાહી ઉચ્ચ સંયોજન ગણિત અને બિગ ડેટા અલ્ગોરિધમ્સ વગર અશક્ય છે."
+  },
+  {
+    "q": "પ્રશ્ન 495. ગણિતના શિક્ષક જ્યારે વર્ગખંડમાં પાઠ આયોજનના વિષય નિરૂપણમાં 'શિક્ષણ પ્રક્રિયાને ત્રિ-ધ્રુવીય' (Tri-polar Process) તરીકે દર્શાવે છે, ત્યારે તે ત્રણ ધ્રુવો કયા છે?",
+    "options": [
+      "ચોક, ડસ્ટર અને પુસ્તક.",
+      "ધ્યેય / હેતુઓ (Goals), સાધનો / શિક્ષણ અનુભવો (Means/Experiences) અને પ્રવૃત્તિ / મૂલ્યાંકન (Activities/Evaluation).",
+      "શાળા, વર્ગ અને મેદાન.",
+      "ફી, પરીક્ષા અને પરિણામ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને વર્તન પરિવર્તન",
+    "exp": "પુસ્તકના પાના ૧૪ મુજબ NCERT અને શિક્ષણશાસ્ત્રીઓએ શિક્ષણને હેતુ, સાધન અને મૂલ્યાંકન પ્રવૃત્તિની ત્રિધ્રુવીય સતત ચાલતી પ્રક્રિયા તરીકે સ્વીકારી છે."
+  },
+  {
+    "q": "પ્રશ્ન 496. ગણિત પ્રયોગશાળામાં 'ત્રિકોણની ત્રણેય બાજુઓના મધ્યબિંદુઓને જોડતાં બનતો અંદરનો ત્રિકોણ' મૂળ ત્રિકોણ કરતાં કેવો સંબંધ ધરાવે છે?",
+    "options": [
+      "બમણો મોટો હોય છે.",
+      "મૂળ ત્રિકોણને ૪ એકરૂપ સમરૂપ ત્રિકોણોમાં વિભાજિત કરે છે અને અંદરના ત્રિકોણનું ક્ષેત્રફળ મૂળ ત્રિકોણ કરતાં ચોથા ભાગનું (૧/૪) હોય છે.",
+      "અસમાન હોય છે.",
+      "કોઈ સંબંધ નથી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : પદ્ધતિઓ & એકમ-૧૨ : પ્રયોગશાળા",
+    "exp": "મધ્યબિંદુ પ્રમેય મુજબ ચારેય નાના ત્રિકોણો ક્ષેત્રફળમાં સમાન હોય છે, જે કાગળની ગડી વાળીને પ્રત્યક્ષ એકબીજા પર ઢાંકીને સાબિત કરી શકાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 497. ગણિત શિક્ષણમાં 'સૂક્ષ્મ અધ્યાપન' (Microteaching) દરમિયાન 'કૌશલ્ય પ્રતિપુષ્ટિ' આપતી વખતે સુપરવાઇઝરે કઈ આદર્શ નીતિ પાળવી જોઈએ?",
+    "options": [
+      "માત્ર કડક ટીકા કરવી.",
+      "સેન્ડવિચ અભિગમ (Sandwich Approach) — પ્રથમ સબળા પાસાંઓની પ્રશંસા -> ત્યારબાદ સુધારણા માટેના ચોક્કસ સૂચનો -> અંતે પ્રોત્સાહક આશાવાદ.",
+      "શિક્ષકને નિરાશ કરી દેવા.",
+      "કશું જ ન કહેવું."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "હકારાત્મક અને રચનાત્મક પ્રતિપુષ્ટિ તાલીમાર્થીના આત્મસન્માનને ઇજા પહોંચાડ્યા વગર તેને ખામીઓ સુધારી ઉત્કૃષ્ટ બનવાની પ્રેરણા આપે છે."
+  },
+  {
+    "q": "પ્રશ્ન 498. ગણિત કસોટીમાં 'પ્રશ્નપત્રનું સર્વાંગી ગુણવત્તા નિયંત્રણ' કરતી વખતે કઈ ત્રિપુટી (Holy Trinity of Evaluation) અનિવાર્ય ગણાય છે?",
+    "options": [
+      "કાગળ, પેન અને શાહી.",
+      "યથાર્થતા (Validity), વિશ્વસનીયતા (Reliability) અને વસ્તુલક્ષિતા / વ્યવહારુતા (Objectivity and Usability).",
+      "સરળતા, ઝડપ અને સુંદરતા.",
+      "માત્ર માર્ક્સ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "આ ત્રણ માપદંડો શૈક્ષણિક મૂલ્યાંકનનો પાયો છે; આ ત્રણેય જળવાય ત્યારે જ કસોટી વૈજ્ઞાનિક અને ન્યાયી બને છે."
+  },
+  {
+    "q": "પ્રશ્ન 499. ગણિત શિક્ષણમાં 'આંતરરાષ્ટ્રીય કક્ષાએ ગણિત શિક્ષકની સર્વોચ્ચ વૈશ્વિક ભૂમિકા' કઈ સ્વીકારાઈ છે?",
+    "options": [
+      "માત્ર અભ્યાસક્રમ પૂર્ણ કરવો.",
+      "પ્રત્યેક બાળકના મસ્તિષ્કમાં તાર્કિક ચિંતનની ટેવ સ્થાપિત કરવી, વિવેચનાત્મક સમસ્યા ઉકેલક બનાવવો અને વિશ્વ સભ્યતાના ગણિતીય વારસાનો સંવાહક બનાવવો.",
+      "પરીક્ષામાં પાસ કરાવવા.",
+      "કડક શિસ્ત રાખવી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : સંકલ્પના & એકમ-૩ : મૂલ્યો",
+    "exp": "જ્હોન લોકના શબ્દોમાં 'ગણિત એ બાળકના મનમાં તર્ક કરવાની આદત સ્થાપે છે' અને શિક્ષક એ પરિવર્તનનો સાચો શિલ્પી છે."
+  },
+  {
+    "q": "પ્રશ્ન 500. TET, TAT અને GPSC શિક્ષણ સેવા વર્ગ-૨ ના ૫૦૦ પ્રશ્નોની આ ઐતિહાસિક શ્રેણીના સર્વોચ્ચ શૈક્ષણિક નિષ્કર્ષરૂપે: 'ES-112 ગણિતનું અધ્યાપન મોડ્યુલ અનુસાર ગણિત શિક્ષણની અંતિમ સફળતા ક્યારે સિદ્ધ થયેલી ગણાશે?'",
+    "options": [
+      "જ્યારે તમામ બાળકો ગણિતના પ્રમેયો ગોખીને ૧૦૦ માંથી ૧૦૦ ગુણ મેળવી લે.",
+      "જ્યારે વર્ગખંડનો પ્રત્યેક બાળક ગણિતના ભયમાંથી કાયમ માટે મુક્ત થઈ, દૈનિક જીવનની સમસ્યાઓમાં ગાણિતિક તર્ક અને વૈજ્ઞાનિક અભિગમનો સહજ વિનિયોગ કરતો આત્મવિશ્વાસુ, સત્યનિષ્ઠ અને રાષ્ટ્રનિર્માણ માટે સમર્થ પ્રબુદ્ધ નાગરિક બને.",
+      "જ્યારે તમામ પુસ્તકો ડિજિટલ થઈ જાય.",
+      "જ્યારે ગણિતની પરીક્ષાઓ સંપૂર્ણ બંધ થઈ જાય."
+    ],
+    "ans": 1,
+    "unit": "સમગ્ર ES-112 મોડ્યુલ મહાનિષ્કર્ષ (એકમ ૧ થી ૧૬ પૂર્ણ)",
+    "exp": "ડૉ. બાબાસાહેબ આંબેડકર ઓપન યુનિવર્સિટીના આ સમગ્ર મોડ્યુલનું અંતિમ લક્ષ્ય કેવળ પુસ્તકીય શિક્ષણ નથી, પરંતુ ગણિત શિક્ષણ દ્વારા માનવ વ્યક્તિત્વનું સર્વાંગી ઘડતર કરી દેશને પ્રબુદ્ધ નાગરિકો અર્પણ કરવાનું છે."
+  }
+];
+
+let studentName = "", studentPhone = "", studentEmail = "";
+let currentQ = 0;
+let userAnswers = new Array(questions.length).fill(null);
+let flaggedQuestions = new Array(questions.length).fill(false);
+let startTime, timerInterval;
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    const btn = document.getElementById("themeToggleBtn");
+    btn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i> લાઈટ મોડ' : '<i class="fa-solid fa-moon"></i> ડાર્ક મોડ';
+}
+
+function showNotice(msg, type = "info") {
+    const box = document.getElementById("noticeMsg");
+    box.className = "msg-box " + (type === "error" ? "msg-error" : "msg-info");
+    box.innerText = msg;
+    box.style.display = "block";
+    setTimeout(() => { box.style.display = "none"; }, 6000);
+}
+
+/* ૧. ઓથેન્ટિકેશન & OTP */
+function requestOTP() {
+    studentName = document.getElementById("name").value.trim();
+    studentPhone = document.getElementById("phone").value.trim();
+    studentEmail = document.getElementById("email").value.trim();
+
+    if (!studentName || studentPhone.length < 10 || !studentEmail.includes("@")) {
+        showNotice("કૃપા કરીને પૂરું નામ, ૧૦ અંકનો સાચો મોબાઇલ નંબર અને માન્ય ઇમેઇલ દાખલ કરો.", "error");
+        return;
+    }
+
+    const btn = document.getElementById("getOtpBtn");
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> OTP મોકલાઈ રહ્યો છે...';
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+            action: "sendOTP",
+            name: studentName,
+            email: studentEmail
+        })
+    })
+    .then(function() {
+        showNotice("આપના ઈમેઈલ પર ૪ અંકનો OTP મોકલવામાં આવ્યો છે. ઇનબોક્સ/સ્પામ તપાસો.", "info");
+        document.getElementById("otpContainer").style.display = "block";
+        btn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> OTP ફરીથી મોકલો';
+        btn.disabled = false;
+    })
+    .catch(function() {
+        showNotice("OTP મોકલવામાં ક્ષતિ આવી. ફરી પ્રયાસ કરો.", "error");
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> OTP મેળવો અને આગળ વધો';
+    });
+}
+
+function verifyAndStart() {
+    const enteredOTP = document.getElementById("otpInput").value.trim();
+    if (enteredOTP.length !== 4) {
+        showNotice("કૃપા કરીને ૪ અંકનો સાચો OTP દાખલ કરો.", "error");
+        return;
+    }
+
+    const vBtn = document.getElementById("verifyBtn");
+    vBtn.disabled = true;
+    vBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ચકાસણી ચાલુ છે...';
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({
+            action: "verifyOTP",
+            email: studentEmail,
+            otp: enteredOTP
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === "success" && data.verified) {
+            document.getElementById("loginScreen").style.display = "none";
+            document.getElementById("quizScreen").style.display = "block";
+            initQuestionPalette();
+            startTime = new Date();
+            timerInterval = setInterval(updateTimer, 1000);
+            loadQuestion();
+        } else {
+            showNotice("ખોટો OTP અથવા સમય વીતી ગયો છે! ફરી ચકાસો.", "error");
+            vBtn.disabled = false;
+            vBtn.innerHTML = '<i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો';
+        }
+    })
+    .catch(() => {
+        showNotice("ચકાસણીમાં ભૂલ થઈ. ફરી પ્રયાસ કરો.", "error");
+        vBtn.disabled = false;
+        vBtn.innerHTML = '<i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો';
+    });
+}
+
+/* ૨. ટાઈમર */
+function updateTimer() {
+    const elapsed = Math.floor((new Date() - startTime) / 1000);
+    const mins = String(Math.floor(elapsed / 60)).padStart(2, '0');
+    const secs = String(elapsed % 60).padStart(2, '0');
+    document.getElementById("timerDisplay").innerText = `${mins}:${secs}`;
+}
+
+/* ૩. પ્રશ્ન પેલેટ (Question Palette 451-500) */
+function initQuestionPalette() {
+    const container = document.getElementById("questionGridContainer");
+    container.innerHTML = "";
+    for (let i = 0; i < questions.length; i++) {
+        const pill = document.createElement("div");
+        pill.className = "q-pill";
+        pill.id = `qPill_${i}`;
+        pill.innerText = i + START_Q_NUM;
+        pill.onclick = () => jumpToQuestion(i);
+        container.appendChild(pill);
+    }
+    updatePaletteStats();
+}
+
+function updatePaletteStats() {
+    for (let i = 0; i < questions.length; i++) {
+        const pill = document.getElementById(`qPill_${i}`);
+        if (!pill) continue;
+        pill.className = "q-pill";
+        
+        if (i === currentQ) {
+            pill.classList.add("status-current");
+        }
+        if (flaggedQuestions[i]) {
+            pill.classList.add("status-flagged");
+        } else if (userAnswers[i] !== null) {
+            pill.classList.add("status-answered");
+        }
+    }
+    const totalAns = userAnswers.filter(a => a !== null).length;
+    document.getElementById("answeredCountBadge").innerText = `${totalAns} / ${questions.length} પૂર્ણ`;
+}
+
+function jumpToQuestion(idx) {
+    currentQ = idx;
+    loadQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ૪. પ્રશ્ન લોડિંગ અને નેવિગેશન */
+function loadQuestion() {
+    const q = questions[currentQ];
+    document.getElementById("qProgress").innerText = `પ્રશ્ન ${currentQ + START_Q_NUM} / ૫૦૦`;
+    document.getElementById("unitBadge").innerText = `📘 ${q.unit}`;
+    document.getElementById("questionText").innerText = q.q;
+
+    const flagBtn = document.getElementById("flagBtn");
+    if (flaggedQuestions[currentQ]) {
+        flagBtn.className = "btn-flag active-flag";
+        flagBtn.innerHTML = '<i class="fa-solid fa-bookmark"></i> Flag કરેલ છે 🚩';
+    } else {
+        flagBtn.className = "btn-flag";
+        flagBtn.innerHTML = '<i class="fa-regular fa-bookmark"></i> Flag (રિવ્યુ માટે)';
+    }
+
+    const optContainer = document.getElementById("optionsContainer");
+    optContainer.innerHTML = "";
+
+    q.options.forEach((opt, idx) => {
+        const label = document.createElement("label");
+        label.className = "option-label";
+        const isChecked = userAnswers[currentQ] === idx ? "checked" : "";
+        label.innerHTML = `
+            <input type="radio" name="opt" value="${idx}" ${isChecked} onchange="onOptionSelect(${idx})">
+            <span><strong>(${String.fromCharCode(65 + idx)})</strong> ${opt}</span>
+        `;
+        optContainer.appendChild(label);
+    });
+
+    document.getElementById("prevBtn").style.visibility = (currentQ === 0) ? "hidden" : "visible";
+    document.getElementById("nextBtn").innerHTML = (currentQ === questions.length - 1) 
+        ? '<i class="fa-solid fa-flag-checkered"></i> કસોટી પૂર્ણ કરો' 
+        : 'આગળ <i class="fa-solid fa-arrow-right"></i>';
+
+    updatePaletteStats();
+}
+
+function onOptionSelect(idx) {
+    userAnswers[currentQ] = idx;
+    updatePaletteStats();
+}
+
+function toggleFlagCurrentQuestion() {
+    flaggedQuestions[currentQ] = !flaggedQuestions[currentQ];
+    loadQuestion();
+}
+
+function prevQuestion() {
+    if (currentQ > 0) {
+        currentQ--;
+        loadQuestion();
+    }
+}
+
+function nextQuestion() {
+    if (currentQ < questions.length - 1) {
+        currentQ++;
+        loadQuestion();
+    } else {
+        confirmSubmitQuiz();
+    }
+}
+
+function confirmSubmitQuiz() {
+    const unans = userAnswers.filter(a => a === null).length;
+    const flagCount = flaggedQuestions.filter(f => f === true).length;
+    
+    let msg = "શું આપ ખરેખર કસોટી સબમિટ કરવા માંગો છો?";
+    if (unans > 0 || flagCount > 0) {
+        msg = `ધ્યાન આપો:
+- ${unans} પ્રશ્નોના ઉત્તર બાકી છે.
+- ${flagCount} પ્રશ્નો Flag કરેલા છે.
+
+શું આપ કસોટી સબમિટ કરવા માંગો છો?`;
+    }
+    
+    if (confirm(msg)) {
+        submitQuiz();
+    }
+}
+
+/* ૫. સબમિશન અને પરિણામ પ્રદર્શન */
+function submitQuiz() {
+    clearInterval(timerInterval);
+    const elapsed = Math.floor((new Date() - startTime) / 1000);
+    const mins = Math.floor(elapsed / 60);
+    const secs = elapsed % 60;
+    const formattedTime = `${mins} મિનિટ ${secs} સેકન્ડ`;
+
+    let score = 0;
+    let wrongIndices = [];
+    questions.forEach((q, i) => {
+        if (userAnswers[i] === q.ans) {
+            score++;
+        } else {
+            wrongIndices.push(i);
+        }
+    });
+    const percent = ((score / questions.length) * 100).toFixed(2);
+    const flagCount = flaggedQuestions.filter(f => f === true).length;
+
+    document.getElementById("quizScreen").style.display = "none";
+    document.getElementById("resultScreen").style.display = "block";
+
+    document.getElementById("resName").innerText = studentName;
+    document.getElementById("resPhone").innerText = studentPhone;
+    document.getElementById("resTime").innerText = `${mins}m ${secs}s`;
+    document.getElementById("resScore").innerText = `${score} / ${questions.length}`;
+    document.getElementById("resPercent").innerText = `${percent}% ગુણાંક`;
+    document.getElementById("resCorrectCount").innerText = score;
+    document.getElementById("resWrongCount").innerText = questions.length - score;
+    document.getElementById("resFlagCount").innerText = flagCount;
+
+    renderWrongQuestions(wrongIndices);
+    renderFullAnswerKey();
+    renderBlankPaper();
+    prepareAndSendBackendResult(score, percent, formattedTime);
+}
+
+function switchResultTab(tabName) {
+    document.getElementById("tabBtnWrong").classList.remove("active-tab");
+    document.getElementById("tabBtnAnswers").classList.remove("active-tab");
+    document.getElementById("tabBtnBlank").classList.remove("active-tab");
+
+    document.getElementById("tabContentWrong").style.display = "none";
+    document.getElementById("tabContentAnswers").style.display = "none";
+    document.getElementById("tabContentBlank").style.display = "none";
+
+    if (tabName === "wrong") {
+        document.getElementById("tabBtnWrong").classList.add("active-tab");
+        document.getElementById("tabContentWrong").style.display = "block";
+    } else if (tabName === "answers") {
+        document.getElementById("tabBtnAnswers").classList.add("active-tab");
+        document.getElementById("tabContentAnswers").style.display = "block";
+    } else if (tabName === "blank") {
+        document.getElementById("tabBtnBlank").classList.add("active-tab");
+        document.getElementById("tabContentBlank").style.display = "block";
+    }
+}
+
+function renderWrongQuestions(wrongIndices) {
+    const container = document.getElementById("wrongQuestionsList");
+    container.innerHTML = "";
+
+    if (wrongIndices.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 35px; background: var(--container-bg); border-radius: 12px; border: 2px solid #10b981;">
+                <i class="fa-solid fa-circle-check fa-3x" style="color: #10b981; margin-bottom: 12px;"></i>
+                <h3 style="color: #065f46; font-size: 18px;">અભિનંદન! તમારો એક પણ પ્રશ્ન ખોટો પડ્યો નથી!</h3>
+                <p style="color: var(--subheading-color); font-size: 13.5px; margin-top: 6px;">આપે ${questions.length} માંથી ${questions.length} સંપૂર્ણ ગુણ મેળવી શ્રેષ્ઠ પ્રદર્શન કરેલ છે.</p>
+            </div>
+        `;
+        return;
+    }
+
+    wrongIndices.forEach((i) => {
+        const q = questions[i];
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી (ખાલી છોડેલ)";
+        const correctChoiceText = q.options[q.ans];
+
+        const item = document.createElement("div");
+        item.className = "review-item is-wrong";
+        item.innerHTML = `
+            <p style="font-weight: 800; font-size: 15px; margin-bottom: 8px;">
+                ${q.q}
+            </p>
+            <p style="margin: 4px 0; font-weight: 700; color: #b91c1c;">
+                ❌ તમારો ઉત્તર: ${userChoiceText}
+            </p>
+            <p style="margin: 4px 0; font-weight: 700; color: #047857;">
+                ✅ સાચો ઉત્તર: <strong>(${String.fromCharCode(65 + q.ans)}) ${correctChoiceText}</strong>
+            </p>
+            <div class="exp-box">
+                <div style="font-size: 11.5px; font-weight: 800; color: #2563eb; margin-bottom: 3px;">📘 ${q.unit}</div>
+                <strong>વિગતવાર સમજૂતી:</strong> ${q.exp}
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function renderFullAnswerKey() {
+    const container = document.getElementById("allAnswersList");
+    container.innerHTML = "";
+
+    questions.forEach((q, i) => {
+        const isCorrect = (userAnswers[i] === q.ans);
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી";
+        const correctChoiceText = q.options[q.ans];
+
+        const item = document.createElement("div");
+        item.className = "review-item " + (isCorrect ? "is-correct" : "is-wrong");
+        item.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+                <span style="font-weight: 800; font-size: 15px;">${q.q}</span>
+                <span style="font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 6px; background:${isCorrect ? '#10b981' : '#ef4444'}; color:white; white-space:nowrap;">
+                    ${isCorrect ? '✅ સાચો' : '❌ ખોટો'}
+                </span>
+            </div>
+            <div style="margin: 6px 0; font-size: 13.5px;">
+                ${q.options.map((opt, oIdx) => `
+                    <div style="padding: 2px 0; ${oIdx === q.ans ? 'font-weight:bold; color:#047857;' : ''}">
+                        (${String.fromCharCode(65 + oIdx)}) ${opt} ${oIdx === q.ans ? '⭐ (સાચો ઉત્તર)' : ''}
+                    </div>
+                `).join('')}
+            </div>
+            <p style="margin: 6px 0; font-weight: 700;">
+                તમે પસંદ કરેલ જવાબ: <span style="color:${isCorrect ? '#047857' : '#b91c1c'};">${userChoiceText}</span>
+            </p>
+            <div class="exp-box">
+                <div style="font-size: 11.5px; font-weight: 800; color: #2563eb; margin-bottom: 3px;">📘 ${q.unit}</div>
+                <strong>સમજૂતી:</strong> ${q.exp}
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function renderBlankPaper() {
+    const container = document.getElementById("blankQuestionsList");
+    container.innerHTML = `
+        <div style="background: var(--card-gradient); padding: 14px; border-radius: 10px; margin-bottom: 14px; border: 1.5px solid var(--border-color); text-align: center;">
+            <h3 style="color: var(--heading-color); font-size: 16px; font-weight: 800;">📝 મૂળ પ્રશ્નપત્ર (Offline / Practice View)</h3>
+            <p style="color: var(--subheading-color); font-size: 12.5px;">આ પ્રશ્નપત્રમાં કોઈપણ જવાબ ટીક કરેલ નથી. તમે સ્વ-અધ્યયન કે પુનરાવર્તન માટે તેનો ઉપયોગ કરી શકો છો.</p>
+        </div>
+    `;
+
+    questions.forEach((q, i) => {
+        const box = document.createElement("div");
+        box.className = "blank-q-card";
+        box.innerHTML = `
+            <div style="font-weight: 800; font-size: 14.5px; margin-bottom: 8px; color: var(--heading-color);">${q.q}</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 13.5px; color: var(--text-color);">
+                ${q.options.map((opt, oIdx) => `
+                    <div style="background: var(--option-bg); padding: 7px 10px; border-radius: 6px; border: 1px solid var(--border-color);">
+                        <strong>(${String.fromCharCode(65 + oIdx)})</strong> ${opt}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        container.appendChild(box);
+    });
+}
+
+function prepareAndSendBackendResult(score, percent, formattedTime) {
+    let emailReviewHtml = "";
+    
+    questions.forEach((q, i) => {
+        const isCorrect = (userAnswers[i] === q.ans);
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી";
+        const correctChoiceText = q.options[q.ans];
+
+        emailReviewHtml += `
+            <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding: 12px; margin-bottom: 12px; background-color: ${isCorrect ? '#f0fdf4' : '#fff1f2'};">
+                <p style="margin: 0 0 6px 0; font-weight: bold; color: #1e293b;">${q.q}</p>
+                <p style="margin: 3px 0; color: ${isCorrect ? '#166534' : '#9f1239'};">
+                    <strong>પરીક્ષાર્થીનો ઉત્તર:</strong> ${userChoiceText} ${isCorrect ? '✅' : '❌'}
+                </p>
+                ${!isCorrect ? `<p style="margin: 3px 0; color: #166534; font-weight: bold;"><strong>સાચો ઉત્તર:</strong> (${String.fromCharCode(65 + q.ans)}) ${correctChoiceText}</p>` : ''}
+                <div style="background-color: #f8fafc; padding: 8px; border-radius: 4px; margin-top: 6px; font-size: 12.5px; border-left: 3px solid #2563eb;">
+                    <div style="color: #1e40af; font-weight: bold; margin-bottom: 2px;">📘 ${q.unit}</div>
+                    <strong>સમજૂતી:</strong> ${q.exp}
+                </div>
+            </div>
+        `;
+    });
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+            action: "submitResult",
+            dateTime: new Date().toLocaleString('gu-IN', { timeZone: 'Asia/Kolkata' }),
+            name: studentName,
+            phone: studentPhone,
+            email: studentEmail,
+            timeTaken: formattedTime,
+            score: `${score} / ${questions.length}`,
+            percentage: `${percent}%`,
+            subject: "ES-112 ગણિતનું અધ્યાપન (BAOU) | ૫૦૦ પ્રશ્નો શ્રેણી (તબક્કો - ૧૧ | પ્રશ્ન ૪૫૧ થી ૫૦૦)",
+            detailedReviewHtml: emailReviewHtml,
+            repoName: "maths",
+            testFileName: "es112mathsmethodpart11.html",
+            testUploadDate: "2026-11-09"
+        })
+    });
+}
+</script>
+</body>
+</html>
