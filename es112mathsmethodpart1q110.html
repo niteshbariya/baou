@@ -1,0 +1,2469 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TET / TAT / GPSC શિક્ષણ સેવા વર્ગ-૨: ES-112 ગણિતનું અધ્યાપન (૧૧૦ HOTS પ્રશ્નો)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+            --header-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
+            --card-gradient: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 50%, #fdf2f8 100%);
+            --bg-color: #f1f5f9;
+            --container-bg: #ffffff;
+            --text-color: #0f172a;
+            --heading-color: #1e3a8a;
+            --subheading-color: #64748b;
+            --border-color: #cbd5e1;
+            --card-border: #e2e8f0;
+            --option-bg: #f8fafc;
+            --option-hover: #ede9fe;
+            --option-border: #cbd5e1;
+            --badge-bg: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            --correct-bg: #ecfdf5;
+            --correct-border: #34d399;
+            --correct-text: #065f46;
+            --wrong-bg: #fff1f2;
+            --wrong-border: #fb7185;
+            --wrong-text: #9f1239;
+            --exp-box-bg: #f8fafc;
+            --input-bg: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.12), 0 8px 10px -6px rgba(30, 58, 138, 0.08);
+            
+            --color-answered: #10b981;
+            --color-flagged: #f59e0b;
+            --color-unanswered: #94a3b8;
+            --color-current: #2563eb;
+        }
+
+        body.dark-mode {
+            --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #ec4899 100%);
+            --header-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            --card-gradient: linear-gradient(135deg, #1e1b4b 0%, #1e293b 50%, #0f172a 100%);
+            --bg-color: #030712;
+            --container-bg: #0b1329;
+            --text-color: #f8fafc;
+            --heading-color: #93c5fd;
+            --subheading-color: #94a3b8;
+            --border-color: #334155;
+            --card-border: #1e293b;
+            --option-bg: #1e293b;
+            --option-hover: #2e1065;
+            --option-border: #475569;
+            --badge-bg: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --correct-bg: #064e3b;
+            --correct-border: #059669;
+            --correct-text: #a7f3d0;
+            --wrong-bg: #881337;
+            --wrong-border: #e11d48;
+            --wrong-text: #fecdd3;
+            --exp-box-bg: #0f172a;
+            --input-bg: #1e293b;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            font-family: 'Noto Sans Gujarati', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            padding: 14px; 
+            display: flex; 
+            justify-content: center; 
+            transition: all 0.3s ease;
+            min-height: 100vh;
+        }
+
+        .container { 
+            background-color: var(--container-bg); 
+            max-width: 1000px; 
+            width: 100%; 
+            border-radius: 18px; 
+            box-shadow: var(--shadow); 
+            padding: 24px; 
+            position: relative;
+            border: 1.5px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 6px; }
+            .container { padding: 14px; border-radius: 12px; }
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-pill {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 800;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn {
+            background: var(--option-bg);
+            color: var(--text-color);
+            border: 1.5px solid var(--border-color);
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 20px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .theme-toggle-btn:hover {
+            transform: scale(1.04);
+            border-color: #3b82f6;
+        }
+
+        .banner-title {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 900;
+            margin: 5px 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .banner-sub {
+            color: var(--subheading-color);
+            text-align: center;
+            font-size: 13.5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        #loginScreen {
+            max-width: 480px;
+            margin: 15px auto;
+            background: var(--card-gradient);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1.5px solid var(--border-color);
+        }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-weight: 700; margin-bottom: 6px; font-size: 13.5px; color: var(--heading-color); }
+        input[type="text"], input[type="tel"], input[type="email"] { 
+            width: 100%; 
+            padding: 11px 14px; 
+            border: 1.5px solid var(--border-color); 
+            border-radius: 8px; 
+            font-size: 14.5px; 
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        input:focus { outline: none; border-color: #2563eb; }
+
+        .btn-gradient { 
+            background: var(--primary-gradient); 
+            color: white; 
+            border: none; 
+            padding: 12px 18px; 
+            font-size: 15px; 
+            font-weight: 800; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            width: 100%; 
+            transition: all 0.25s; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            font-family: inherit;
+        }
+        .btn-gradient:hover { opacity: 0.95; transform: translateY(-1.5px); }
+        .btn-gradient:disabled { background: #94a3b8; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        .otp-box { 
+            background: var(--container-bg); 
+            border: 2px dashed #3b82f6; 
+            padding: 16px; 
+            border-radius: 10px; 
+            margin-top: 16px; 
+            display: none; 
+            text-align: center;
+        }
+
+        .quiz-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .quiz-main-card {
+            background: var(--container-bg);
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .quiz-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1.5px solid var(--border-color); 
+            padding-bottom: 12px; 
+            margin-bottom: 18px; 
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .timer-badge { 
+            font-size: 15px; 
+            font-weight: 800; 
+            color: #ef4444; 
+            background: #fee2e2;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        body.dark-mode .timer-badge { background: #450a0a; color: #fca5a5; }
+
+        .unit-badge { 
+            display: inline-block; 
+            background: var(--badge-bg); 
+            color: white; 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 12px; 
+            font-weight: 700; 
+            margin-bottom: 14px; 
+        }
+
+        .question-text {
+            font-size: 18px;
+            line-height: 1.65;
+            margin-bottom: 22px;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .option-label { 
+            display: flex;
+            align-items: center;
+            background: var(--option-bg); 
+            padding: 14px 18px; 
+            margin-bottom: 12px; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            line-height: 1.5; 
+            border: 1.5px solid var(--option-border); 
+            transition: all 0.2s;
+            font-size: 15.5px;
+        }
+        .option-label:hover { 
+            background: var(--option-hover); 
+            border-color: #3b82f6;
+            transform: translateX(4px);
+        }
+        .option-label input[type="radio"] {
+            margin-right: 14px;
+            transform: scale(1.25);
+            accent-color: #2563eb;
+            cursor: pointer;
+        }
+
+        .quiz-actions-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1.5px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .nav-buttons-group {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-prev, .btn-next, .btn-flag {
+            padding: 10px 18px;
+            font-size: 14.5px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: inherit;
+        }
+        .btn-prev { background: #64748b; color: white; }
+        .btn-prev:hover { background: #475569; }
+        .btn-next { background: var(--primary-gradient); color: white; }
+        .btn-next:hover { opacity: 0.95; }
+
+        .btn-flag {
+            background: #fef3c7;
+            color: #b45309;
+            border: 1.5px solid #f59e0b;
+        }
+        body.dark-mode .btn-flag {
+            background: #451a03;
+            color: #fde68a;
+            border-color: #d97706;
+        }
+        .btn-flag.active-flag {
+            background: #f59e0b;
+            color: white;
+            border-color: #b45309;
+        }
+
+        .palette-bottom-card {
+            background: var(--card-gradient);
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .palette-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--heading-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .legend-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 12px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-dot { width: 11px; height: 11px; border-radius: 50%; }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            gap: 7px;
+            max-height: 260px;
+            overflow-y: auto;
+            padding: 6px 4px;
+        }
+        .q-pill {
+            padding: 7px 0;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: 800;
+            text-align: center;
+            cursor: pointer;
+            border: 1.5px solid var(--border-color);
+            background: var(--container-bg);
+            color: var(--text-color);
+            transition: all 0.15s ease;
+            position: relative;
+        }
+        .q-pill:hover { transform: scale(1.08); z-index: 2; }
+        .q-pill.status-current {
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 2.5px #2563eb;
+            font-weight: 900;
+        }
+        .q-pill.status-answered {
+            background: #10b981 !important;
+            color: white !important;
+            border-color: #059669 !important;
+        }
+        .q-pill.status-flagged {
+            background: #f59e0b !important;
+            color: white !important;
+            border-color: #d97706 !important;
+        }
+        .q-pill.status-flagged::after {
+            content: '🚩';
+            position: absolute;
+            top: -6px;
+            right: -3px;
+            font-size: 9px;
+        }
+
+        .result-summary-card {
+            background: var(--card-gradient);
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .score-pill {
+            display: inline-block;
+            font-size: 32px;
+            font-weight: 900;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 6px 0;
+        }
+
+        .res-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 14px;
+        }
+        @media (max-width: 600px) {
+            .res-stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .res-stat-box {
+            padding: 8px;
+            border-radius: 8px;
+            font-weight: 700;
+            color: white;
+            font-size: 12px;
+        }
+
+        .result-tabs-nav {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        .res-tab-btn {
+            padding: 9px 16px;
+            font-size: 13.5px;
+            font-weight: 800;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1.5px solid var(--border-color);
+            background: var(--option-bg);
+            color: var(--text-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .res-tab-btn:hover { border-color: #2563eb; }
+        .res-tab-btn.active-tab {
+            background: var(--primary-gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        .review-item {
+            padding: 16px;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            border: 1.5px solid var(--card-border);
+            transition: all 0.2s;
+            background: var(--container-bg);
+        }
+        .review-item.is-correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+            color: var(--correct-text);
+        }
+        .review-item.is-wrong {
+            background-color: var(--wrong-bg);
+            border-color: var(--wrong-border);
+            color: var(--wrong-text);
+        }
+
+        .exp-box {
+            background: var(--exp-box-bg);
+            color: var(--text-color);
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 13.5px;
+            line-height: 1.5;
+            border-left: 4px solid #2563eb;
+        }
+
+        .blank-q-card {
+            background: var(--container-bg);
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+
+        .msg-box {
+            display: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .msg-error { background-color: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+        .msg-info { background-color: #dcfce7; color: #166534; border: 1px solid #4ade80; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header-top">
+        <span class="tag-pill"><i class="fa-solid fa-calculator"></i> TET-1/2 | TAT | GPSC શિક્ષણ સેવા વર્ગ-૨: ગણિત પદ્ધતિશાસ્ત્ર</span>
+        <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleDarkMode()">
+            <i class="fa-solid fa-moon"></i> ડાર્ક મોડ
+        </button>
+    </header>
+
+    <div id="noticeMsg" class="msg-box"></div>
+
+    <!-- પ્રવેશ અને OTP સ્ક્રીન -->
+    <section id="loginScreen">
+        <div style="text-align: center; margin-bottom: 18px;">
+            <div style="font-size: 32px; color: #2563eb; margin-bottom: 4px;"><i class="fa-solid fa-shapes"></i></div>
+            <h1 class="banner-title" style="font-size: 20px;">ES-112 : ગણિતનું અધ્યાપન</h1>
+            <p class="banner-sub" style="margin-bottom: 10px;">BAOU / D.El.Ed. / B.Ed. | ૧૧૦ HOTS ગહન પ્રશ્નોત્તરી (તબક્કો ૧ થી ૩)</p>
+        </div>
+
+        <div class="form-group">
+            <label for="name">👤 પૂરું નામ:</label>
+            <input type="text" id="name" placeholder="તમારું પૂરું નામ દાખલ કરો">
+        </div>
+        <div class="form-group">
+            <label for="phone">📱 મોબાઇલ નંબર:</label>
+            <input type="tel" id="phone" placeholder="૧૦ અંકનો સાચો મોબાઇલ નંબર" maxlength="10">
+        </div>
+        <div class="form-group">
+            <label for="email">📧 ઇમેઇલ આઇડી:</label>
+            <input type="email" id="email" placeholder="તમારું સાચું ઈમેઈલ આઈડી લખો">
+        </div>
+
+        <button id="getOtpBtn" class="btn-gradient" onclick="requestOTP()">
+            <i class="fa-solid fa-paper-plane"></i> OTP મેળવો અને આગળ વધો
+        </button>
+
+        <div id="otpContainer" class="otp-box">
+            <p style="margin: 0 0 10px 0; color: var(--heading-color); font-weight: 700; font-size: 13px;">
+                📩 આપના ઈમેઈલ પર ૪ અંકનો સુરક્ષિત OTP મોકલવામાં આવ્યો છે:
+            </p>
+            <div class="form-group" style="max-width: 200px; margin: 0 auto 12px auto;">
+                <input type="text" id="otpInput" placeholder="૪ અંક OTP" maxlength="4" style="text-align: center; font-size: 20px; letter-spacing: 5px; font-weight: 800;">
+            </div>
+            <button id="verifyBtn" class="btn-gradient" onclick="verifyAndStart()" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                <i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો
+            </button>
+        </div>
+    </section>
+
+    <!-- મોક ટેસ્ટ સ્ક્રીન -->
+    <section id="quizScreen" style="display: none;">
+        <div class="quiz-layout">
+            <div class="quiz-main-card">
+                <div>
+                    <div class="quiz-header">
+                        <div>
+                            <span id="qProgress" style="font-weight: 800; font-size: 16px; color: var(--heading-color);">પ્રશ્ન ૧ / ૧૧૦</span>
+                        </div>
+                        <div class="timer-badge">
+                            <i class="fa-regular fa-clock"></i> <span id="timerDisplay">૦૦:૦૦</span>
+                        </div>
+                    </div>
+                    <div class="question-box">
+                        <div id="unitBadge" class="unit-badge"></div>
+                        <div id="questionText" class="question-text"></div>
+                        <div id="optionsContainer"></div>
+                    </div>
+                </div>
+
+                <div class="quiz-actions-bar">
+                    <button id="flagBtn" class="btn-flag" onclick="toggleFlagCurrentQuestion()">
+                        <i class="fa-regular fa-bookmark"></i> Flag (રિવ્યુ માટે)
+                    </button>
+                    <div class="nav-buttons-group">
+                        <button id="prevBtn" class="btn-prev" onclick="prevQuestion()"><i class="fa-solid fa-arrow-left"></i> પાછળ</button>
+                        <button id="nextBtn" class="btn-next" onclick="nextQuestion()">આગળ <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- પ્રશ્ન પેલેટ (૧૧૦ પ્રશ્નો) -->
+            <div class="palette-bottom-card">
+                <div class="palette-title">
+                    <span><i class="fa-solid fa-table-cells"></i> પ્રશ્ન પેલેટ (૧૧૦ પ્રશ્નોની સ્થિતિ)</span>
+                    <span id="answeredCountBadge" style="font-size: 12px; background: #10b981; color: white; padding: 4px 10px; border-radius: 12px;">0 / 110 પૂર્ણ</span>
+                </div>
+
+                <div class="legend-grid">
+                    <div class="legend-item"><div class="legend-dot" style="background:#10b981;"></div> જવાબ આપેલ</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b;"></div> Flag / રિવ્યુ</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#94a3b8;"></div> બાકી પ્રશ્ન</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#2563eb;"></div> ચાલુ પ્રશ્ન</div>
+                </div>
+
+                <div class="palette-grid" id="questionGridContainer"></div>
+
+                <div style="text-align: right; margin-top: 6px;">
+                    <button class="btn-gradient" onclick="confirmSubmitQuiz()" style="max-width: 280px; margin-left: auto; background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); padding: 11px 18px; font-size: 14.5px;">
+                        <i class="fa-solid fa-circle-check"></i> કસોટી સબમિટ કરો
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- પરિણામ સ્ક્રીન -->
+    <section id="resultScreen" style="display: none;">
+        <div class="result-summary-card">
+            <h2 style="color: var(--heading-color); font-size: 20px; font-weight: 900; margin-bottom: 6px;">
+                🎉 કસોટી મૂલ્યાંકન અહેવાલ
+            </h2>
+            <p style="margin: 3px 0; font-size: 14px;"><strong>પરીક્ષાર્થી:</strong> <span id="resName"></span> | <strong>સંપર્ક:</strong> <span id="resPhone"></span></p>
+            <p style="margin: 3px 0; font-size: 13px; color: var(--subheading-color);"><strong>વિષય:</strong> ES-112 ગણિતનું અધ્યાપન: શિક્ષણ પદ્ધતિ, પ્રયુક્તિઓ, સૂત્રો, પાઠ આયોજન અને TLM (૧૧૦ પ્રશ્નો)</p>
+            
+            <div class="score-pill" id="resScore">0 / 110</div>
+            <div style="font-size: 17px; font-weight: 800; color: #10b981;" id="resPercent">0%</div>
+
+            <div class="res-stats-grid">
+                <div class="res-stat-box" style="background:#10b981;">
+                    <div>સાચા ઉત્તર</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resCorrectCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#ef4444;">
+                    <div>ખોટા ઉત્તર</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resWrongCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#f59e0b;">
+                    <div>રિવ્યુ/Flagged</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resFlagCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#2563eb;">
+                    <div>લીધેલો સમય</div>
+                    <div style="font-size: 15px; font-weight: 900; margin-top: 2px;" id="resTime">00:00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-tabs-nav">
+            <button class="res-tab-btn active-tab" id="tabBtnWrong" onclick="switchResultTab('wrong')">
+                <i class="fa-solid fa-triangle-exclamation" style="color: #ef4444;"></i> ❌ માત્ર ખોટા પડેલા પ્રશ્નો
+            </button>
+            <button class="res-tab-btn" id="tabBtnAnswers" onclick="switchResultTab('answers')">
+                <i class="fa-solid fa-square-check" style="color: #10b981;"></i> 📋 ઉત્તરવહી & સમજૂતી
+            </button>
+            <button class="res-tab-btn" id="tabBtnBlank" onclick="switchResultTab('blank')">
+                <i class="fa-solid fa-file-lines" style="color: #2563eb;"></i> 📝 મૂળ પ્રશ્નપત્ર (પ્રેક્ટિસ)
+            </button>
+        </div>
+
+        <div id="tabContentWrong">
+            <div id="wrongQuestionsList"></div>
+        </div>
+
+        <div id="tabContentAnswers" style="display: none;">
+            <div id="allAnswersList"></div>
+        </div>
+
+        <div id="tabContentBlank" style="display: none;">
+            <div id="blankQuestionsList"></div>
+        </div>
+    </section>
+</div>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz-khogtnFjvjzRuv_ieBYJfx0TAxluM9OfoXlf72h9Yce14rdQu9_Xbmx3fnprk5Q30g/exec";
+
+// ૧૧૦ HOTS ગહન પ્રશ્નોત્તરી (ભાગ ૧: ૧ થી ૩૦ | ભાગ ૨: ૩૧ થી ૭૦ | ભાગ ૩: ૭૧ થી ૧૧૦)
+const questions = [
+  {
+    "q": "પ્રશ્ન 1. ગણિતની પ્રકૃતિ સંદર્ભે નીચેના પૈકી કયું વિધાન અસત્ય છે?",
+    "options": [
+      "ગણિત એ અમૂર્ત ખ્યાલોનું વિજ્ઞાન છે જે અંક અને અંતર વચ્ચેના સંબંધોનું નિગમન શોધે છે.",
+      "ગણિતના નિયમો અને સિદ્ધાંતો દેશ, કાળ અને પરિસ્થિતિ મુજબ બદલાય છે.",
+      "ગણિતની પોતાની આગવી ભાષા, વિશિષ્ટ સંકેતો અને પારિભાષિક સંજ્ઞાઓ હોય છે.",
+      "ગણિતનું જ્ઞાન યથાર્થ (Exact), ક્રમબદ્ધ (Systematic) અને તાર્કિક (Logical) હોય છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : ગણિત અને ગણિત શિક્ષણની સંકલ્પના",
+    "exp": "ગણિતના નિયમો અને સૂત્રો સર્વવ્યાપી, શાશ્વત અને પ્રમાણભૂત છે. તેના પર સ્થળ કે કાળની કોઈ અસર થતી નથી (દા.ત. ૨ + ૨ = ૪ વિશ્વના કોઈપણ છેડે અને સદાકાળ માટે સત્ય છે)."
+  },
+  {
+    "q": "પ્રશ્ન 2. 'Mathematics is the language in which God has written the Universe' - ગણિત શિક્ષણ સંદર્ભે આ સુપ્રસિદ્ધ કથન કોનું છે?",
+    "options": [
+      "ગેલેલિયો (Galileo)",
+      "આઇઝેક ન્યૂટન (Isaac Newton)",
+      "પાસ્કલ (Pascal)",
+      "જ્હોન લોક (Locke)"
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧ : ગણિત અને ગણિત શિક્ષણની સંકલ્પના",
+    "exp": "ગેલેલિયોએ જણાવ્યું હતું કે ગણિત એ ભાષા છે કે જેમાં પરમેશ્વરે સંપૂર્ણ બ્રહ્માંડને લખી દીધું છે. જ્યારે લોકે ગણિતને મનમાં તર્ક કરવાની આદત સ્થાપિત કરવાનો માર્ગ કહ્યો છે."
+  },
+  {
+    "q": "પ્રશ્ન 3. કોઠારી કમિશન (૧૯૬૪-૬૬) અનુસાર શાળાકીય શિક્ષણમાં ગણિતના સ્થાન અંગે કઈ ભલામણ કરવામાં આવી હતી?",
+    "options": [
+      "ધોરણ ૫ થી ગણિત ઐચ્છિક વિષય બનાવવો.",
+      "શાળા જીવનના પ્રથમ દસ વર્ષોમાં વિજ્ઞાન અને ગણિત અનિવાર્યરૂપે (ફરજિયાત) શીખવવું જોઈએ.",
+      "માધ્યમિક કક્ષાએ માત્ર વ્યાવહારિક ગણિત જ રાખવું.",
+      "પ્રાથમિક શાળામાં ગણિતનું કોઈ ઔપચારિક મૂલ્યાંકન ન કરવું."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧ : ગણિત અને ગણિત શિક્ષણની સંકલ્પના",
+    "exp": "કોઠારી કમિશને સ્પષ્ટ ભલામણ કરી હતી કે દેશના દરેક નાગરિકના પાયાના ઘડતર માટે શાળાકીય શિક્ષણના પ્રથમ દસ વર્ષમાં ગણિત અને વિજ્ઞાન સામાન્ય શિક્ષણના ભાગરૂપે અનિવાર્ય હોવું જોઈએ."
+  },
+  {
+    "q": "પ્રશ્ન 4. ડૉ. જે. વેલ્ટનના મતે શિક્ષણના સૂત્રો (Maxims of Teaching) નું અધ્યાપન પ્રક્રિયામાં સાચું સ્થાન શું છે?",
+    "options": [
+      "તે શિક્ષણના અપરિવર્તનીય વૈશ્વિક કાયદા છે.",
+      "તે અધ્યાપન પદ્ધતિના ગૌણ સિદ્ધાંતો છે, જે સુજ્ઞ શિક્ષક માટે માર્ગદર્શક સ્તંભ જેવાં છે.",
+      "તે માત્ર વર્ગ વ્યવહાર નિયંત્રણ માટેની પ્રયુક્તિઓ છે.",
+      "તે માત્ર નબળા વિદ્યાર્થીઓ માટેની ઉપચારાત્મક તરકીબો છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૨ : ગણિતનું સ્વરૂપ & એકમ-૯ : ગણિત શિક્ષણના સૂત્રો",
+    "exp": "ડૉ. જે. વેલ્ટનના જણાવ્યા મુજબ અધ્યાપન સૂત્રો એ સુ-શિક્ષકોના અનુભવો, વિચારો અને અવલોકનોના નિષ્કર્ષરૂપ ગૌણ સિદ્ધાંતો અને સત્યોની સંહિતા છે."
+  },
+  {
+    "q": "પ્રશ્ન 5. એક શિક્ષક વર્ગખંડમાં પ્રાકૃતિક સંખ્યાગણ (N) ના નિયમો શીખવ્યા બાદ પૂર્ણાંક સંખ્યાગણ (Z), સંમેય સંખ્યાગણ (Q) અને વાસ્તવિક સંખ્યાગણ (R) ના ગુણધર્મો તરફ આગળ વધે છે. શિક્ષક અહીં કયા અધ્યાપન સૂત્રનો વિનિયોગ કરે છે?",
+    "options": [
+      "અમૂર્ત પરથી મૂર્ત પર જવું",
+      "સંયોજન પરથી પૃથક્કરણ પર જવું",
+      "જ્ઞાત પરથી અજ્ઞાત પર જવું (Known to Unknown)",
+      "સંકુલ પરથી સરળ પર જવું"
+    ],
+    "ans": 2,
+    "unit": "એકમ-૨ : ગણિતનું સ્વરૂપ & એકમ-૯ : ગણિત શિક્ષણના સૂત્રો",
+    "exp": "બાળકના પૂર્વાનુભવો અને જે તે જાણે છે (N) નો આધાર લઈને તેને નવા અને અજ્ઞાત ક્ષેત્ર (Z, Q, R) તરફ દોરી જવું એ 'જ્ઞાત પરથી અજ્ઞાત પર જવું' સૂત્રનું સર્વોત્તમ ઉદાહરણ છે."
+  },
+  {
+    "q": "પ્રશ્ન 6. 'પાઠનો પ્રારંભ મૂર્તથી થવો જોઈએ અને સમાપ્તિ અમૂર્તમાં થવી જોઈએ' — આ શિક્ષણશાસ્ત્રીય વિધાન કોનું છે?",
+    "options": [
+      "હર્બર્ટ સ્પેન્સર (Herbert Spencer)",
+      "પેસ્ટોલોઝી (Pestalozzi)",
+      "રૂસો (Rousseau)",
+      "મારિયા મોન્ટેસરી (Maria Montessori)"
+    ],
+    "ans": 0,
+    "unit": "એકમ-૨ : ગણિતનું સ્વરૂપ & એકમ-૯ : ગણિત શિક્ષણના સૂત્રો",
+    "exp": "હર્બર્ટ સ્પેન્સરે ભારપૂર્વક જણાવ્યું છે કે કોઈપણ અધ્યાપન કાર્ય પ્રત્યક્ષ (મૂર્ત) અનુભવોથી શરૂ થવું જોઈએ અને વૈચારિક/તાર્કિક સંકલ્પના (અમૂર્ત) માં પરિણમવું જોઈએ."
+  },
+  {
+    "q": "પ્રશ્ન 7. કોયડા ઉકેલ (Problem Solving) માં વિદ્યાર્થી જ્યારે 'ધારો કે પુત્રીની ઉંમર X વર્ષ છે, માટે માતાની ઉંમર 3X વર્ષ થાય અને 4(X-5) = 3X-5' જેવી પદાવલિ રચે છે, ત્યારે તે કયા સોપાનમાં કાર્યરત છે?",
+    "options": [
+      "કોયડાને સમજવો",
+      "ગાણિતિક સંબંધોનું પૃથક્કરણ કરવું",
+      "ગાણિતિક માળખું રચવું અને હલ કરવું",
+      "ઉકેલની ખાતરી (તાળો મેળવવો) કરવી"
+    ],
+    "ans": 2,
+    "unit": "એકમ-૨ : ગણિતનું સ્વરૂપ",
+    "exp": "અજ્ઞાત રાશિ માટે ચલ ધારીને સમીકરણ સ્વરૂપે પ્રતીકાત્મક રજૂઆત કરવી અને ગાણિતિક પ્રક્રિયાઓ દ્વારા ઉકેલ મેળવવો એ ત્રીજું સોપાન 'ગાણિતિક માળખું રચવું અને હલ કરવું' છે."
+  },
+  {
+    "q": "પ્રશ્ન 8. ગણિત શિક્ષણનું 'માનસ ઘડતરનું મૂલ્ય' (Disciplinary Value / નિયામક મૂલ્ય) મુખ્યત્વે શેના પર ભાર મૂકે છે?",
+    "options": [
+      "દૈનિક જીવનમાં શાકભાજી કે દૂધની ખરીદી કરવા પર",
+      "માનસિક શક્તિઓનો વિકાસ, તર્કશક્તિ, ચોકસાઈ, નિયમિતતા અને તાલીમ-સંક્રમણ (Transfer of Training) પર",
+      "મોટી રકમના વ્યાજની નફાકારક ગણતરીઓ પર",
+      "પરીક્ષામાં સૌથી વધુ ગુણ મેળવવાની સ્પર્ધાત્મકતા પર"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૩ : ગણિત શિક્ષણના મૂલ્યો",
+    "exp": "ગણિતના અભ્યાસથી પ્રાપ્ત થતી એકાગ્રતા, તર્ક, સુઘડતા અને સચોટતા વ્યક્તિના સમગ્ર જીવનવ્યવહાર અને વ્યક્તિત્વ પર કાયમી છાપ છોડે છે, જેને નિયામક કે માનસ ઘડતર મૂલ્ય કહે છે."
+  },
+  {
+    "q": "પ્રશ્ન 9. કવિતામાં છંદ અને માત્રાઓની ગણતરી, સંગીતમાં લય-તાલ તથા સ્થાપત્ય-ચિત્રકળામાં સમરૂપતા અને સપ્રમાણતા એ ગણિતના કયા મૂલ્યનું સમર્થન કરે છે?",
+    "options": [
+      "આંતરરાષ્ટ્રીય મૂલ્ય",
+      "સાંસ્કૃતિક અને કલાત્મક/સૌંદર્યાત્મક મૂલ્ય",
+      "કેવળ વ્યાવસાયિક મૂલ્ય",
+      "ભૌતિક મૂલ્ય"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૩ : ગણિત શિક્ષણના મૂલ્યો",
+    "exp": "ગણિત એ કલા, સાહિત્ય, છંદશાસ્ત્ર, સંગીત અને સ્થાપત્યનો આધારસ્તંભ છે. આંતરિક સંવાદિતા અને સપ્રમાણતા ગાણિતિક હોવાથી તે સાંસ્કૃતિક અને સૌંદર્યાત્મક મૂલ્ય દર્શાવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 10. ડમવિલ (Dumville) ના મતે 'અનુબંધ' (Correlation) એટલે શું?",
+    "options": [
+      "વિદ્યાર્થી અને શિક્ષક વચ્ચેનો ભાવનાત્મક સંબંધ",
+      "એક વિષયને બીજા વિષય સાથે જોડવાનો સિદ્ધાંત",
+      "પાઠ્યપુસ્તક અને નોટબુક વચ્ચેનું જોડાણ",
+      "શાળા અને સમાજ વચ્ચેની ભાગીદારી"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૪ : ગણિત શિક્ષણમાં અનુબંધ",
+    "exp": "ડમવિલે સ્પષ્ટ સંકલ્પના આપી છે કે: 'એક વિષયને બીજા વિષય સાથે જોડવાનો સિદ્ધાંત અનુબંધ નામથી ઓળખાય છે.' જ્ઞાન અખંડ છે અને વિષયો વચ્ચેનો આંતરસંબંધ અધ્યયનને અર્થપૂર્ણ બનાવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 11. ભૂગોળ વિષયમાં નકશાવાચન, અક્ષાંશ-રેખાંશ, સ્થાનિક સમયની ગણતરી અને તાપમાન/વરસાદના આલેખો સમજવા માટે ગણિતની કઈ શાખાઓનો અનિવાર્ય અનુબંધ છે?",
+    "options": [
+      "કેવળ બીજગણિત",
+      "અંકગણિત, ભૂમિતિ અને આંકડાશાસ્ત્ર",
+      "માત્ર ત્રિકોણમિતિ",
+      "માત્ર કલનશાસ્ત્ર (Calculus)"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૪ : ગણિત શિક્ષણમાં અનુબંધ",
+    "exp": "અંતર અને પ્રમાણમાપ માટે અંકગણિત, અક્ષાંશ-રેખાંશ અને ભૌગોલિક ખૂણાઓ માટે ભૂમિતિ તથા આબોહવાકીય ડેટા માટે આંકડાશાસ્ત્રનો સીધો અનુબંધ ભૂગોળ સાથે જોડાયેલો છે."
+  },
+  {
+    "q": "પ્રશ્ન 12. બ્લૂમ અને કેશવોલના વર્ગીકરણ અનુસાર 'મૂલ્ય આકારવું' (Valuing), 'સંગઠન' (Organization) અને 'ચરિત્રલેખન/લાક્ષણિકીકરણ' (Characterization) એ કયા વર્તનક્ષેત્રના સોપાનો છે?",
+    "options": [
+      "બોધાત્મક / જ્ઞાનાત્મક ક્ષેત્ર (Cognitive Domain)",
+      "ભાવાત્મક ક્ષેત્ર (Affective Domain)",
+      "મનોશારીરિક / ક્રિયાત્મક ક્ષેત્ર (Psychomotor Domain)",
+      "શારીરિક સ્વાસ્થ્ય ક્ષેત્ર"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૫ : ગણિત શિક્ષણ અને વર્તનક્ષેત્રો",
+    "exp": "ભાવાત્મક ક્ષેત્રમાં ગ્રહણ કરવું (Receiving), પ્રતિક્રિયા આપવી (Responding), મૂલ્ય આકારવું (Valuing), સંગઠન (Organization) અને લાક્ષણિકીકરણ (Characterization) ક્રમશઃ સ્તરો છે."
+  },
+  {
+    "q": "પ્રશ્ન 13. ક્રિયાત્મક ક્ષેત્ર (Psychomotor Domain) માં સર્વોચ્ચ કૌશલ્ય પ્રાપ્તિનો આખરી તબક્કો કયો છે, જ્યાં વિદ્યાર્થી કોઈપણ ગાણિતિક સાધન કે રચના સહજતાથી, ક્ષતિરહિત અને અનાયાસ કરી શકે છે?",
+    "options": [
+      "ઉત્તેજના / આવેગ (Impulsion)",
+      "નિયંત્રણ (Control)",
+      "સંયોગીકરણ (Co-ordination)",
+      "સ્વાભાવિકીકરણ (Naturalization)"
+    ],
+    "ans": 3,
+    "unit": "એકમ-૫ : ગણિત શિક્ષણ અને વર્તનક્ષેત્રો",
+    "exp": "સાયકોમોટર ડોમેઈનનો વિકાસ ક્રમ: આવેગ -> ક્રિયાત્મકતા -> નિયંત્રણ -> સંયોગીકરણ -> સ્વાભાવિકીકરણ (Naturalization). છેલ્લે સ્વાભાવિકીકરણ થતાં કૌશલ્ય સહજ સ્વભાવ બની જાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 14. NCF-2005 અનુસાર પ્રાથમિક શાળાના ગણિત શિક્ષણ અંગે કઈ બાબત અયોગ્ય છે?",
+    "options": [
+      "શિક્ષણ રમત, કોયડા અને બાળવાર્તાઓ દ્વારા રસપ્રદ બનાવવું જોઈએ.",
+      "ગણિત એટલે માત્ર અંકગણિત અને યાંત્રિક ઘડિયા ઘૂંટાવવા.",
+      "આકાર, તરાહ (Patterns), માપ અને આંકડાની પાયાની સમજ કેળવવી.",
+      "મૂર્ત અનુભવોથી અમૂર્ત ખ્યાલો તરફની ગતિ સુનિશ્ચિત કરવી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૬ : NCF-2005 પ્રમાણે ગણિત શિક્ષણના હેતુઓ",
+    "exp": "NCF-2005 સ્પષ્ટ નિર્દેશ કરે છે કે ગણિત એટલે માત્ર અંકગણિત કે અલ્ગોરિધમની તાનાશાહી નથી. ઘડિયા ગોખાવવાને બદલે જૂથ, તરાહ, માપન અને પરિમાણ વચ્ચેના સંબંધોની સમજ આપવી જોઈએ."
+  },
+  {
+    "q": "પ્રશ્ન 15. અધ્યયન અનુભવો આપતાં પહેલાં વિદ્યાર્થીના વર્તનને 'પ્રાવેશિક વર્તન' (Entering Behaviour) કહેવાય, તો અનુભવો આપ્યા બાદ પરિણમતા અપેક્ષિત પરિવર્તનને શું કહે છે?",
+    "options": [
+      "આકસ્મિક વર્તન",
+      "આંત્યિક વર્તન (Terminal Behaviour)",
+      "પ્રતિક્રિયાત્મક વર્તન",
+      "નિષ્ક્રિય વર્તન"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને વર્તન પરિવર્તન",
+    "exp": "આઈ.કે. ડેવીસના મત મુજબ શિક્ષણ પ્રક્રિયા દ્વારા બાળકના પ્રાવેશિક વર્તનમાં સુધારો કરી જે લક્ષિત વર્તન નીપજાવવામાં આવે છે તેને 'આંત્યિક વર્તન' (Terminal Behaviour) અથવા સ્પષ્ટીકરણ કહે છે."
+  },
+  {
+    "q": "પ્રશ્ન 16. નીચેનામાંથી કયું ક્રિયાપદ ગણિત શિક્ષણના 'સમજ' (Understanding) હેતુનું સ્પષ્ટીકરણ દર્શાવે છે?",
+    "options": [
+      "વ્યાખ્યાની યાદી બનાવે છે (Lists)",
+      "સંજ્ઞા ઓળખે છે (Recognises)",
+      "બે ભૌમિતિક આકારો વચ્ચે ભેદ સ્પષ્ટ કરે છે (Discriminates / Differentiates)",
+      "પૂર્વધારણાનું પુનરાવર્તન કરે છે (Reproduces)"
+    ],
+    "ans": 2,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને વર્તન પરિવર્તન",
+    "exp": "યાદી બનાવવી કે ઓળખવું એ માત્ર 'જ્ઞાન' છે; જ્યારે ભેદ સ્પષ્ટ કરવો, ભૂલ પારખવી, વર્ગીકરણ કરવું કે પોતાના શબ્દોમાં ઉદાહરણ આપવું એ 'સમજ' (Understanding) ના સ્પષ્ટીકરણો છે."
+  },
+  {
+    "q": "પ્રશ્ન 17. શાળામાં ગણિત વિષયમાં વિશિષ્ટ પ્રતિભા ધરાવતા (Gifted) વિદ્યાર્થીઓ માટે ગણિતમંડળ (Math Club) દ્વારા કઈ શ્રેષ્ઠ પ્રવૃત્તિ યોજી શકાય?",
+    "options": [
+      "તેમને માત્ર વર્ગના મોનિટર બનાવી શાંત બેસાડી રાખવા.",
+      "તેમને સામાન્ય કરતાં ઉચ્ચ કઠિનતાવાળા કોયડા આપવા, સાધન નિર્માણ સોંપવું તથા નબળા વિદ્યાર્થીઓને માર્ગદર્શન આપવાની જવાબદારી સોંપવી.",
+      "તેમને ગણિતના તાસમાંથી મુક્તિ આપવી.",
+      "તેમને માત્ર લાઈબ્રેરીના પુસ્તકો ગોઠવવાનું શારીરિક કામ આપવું."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૮ : ગણિત મંડળ",
+    "exp": "પ્રતિભાશાળી વિદ્યાર્થીઓની શક્તિઓનો સર્જનાત્મક ઉપયોગ થાય તે માટે તેમને પ્રોજેક્ટ્સ, પ્રશ્નમંચ, પીઅર-ટ્યુટરિંગ (સાથી શિક્ષણ) અને મોડેલ મેકિંગ જેવી જવાબદારીઓ સોંપવી જોઈએ."
+  },
+  {
+    "q": "પ્રશ્ન 18. ગણિત પ્રયોગશાળા (Mathematics Laboratory) ની અનિવાર્યતા પાછળ રહેલો મુખ્ય શૈક્ષણિક તર્ક કયો છે?",
+    "options": [
+      "વિદ્યાર્થીઓ માત્ર પ્રયોગશાળામાં બેસીને આરામ કરી શકે.",
+      "અમૂર્ત ગાણિતિક ખ્યાલોને મૂર્ત સ્વરૂપમાં સાધનો, મૉડેલ્સ અને સ્વાનુભવ દ્વારા સિદ્ધ કરી શકાય.",
+      "શાળાનું વાર્ષિક બજેટ ખર્ચાઈ જાય તે સુનિશ્ચિત કરવા.",
+      "માત્ર વિજ્ઞાન મેળામાં પ્રદર્શન ગોઠવવા પૂરતો."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો અને ગણિત પ્રયોગશાળા & એકમ-૮",
+    "exp": "'What I do, I learn' ના સિદ્ધાંત મુજબ ગણિત પ્રયોગશાળામાં વિદ્યાર્થી જાતે કાપકૂપ, માપન અને મોડેલિંગ દ્વારા પ્રમેયો અને ક્ષેત્રફળના સૂત્રોની સત્યતા પ્રત્યક્ષ ચકાસી શકે છે."
+  },
+  {
+    "q": "પ્રશ્ન 19. ગણિત શિક્ષણમાં 'અચોક્કસ પરથી ચોક્કસ પર જવું' (Indefinite to Definite) સૂત્રનો મુખ્ય ભાવાર્થ શો છે?",
+    "options": [
+      "વિદ્યાર્થી પાસે શરૂઆતથી જ નિર્ભૂલ ગણતરીની અપેક્ષા રાખવી.",
+      "બાળકના મનમાં રહેલા પ્રારંભિક અસ્પષ્ટ કે કાચા ખ્યાલોને સચોટ ઉદાહરણો અને પ્રવૃત્તિઓ દ્વારા સુસ્પષ્ટ અને નિશ્ચિત બનાવવા.",
+      "અનિશ્ચિત સંભાવના વાળા પ્રકરણો અભ્યાસક્રમમાંથી રદ કરવા.",
+      "પરીક્ષામાં માત્ર અંદાજિત જવાબોને જ માન્ય રાખવા."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૨ : ગણિતનું સ્વરૂપ & એકમ-૯ : ગણિત શિક્ષણના સૂત્રો",
+    "exp": "દા.ત. શરૂઆતમાં વિદ્યાર્થી a² + b² અને (a+b)² વચ્ચે ગૂંચવાય છે. શિક્ષક યોગ્ય પૃથક્કરણ અને તાર્કિક દૃષ્ટાંતો દ્વારા અસ્પષ્ટતા દૂર કરી ખ્યાલને ચોક્કસ બનાવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 20. વર્ગખંડમાં 'દૃઢિકરણ' (Drill Work) કરાવતી વખતે શિક્ષકે કઈ બાબત ખાસ ધ્યાને રાખવી જોઈએ?",
+    "options": [
+      "દૃઢિકરણ આખા તાસ (૪૫ મિનિટ) સુધી એકધારું ચાલવું જોઈએ.",
+      "દૃઢિકરણ ક્યારેય વિદ્યાર્થીને શિક્ષા (Punishment) ના સ્વરૂપમાં ન આપવું જોઈએ.",
+      "દૃઢિકરણમાં હંમેશા સૌથી અઘરા અને ન શીખવેલા દાખલા જ પૂછવા જોઈએ.",
+      "દૃઢિકરણ કેવળ યાંત્રિક પુનરાવર્તન જ હોવું જોઈએ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૦ : ગણિત શિક્ષણની પ્રયુક્તિઓ",
+    "exp": "જો વિદ્યાર્થીને શિક્ષા તરીકે પાંચ-દસ વાર દાખલા લખવા અપાય તો તેના મનમાં વિષય પ્રત્યે નફરત પેદા થાય છે. દૃઢિકરણ સમજપૂર્વકનું, પ્રેરણાદાયી અને ૫ થી ૧૦ મિનિટના ટૂંકા ગાળાનું હોવું જોઈએ."
+  },
+  {
+    "q": "પ્રશ્ન 21. ગણિત શિક્ષણમાં 'મૌખિક કાર્ય' (Mental / Oral Work) ની મહત્તા બાબતે કયું વિધાન સાચું છે?",
+    "options": [
+      "મૌખિક કાર્યથી વિદ્યાર્થીઓની સ્મૃતિ અને ત્વરિત નિર્ણય શક્તિ ખીલે છે તેમજ લેખિત કાર્યમાં ઝડપ વધે છે.",
+      "મૌખિક કાર્યથી વિદ્યાર્થીઓ આળસુ બને છે.",
+      "ગણિતમાં મૌખિક કાર્યને કોઈ સ્થાન હોવું જ ન જોઈએ, બધું લખીને જ થવું જોઈએ.",
+      "કેલ્ક્યુલેટરના યુગમાં મૌખિક ગણતરી બિનજરૂરી છે."
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૦ : ગણિત શિક્ષણની પ્રયુક્તિઓ",
+    "exp": "પેન-પેપર વગર મનમાં થતી ગણતરીથી બાળકની વિચારક્ષમતા તીવ્ર બને છે અને વ્યવહારમાં સમયનો બચાવ થાય છે, જે લેખિત કાર્યને પણ વધુ ક્ષતિરહિત બનાવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 22. બ્રિટિશ શિક્ષણવિદ્ ટોની બુઝાન (Tony Buzan) દ્વારા ૧૯૭૨ માં કઈ સંકલ્પના રજૂ કરવામાં આવી હતી?",
+    "options": [
+      "પ્રોજેક્ટ પદ્ધતિ",
+      "સૂક્ષ્મ અધ્યાપન (Microteaching)",
+      "માઈન્ડ મેપિંગ (Mind Mapping)",
+      "અભિક્રમિત અધ્યયન (Programmed Learning)"
+    ],
+    "ans": 2,
+    "unit": "એકમ-૧૦ : ગણિત શિક્ષણની પ્રયુક્તિઓ",
+    "exp": "ટોની બુઝાને તેમના પુસ્તક 'Use Your Head' માં મગજના વિચારોને બિનરેખીય આલેખન દ્વારા વ્યવસ્થિત કરવા 'માઈન્ડ મેપિંગ' પ્રયુક્તિ આપી હતી."
+  },
+  {
+    "q": "પ્રશ્ન 23. વર્ગખંડમાં સહકારી અધ્યયન (Cooperative Learning) અને જૂથકાર્ય (Group Work) કરતી વખતે શિક્ષકે જૂથની રચના કેવી રીતે કરવી જોઈએ?",
+    "options": [
+      "હોંશિયાર વિદ્યાર્થીઓનું અલગ અને નબળા વિદ્યાર્થીઓનું અલગ જૂથ બનાવવું.",
+      "તમામ કક્ષાના (પ્રતિભાશાળી, મધ્યમ અને નબળા) વિદ્યાર્થીઓનું મિશ્ર / સપ્રમાણ જૂથ રચવું જેથી પરસ્પર આદાનપ્રદાન થાય.",
+      "વિદ્યાર્થીઓની જાતિ કે આર્થિક સ્થિતિ મુજબ જૂથ પાડવા.",
+      "જૂથમાં વિદ્યાર્થીઓની સંખ્યા ઓછામાં ઓછી ૨૫ રાખવી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૦ : ગણિત શિક્ષણની પ્રયુક્તિઓ",
+    "exp": "જૂથકાર્યનો આત્મા 'પીઅર લર્નિંગ' છે. વિષમાંગ (સંતુલિત મિશ્ર) જૂથોમાં નબળા બાળકને પ્રતિભાશાળી સાથી પાસેથી સહજ માર્ગદર્શન મળે છે અને સામાજિક કૌશલ્યો ખીલે છે."
+  },
+  {
+    "q": "પ્રશ્ન 24. નીચેના પૈકી કયો ક્રમ આગમન પદ્ધતિ (Inductive Method) ના સોપાનોનો સાચો તાર્કિક ક્રમ દર્શાવે છે?",
+    "options": [
+      "નિયમની રજૂઆત -> ઉદાહરણો -> ચકાસણી -> સામાન્યીકરણ",
+      "વિશિષ્ટ ઉદાહરણોની રજૂઆત -> નિરીક્ષણ/પૃથક્કરણ -> સામાન્યીકરણ -> નિયમ/સૂત્રની તારવણી -> ચકાસણી",
+      "સામાન્યીકરણ -> ઉદાહરણો -> નિયમ -> તાળો મેળવવો",
+      "સૂત્ર ગોખવું -> દાખલા ગણવા -> નિયમ બનાવવો"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "આગમન પદ્ધતિ વિશિષ્ટ ઉદાહરણોથી શરૂ થાય છે. વિદ્યાર્થી તેનું અવલોકન કરે છે, સામાન્ય ગુણધર્મ તારવે છે, સૂત્ર સ્થાપિત કરે છે અને છેલ્લે નવા દાખલામાં તેની સત્યતા ચકાસે છે."
+  },
+  {
+    "q": "પ્રશ્ન 25. જો શિક્ષક સીધું જ નળાકારની વક્રસપાટીનું ક્ષેત્રફળ A = 2πrh બોર્ડ પર લખી આપે છે અને વિદ્યાર્થીઓને તે મુજબ સીધા દાખલા ગણાવે છે, તો આ કઈ પદ્ધતિ ગણાય?",
+    "options": [
+      "આગમન પદ્ધતિ",
+      "નિગમન પદ્ધતિ (Deductive Method)",
+      "હ્યુરિસ્ટિક પદ્ધતિ (શોધ પદ્ધતિ)",
+      "પ્રયોગશાળા પદ્ધતિ"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "જ્યાં નિયમ કે સૂત્ર પૂર્વસ્થાપિત સત્ય તરીકે સીધું આપી દેવાય અને તેના આધારે વિદ્યાર્થીઓ ઉદાહરણો ગણે તેને 'નિગમન પદ્ધતિ' કહે છે, જે સામાન્યથી વિશિષ્ટ તરફ જાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 26. ભૂમિતિના પ્રમેયોની સાબિતી માટે પાઠ્યપુસ્તકોમાં પ્રાયઃ કઈ પદ્ધતિના સ્વરૂપે લેખિત રજૂઆત જોવા મળે છે?",
+    "options": [
+      "પૃથક્કરણ પદ્ધતિ (Analytic Method)",
+      "સંયોગીકરણ પદ્ધતિ (Synthetic Method)",
+      "વાર્તાકથન પદ્ધતિ",
+      "મુક્ત ચર્ચા પદ્ધતિ"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "પાઠ્યપુસ્તકોમાં જગ્યા અને સંક્ષિપ્તતા ખાતર સાબિતી 'પક્ષ -> કૃત્ય -> સાબિતી -> સાધ્ય' ના ક્રમમાં (જ્ઞાતથી અજ્ઞાત તરફ) સંયોગીકરણ સ્વરૂપે છાપવામાં આવે છે, જોકે શોધવા માટે પૃથક્કરણ જરૂરી છે."
+  },
+  {
+    "q": "પ્રશ્ન 27. ગણિત શિક્ષણમાં 'નિદર્શન પદ્ધતિ' (Demonstration Method) નો સૌથી મોટો ફાયદો કયો છે?",
+    "options": [
+      "તેમાં શિક્ષકે કશું બોલવાનું હોતું નથી.",
+      "મૂર્ત સાધનોના પ્રત્યક્ષ નિદર્શન દ્વારા વિદ્યાર્થીઓની શ્રવણ અને દ્રષ્ટિ બંને જ્ઞાનેન્દ્રિયો સક્રિય બને છે અને સમય-સાધનની કરકસર થાય છે.",
+      "તમામ વિદ્યાર્થીઓ પ્રયોગશાળામાં જાતે તોડફોડ કરી શકે છે.",
+      "તેનાથી કોઈપણ તૈયારી વગર ભણાવી શકાય છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "નિદર્શન પદ્ધતિ શિક્ષકકેન્દ્રી અને વિદ્યાર્થી-સહભાગી છે, જેમાં શિક્ષક પ્રત્યક્ષ પ્રયોગ કે મોડેલ બતાવીને સમજાવે છે, જેથી ખર્ચ બચે છે અને સંકલ્પના દ્રશ્યમાન બને છે."
+  },
+  {
+    "q": "પ્રશ્ન 28. ગણિતના દૈનિક પાઠ આયોજન (Lesson Plan) માં 'હર્બર્ટિયન પંચપદી' (Herbartian Steps) નો સાચો ક્રમ કયો છે?",
+    "options": [
+      "પ્રસ્તુતીકરણ -> તૈયારી -> તુલના -> સામાન્યીકરણ -> ઉપયોગ",
+      "પૂર્વતૈયારી (વિષયાભિમુખ) -> પ્રસ્તુતીકરણ -> તુલના/સંયોજન -> સામાન્યીકરણ -> વિનિયોગ (ઉપયોગ)",
+      "મૂલ્યાંકન -> ગૃહકાર્ય -> હેતુ -> વિષયાભિમુખ -> પ્રસ્તુતિ",
+      "સામાન્યીકરણ -> વિષયાભિમુખ -> ઉપયોગ -> તુલના"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૩ : પાઠ આયોજનનો અર્થ, મહત્ત્વ અને સોપાનો",
+    "exp": "હર્બર્ટિયન પંચપદીના ૫ સોપાનો: ૧. Preparation (તૈયારી), ૨. Presentation (વિષય નિરૂપણ), ૩. Association/Comparison (તુલના), ૪. Generalization (નિયમીકરણ), ૫. Application (વિનિયોગ)."
+  },
+  {
+    "q": "પ્રશ્ન 29. એકમ આયોજન (Unit Plan) અને દૈનિક પાઠ આયોજન (Daily Lesson Plan) વચ્ચેનો મુખ્ય તાત્વિક તફાવત કયો છે?",
+    "options": [
+      "એકમ આયોજન માત્ર ૧ તાસનું હોય છે જ્યારે પાઠ આયોજન આખા મહિનાનું હોય છે.",
+      "એકમ આયોજન સમગ્ર પ્રકરણના વિષયવસ્તુનું વ્યાપક અને સંકલિત માળખું છે, જ્યારે દૈનિક પાઠ આયોજન એક ચોક્કસ તાસ (૩૫-૪૦ મિનિટ) પૂરતું સીમિત અને સૂક્ષ્મ હોય છે.",
+      "એકમ આયોજન માત્ર આચાર્ય માટે હોય છે.",
+      "બંને વચ્ચે કોઈ તફાવત નથી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "એકમ આયોજન સમગ્ર એકમના પેટા મુદ્દાઓ, હેતુઓ અને મૂલ્યાંકનને આવરી લેતો દીર્ઘકાલીન પ્લાન છે, જ્યારે પાઠ આયોજન દૈનિક શિક્ષણકાર્યની ચોક્કસ વર્ગખંડ પ્રક્રિયા દર્શાવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 30. શિક્ષણ સેવા વર્ગ-૨ અને TAT પરીક્ષાના પરિપ્રેક્ષ્યમાં: 'જો વિદ્યાર્થી ગણિતના પ્રશ્નનો ઉકેલ લાવ્યા બાદ વૈકલ્પિક બીજી ટૂંકી રીત (Short-cut or Alternative Method) જાતે શોધી કાઢે છે', તો તે કઈ ક્ષમતા દર્શાવે છે?",
+    "options": [
+      "માત્ર સ્મૃતિ શક્તિ",
+      "યાંત્રિક ગણન કૌશલ્ય",
+      "સર્જનાત્મક ચિંતન અને ઉચ્ચ ગાણિતિક સૂઝ (Divergent / Creative Thinking)",
+      "પુનરાવર્તન ક્ષમતા"
+    ],
+    "ans": 2,
+    "unit": "એકમ-૨ : ગણિતનું સ્વરૂપ & એકમ-૭ : ગણિત શિક્ષણના હેતુઓ",
+    "exp": "એક જ સમસ્યાના એકથી વધુ મૌલિક ઉકેલો વિચારવા એ અપસારી ચિંતન (Divergent Thinking) અને ઉચ્ચ ગાણિતિક સર્જનાત્મકતાનું પરિચાયક છે."
+  },
+  {
+    "q": "પ્રશ્ન 31. ગણિત શિક્ષણમાં 'મૂર્ત પરથી અમૂર્ત પર જવું' (Concrete to Abstract) સૂત્રના વિનિયોગ સંદર્ભે નીચેના પૈકી કયું શિક્ષણકાર્ય સૌથી અયોગ્ય અભિગમ દર્શાવે છે?",
+    "options": [
+      "પ્રાથમિક કક્ષાએ સંખ્યા '૨' નો ખ્યાલ આપવા માટે બે ચોકલેટ કે બે લખોટીઓ પ્રત્યક્ષ બતાવવી.",
+      "ત્રિકોણના ત્રણેય ખૂણાના માપનો સરવાળો ૧૮૦° થાય તે સાબિત કરવા કાગળના ત્રિકોણના ખૂણા કાપીને રેખીય જોડ રચવી.",
+      "નિયમ કે સૂત્ર તારવ્યા પછી પણ વિદ્યાર્થીને સતત અને જીવનભર લખોટી કે વેઢા ગણીને જ સરવાળા કરવા ફરજ પાડવી.",
+      "સમઘન અને લંબઘનના ઘનફળનો ખ્યાલ આપવા લાકડાના બ્લોક્સ (ઘન ટુકડા) ગોઠવીને પ્રત્યક્ષ ગણતરી કરાવવી."
+    ],
+    "ans": 2,
+    "unit": "એકમ-૯ : ગણિત શિક્ષણના સૂત્રો",
+    "exp": "મૂર્ત સાધનો માત્ર અમૂર્ત વિચાર/નિયમ સુધી પહોંચવાની સીડી છે. એકવાર સંકલ્પના મનમાં દૃઢ થઈ ગયા પછી વિદ્યાર્થીએ મૂર્ત સાધનો છોડીને અમૂર્ત તાર્કિક ચિંતન કરતા શીખવું અનિવાર્ય છે."
+  },
+  {
+    "q": "પ્રશ્ન 32. શિક્ષણસૂત્ર 'સરળ પરથી કઠિન પર જવું' (Simple to Complex) સંદર્ભે શિક્ષકે કઈ મનોવૈજ્ઞાનિક વાસ્તવિકતા સદાય ધ્યાનમાં રાખવી જોઈએ?",
+    "options": [
+      "જે મુદ્દો શિક્ષક માટે અત્યંત સરળ હોય તે વિદ્યાર્થી માટે પણ સ્વતઃ સરળ જ હોય છે.",
+      "સરળતા કે કઠિનતાનો માપદંડ શિક્ષકની નજરે નહીં, પરંતુ વિદ્યાર્થીની વયકક્ષા અને બૌદ્ધિક ગ્રહણક્ષમતાની નજરે નક્કી થવો જોઈએ.",
+      "તમામ કઠિન પ્રકરણો અભ્યાસક્રમમાંથી રદ કરવા જોઈએ.",
+      "પ્રથમ તાસમાં જ સૌથી કઠિન સિદ્ધાંત શીખવી દેવો જેથી બાકીનું સરળ લાગે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૯ : ગણિત શિક્ષણના સૂત્રો",
+    "exp": "ઘણીવાર જે બાબત વિષયનિષ્ણાત શિક્ષક માટે સહજ હોય તે બાળક માટે અત્યંત ગૂંચવણભરી હોઈ શકે છે. તેથી વિષયવસ્તુ સરળ છે કે કઠિન તે વિદ્યાર્થીના વૈયક્તિક તફાવતોને આધારે જ આંકવું જોઈએ."
+  },
+  {
+    "q": "પ્રશ્ન 33. બીજગણિતમાં એક શિક્ષક પહેલાં વિભાજનનો નિયમ a(b+c) શીખવે છે, ત્યારબાદ (a+b)(c+d), પછી (a+b)² અને છેલ્લે (a+b+c)² નિત્યસમ તરફ આગળ વધે છે. આ આયોજન કયા સૂત્રનું અનુપાલન કરે છે?",
+    "options": [
+      "અમૂર્ત પરથી મૂર્ત",
+      "સરળ પરથી સંકુલ / કઠિન પર જવું",
+      "વિભાગ પરથી સંપૂર્ણ પર જવું",
+      "સંયોગીકરણ પરથી પૃથક્કરણ"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૯ : ગણિત શિક્ષણના સૂત્રો",
+    "exp": "પ્રથમ એકપદીનો દ્વિપદી સાથે ગુણાકાર (સરળ), ત્યારબાદ દ્વિપદીનો દ્વિપદી સાથે અને છેલ્લે ત્રિપદીના વર્ગનું વિસ્તરણ (સંકુલ) એ સરળથી સંકુલ તરફ જવાનો ચોક્કસ મનોવૈજ્ઞાનિક ક્રમ છે."
+  },
+  {
+    "q": "પ્રશ્ન 34. ગણિતના શિક્ષક વર્ગખંડમાં નવું પ્રકરણ શરૂ કરતાં પહેલાં પ્રસ્તાવનારૂપે સમગ્ર એકમનો સારાંશ, તેની રૂપરેખા અને શીખવાના મુખ્ય મુદ્દાઓનો પૂર્વાવલોકન પરિચય આપે છે. આ કાર્ય કયા સૂત્ર અનુસાર છે?",
+    "options": [
+      "સંપૂર્ણ પરથી વિભાગ પર જવું (Whole to Part)",
+      "અજ્ઞાત પરથી જ્ઞાત પર જવું",
+      "વિશેષ પરથી સામાન્ય પર જવું",
+      "સંકુલ પરથી સરળ પર જવું"
+    ],
+    "ans": 0,
+    "unit": "એકમ-૯ : ગણિત શિક્ષણના સૂત્રો",
+    "exp": "ગેસ્ટાલ્ટવાદ અનુસાર સમગ્ર એકમનું સાકલ્યવાદી ચિત્ર મનમાં સ્પષ્ટ થયા બાદ તેના વિભાજિત ખંડો કે પેટા-મુદ્દાઓ શીખવવાથી અધ્યયન અર્થપૂર્ણ અને સુગમ બને છે."
+  },
+  {
+    "q": "પ્રશ્ન 35. ગણિત શિક્ષણમાં 'પ્રયુક્તિ' (Technique / Device) ની સચોટ સંકલ્પના કઈ છે?",
+    "options": [
+      "આખા વર્ષનો વાર્ષિક શૈક્ષણિક અભ્યાસક્રમ",
+      "શિક્ષણ પદ્ધતિને વધુ સતેજ, સચોટ અને રસપ્રદ બનાવવા શિક્ષક દ્વારા પ્રયોજાતી વિશિષ્ટ યુક્તિ, કરામત કે કૌશલ્ય",
+      "માત્ર શાળાનું સમયપત્રક",
+      "માત્ર બોર્ડની પરીક્ષા પદ્ધતિ"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૦ : ગણિત શિક્ષણની પ્રયુક્તિઓ",
+    "exp": "પદ્ધતિ એ વ્યાપક માર્ગ છે, જ્યારે પ્રયુક્તિ (Technique) એ પદ્ધતિને અસરકારક અને જીવંત બનાવવા વર્ગખંડમાં વપરાતી ચોક્કસ યુક્તિ, કૌશલ્ય કે વ્યૂહરચના છે (દા.ત. દૃઢિકરણ, માઈન્ડ મેપિંગ, જૂથકાર્ય)."
+  },
+  {
+    "q": "પ્રશ્ન 36. દૃઢિકરણ (Drill Work) કાર્ય ક્યારે પોતાના મૂળ શૈક્ષણિક ઉદ્દેશ્યથી ભટકીને અર્થહીન કે હાનિકારક બની જાય છે?",
+    "options": [
+      "જ્યારે તે ૫ થી ૧૦ મિનિટના ટૂંકા ગાળા માટે નિયમિત યોજાય.",
+      "જ્યારે સંકલ્પના સમજાવ્યા વગર માત્ર ગોખણપટ્ટી અને યાંત્રિક શિક્ષા (Punishment) ના રૂપમાં લાંબા સમય સુધી થોપવામાં આવે.",
+      "જ્યારે તેમાં વિવિધતા અને પ્રેરણા હોય.",
+      "જ્યારે તે વિદ્યાર્થીઓની વૈયક્તિક ભિન્નતાને ધ્યાનમાં રાખીને અપાય."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૦ : ગણિત શિક્ષણની પ્રયુક્તિઓ",
+    "exp": "સમજણ વગરનું દૃઢિકરણ કેવળ યાંત્રિક કવાયત બની જાય છે. જો દાખલા ન આવડવા બદલ દસ-વીસ વાર લખવાની સજા અપાય તો વિદ્યાર્થી ગણિતથી કાયમ માટે વિમુખ થઈ જાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 37. વિહંગાવલોકન (Review Work) ના સંદર્ભમાં કયું વિધાન સાચું છે?",
+    "options": [
+      "વિહંગાવલોકન એ માત્ર એક જ સૂત્રના દાખલાઓ વારંવાર ગણવાની ક્રિયા છે.",
+      "સંમેય પદાવલિનું સાદુરૂપ આપતી વખતે વિસ્તરણ, અવયવીકરણ અને લ.સા.અ. જેવા વિવિધ સૂત્રોનો એકસાથે ઉપયોગ અને સંકલન એ વિહંગાવલોકનનું શ્રેષ્ઠ ઉદાહરણ છે.",
+      "વિહંગાવલોકનમાં માત્ર મૌખિક ઘડિયા બોલાવાય છે.",
+      "વિહંગાવલોકન અને દૃઢિકરણ વચ્ચે કોઈ સૈદ્ધાંતિક ભેદ નથી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૦ : ગણિત શિક્ષણની પ્રયુક્તિઓ",
+    "exp": "દૃઢિકરણ સીમિત મુદ્દા પર કેન્દ્રિત હોય છે, જ્યારે વિહંગાવલોકન અગાઉ શીખેલા બહુવિધ નિયમો અને સંકલ્પનાઓને એકસાથે સાંકળીને સમગ્રતામાં ઉપયોગ કરવાની ક્ષમતા ખીલવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 38. ગણિતમાં મૌખિક કાર્ય (Mental / Oral Work) બાબતે નીચેના પૈકી કઈ બાબત સૌથી આવશ્યક ગણાય?",
+    "options": [
+      "વિદ્યાર્થીઓને કેલ્ક્યુલેટર વાપરવાની સંપૂર્ણ છૂટ આપવી.",
+      "પેન-પેપર વિના માનસિક ગણતરી કરવાની ટેવ પાડીને ત્વરિત વિચારવાની ઝડપ અને સચોટતા વિકસાવવી.",
+      "માત્ર સૂત્રો ગોખાવી દેવા.",
+      "વિદ્યાર્થીઓ પાસે માત્ર લાંબા નિબંધ લખાવવા."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૦ : ગણિત શિક્ષણની પ્રયુક્તિઓ",
+    "exp": "મૌખિક કાર્ય વિદ્યાર્થીની માનસિક સજાગતા અને તર્કશક્તિ વધારે છે. વ્યવહારિક જીવનમાં દૈનિક હિસાબો કરવા માટે મૌખિક કાર્ય અનિવાર્ય પાયો છે."
+  },
+  {
+    "q": "પ્રશ્ન 39. ટોની બુઝાન દ્વારા સૂચવેલ 'માઈન્ડ મેપિંગ' (Mind Mapping) ની રચના કરતી વખતે કયો નિયમ પાળવો અનિવાર્ય છે?",
+    "options": [
+      "કેન્દ્રમાં કોઈ વિચાર ન રાખવો અને માત્ર સીધી રેખામાં લખાણ લખવું.",
+      "મુખ્ય વિષય/મુદ્દાને કેન્દ્રસ્થાને રાખવો અને તેની આસપાસ સંબંધિત શાખાઓ, કી-વર્ડ્સ (Key words) અને રંગોનો ઉપયોગ કરવો.",
+      "માત્ર કાળી શાહીથી આખો નિબંધ લખવો.",
+      "ચિત્રો કે પ્રતીકોનો ઉપયોગ સખત રીતે વર્જ્ય છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૦ : ગણિત શિક્ષણની પ્રયુક્તિઓ",
+    "exp": "માઈન્ડ મેપમાં સેન્ટ્રલ આઈડિયા કેન્દ્રમાં હોય છે અને તેની સાથે સંકળાયેલા પેટા-ખ્યાલો બિનરેખીય શાખાઓ, સંકેતો અને વિવિધ રંગો વડે આલેખાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 40. NCTM (National Council of Teachers of Mathematics) ના મતે ગણિત શિક્ષણમાં જૂથકાર્ય (Group Work) નો મુખ્ય ફાયદો કયો છે?",
+    "options": [
+      "શિક્ષકને વર્ગખંડમાં ભણાવવામાંથી આરામ મળે છે.",
+      "પ્રશ્નો પૂછવા, સહિયારી જવાબદારી, વિવેચનાત્મક વિશ્લેષણ અને સ્વસ્થ હકારાત્મક ભાવાવરણનું નિર્માણ થાય છે.",
+      "વિદ્યાર્થીઓ વચ્ચે અંદરોઅંદર જૂથવાદ અને ઝઘડા વધે છે.",
+      "પરીક્ષામાં ચોરી કરવાની સરળતા રહે છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૦ : ગણિત શિક્ષણની પ્રયુક્તિઓ",
+    "exp": "NCTM મુજબ જૂથકાર્ય દ્વારા વિદ્યાર્થીઓ મુક્તપણે ગાણિતિક વિચારોનું આદાન-પ્રદાન કરે છે, સહાનુભૂતિ અને સહકાર કેળવે છે અને ગણિતનો ભય દૂર થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 41. જૂથકાર્ય (Group Work) ના આયોજનના તબક્કાઓનો સાચો ક્રમ કયો છે?",
+    "options": [
+      "મૂલ્યાંકન -> જૂથરચના -> હેતુ નિર્ધારણ -> માર્ગદર્શન",
+      "હેતુઓ અને વિષયવસ્તુ નિર્ધારણ -> જૂથ રચના અને નેતા નક્કી કરવા -> વિષયવસ્તુનું વર્ગીકરણ -> જરૂર મુજબ માર્ગદર્શન -> મૂલ્યાંકન",
+      "વિષયવસ્તુ વહેંચણી -> મૂલ્યાંકન -> હેતુ નક્કી કરવા -> જૂથ બનાવવા",
+      "માર્ગદર્શન -> જૂથરચના -> હેતુ -> મૂલ્યાંકન"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૦ : ગણિત શિક્ષણની પ્રયુક્તિઓ",
+    "exp": "પાઠ્યપુસ્તક મુજબ જૂથકાર્યના ક્રમશઃ ૫ તબક્કા છે: ૧. હેતુઓ-વિષયવસ્તુ નિર્ધારણ, ૨. જૂથોની રચના/જૂથનેતા, ૩. વિષયવસ્તુ વર્ગીકરણ, ૪. માર્ગદર્શન, ૫. મૂલ્યાંકન."
+  },
+  {
+    "q": "પ્રશ્ન 42. આગમન પદ્ધતિ (Inductive Method) ગણિત શિક્ષણ માટે સૌથી ઉત્તમ મનોવૈજ્ઞાનિક પદ્ધતિ કેમ ગણાય છે?",
+    "options": [
+      "તેમાં વિદ્યાર્થી પોતે ઉદાહરણો પરથી સ્વસ્ફૂરણા અને ચિંતન દ્વારા સામાન્ય નિયમ તારવે છે, જેથી જ્ઞાન કાયમી બને છે.",
+      "તેમાં કોઈ મહેનત કરવી પડતી નથી.",
+      "તેનાથી અભ્યાસક્રમ ૧૦ દિવસમાં પૂરો થઈ જાય છે.",
+      "તેમાં પુસ્તકની કોઈ જરૂર રહેતી નથી."
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "આગમન પદ્ધતિ સ્વાનુભવ અને સક્રિય વિચારણા પર આધારિત હોવાથી ગોખણપટ્ટી નાબૂદ કરે છે અને વિદ્યાર્થીમાં આત્મવિશ્વાસ તથા શોધવૃત્તિ કેળવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 43. આગમન પદ્ધતિની મુખ્ય મર્યાદા (Demerit) કઈ છે?",
+    "options": [
+      "તે વિદ્યાર્થીઓને સક્રિય બનાવે છે.",
+      "તે વધુ સમય માંગી લે છે, જો શિક્ષક ઉદાહરણો યોગ્ય ન આપે તો ખોટો નિયમ તારવવાની શક્યતા રહે છે અને તે નિયમનો આગળ ઉપયોગ શીખવતી નથી.",
+      "તે તાર્કિક ક્ષમતા ખીલવે છે.",
+      "તે પ્રાથમિક કક્ષાએ ઉપયોગી છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "આગમન પદ્ધતિ સમય અને શક્તિ વધુ ખર્ચે છે. વળી તે માત્ર નિયમ શોધવા પૂરતી સીમિત છે; તે નિયમનો દાખલાઓમાં ઝડપી ઉપયોગ કરવા માટે નિગમન પદ્ધતિની સહાય અનિવાર્ય બને છે."
+  },
+  {
+    "q": "પ્રશ્ન 44. ગણિત શિક્ષણમાં 'આગમન અને નિગમન' વચ્ચેનો સાચો સંબંધ કયો છે?",
+    "options": [
+      "બંને એકબીજાની શત્રુ પદ્ધતિઓ છે.",
+      "બંને એકબીજાની પૂરક પદ્ધતિઓ છે; આગમનથી નિયમ શોધાય છે અને નિગમનથી તેનો મહાવરો/ઉપયોગ સિદ્ધ થાય છે.",
+      "નિગમન પદ્ધતિનો ક્યારેય ઉપયોગ કરવો જ ન જોઈએ.",
+      "માત્ર ઉચ્ચ વર્ગોમાં જ આગમન વપરાય છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "આગમન અને નિગમન એક સિક્કાની બે બાજુઓ છે. માત્ર આગમનથી કાર્ય અધૂરું રહે અને માત્ર નિગમનથી જ્ઞાન યાંત્રિક બને. બંનેનો સમન્વય જ આદર્શ શિક્ષણ છે."
+  },
+  {
+    "q": "પ્રશ્ન 45. પૃથક્કરણ પદ્ધતિ (Analytic Method) નું મુખ્ય સૂત્ર અને દિશા કઈ છે?",
+    "options": [
+      "જ્ઞાત પરથી અજ્ઞાત પર જવું (પક્ષથી સાધ્ય)",
+      "અજ્ઞાત પરથી જ્ઞાત પર જવું (સાધ્ય પરથી પક્ષ તરફ શોધ કરવી)",
+      "સામાન્ય પરથી વિશિષ્ટ પર જવું",
+      "અમૂર્ત પરથી મૂર્ત પર જવું"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "પૃથક્કરણમાં સમસ્યાને તેના ઘટકોમાં વિભાજીત કરી 'મારે શું સાબિત કરવું છે? તે સાબિત કરવા કઈ શરત જોઈએ?' એમ ઊલટી દિશામાં તર્ક કરી પક્ષ સુધી પહોંચાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 46. સંયોગીકરણ પદ્ધતિ (Synthetic Method) ની મુખ્ય લાક્ષણિકતા કઈ છે?",
+    "options": [
+      "તે શોધની પદ્ધતિ (Method of Discovery) છે.",
+      "તે રજૂઆતની પદ્ધતિ (Method of Presentation) છે, જે જ્ઞાત સત્યોને ક્રમબદ્ધ જોડીને સાધ્ય તરફ લઈ જાય છે.",
+      "તેમાં વિદ્યાર્થી દરેક પગલાંનું કારણ જાતે શોધે છે.",
+      "તે માત્ર નબળા બાળકો માટે જ છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "સંયોગીકરણ પદ્ધતિમાં પહેલેથી જાણીતી શરતો (પક્ષ) ને તાર્કિક શૃંખલામાં જોડીને સાબિતી રજૂ કરાય છે. તે સંક્ષિપ્ત અને વ્યવસ્થિત છે પણ તેમાં શોધનો આનંદ નથી."
+  },
+  {
+    "q": "પ્રશ્ન 47. ગણિત શિક્ષણશાસ્ત્રીઓ અનુસાર ભૂમિતિના કઠિન પ્રમેયો શીખવતી વખતે શિક્ષકે કયો સમન્વય સાધવો જોઈએ?",
+    "options": [
+      "પ્રમેય શોધવા માટે પૃથક્કરણ પદ્ધતિ અને તેની આખરી ચોપડામાં રજૂઆત માટે સંયોગીકરણ પદ્ધતિ",
+      "માત્ર ગોખણપટ્ટી કરાવવી",
+      "માત્ર વ્યાખ્યાન આપવું",
+      "પ્રમેય સાબિતી વગર સ્વીકારી લેવા"
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "કહેવત છે કે: 'Analysis is the method of discovery, Synthesis is the method of concise presentation.' બંનેનો સમન્વય પ્રમેય શિક્ષણને સર્વોત્તમ બનાવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 48. નિદર્શન પદ્ધતિ (Demonstration Method) નો ઉપયોગ કરતી વખતે શિક્ષકે કઈ સાવચેતી રાખવી અનિવાર્ય છે?",
+    "options": [
+      "સાધનો એટલા નાના હોવા જોઈએ કે આગળની પાટલી વાળાને જ દેખાય.",
+      "પ્રદર્શન ટેબલ પૂરતી ઊંચાઈ પર હોવું જોઈએ, સાધનો મોટા અને સ્પષ્ટ દેખાય તેવા હોવા જોઈએ અને વિદ્યાર્થીઓને પ્રશ્નોત્તરીમાં સહભાગી બનાવવા જોઈએ.",
+      "પ્રયોગ કરતી વખતે વર્ગમાં સંપૂર્ણ અંધારું રાખવું.",
+      "વિદ્યાર્થીઓને કોઈ ખુલાસો ન કરવો."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "નિદર્શન પદ્ધતિ ત્યારે જ સફળ બને જ્યારે વર્ગના છેલ્લા બાંકડે બેઠેલા બાળકને પણ સાધન સ્પષ્ટ દેખાય અને શિક્ષક માત્ર મૂક પ્રદર્શન કરવાને બદલે બાળકો સાથે સક્રિય સંવાદ જાળવે."
+  },
+  {
+    "q": "પ્રશ્ન 49. ગણિત શિક્ષણમાં પ્રાયોગિક પદ્ધતિ (Laboratory Method) ના પ્રણેતા તરીકે અને તેના પ્રસારમાં કોનું પ્રદાન મહત્ત્વનું છે?",
+    "options": [
+      "પ્રો. જે. ડબલ્યુ. એ. યંગ (J.W.A. Young)",
+      "સ્કીનર",
+      "થોર્નડાઈક",
+      "પાવલોવ"
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ & એકમ-૧૨",
+    "exp": "પ્રોફેસર જે. ડબલ્યુ. એ. યંગે ગણિત શિક્ષણમાં પ્રયોગશાળા પદ્ધતિની હિમાયત કરતાં કહ્યું હતું કે ગણિત એ માત્ર પુસ્તકીય વિષય નથી પણ પ્રાયોગિક અનુભવો દ્વારા શીખવાનો વિષય છે."
+  },
+  {
+    "q": "પ્રશ્ન 50. ડૉ. વિલિયમ કિલપેટ્રિક અનુસાર 'પ્રોજેક્ટ' ની સર્વમાન્ય વ્યાખ્યા કઈ છે?",
+    "options": [
+      "પરીક્ષા પાસ કરવા માટેની ટૂંકી ગાઈડ",
+      "પ્રોજેક્ટ એ સામાજિક વાતાવરણમાં પૂર્ણ દિલથી હાથ ધરાયેલી હેતુપૂર્ણ પ્રવૃત્તિ છે (A wholehearted purposeful activity proceeding in a social environment)",
+      "શાળાના ઓરડામાં પુરાઈને કરવામાં આવતું લેખિત કાર્ય",
+      "શિક્ષક દ્વારા અપાતી સજા"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "કિલપેટ્રિકે સ્પષ્ટ કર્યું છે કે પ્રોજેક્ટ વાસ્તવિક જીવનની પરિસ્થિતિ સાથે જોડાયેલી, સામાજિક વાતાવરણમાં વિદ્યાર્થી દ્વારા આંતરિક ઉત્સાહથી કરાતી સહેતુક પ્રવૃત્તિ છે."
+  },
+  {
+    "q": "પ્રશ્ન 51. પ્રોજેક્ટ પદ્ધતિના સોપાનોનો સાચો ક્રમ કયો છે?",
+    "options": [
+      "અમલીકરણ -> આયોજન -> પરિસ્થિતિ નિર્માણ -> મૂલ્યાંકન",
+      "પરિસ્થિતિનું નિર્માણ -> પ્રોજેક્ટની પસંદગી -> આયોજન (પ્લાનિંગ) -> અમલીકરણ (કાર્ય કરવું) -> મૂલ્યાંકન -> નોંધ રાખવી (રેકોર્ડિંગ)",
+      "નોંધ રાખવી -> મૂલ્યાંકન -> અમલીકરણ -> પસંદગી",
+      "આયોજન -> મૂલ્યાંકન -> પસંદગી -> અમલીકરણ"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "પ્રોજેક્ટ પદ્ધતિના ૬ સોપાનો છે: ૧. Providing a situation, ૨. Choosing and purposing, ૩. Planning, ૪. Executing, ૫. Evaluating, ૬. Recording."
+  },
+  {
+    "q": "પ્રશ્ન 52. ગણિત પ્રયોગશાળા (Math Lab) માં 'જિયોબોર્ડ' (Geoboard) નો ઉપયોગ મુખ્યત્વે કઈ ગાણિતિક સંકલ્પનાઓ શીખવવા માટે થાય છે?",
+    "options": [
+      "માત્ર લઘુગણક (Logarithm) શોધવા",
+      "વિવિધ ભૌમિતિક આકારો, ત્રિકોણ, ચતુષ્કોણ, ક્ષેત્રફળ અને પરિમિતિની પ્રાયોગિક સમજ આપવા",
+      "માત્ર સરવાળા-બાદબાકી કરવા",
+      "સંભાવનાના પ્રમેયો ગોખવા"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો અને ગણિત પ્રયોગશાળા",
+    "exp": "જિયોબોર્ડ પર ચોક્કસ અંતરે રહેલી ખીલીઓ પર રબરબેન્ડ ભરાવીને વિવિધ સમતલીય આકારો, તેમની બાજુઓ, ખૂણા, પરિમિતિ અને ક્ષેત્રફળ મૂર્ત રીતે દર્શાવી શકાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 53. પ્રાચીન ભારતીય ગણિત અને ચીની પરંપરામાં સ્થાનકિંમત, સરવાળા-બાદબાકી અને દશાંશ પદ્ધતિ શીખવવા માટે કયું પરંપરાગત સાધન વપરાતું આવ્યું છે?",
+    "options": [
+      "મણકાઘોડી (Abacus)",
+      "નેપિયર્સ બોન્સ",
+      "સ્લાઈડ રૂલ",
+      "થિયોડોલાઈટ"
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો અને ગણિત પ્રયોગશાળા",
+    "exp": "એબેકસ (મણકાઘોડી) પ્રાથમિક કક્ષાએ અંકોની ઓળખ, એકમ-દશક-સો ની સ્થાનકિંમત અને મૂળભૂત ગાણિતિક ક્રિયાઓ દૃશ્યમાન કરવા માટેનું શ્રેષ્ઠ સાધન છે."
+  },
+  {
+    "q": "પ્રશ્ન 54. ગણિત શિક્ષણમાં શૈક્ષણિક સાધનો (TLM) ના વર્ગીકરણ સંદર્ભે 'એડગર ડેલ' (Edgar Dale) ના 'અનુભવ શંકુ' (Cone of Experience) મુજબ સર્વાધિક પ્રભાવશાળી અધ્યયન શેના દ્વારા થાય છે?",
+    "options": [
+      "મૌખિક પ્રતીકો (શબ્દો સાંભળવાથી)",
+      "દ્રશ્ય પ્રતીકો (ચિત્રો જોવાથી)",
+      "પ્રત્યક્ષ હેતુપૂર્ણ સ્વાનુભવો (Direct Purposeful Experiences)",
+      "રેડિયો પ્રસારણ સાંભળવાથી"
+    ],
+    "ans": 2,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો & એકમ-૧૬",
+    "exp": "એડગર ડેલના અનુભવ શંકુના પાયામાં પ્રત્યક્ષ સ્વાનુભવો છે, જ્યાં વિદ્યાર્થી વાસ્તવિક પદાર્થો સાથે પ્રત્યક્ષ ક્રિયા કરીને સૌથી વધુ (૯૦% સુધી) ગ્રહણ અને ધારણ કરે છે."
+  },
+  {
+    "q": "પ્રશ્ન 55. ગણિત પ્રયોગશાળાની સ્થાપના પાછળ શાળાઓ માટે કઈ બાબત સૌથી લાભદાયી છે?",
+    "options": [
+      "વિદ્યાર્થીઓ માટે ગણિતનો ભય દૂર થાય છે અને વિષય રસપ્રદ બને છે.",
+      "સ્થાનિક કક્ષાએ નકામી ચીજવસ્તુઓ (Low-cost/No-cost materials) માંથી સ્વનિર્મિત સાધનો બનાવી શકાય છે.",
+      "'જાતે કરીને શીખો' (Learning by Doing) ના સિદ્ધાંતનું સાચું અમલીકરણ થાય છે.",
+      "ઉપરોક્ત તમામ (A, B અને C)"
+    ],
+    "ans": 3,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો અને ગણિત પ્રયોગશાળા",
+    "exp": "ગણિત પ્રયોગશાળા વિદ્યાર્થી કેન્દ્રી વાતાવરણ પૂરું પાડે છે, જેમાં સ્થાનિક કચરામાંથી સાધન નિર્માણ, પ્રવૃત્તિમય શિક્ષણ અને ગણિત પ્રત્યે હકારાત્મક અભિગમ કેળવાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 56. હ્યુરિસ્ટિક પદ્ધતિ (Heuristic Method) ના જનક કોણ છે અને તેનો શાબ્દિક અર્થ શું થાય છે?",
+    "options": [
+      "આર્મસ્ટ્રોંગ (H.E. Armstrong) — 'હું શોધું છું' (I find out)",
+      "જ્હોન ડ્યૂઈ — 'હું વિચારું છું'",
+      "પ્લેટો — 'હું જાણું છું'",
+      "એરિસ્ટોટલ — 'હું વર્ગીકરણ કરું છું'"
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "ગ્રીક શબ્દ 'Heurisko' પરથી હ્યુરિસ્ટિક શબ્દ બન્યો છે, જેનો અર્થ 'હું જાતે શોધું છું' થાય છે. પ્રોફેસર આર્મસ્ટ્રોંગે વિદ્યાર્થીને સંશોધકની સ્થિતિમાં મૂકવા આ પદ્ધતિ આપી."
+  },
+  {
+    "q": "પ્રશ્ન 57. ગણિત શિક્ષણમાં 'નેપિયર્સ બોન્સ' (Napier's Bones) સાધનનો મુખ્ય ઉપયોગ કઈ ક્રિયા સરળ બનાવવા માટે થાય છે?",
+    "options": [
+      "વર્તુળ દોરવા",
+      "મોટી સંખ્યાઓના ગુણાકાર અને ભાગાકાર કરવા",
+      "ખૂણા માપવા",
+      "આલેખ દોરવા"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો અને ગણિત પ્રયોગશાળા",
+    "exp": "જ્હોન નેપિયરે ૧૭મી સદીમાં હાડકાં કે લાકડાની પટ્ટીઓ પર અંકો કોતરીને ગુણાકાર અને ભાગાકારની ક્રિયાને અત્યંત ઝડપી અને સચોટ બનાવવા નેપિયર્સ બોન્સ સાધન બનાવ્યું હતું."
+  },
+  {
+    "q": "પ્રશ્ન 58. નીચેના પૈકી કયું સાધન 'ત્રિ-પરિમાણીય' (3-D) શૈક્ષણિક સાધનનું ઉદાહરણ છે?",
+    "options": [
+      "ગ્રાફ પેપર પર દોરેલો આલેખ",
+      "શંકુ, ગોલક અને નળાકારના લાકડાના કે પ્લાસ્ટિકના નક્કર મોડેલ્સ",
+      "બ્લેકબોર્ડ પર દોરેલો ચોરસ",
+      "ચાર્ટ પેપર"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો અને ગણિત પ્રયોગશાળા",
+    "exp": "ચાર્ટ, આલેખ અને બોર્ડ દ્વિ-પરિમાણીય (લંબાઈ x પહોળાઈ) છે, જ્યારે નક્કર મોડેલ્સ લંબાઈ, પહોળાઈ અને ઊંચાઈ/ઊંડાઈ ધરાવતા હોવાથી 3-D સાધનો છે."
+  },
+  {
+    "q": "પ્રશ્ન 59. ગણિત શિક્ષણમાં 'ફ્લેશ કાર્ડ્સ' (Flash Cards) નો ઉપયોગ શિક્ષક સામાન્ય રીતે કયા હેતુ માટે સૌથી વધુ કરે છે?",
+    "options": [
+      "આખા પ્રકરણનું વાંચન કરાવવા",
+      "સૂત્રો, ઘડિયા અને સંજ્ઞાઓનું ત્વરિત દૃઢિકરણ અને સ્મૃતિ ચકાસણી કરવા",
+      "વિદ્યાર્થીઓને શાંત બેસાડવા",
+      "કાગળકામની કળા શીખવવા"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૦ : પ્રયુક્તિઓ & એકમ-૧૨ : સાધનો",
+    "exp": "ફ્લેશ કાર્ડ્સ ઝડપી મૌખિક પ્રશ્નોત્તરી, સૂત્રોની ઓળખ અને ઘડિયા પાકા કરાવવા માટે વર્ગખંડમાં ઉત્સાહપ્રેરક સાધન તરીકે વપરાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 60. ગણિત પ્રયોગશાળામાં વિદ્યાર્થીઓ જ્યારે ગોળ કાગળ કાપીને તેને ક્ષેત્રફળના સૂત્ર A = πr² માં ગોઠવે છે, ત્યારે કયો સિદ્ધાંત ચરિતાર્થ થાય છે?",
+    "options": [
+      "ગોખણપટ્ટી દ્વારા જ્ઞાન",
+      "પ્રત્યક્ષ ક્રિયા દ્વારા અધ્યયન (Learning by Doing)",
+      "શિક્ષકનું એકાધિકાર શિક્ષણ",
+      "નિષ્ક્રિય શ્રવણ"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : પદ્ધતિઓ & એકમ-૧૨ : પ્રયોગશાળા",
+    "exp": "વર્તુળના નાના ત્રિજ્યાખંડો કાપીને તેને લંબચોરસમાં ગોઠવી લંબાઈ (πr) અને પહોળાઈ (r) પરથી πr² મેળવવું એ પ્રાયોગિક સ્વાનુભવનું ઉત્તમ ઉદાહરણ છે."
+  },
+  {
+    "q": "પ્રશ્ન 61. ગણિત શિક્ષણમાં 'ક્લિનોમીટર' (Clinometer) સાધનનો ઉપયોગ ક્ષેત્રીય કાર્યમાં શાના માટે થાય છે?",
+    "options": [
+      "વર્તુળનું ક્ષેત્રફળ માપવા",
+      "ઉત્સેધકોણ (Angle of Elevation) અને અવસેધકોણ (Angle of Depression) માપી ઝાડ કે મકાનની ઊંચાઈ શોધવા",
+      "માત્ર સમય જોવા",
+      "પ્રવાહીનું કદ માપવા"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો અને ગણિત પ્રયોગશાળા",
+    "exp": "ત્રિકોણમિતિના વ્યવહારિક ઉપયોગમાં ક્લિનોમીટર વડે દૂર રહેલા ઊંચા પદાર્થોનો દૃષ્ટિકોણ માપીને અંતર અને ઊંચાઈની ગણતરી ક્ષેત્રકાર્યમાં થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 62. ગણિત શિક્ષણની પદ્ધતિ પસંદ કરતી વખતે શિક્ષકે કયા પરિબળને પ્રાધાન્ય આપવું જોઈએ?",
+    "options": [
+      "માત્ર શિક્ષકની અંગત સગવડ",
+      "વિષયવસ્તુનું સ્વરૂપ, વિદ્યાર્થીઓની વયકક્ષા, પૂર્વજ્ઞાન અને પ્રાપ્ત સાધન-સુવિધા",
+      "શાળાની ફીનું ધોરણ",
+      "માત્ર બજારમાં મળતી તૈયાર ગાઈડો"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "કોઈ એક પદ્ધતિ સર્વશ્રેષ્ઠ નથી હોતી. વિષયાંગનું સ્વરૂપ (પ્રમેય, કોયડો કે રચના) અને વિદ્યાર્થીઓની ક્ષમતા મુજબ પદ્ધતિઓનો સમન્વય કરવો એ આદર્શ શિક્ષકનું લક્ષણ છે."
+  },
+  {
+    "q": "પ્રશ્ન 63. પ્રોજેક્ટ પદ્ધતિમાં શિક્ષકની ભૂમિકા મુખ્યત્વે કેવી હોવી જોઈએ?",
+    "options": [
+      "એક આપખુદ શાસક અને સરમુખત્યાર જેવી",
+      "મિત્ર, તત્વચિંતક અને માર્ગદર્શક (Friend, Philosopher and Guide) જેવી",
+      "તદ્દન ઉદાસીન અને નિષ્ક્રિય",
+      "તમામ કામ જાતે કરી આપનાર કારકૂન જેવી"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "પ્રોજેક્ટ પદ્ધતિ વિદ્યાર્થીકેન્દ્રી છે. શિક્ષક પડદા પાછળ રહીને મુશ્કેલીના સમયે યોગ્ય દિશાસૂચન કરે છે, પણ વિદ્યાર્થીની મૌલિકતા છીનવી લેતા નથી."
+  },
+  {
+    "q": "પ્રશ્ન 64. નીચેના પૈકી કયું વિધાન 'નિગમન પદ્ધતિ' (Deductive Method) નો સ્પષ્ટ ફાયદો દર્શાવે છે?",
+    "options": [
+      "તેનાથી વિદ્યાર્થીઓમાં વૈજ્ઞાનિક સંશોધનવૃત્તિ જાગે છે.",
+      "તે સંક્ષિપ્ત અને વ્યવહારુ છે, સમય અને શક્તિનો બચાવ કરે છે અને ઉચ્ચ કક્ષાએ મહાવરા માટે આદર્શ છે.",
+      "તે બાળકોને ક્યારેય ભૂલ કરવા દેતી નથી.",
+      "તે પ્રાથમિક શાળાના નાના બાળકો માટે સર્વોત્તમ છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "જ્યારે અભ્યાસક્રમ સમયસર પૂર્ણ કરવાનો હોય અને અગાઉ તારવેલા સૂત્રોનો ઉપયોગ કરી દાખલા ગણવાના હોય ત્યારે નિગમન પદ્ધતિ અત્યંત ઝડપી અને ફળદાયી નીવડે છે."
+  },
+  {
+    "q": "પ્રશ્ન 65. ગણિત પ્રયોગશાળામાં 'ટેન્ગ્રામ' (Tangram) રમતના ઉપયોગથી બાળકમાં કઈ ગાણિતિક સૂઝ ખીલે છે?",
+    "options": [
+      "માત્ર ભાગાકાર કરવાની ઝડપ",
+      "ભૌમિતિક ટુકડાઓ (૭ ટુકડા) ના સંયોજનથી નવા આકારો બનાવવાની સ્થાનિક અને દ્રશ્ય-કલ્પના શક્તિ (Spatial Reasoning)",
+      "માત્ર વ્યાજની ગણતરી",
+      "ઇતિહાસની સાલવારી યાદ રાખવી"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો અને ગણિત પ્રયોગશાળા",
+    "exp": "ચીની કોયડો 'ટેન્ગ્રામ' એક ચોરસના ૭ ભૌમિતિક ટુકડાઓથી બને છે. તેના વડે બાળકો ભૂમિતિના ખૂણા, સમપ્રમાણતા અને સ્થાનિક તર્ક (Spatial ability) રમત રમતમાં શીખે છે."
+  },
+  {
+    "q": "પ્રશ્ન 66. ગણિત શિક્ષણમાં 'સંશોધન પદ્ધતિ / હ્યુરિસ્ટિક પદ્ધતિ' ની મુખ્ય મર્યાદા કઈ છે?",
+    "options": [
+      "વિદ્યાર્થીઓ આળસુ બને છે.",
+      "તે અત્યંત ધીમી પદ્ધતિ છે, સામાન્ય બુદ્ધિવાળા વિદ્યાર્થીઓ ઘણીવાર નિરાશ થઈ જાય છે અને નિયત સમયમાં શાળાનો અભ્યાસક્રમ પૂરો કરવો અશક્ય બને છે.",
+      "તેમાં શિક્ષકે કશું ભણાવવું પડતું નથી.",
+      "તેનાથી વિદ્યાર્થીઓની વિચારશક્તિ નષ્ટ થાય છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "દરેક વિદ્યાર્થી ગાણિતિક સત્ય જાતે શોધી શકે તેટલો પ્રતિભાશાળી હોતો નથી. વળી જો આ પદ્ધતિથી આખો અભ્યાસક્રમ ભણાવવા જઈએ તો વર્ષો વીતી જાય."
+  },
+  {
+    "q": "પ્રશ્ન 67. ગણિત શિક્ષણમાં 'આગમન પદ્ધતિ' નું યોગ્ય ઉદાહરણ કયું છે?",
+    "options": [
+      "શિક્ષક 2³ x 2² = 2^(3+2) = 2⁵ અને 7² x 7³ = 7⁵ જેવા ઉદાહરણો કરાવી વિદ્યાર્થીઓ પાસે a^m x a^n = a^(m+n) સૂત્ર તારવે છે.",
+      "શિક્ષક સીધું સૂત્ર આપીને માત્ર ગુણાકાર કરાવે છે.",
+      "વિદ્યાર્થી પુસ્તકમાંથી સૂત્ર ગોખીને લખે છે.",
+      "શિક્ષક બોર્ડ પર પ્રમેય વાંચી સંભળાવે છે."
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ",
+    "exp": "વિશિષ્ટ સંખ્યાકીય ઉદાહરણોનું વિદ્યાર્થીઓ દ્વારા વિશ્લેષણ કરાવી સાર્વત્રિક બીજગાણિતિક સૂત્ર સુધી પહોંચવું એ આગમન પદ્ધતિનું ઉત્કૃષ્ટ પાઠ્યપુસ્તકીય ઉદાહરણ છે."
+  },
+  {
+    "q": "પ્રશ્ન 68. ગણિત પ્રયોગશાળા રજીસ્ટરમાં સાધન-સામગ્રીની આવક-જાવક અને જાળવણીની મુખ્ય જવાબદારી કોની હોય છે?",
+    "options": [
+      "પટાવાળાની",
+      "ગણિત શિક્ષક / સ્ટોરકીપર અને લેબ ઈન્ચાર્જની",
+      "વર્ગના સૌથી નબળા વિદ્યાર્થીની",
+      "ગામના સરપંચની"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૮ : ગણિત મંડળ & એકમ-૧૨ : પ્રયોગશાળા",
+    "exp": "ગણિત પ્રયોગશાળા કે મંડળના બંધારણમાં સ્ટોરકીપર/શિક્ષકની ફરજ સાધનોની નોંધણી (Dead Stock Register), જાળવણી અને સુરક્ષિત વિતરણ કરવાની હોય છે."
+  },
+  {
+    "q": "પ્રશ્ન 69. પ્રાથમિક શાળામાં ખૂણાના પ્રકારો (કાટકોણ, લઘુકોણ, ગુરુકોણ) શીખવવા માટે વર્ગખંડમાં રહેલું કયું સહજ સાધન સૌથી ઝડપી અને જીવંત ઉદાહરણ બની શકે?",
+    "options": [
+      "વર્ગખંડના બારણા અને દીવાલ વચ્ચે બનતો ખૂણો તથા ઘડિયાળના બે કાંટા વચ્ચેનો ખૂણો",
+      "પાણીનો ગ્લાસ",
+      "ચોકનો ટુકડો",
+      "શાળાની ઘંટડી"
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૨ : શૈક્ષણિક સાધનો અને ગણિત પ્રયોગશાળા",
+    "exp": "દરવાજો ખોલવા-બંધ કરવાથી વિવિધ માપના ખૂણાઓ પ્રત્યક્ષ બદલાતા જોઈ શકાય છે અને ઘડિયાળના કાંટા વિવિધ સમયે લઘુકોણ, કાટકોણ કે ગુરુકોણ મૂર્ત રીતે દર્શાવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 70. શિક્ષણ સેવા વર્ગ-૨ અને TAT ઉચ્ચતર માધ્યમિક પરીક્ષાના સ્તરે: 'ગણિતની શિક્ષણ પદ્ધતિ એ કેવળ જ્ઞાન સંક્રમણનું સાધન નથી, પરંતુ વિદ્યાર્થીના વિચારતંત્રનું વૈજ્ઞાનિક રૂપાંતરણ છે.' આ વિચારને સાકાર કરવા શિક્ષકે કઈ પદ્ધતિઓનો અધિકતમ આશ્રય લેવો જોઈએ?",
+    "options": [
+      "માત્ર વ્યાખ્યાન અને પાઠ્યપુસ્તક વાચન",
+      "સમસ્યા ઉકેલ, આગમન-પૃથક્કરણ સમન્વય અને પ્રયોગશાળા આધારિત સંશોધનાત્મક પ્રવૃત્તિઓ",
+      "માત્ર પ્રશ્ન-જવાબ ગોખાવવાની પદ્ધતિ",
+      "વિદ્યાર્થીઓને માત્ર હોમવર્ક આપી દેવું"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૧ : ગણિત શિક્ષણની પદ્ધતિઓ & એકમ-૨, ૬",
+    "exp": "વિદ્યાર્થીના ચિંતનનું ગાણિતીકરણ કરવા માટે ગોખણપટ્ટી મુક્ત, સમસ્યા-કેન્દ્રી અને તાર્કિક શોધ પદ્ધતિઓનો સંકલિત વિનિયોગ અનિવાર્ય છે."
+  },
+  {
+    "q": "પ્રશ્ન 71. ગણિત શિક્ષણમાં દૈનિક પાઠ આયોજન (Daily Lesson Planning) પાછળનો મુખ્ય તાત્વિક ઉદ્દેશ્ય કયો છે?",
+    "options": [
+      "માત્ર આચાર્યશ્રીની સહી મેળવીને વહીવટી ઔપચારિકતા પૂરી કરવી.",
+      "વર્ગખંડ શિક્ષણને હેતુલક્ષી, સુઆયોજિત, સમયબદ્ધ અને વિદ્યાર્થી-કેન્દ્રી બનાવી અપેક્ષિત વર્તન પરિવર્તનો હાંસલ કરવા.",
+      "વિદ્યાર્થીઓ પાસે પાઠ્યપુસ્તક આખેઆખું વર્ગમાં લખાવી દેવું.",
+      "શિક્ષકને વર્ગખંડમાં પૂર્વતૈયારી વગર બોલવાની છૂટ આપવી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૩ : પાઠ આયોજનનો અર્થ, મહત્ત્વ અને સોપાનો",
+    "exp": "આયોજન વગરનું શિક્ષણ સમય અને શક્તિનો વ્યય કરે છે. પાઠ આયોજન શિક્ષકને સ્પષ્ટ દિશા આપે છે કે શું શીખવવું, શા માટે શીખવવું, કઈ પદ્ધતિથી શીખવવું અને કેવી રીતે મૂલ્યાંકન કરવું."
+  },
+  {
+    "q": "પ્રશ્ન 72. 'પાઠ આયોજન એ શિક્ષણની ભાવિ યોજના છે જે શિક્ષકને વર્ગખંડમાં વ્યવસ્થિત કાર્ય કરવા માર્ગદર્શન પૂરું પાડે છે.' - પાઠ આયોજન સંદર્ભે 'હર્બર્ટિયન પંચપદી' ના કયા સોપાનમાં વિદ્યાર્થીઓના પૂર્વજ્ઞાનનું પરીક્ષણ કરી નવા વિષયવસ્તુ તરફ પ્રયાણ કરવામાં આવે છે?",
+    "options": [
+      "વિષય નિરૂપણ / પ્રસ્તુતીકરણ (Presentation)",
+      "તૈયારી / વિષયાભિમુખ (Preparation / Introduction)",
+      "તુલના / સંયોજન (Comparison / Association)",
+      "સામાન્યીકરણ (Generalization)"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૩ : પાઠ આયોજનનો અર્થ, મહત્ત્વ અને સોપાનો",
+    "exp": "પ્રથમ સોપાન 'તૈયારી' (Preparation) માં વિદ્યાર્થીઓના પૂર્વજ્ઞાનની ચકાસણી કરવામાં આવે છે અને તેને નવા જ્ઞાન સાથે જોડીને વર્ગખંડમાં વિષયાભિમુખ કરાવી જિજ્ઞાસા જગાડવામાં આવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 73. હર્બર્ટિયન પાઠ આયોજનના 'તુલના અને સંયોજન' (Comparison and Association) સોપાનમાં શિક્ષકની મુખ્ય કામગીરી કઈ હોય છે?",
+    "options": [
+      "માત્ર સ્વાધ્યાયના દાખલાઓ લખાવવા.",
+      "પ્રસ્તુત થયેલા વિવિધ ઉદાહરણો, તથ્યો અને સંકલ્પનાઓ વચ્ચે સામ્ય-વૈષમ્ય સ્પષ્ટ કરી પૂર્વજ્ઞાન અને નવા જ્ઞાન વચ્ચે અનુબંધ સાધવો.",
+      "ગૃહકાર્ય તપાસવું.",
+      "વર્ગ નિયંત્રણ કરવું."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૩ : પાઠ આયોજનનો અર્થ, મહત્ત્વ અને સોપાનો",
+    "exp": "આ સોપાનમાં વિદ્યાર્થીઓ વિવિધ ઉદાહરણોની પરસ્પર સરખામણી કરે છે અને તેમાંથી સામાન્ય તારણો કાઢવા માટેની વૈચારિક ભૂમિકા તૈયાર કરે છે."
+  },
+  {
+    "q": "પ્રશ્ન 74. ગણિતના આદર્શ પાઠ આયોજન (Ideal Lesson Plan) માં 'વિષયવસ્તુ પૃથક્કરણ' (Content Analysis) શા માટે અનિવાર્ય ગણાય છે?",
+    "options": [
+      "જેથી શિક્ષક જાણી શકે કે એકમમાં કયા કયા મુખ્ય મુદ્દા, પદો, વ્યાખ્યાઓ, સૂત્રો અને સિદ્ધાંતો સમાવિષ્ટ છે.",
+      "જેથી પાઠ્યપુસ્તકના પાના ગણી શકાય.",
+      "જેથી વિદ્યાર્થીઓ પર શૈક્ષણિક બોજ વધારી શકાય.",
+      "માત્ર કાગળ પર લખાણ ભરવા માટે."
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૪ : આદર્શ પાઠ આયોજન",
+    "exp": "વિષયવસ્તુ પૃથક્કરણ દ્વારા સમગ્ર એકમનું નાના તાર્કિક ઘટકોમાં વિભાજન થાય છે, જેના આધારે શિક્ષક વિશિષ્ટ હેતુઓ અને વર્ગખંડ પ્રવૃત્તિઓનું ચોક્કસ આયોજન કરી શકે છે."
+  },
+  {
+    "q": "પ્રશ્ન 75. પાઠ આયોજનમાં 'શિક્ષક પ્રવૃત્તિ' અને 'વિદ્યાર્થી પ્રવૃત્તિ' નું દ્વિ-સ્તંભાકાર આલેખન કઈ બાબત સુનિશ્ચિત કરવા માટે કરવામાં આવે છે?",
+    "options": [
+      "વર્ગખંડ માત્ર શિક્ષકકેન્દ્રી બની ન રહે અને વિદ્યાર્થીઓની સક્રિય સહભાગીતા જળવાઈ રહે.",
+      "બંને વચ્ચે સ્પર્ધા કરાવવા માટે.",
+      "માત્ર સમય પસાર કરવા માટે.",
+      "વિદ્યાર્થીઓનું મૌન રહેવું ચકાસવા માટે."
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૪ : આદર્શ પાઠ આયોજન",
+    "exp": "આધુનિક બાળકેન્દ્રી શિક્ષણમાં શિક્ષક માત્ર વ્યાખ્યાતા નથી પણ સુગમકર્તા છે. બંને સ્તંભોનું સુમેળભર્યું આયોજન વર્ગખંડમાં જીવંત આંતરક્રિયા (Interaction) સુનિશ્ચિત કરે છે."
+  },
+  {
+    "q": "પ્રશ્ન 76. ગણિતના પાઠ આયોજનમાં 'ફલક કાર્ય' (Blackboard / Board Work) સંદર્ભે શિક્ષકે કયો સુવર્ણ નિયમ સદાય પાળવો જોઈએ?",
+    "options": [
+      "બોર્ડ પર ગમે ત્યાં અસ્તવ્યસ્ત ગણતરી કરવી.",
+      "બોર્ડના સ્પષ્ટ બે કે ત્રણ ભાગ પાડીને ડાબી બાજુ મુદ્દા, વચ્ચે મુખ્ય દાખલાની ગણતરી અને જમણી બાજુ કાચી ગણતરી (Rough Work) સુવાચ્ય અક્ષરે દર્શાવવી.",
+      "બોર્ડ પર માત્ર આકૃતિ દોરીને લખાણ ન લખવું.",
+      "આખો તાસ બોર્ડ સામે જ મોં રાખીને વિદ્યાર્થીઓ તરફ પીઠ રાખવી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૪ : આદર્શ પાઠ આયોજન",
+    "exp": "ફલક કાર્ય એ શિક્ષકનો દર્પણ છે. સુવ્યવસ્થિત બોર્ડવર્ક વિદ્યાર્થીઓમાં ચોકસાઈ, સુઘડતા અને મુદ્દાસર નોંધ કરવાની ટેવ વિકસાવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 77. પાઠ આયોજનના વિવિધ પ્રકારો પૈકી 'સૂક્ષ્મ પાઠ આયોજન' (Micro-lesson Plan) નો મુખ્ય ઉદ્દેશ્ય શો છે?",
+    "options": [
+      "આખા સત્રનો અભ્યાસક્રમ પૂર્ણ કરવો.",
+      "પ્રશિક્ષણાર્થી શિક્ષકમાં અધ્યાપનના ચોક્કસ એક જ કૌશલ્ય (દા.ત. વિષયાભિમુખ, પ્રશ્નપ્રવાહિતા, ફલકકાર્ય) પર પ્રભુત્વ મેળવવું.",
+      "વર્ગના બધા વિદ્યાર્થીઓનું એકસાથે વાર્ષિક મૂલ્યાંકન કરવું.",
+      "શાળાની રમતોનું આયોજન કરવું."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "સૂક્ષ્મ શિક્ષણ (Microteaching) એ તાલીમી પ્રક્રિયા છે જેમાં ટૂંકા સમય (૫-૭ મિનિટ), ટૂંકા વિષયવસ્તુ અને ઓછા વિદ્યાર્થીઓ સમક્ષ એક સમયે માત્ર એક જ શિક્ષણ કૌશલ્યનો મહાવરો કરાવાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 78. ગણિત શિક્ષણમાં 'સેતુ પાઠ' (Bridge Lesson Plan / Link Lesson) નું સ્થાન ક્યાં આવે છે?",
+    "options": [
+      "વાર્ષિક પરીક્ષાના છેલ્લા દિવસે.",
+      "સૂક્ષ્મ શિક્ષણ (Microteaching) દ્વારા મેળવેલા અલગ અલગ કૌશલ્યો અને વાસ્તવિક સંપૂર્ણ વર્ગશિક્ષણ (Macro Teaching) વચ્ચે સંકલન સાધવા માટે.",
+      "માત્ર શાળાના મધ્યસત્ર વેકેશનમાં.",
+      "માત્ર નબળા વિદ્યાર્થીઓને ખાનગી ટ્યુશન આપવા માટે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "સેતુ પાઠ એ સૂક્ષ્મ કૌશલ્યોને જોડીને પૂર્ણ પાઠ તરફ લઈ જતી કડી (Bridge) છે, જેથી તાલીમાર્થી એકસાથે બહુવિધ કૌશલ્યોનું વાસ્તવિક વર્ગખંડમાં સંયોજન કરી શકે."
+  },
+  {
+    "q": "પ્રશ્ન 79. 'વાર્ષિક આયોજન' (Annual Plan) ઘડતી વખતે શિક્ષકે કઈ વ્યાવહારિક બાબત સૌથી પહેલાં ધ્યાને રાખવી પડે છે?",
+    "options": [
+      "શાળાના વાર્ષિક ઉત્સવનો ખર્ચ.",
+      "સત્ર દરમિયાન ઉપલબ્ધ વાસ્તવિક કાર્યકારી દિવસો (Working Days) અને તાસની ચોક્કસ સંખ્યા.",
+      "બજારમાં નોટબુકના ભાવ.",
+      "શિક્ષકનો અંગત રજાઓનો પ્લાન."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "વાર્ષિક આયોજન સમગ્ર શૈક્ષણિક વર્ષનો બ્લુપ્રિન્ટ છે. જાહેર રજાઓ, પરીક્ષાઓ અને ઈત્તર પ્રવૃત્તિઓ બાદ કરતાં શિક્ષણકાર્ય માટે ખરેખર કેટલા તાસ ઉપલબ્ધ છે તેના આધારે અભ્યાસક્રમનું માસવાર વિભાજન થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 80. ગણિતમાં 'એકમ યોજના' (Unit Plan) ની સંકલ્પના સર્વપ્રથમ કોના શિક્ષણ દર્શન અને પદ્ધતિ દ્વારા પ્રચલિત બની?",
+    "options": [
+      "એચ. સી. મોરિસન (H.C. Morrison)",
+      "બી. એફ. સ્કીનર",
+      "સિગ્મંડ ફ્રોઈડ",
+      "આલ્ફ્રેડ બિને"
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "મોરિસને શિક્ષણમાં એકમ અભિગમ (Morrison's Unit Approach) રજૂ કર્યો, જેમાં વિષયવસ્તુના અર્થપૂર્ણ સાકલ્યવાદી ખંડને એકમ તરીકે સ્વીકારી શિક્ષણ આપવાની હિમાયત કરવામાં આવી હતી."
+  },
+  {
+    "q": "પ્રશ્ન 81. ગણિત શિક્ષણમાં 'અધ્યયન-અધ્યાપન સામગ્રી' (Teaching-Learning Material - TLM) ના ઉપયોગથી કયો મનોવૈજ્ઞાનિક લાભ થાય છે?",
+    "options": [
+      "વિદ્યાર્થીઓની ગોખણપટ્ટી કરવાની શક્તિ વધે છે.",
+      "સંકલ્પનાઓની અમૂર્તતા ઘટે છે, સ્મૃતિ અને રસ દીર્ઘકાલીન બને છે તથા બહુ-ઈન્દ્રિય અનુભવ (Multi-sensory experience) મળે છે.",
+      "શિક્ષકનો વર્ગમાં બોલવાનો સમય શૂન્ય થઈ જાય છે.",
+      "પરીક્ષા લેવાની જરૂરિયાત રહેતી નથી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૬ : અધ્યયન-અધ્યાપન સામગ્રી",
+    "exp": "ગાણિતિક સંકલ્પનાઓ સ્વભાવે અમૂર્ત હોય છે. TLM દ્વારા બાળક આંખ, કાન અને હાથ (ક્રિયેન્દ્રિય) નો સમન્વય કરી પ્રત્યક્ષ અનુભવ મેળવે છે, જેથી ધારણા વધુ સ્થાયી બને છે."
+  },
+  {
+    "q": "પ્રશ્ન 82. ગણિત શિક્ષણમાં TLM ના પ્રકારો સંદર્ભે 'દ્રશ્ય-શ્રાવ્ય' (Audio-Visual) સાધનનું શ્રેષ્ઠ ઉદાહરણ કયું છે?",
+    "options": [
+      "સામાન્ય કાળું પાટિયું (Blackboard)",
+      "એનિમેશન અને અવાજ સાથે ગાણિતિક પ્રમેય દર્શાવતો વિડીયો / કમ્પ્યુટર પ્રોજેક્ટર",
+      "કાર્ડબોર્ડ પર દોરેલો આલેખ",
+      "રેડિયો પ્રસારણ"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૬ : અધ્યયન-અધ્યાપન સામગ્રી",
+    "exp": "જે સાધનમાં એકસાથે આંખથી જોઈ શકાય અને કાનથી સાંભળી શકાય તે 'દ્રશ્ય-શ્રાવ્ય' સાધન કહેવાય. મલ્ટિમીડિયા, એનિમેટેડ વિડીયો અને શૈક્ષણિક ફિલ્મો આના ઉત્કૃષ્ટ ઉદાહરણો છે."
+  },
+  {
+    "q": "પ્રશ્ન 83. ગણિત શિક્ષણમાં 'ક્યુઝીનેર રોડ્સ' (Cuisenaire Rods) નો ઉપયોગ મુખ્યત્વે કયા હેતુ માટે કરવામાં આવે છે?",
+    "options": [
+      "માત્ર વર્તુળનો પરિઘ માપવા.",
+      "અપૂર્ણાંકની સંકલ્પના, સરખામણી, ગુણોત્તર અને પાયાની અંકગણિત પ્રક્રિયાઓ રંગબેરંગી લાકડાની વિવિધ લંબાઈની પટ્ટીઓ દ્વારા સ્પષ્ટ કરવા.",
+      "ભૂગોળનો નકશો દોરવા.",
+      "વ્યાકરણ શીખવવા."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૬ : અધ્યયન-અધ્યાપન સામગ્રી & એકમ-૧૨",
+    "exp": "જ્યોર્જ ક્યુઝીનેરે ૧ થી ૧૦ સેમી લંબાઈની ૧૦ જુદા જુદા રંગોની પટ્ટીઓ (Cuisenaire rods) બનાવી હતી, જે અપૂર્ણાંક, સરવાળા, બાદબાકી અને વિભાજ્યતા શીખવવામાં અત્યંત પ્રભાવશાળી છે."
+  },
+  {
+    "q": "પ્રશ્ન 84. ગણિતના શિક્ષક દ્વારા સ્થાનિક કક્ષાએ નકામી ચીજોમાંથી બનાવાતા 'સ્વ-નિર્મિત સાધનો' (Improvised Apparatus / Low-cost TLM) નો મુખ્ય શૈક્ષણિક અને આર્થિક ફાયદો શો છે?",
+    "options": [
+      "તે મોંઘા હોય છે જેથી શાળાનું સ્તર ઊંચું દેખાય.",
+      "તે નહિવત ખર્ચે સ્થાનિક પર્યાવરણમાંથી બને છે, વિદ્યાર્થીઓમાં સર્જનાત્મકતા ખીલવે છે અને વિજ્ઞાન-ગણિતનો ભય દૂર કરે છે.",
+      "તે માત્ર એક જ વાર વાપરી ફેંકી દેવાના હોય છે.",
+      "તેનાથી શિક્ષકને ખરીદીના ખોટા બિલ બનાવવામાં સરળતા રહે છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૬ : અધ્યયન-અધ્યાપન સામગ્રી",
+    "exp": "સ્થાનિક સ્તરે ઉપલબ્ધ સાધન સામગ્રીમાંથી જ્યારે શિક્ષક અને બાળકો જાતે સાધનો બનાવે છે ત્યારે બાળકોનો આત્મવિશ્વાસ વધે છે અને શિક્ષણ ખર્ચમુક્ત તથા સાહજિક બને છે."
+  },
+  {
+    "q": "પ્રશ્ન 85. ગણિતના પાઠ આયોજનમાં 'ગૃહકાર્ય' (Home Assignment) આપતી વખતે શિક્ષકે કઈ તકેદારી રાખવી અનિવાર્ય છે?",
+    "options": [
+      "આખી ગાઈડમાંથી ૫૦ દાખલા એકસાથે લખવા આપી દેવા.",
+      "ગૃહકાર્ય વિદ્યાર્થીઓની વ્યક્તિગત ક્ષમતાને અનુરૂપ, શીખવેલા એકમનું દૃઢિકરણ કરનારું, મૌલિક વિચારણાને પ્રોત્સાહક અને માપસરનું હોવું જોઈએ.",
+      "નબળા વિદ્યાર્થીઓને આખી રાત જાગવું પડે તેટલું અઘરું ગૃહકાર્ય આપવું.",
+      "આપેલા ગૃહકાર્યની ક્યારેય ચકાસણી ન કરવી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૩ : પાઠ આયોજન & એકમ-૧૪",
+    "exp": "ગૃહકાર્ય એ શિક્ષા નથી પરંતુ અધ્યયનનું વિસ્તરણ છે. તે બોજારૂપ ન બનવું જોઈએ અને બીજા દિવસે શિક્ષકે તેનું મૂલ્યાંકન કરી પ્રતિપુષ્ટિ (Feedback) આપવી જરૂરી છે."
+  },
+  {
+    "q": "પ્રશ્ન 86. ગણિત શિક્ષણમાં 'સતત અને સર્વગ્રાહી મૂલ્યાંકન' (Continuous and Comprehensive Evaluation - CCE) નો મુખ્ય ભાવાર્થ કયો છે?",
+    "options": [
+      "વર્ષમાં માત્ર એક જ વાર વાર્ષિક પરીક્ષા લેવી.",
+      "વિદ્યાર્થીના કેવળ જ્ઞાનાત્મક ક્ષેત્રની સાથે સાથે તેના ભાવાત્મક અને ક્રિયાત્મક પાસાઓનું સમગ્ર શૈક્ષણિક સત્ર દરમિયાન સતત નિરીક્ષણ અને મૂલ્યાંકન કરવું.",
+      "તમામ વિદ્યાર્થીઓને નાપાસ કરવા.",
+      "પરીક્ષા પદ્ધતિ સંપૂર્ણ બંધ કરી દેવી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૫ : વર્તનક્ષેત્રો & એકમ-૭ : મૂલ્યાંકન ત્રિકોણ",
+    "exp": "CCE બાળકના સર્વાંગી વિકાસને માપે છે. તેમાં રચનાત્મક (Formative) અને સત્રાંત (Summative) મૂલ્યાંકન દ્વારા અધ્યયનની ક્ષતિઓ શોધી ઉપચારકાર્ય કરવામાં આવે છે."
+  },
+  {
+    "q": "પ્રશ્ન 87. ગણિત વિષયમાં 'નિદાનાત્મક કસોટી' (Diagnostic Test) યોજવા પાછળનો પ્રાથમિક હેતુ કયો હોય છે?",
+    "options": [
+      "વિદ્યાર્થીઓને ગુણ આપીને પાસ કે નાપાસ જાહેર કરવા.",
+      "વિદ્યાર્થી ગણિતના કયા ચોક્કસ મુદ્દા, સંકલ્પના કે પ્રક્રિયાના સોપાનમાં કચાશ કે મુશ્કેલી અનુભવે છે તે ચોકસાઈપૂર્વક શોધી કાઢવું.",
+      "શાળામાં સૌથી હોંશિયાર વિદ્યાર્થીને ઈનામ આપવું.",
+      "વાલીઓને ફરિયાદ કરવી."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૨ : સ્વરૂપ & એકમ-૭ : મૂલ્યાંકન",
+    "exp": "જેમ તબીબ રોગનું ચોક્કસ કારણ શોધવા લેબોરેટરી નિદાન કરે છે, તેમ નિદાનાત્મક કસોટી બાળકની અધ્યયન કચાશના ચોક્કસ કારણો શોધે છે, જેથી યોગ્ય ઉપચારકાર્ય (Remedial Teaching) થઈ શકે."
+  },
+  {
+    "q": "પ્રશ્ન 88. નિદાન બાદ શિક્ષક દ્વારા યોજાતા 'ઉપચારાત્મક શિક્ષણ' (Remedial Teaching) માં કઈ વ્યુહરચના સૌથી વધુ કારગત નીવડે છે?",
+    "options": [
+      "આખો વર્ગ ફરીથી એ જ જૂની રીતે એકસાથે બેસાડીને ભણાવવો.",
+      "જે વિદ્યાર્થીઓને જ્યાં ચોક્કસ ગૂંચવણ છે ત્યાં વ્યક્તિગત માર્ગદર્શન, સાથી-જૂથ અધ્યયન (Peer Tutoring) અને સરળ મૂર્ત સાધનો દ્વારા પુનઃશિક્ષણ આપવું.",
+      "વિદ્યાર્થીઓને વર્ગમાંથી બહાર કાઢી મૂકવા.",
+      "વિદ્યાર્થીઓને માત્ર દાખલા ગોખી લેવા કહેવું."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૦ : પ્રયુક્તિઓ & એકમ-૧૪",
+    "exp": "ઉપચાર કાર્ય વૈવિધ્યસભર અને વૈયક્તિક હોવું જોઈએ. સામાન્ય શિક્ષણ પદ્ધતિથી જે ન શીખી શક્યા તેમને નવીન પદ્ધતિઓ અને સાથીઓના સહયોગથી શીખવવું જોઈએ."
+  },
+  {
+    "q": "પ્રશ્ન 89. ગણિત પ્રશ્નપત્ર રચનામાં 'દ્વિ-પરિમાણીય સારણી' (Blue Print) તૈયાર કરવાનો સર્વોચ્ચ ફાયદો કયો છે?",
+    "options": [
+      "પ્રશ્નપત્ર સુંદર અને રંગીન દેખાય છે.",
+      "હેતુઓ (જ્ઞાન, સમજ, ઉપયોગ, કૌશલ્ય), વિષયવસ્તુના પ્રકરણો અને પ્રશ્નોના પ્રકારો (હેતુલક્ષી, ટૂંકજવાબી, લાંબા) વચ્ચે સંતુલિત અને પ્રમાણસર ગુણભાર જળવાઈ રહે છે.",
+      "શિક્ષકને કોઈ પ્રશ્ન વિચારવો પડતો નથી.",
+      "તમામ વિદ્યાર્થીઓને ૧૦૦ માંથી ૧૦૦ ગુણ મળી જાય છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને વર્તન પરિવર્તન",
+    "exp": "બ્લુપ્રિન્ટ એ કસોટી નિર્માણનો પાયો છે. તે કસોટીની યથાર્થતા (Validity) અને વિશ્વસનીયતા (Reliability) સુનિશ્ચિત કરે છે અને કોઈપણ એક હેતુ કે પ્રકરણ તરફ પક્ષપાત થવા દેતી નથી."
+  },
+  {
+    "q": "પ્રશ્ન 90. ગણિતની કસોટીમાં 'વસ્તુલક્ષી પ્રશ્નો' (Objective Type Questions / MCQs) ની મુખ્ય શક્તિ (Merit) કઈ ગણાય?",
+    "options": [
+      "વિદ્યાર્થી પોતાની ઈચ્છા મુજબ લાંબા નિબંધો લખી શકે છે.",
+      "મૂલ્યાંકનમાં વ્યક્તિલક્ષી પક્ષપાત (Subjectivity) નો સંપૂર્ણ અભાવ હોય છે અને સમગ્ર અભ્યાસક્રમમાંથી વ્યાપક નમૂનારૂપ પ્રશ્નો પૂછી શકાય છે.",
+      "વિદ્યાર્થી અક્ષરો સુંદર કાઢી શકે છે.",
+      "શિક્ષકને ગુણ આપવામાં મુશ્કેલી પડે છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "વસ્તુલક્ષી પ્રશ્નોમાં કોઈપણ પરીક્ષક તપાસે તો પણ પરિણામ સમાન રહે છે (ઉચ્ચ વિશ્વસનીયતા) અને તે સમયના કરકસર સાથે મોટા અભ્યાસક્રમની ઊંડી ચકાસણી કરે છે."
+  },
+  {
+    "q": "પ્રશ્ન 91. ગણિતના પાઠ આયોજનમાં 'સામાન્ય હેતુઓ' (General Objectives) અને 'વિશિષ્ટ હેતુઓ' (Specific Objectives) વચ્ચે કાળક્રમની દ્રષ્ટિએ કયો સંબંધ છે?",
+    "options": [
+      "સામાન્ય હેતુઓ ૧૦ મિનિટમાં સિદ્ધ થાય છે જ્યારે વિશિષ્ટ હેતુઓ વર્ષો સુધી સિદ્ધ થતા નથી.",
+      "વિશિષ્ટ હેતુઓ એ સીડીના એક-એક પગથિયાં જેવાં છે, જે દૈનિક તાસમાં સિદ્ધ થઈને લાંબાગાળે વિષયના સામાન્ય હેતુઓ અને શિક્ષણના અંતિમ ધ્યેય તરફ લઈ જાય છે.",
+      "બંને વચ્ચે કોઈ સંબંધ નથી.",
+      "સામાન્ય હેતુઓ સિદ્ધ થાય પછી જ વિશિષ્ટ હેતુ નક્કી થાય છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ & એકમ-૧૩",
+    "exp": "પાઠ્યપુસ્તકના પાના ૧૫-૧૬ મુજબ, વિશિષ્ટ હેતુઓ ટૂંકા ગાળાના (એક તાસના) હોય છે. એક-એક વિશિષ્ટ હેતુ સિદ્ધ થતાં સમગ્ર પ્રકરણ અને વર્ષાન્તે સામાન્ય હેતુઓની સિદ્ધિની ભૂમિકા રચાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 92. ગણિતના આદર્શ પાઠ આયોજનમાં 'હેતુકથન' (Statement of Aim) શિક્ષકે ક્યારે અને કેવી રીતે કરવું જોઈએ?",
+    "options": [
+      "વર્ગમાં પ્રવેશતાંની સાથે જ સીધું બોલી જવું.",
+      "પૂર્વજ્ઞાન ચકાસણી અને વિષયાભિમુખના તાર્કિક પ્રશ્નોત્તરી દ્વારા સમસ્યા ઊભી થયા બાદ સ્પષ્ટ, સંક્ષિપ્ત અને પ્રભાવશાળી અવાજે હેતુકથન કરી બોર્ડ પર વિષયાંગ નોંધવું.",
+      "તાસ પૂરો થવાની છેલ્લી બે મિનિટે.",
+      "ક્યારેય હેતુકથન ન કરવું."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૪ : આદર્શ પાઠ આયોજન",
+    "exp": "વિષયાભિમુખના છેલ્લા પ્રશ્નથી જ્યારે વિદ્યાર્થીઓમાં જિજ્ઞાસા ચરમસીમાએ પહોંચે ત્યારે શિક્ષક કહે છે: 'તો વિદ્યાર્થીમિત્રો, આજે આપણે ત્રિકોણના ક્ષેત્રફળ વિશે અભ્યાસ કરીશું' અને બોર્ડ પર વિષયાંગ લખે છે."
+  },
+  {
+    "q": "પ્રશ્ન 93. પાઠ આયોજનમાં 'મૂલ્યાંકન પ્રશ્નો' (Evaluation Questions) નું સ્થાન ક્યાં હોય છે અને તેનું મુખ્ય કાર્ય શું છે?",
+    "options": [
+      "તાસની શરૂઆતમાં હાજરી પૂરવા માટે.",
+      "વિષય નિરૂપણના અંતે, જે તાસ દરમિયાન શીખવેલા વિશિષ્ટ હેતુઓ ક્યાં સુધી સિદ્ધ થયા છે તેની તાત્કાલિક ચકાસણી કરવા માટે.",
+      "માત્ર શાળા છૂટ્યા પછી કરવા માટે.",
+      "વિદ્યાર્થીઓને ગભરાવવા માટે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૪ : આદર્શ પાઠ આયોજન",
+    "exp": "મૂલ્યાંકન પ્રશ્નો દ્વારા શિક્ષકને તાત્કાલિક પ્રતિપુષ્ટિ મળે છે કે વર્ગના વિદ્યાર્થીઓ વિષયવસ્તુ સમજ્યા છે કે નહીં, જેના આધારે આગળનું દૃઢિકરણ કે ઉપચારકાર્ય નક્કી થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 94. પ્રાથમિક શાળાના ગણિત શિક્ષણમાં 'ગણિત પેટી' (Math Kit) માં આપેલ પ્લાસ્ટિકના વિવિધ કદના 'અપૂર્ણાંક ચક્ર' (Fraction Discs) નો મુખ્ય ઉપયોગ શો છે?",
+    "options": [
+      "ક્રિકેટ રમવા માટે.",
+      "પૂર્ણ એકમના ભાગો જેવા કે ૧/૨, ૧/૩, ૧/૪, ૩/૪ ની સમકક્ષતા (Equivalence) અને સરવાળા-બાદબાકી મૂર્ત રીતે પ્રદર્શિત કરવા.",
+      "પેન્સિલ છોલવા માટે.",
+      "વજન માપવા માટે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૬ : અધ્યયન-અધ્યાપન સામગ્રી",
+    "exp": "અપૂર્ણાંક ચક્રના રંગીન ટુકડાઓ જોડીને બાળક પ્રત્યક્ષ જોઈ શકે છે કે બે ૧/૪ ના ટુકડા ભેગા થઈને ૧/૨ બનાવે છે, જેથી અપૂર્ણાંકનો અમૂર્ત ખ્યાલ સ્ફટિક જેવો સ્પષ્ટ થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 95. શિક્ષક વર્ગખંડમાં પાઈ (π) ની કિંમત આશરે ૨૨/૭ કે ૩.૧૪ શા માટે થાય છે તે સાબિત કરવા વિદ્યાર્થીઓ પાસે વિવિધ ગોળ વસ્તુઓનો પરિઘ અને વ્યાસ મપાવી ગુણોત્તર (C/d) કઢાવે છે. આ આયોજન કઈ શ્રેણીમાં આવે છે?",
+    "options": [
+      "આગમન-પ્રાયોગિક પાઠ આયોજન",
+      "માત્ર વ્યાખ્યાન પાઠ",
+      "ગોખણપટ્ટી આયોજન",
+      "નિષ્ક્રિય પાઠ"
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૧ : પદ્ધતિઓ & એકમ-૧૪ : આદર્શ આયોજન",
+    "exp": "વિવિધ માપની બંગડીઓ, સિક્કા કે ઢાંકણાના પરિઘ અને વ્યાસનો ગુણોત્તર હંમેશા ૩.૧૪ ની નજીક અચળ આવે છે તે પ્રત્યક્ષ પ્રયોગથી સાબિત કરી π ની સંકલ્પના તારવવી એ ઉત્તમ આગમનિક આયોજન છે."
+  },
+  {
+    "q": "પ્રશ્ન 96. પાઠ આયોજનમાં 'શૈક્ષણિક સાધનોની પસંદગી' (Selection of TLM) કરતી વખતે શિક્ષકે કયા સિદ્ધાંતને અવગણવો ન જોઈએ?",
+    "options": [
+      "સાધન ગમે તેટલું મોંઘું અને વિદેશી હોવું જોઈએ.",
+      "સાધન વિષયવસ્તુ અને શૈક્ષણિક હેતુ સાથે સુસંગત, નિર્દોષ, ટકાઉ, વર્ગખંડના તમામ વિદ્યાર્થીઓને સ્પષ્ટ દેખાય તેવું અને સરળતાથી સંચાલન કરી શકાય તેવું હોવું જોઈએ.",
+      "સાધન એટલું નાજુક હોવું જોઈએ કે કોઈ અડી ન શકે.",
+      "સાધન માત્ર શોભાના ગાંઠિયા જેવું ટેબલ પર મૂકી રાખવાનું હોવું જોઈએ."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૬ : અધ્યયન-અધ્યાપન સામગ્રી",
+    "exp": "સાધન એ હેતુ નથી પણ સાધન છે. તે વિષયવસ્તુને સ્પષ્ટ કરવામાં સહાયક બનવું જોઈએ, નહીં કે વિદ્યાર્થીઓનું ધ્યાન મૂળ અભ્યાસથી ભટકાવી દે તેવું."
+  },
+  {
+    "q": "પ્રશ્ન 97. ગણિતમાં 'સિદ્ધિ કસોટી' (Achievement Test) ના પ્રશ્નોનું વિશ્લેષણ કરતી વખતે 'કઠિનતા મૂલ્ય' (Difficulty Value / Facility Value) નો આદર્શ વિસ્તાર કેટલો હોવો જોઈએ?",
+    "options": [
+      "૦% થી ૧૦%",
+      "૩૦% થી ૭૦% (સરેરાશ ૫૦%)",
+      "૯૫% થી ૧૦૦%",
+      "હંમેશા ૦%"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "માનક કસોટી વિજ્ઞાન અનુસાર જે પ્રશ્નનું કઠિનતા મૂલ્ય ૦.૩૦ થી ૦.૭૦ (૩૦% થી ૭૦%) વચ્ચે હોય તે પ્રશ્ન ઉત્તમ ગણાય છે, કારણ કે તે ખૂબ અઘરો કે ખૂબ સહેલો હોતો નથી."
+  },
+  {
+    "q": "પ્રશ્ન 98. ગણિત કસોટીના પ્રશ્નની 'વિભેદન શક્તિ' (Discrimination Power) શું દર્શાવે છે?",
+    "options": [
+      "પ્રશ્ન કેટલી ભાષાઓમાં છપાયો છે.",
+      "પ્રશ્ન ઉચ્ચ સિદ્ધિ ધરાવતા (હોંશિયાર) અને નિમ્ન સિદ્ધિ ધરાવતા (નબળા) વિદ્યાર્થીઓ વચ્ચે ભેદ પારખવાની કેટલી ક્ષમતા ધરાવે છે.",
+      "પ્રશ્નપત્રનું વજન કેટલું છે.",
+      "પ્રશ્ન કેટલા ગુણનો છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "વિભેદન શક્તિ એ કસોટી આઈટમનું એ લક્ષણ છે જે તેજસ્વી અને સામાન્ય વિદ્યાર્થીઓને અલગ તારવે છે. આદર્શ પ્રશ્નની વિભેદન શક્તિ ધનાત્મક (+૦.૩૦ થી વધુ) હોવી જોઈએ."
+  },
+  {
+    "q": "પ્રશ્ન 99. શાળામાં ગણિતના પાઠ આયોજનના અંતે 'પુનરાવર્તન / દૃઢીકરણ પ્રશ્નો' (Recapitulatory Questions) પૂછવાનો મુખ્ય ફાયદો કયો છે?",
+    "options": [
+      "સમય પસાર કરવો.",
+      "સમગ્ર તાસ દરમિયાન શીખવેલા તમામ મુખ્ય મુદ્દાઓનું એક સંકલિત પુનરાવલોકન કરી વિદ્યાર્થીઓના માનસપટ પર વિષયવસ્તુ સુદૃઢ કરવું.",
+      "માત્ર વર્ગના મોનિટરની હોંશિયારી તપાસવી.",
+      "વિદ્યાર્થીઓનો થાક વધારવો."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૪ : આદર્શ પાઠ આયોજન",
+    "exp": "હર્બર્ટિયન પદ્ધતિમાં અંતે સમગ્ર પાઠનું 'લુક બેક' (Look back) કરીને પુનરાવલોકન કરવાથી શિક્ષણમાં સાતત્ય જળવાય છે અને છૂટાછવાયા મુદ્દાઓ એક માળખામાં ગૂંથાઈ જાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 100. ગણિત શિક્ષણમાં કમ્પ્યુટર આસિસ્ટિડ લર્નિંગ (CAL) અને 'જિઓજીબ્રા' (GeoGebra) જેવા મુક્ત સોફ્ટવેરનો ઉપયોગ પાઠ આયોજનમાં કયા સોપાનને સૌથી વધુ ગતિશીલ બનાવે છે?",
+    "options": [
+      "માત્ર હાજરી પૂરવી.",
+      "ભૌમિતિક રચનાઓ, આલેખો, વિધેયો (Functions) અને ત્રિ-પરિમાણીય આકારોનું જીવંત અને ગતિશીલ (Dynamic) પ્રત્યક્ષીકરણ કરાવવું.",
+      "ચોક અને ડસ્ટરની ખરીદી કરવી.",
+      "માત્ર કાગળ પ્રિન્ટ કરવા."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૬ : અધ્યયન-અધ્યાપન સામગ્રી & એકમ-૮",
+    "exp": "GeoGebra જેવા સોફ્ટવેરથી વિદ્યાર્થી ભૂમિતિના ખૂણા કે આકારો બદલીને પ્રત્યક્ષ જોઈ શકે છે કે પરિસ્થિતિ બદલાતા પરિણામો કેમ બદલાય છે, જે NCF-2005 ના આઈસીટી વિઝન સાથે સુસંગત છે."
+  },
+  {
+    "q": "પ્રશ્ન 101. એકમ આયોજન (Unit Plan) ઘડતી વખતે સમગ્ર એકમને સામાન્ય રીતે કેટલા પેટા-એકમો (Sub-units) માં વિભાજીત કરવો હિતાવહ છે?",
+    "options": [
+      "૧૦૦ થી વધુ",
+      "વિષયવસ્તુની કઠિનતા અને તાસની ઉપલબ્ધતા મુજબ ૩ થી ૬ તાર્કિક પેટા-એકમોમાં",
+      "માત્ર એક જ ભાગમાં",
+      "વિભાજન કરવાની કોઈ જરૂર નથી"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "એકમને અર્થપૂર્ણ નાના પેટા-એકમોમાં વહેંચવાથી દરેક પેટા-મુદ્દા માટે વિશિષ્ટ હેતુ, શિક્ષણ પદ્ધતિ, શૈક્ષણિક સાધન અને મૂલ્યાંકનનું વ્યવસ્થિત સંકલન કરી શકાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 102. ગણિતના દૈનિક પાઠ આયોજનમાં 'વિશિષ્ટ હેતુઓ' હંમેશા કોના સંદર્ભમાં અને કયા સ્વરૂપે લખાવા જોઈએ?",
+    "options": [
+      "શિક્ષકના વર્તન સંદર્ભે અનિશ્ચિત ક્રિયાપદોમાં",
+      "વિદ્યાર્થીના માપી શકાય અને અવલોકી શકાય તેવા અપેક્ષિત વર્તન પરિવર્તન (Measurable Behavioral Outcomes) ના સ્વરૂપે",
+      "પાઠ્યપુસ્તકના લેખકના સંદર્ભમાં",
+      "વાલીઓની ઈચ્છા મુજબ"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : હેતુઓ અને વર્તન પરિવર્તન & એકમ-૧૩",
+    "exp": "વિશિષ્ટ હેતુ એ શિક્ષક શું કરશે તે નથી, પણ 'તાસના અંતે વિદ્યાર્થી શું કરવા સક્ષમ બનશે' (દા.ત. વ્યાખ્યા આપશે, દાખલો ગણશે, ભેદ દર્શાવશે) તે દર્શાવતું સ્પષ્ટીકરણ છે."
+  },
+  {
+    "q": "પ્રશ્ન 103. ગણિત શિક્ષણમાં 'સૂક્ષ્મ અધ્યાપન' (Microteaching) ચક્રનો પ્રમાણભૂત સમયગાળો (Indian Model - NCERT મુજબ) સામાન્ય રીતે કેટલો નિર્ધારિત થયેલો છે?",
+    "options": [
+      "૬૦ મિનિટ",
+      "૩૬ મિનિટ (૬ મિ. અધ્યાપન + ૬ મિ. પ્રતિપુષ્ટિ + ૧૨ મિ. પુનઃઆયોજન + ૬ મિ. પુનઃઅધ્યાપન + ૬ મિ. પુનઃપ્રતિપુષ્ટિ)",
+      "૧૦ મિનિટ",
+      "૧૨૦ મિનિટ"
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "NCERT દ્વારા વિકસિત ભારતીય સૂક્ષ્મ શિક્ષણ મોડેલમાં કુલ ૩૬ મિનિટનું ચક્ર હોય છે, જેમાં શિક્ષણ (૬ મિ.), પ્રતિપુષ્ટિ (૬ મિ.), પુનઃઆયોજન (૧૨ મિ.), પુનઃશિક્ષણ (૬ મિ.) અને પુનઃપ્રતિપુષ્ટિ (૬ મિ.) નો સમાવેશ થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 104. ગણિતના શિક્ષક વર્ગખંડમાં 'વિષયાભિમુખ કૌશલ્ય' (Skill of Introducing a Lesson) પ્રયોજતી વખતે કઈ બાબતની ખાસ તકેદારી રાખશે?",
+    "options": [
+      "પૂર્વજ્ઞાન આધારિત પ્રશ્નો પૂછવા, કથન ટૂંકું રાખવું અને પ્રશ્નોમાં તાર્કિક શૃંખલાબદ્ધતા (Continuity) જાળવવી.",
+      "વિદ્યાર્થીઓને સીધા જ અઘરા પ્રમેયો પૂછવા.",
+      "પ્રથમ જ મિનિટે આખો દાખલો ગણી દેવો.",
+      "અપ્રસ્તુત વાર્તાઓ કરીને ૨૦ મિનિટ બગાડવી."
+    ],
+    "ans": 0,
+    "unit": "એકમ-૧૪ : આદર્શ પાઠ આયોજન & એકમ-૧૫",
+    "exp": "વિષયાભિમુખનો મુખ્ય હેતુ વિદ્યાર્થીઓનું ધ્યાન કેન્દ્રિત કરવાનો અને પૂર્વજ્ઞાન સાથે સાંકળી નવા વિષય તરફ કુદરતી રીતે લઈ જવાનો છે. પ્રશ્નો વચ્ચે કડીબદ્ધતા હોવી અનિવાર્ય છે."
+  },
+  {
+    "q": "પ્રશ્ન 105. ગણિત શિક્ષણમાં 'પ્રશ્ન પ્રવાહિતા કૌશલ્ય' (Skill of Questioning) માં નીચેના પૈકી કયો દોષ (Defect) ગણાય છે?",
+    "options": [
+      "પ્રશ્ન સ્પષ્ટ અને ચોક્કસ ભાષામાં પૂછવો.",
+      "આખા વર્ગને સંબોધીને પ્રશ્ન પૂછવો, વિચારવાનો સમય આપવો અને પછી જ કોઈ એક વિદ્યાર્થીને ઉત્તર માટે ઊભો કરવો.",
+      "'હા કે ના' માં જ ઉત્તર મળે તેવા સૂચક (Leading) પ્રશ્નો વારંવાર પૂછવા અથવા સમૂહમાં ઉત્તર આપવાની છૂટ આપવી.",
+      "વિષયવસ્તુને સુસંગત પ્રશ્નો પૂછવા."
+    ],
+    "ans": 2,
+    "unit": "એકમ-૧૫ : પાઠ આયોજનના પ્રકાર",
+    "exp": "'હા કે ના' વાળા કે પડઘા પ્રશ્નો વિચારશક્તિને ઉત્તેજિત કરતા નથી અને સમૂહ જવાબોથી વર્ગમાં ઘોંઘાટ થાય છે તથા વ્યક્તિગત મૂલ્યાંકન શક્ય બનતું નથી."
+  },
+  {
+    "q": "પ્રશ્ન 106. ગણિતના શિક્ષક તરીકે પાઠ આયોજન બનાવતી વખતે તમે ત્રિકોણમિતિના વિષયાંગ માટે કયા TLM નો ઉપયોગ સૌથી વધુ અસરકારક માનશો?",
+    "options": [
+      "માત્ર ચોક અને બોર્ડ.",
+      "એકમ વર્તુળ (Unit Circle) નું વર્કિંગ મોડેલ અને ક્લિનોમીટર સાધન.",
+      "ઇતિહાસનું પુસ્તક.",
+      "સામાન્ય નકશો."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૧૬ : અધ્યયન-અધ્યાપન સામગ્રી",
+    "exp": "એકમ વર્તુળ મોડેલથી sin, cos, tan ના ચિહ્નો અને કિંમતો વિવિધ ચરણોમાં પ્રત્યક્ષ સમજી શકાય છે અને ક્લિનોમીટરથી વાસ્તવિક ઊંચાઈ માપવાનો વ્યાવહારિક ઉપયોગ સિદ્ધ થાય છે."
+  },
+  {
+    "q": "પ્રશ્ન 107. ગણિત કસોટીના પરિણામોનું વિશ્લેષણ કરતાં જો કોઈ પ્રશ્નનો ઉત્તર વર્ગના ૧૦૦% વિદ્યાર્થીઓએ સાચો આપ્યો હોય, તો તે પ્રશ્ન વિશે શું કહી શકાય?",
+    "options": [
+      "તે પ્રશ્ન ઉત્કૃષ્ટ વિભેદન શક્તિ ધરાવે છે.",
+      "તેનું કઠિનતા મૂલ્ય ૧.૦ (૧૦૦%) છે અને તેની વિભેદન શક્તિ શૂન્ય છે, માટે તે કસોટીમાં તેજસ્વી અને સામાન્ય બાળકો વચ્ચે કોઈ ભેદ પાડી શકતો નથી.",
+      "તે સૌથી અઘરો પ્રશ્ન છે.",
+      "તે પ્રશ્ન બ્લૂમના સર્વોચ્ચ સ્તરનો છે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૭ : ગણિત શિક્ષણના હેતુઓ અને મૂલ્યાંકન",
+    "exp": "જો બધા જ વિદ્યાર્થીઓ સાચો જવાબ આપે તો પ્રશ્ન અતિશય સરળ છે અને તે કોઈ ભેદરેખા રચી શકતો નથી, જેથી માનક કસોટીમાં આવા પ્રશ્નો સુધારવા કે રદ કરવા પડે છે."
+  },
+  {
+    "q": "પ્રશ્ન 108. ગણિત શિક્ષણમાં શૈક્ષણિક પ્રવાસ કે ક્ષેત્રીય મુલાકાત (Field Trip) ના આયોજન માટે કયું સ્થળ સૌથી વધુ પ્રસ્તુત ગણાય?",
+    "options": [
+      "માત્ર સિનેમા હોલ.",
+      "સ્થાનિક બેંક, પોસ્ટ ઓફિસ, સહકારી મંડળી અથવા સુપરમાર્કેટ (જ્યાં વ્યાજ, બચત, નફો-ખોટ અને વળતરના વ્યવહારો પ્રત્યક્ષ થાય છે).",
+      "પ્રાણી સંગ્રહાલય.",
+      "માત્ર બગીચો."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૮ : ગણિત મંડળ & એકમ-૧૬ : સામગ્રી",
+    "exp": "બેંક અને પોસ્ટ ઓફિસની મુલાકાતથી ચેક, ડિપોઝિટ, સાદું વ્યાજ, ચક્રવૃદ્ધિ વ્યાજ અને ખાતાવહીના વ્યવહારો જોઈને ગણિતનું જીવન સાથેનું ઉપયોગિતા મૂલ્ય જીવંત બને છે."
+  },
+  {
+    "q": "પ્રશ્ન 109. ગણિતના શિક્ષક પાઠ આયોજનમાં 'સમસ્યા ઉકેલ' (Problem Solving) અભિગમ અપનાવતી વખતે વિદ્યાર્થીઓને કઈ બાબત માટે પ્રોત્સાહિત કરશે?",
+    "options": [
+      "ગાઈડમાંથી સીધો દાખલો ઉતારી લેવા માટે.",
+      "માહિતીનું પૃથક્કરણ કરવા, અજ્ઞાત અને જ્ઞાત રાશિઓ ઓળખવા, વિવિધ વૈકલ્પિક રીતો અજમાવવા અને પરિણામની જાતે ચકાસણી (Verification) કરવા માટે.",
+      "ભૂલ થવાના ડરથી દાખલો ન ગણવા માટે.",
+      "શિક્ષક જે ગણે તે જ એકમાત્ર રીત માનવા માટે."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૨ : સ્વરૂપ & એકમ-૧૪ : આયોજન",
+    "exp": "સમસ્યા ઉકેલનો આત્મા જ વિદ્યાર્થીની સ્વાયત્ત વિચારસરણી છે. ભૂલો એ અધ્યયનનો હિસ્સો છે અને વિવિધ માર્ગે ઉકેલ શોધવાની પ્રક્રિયા બાળકની તાર્કિક ક્ષમતા વધારે છે."
+  },
+  {
+    "q": "પ્રશ્ન 110. શિક્ષણ સેવા વર્ગ-૨ અને TAT પરીક્ષાના સર્વોચ્ચ પરિપ્રેક્ષ્યમાં: 'એક આદર્શ ગણિત પાઠ આયોજન વર્ગખંડમાં ચાર દિવાલોની જેલ જેવું બંધિયાર વાતાવરણ નહીં, પરંતુ પ્રયોગ, સંવાદ અને સ્વાનુભવથી ધબકતો લોકશાહી સમાજ રચે છે.' - આ વિધાન ગણિત શિક્ષણના કયા સિદ્ધાંતનું સાચું પ્રતિબિંબ પાડે છે?",
+    "options": [
+      "સરમુખત્યારશાહી નિયંત્રણનો સિદ્ધાંત.",
+      "લોકશાહી વ્યવહાર અને સર્જન-આનંદનો સિદ્ધાંત (Principle of Democratic Attitude and Constructive Joy).",
+      "ગોખણપટ્ટીનો સિદ્ધાંત.",
+      "શારીરિક કવાયતનો સિદ્ધાંત."
+    ],
+    "ans": 1,
+    "unit": "એકમ-૨ : ગણિતનું સ્વરૂપ (સિદ્ધાંતો) & એકમ-૧૪ : આદર્શ પાઠ આયોજન",
+    "exp": "પુસ્તકના પાના ૧૧ મુજબ, આધુનિક વર્ગખંડ એ મુક્ત લોકશાહી સમાજ છે જ્યાં બાળક મુક્ત મને પ્રયોગ કરી શકે, પ્રશ્નો પૂછી શકે અને પોતાની રચનાત્મક શક્તિઓ દ્વારા ગાણિતિક આનંદ માણી શકે."
+  }
+];
+
+let studentName = "", studentPhone = "", studentEmail = "";
+let currentQ = 0;
+let userAnswers = new Array(questions.length).fill(null);
+let flaggedQuestions = new Array(questions.length).fill(false);
+let startTime, timerInterval;
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    const btn = document.getElementById("themeToggleBtn");
+    btn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i> લાઈટ મોડ' : '<i class="fa-solid fa-moon"></i> ડાર્ક મોડ';
+}
+
+function showNotice(msg, type = "info") {
+    const box = document.getElementById("noticeMsg");
+    box.className = "msg-box " + (type === "error" ? "msg-error" : "msg-info");
+    box.innerText = msg;
+    box.style.display = "block";
+    setTimeout(() => { box.style.display = "none"; }, 6000);
+}
+
+/* ૧. ઑથેન્ટિકેશન & OTP */
+function requestOTP() {
+    studentName = document.getElementById("name").value.trim();
+    studentPhone = document.getElementById("phone").value.trim();
+    studentEmail = document.getElementById("email").value.trim();
+
+    if (!studentName || studentPhone.length < 10 || !studentEmail.includes("@")) {
+        showNotice("કૃપા કરીને પૂરું નામ, ૧૦ અંકનો સાચો મોબાઇલ નંબર અને માન્ય ઇમેઇલ દાખલ કરો.", "error");
+        return;
+    }
+
+    const btn = document.getElementById("getOtpBtn");
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> OTP મોકલાઈ રહ્યો છે...';
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+            action: "sendOTP",
+            name: studentName,
+            email: studentEmail
+        })
+    })
+    .then(function() {
+        showNotice("આપના ઈમેઈલ પર ૪ અંકનો OTP મોકલવામાં આવ્યો છે. ઇનબોક્સ/સ્પામ તપાસો.", "info");
+        document.getElementById("otpContainer").style.display = "block";
+        btn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> OTP ફરીથી મોકલો';
+        btn.disabled = false;
+    })
+    .catch(function() {
+        showNotice("OTP મોકલવામાં ક્ષતિ આવી. ફરી પ્રયાસ કરો.", "error");
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> OTP મેળવો અને આગળ વધો';
+    });
+}
+
+function verifyAndStart() {
+    const enteredOTP = document.getElementById("otpInput").value.trim();
+    if (enteredOTP.length !== 4) {
+        showNotice("કૃપા કરીને ૪ અંકનો સાચો OTP દાખલ કરો.", "error");
+        return;
+    }
+
+    const vBtn = document.getElementById("verifyBtn");
+    vBtn.disabled = true;
+    vBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ચકાસણી ચાલુ છે...';
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({
+            action: "verifyOTP",
+            email: studentEmail,
+            otp: enteredOTP
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === "success" && data.verified) {
+            document.getElementById("loginScreen").style.display = "none";
+            document.getElementById("quizScreen").style.display = "block";
+            initQuestionPalette();
+            startTime = new Date();
+            timerInterval = setInterval(updateTimer, 1000);
+            loadQuestion();
+        } else {
+            showNotice("ખોટો OTP અથવા સમય વીતી ગયો છે! ફરી ચકાસો.", "error");
+            vBtn.disabled = false;
+            vBtn.innerHTML = '<i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો';
+        }
+    })
+    .catch(() => {
+        showNotice("ચકાસણીમાં ભૂલ થઈ. ફરી પ્રયાસ કરો.", "error");
+        vBtn.disabled = false;
+        vBtn.innerHTML = '<i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો';
+    });
+}
+
+/* ૨. ટાઈમર */
+function updateTimer() {
+    const elapsed = Math.floor((new Date() - startTime) / 1000);
+    const mins = String(Math.floor(elapsed / 60)).padStart(2, '0');
+    const secs = String(elapsed % 60).padStart(2, '0');
+    document.getElementById("timerDisplay").innerText = `${mins}:${secs}`;
+}
+
+/* ૩. પ્રશ્ન પેલેટ (૧ થી ૧૧૦) */
+function initQuestionPalette() {
+    const container = document.getElementById("questionGridContainer");
+    container.innerHTML = "";
+    for (let i = 0; i < questions.length; i++) {
+        const pill = document.createElement("div");
+        pill.className = "q-pill";
+        pill.id = `qPill_${i}`;
+        pill.innerText = i + 1;
+        pill.onclick = () => jumpToQuestion(i);
+        container.appendChild(pill);
+    }
+    updatePaletteStats();
+}
+
+function updatePaletteStats() {
+    for (let i = 0; i < questions.length; i++) {
+        const pill = document.getElementById(`qPill_${i}`);
+        if (!pill) continue;
+        pill.className = "q-pill";
+        
+        if (i === currentQ) {
+            pill.classList.add("status-current");
+        }
+        if (flaggedQuestions[i]) {
+            pill.classList.add("status-flagged");
+        } else if (userAnswers[i] !== null) {
+            pill.classList.add("status-answered");
+        }
+    }
+    const totalAns = userAnswers.filter(a => a !== null).length;
+    document.getElementById("answeredCountBadge").innerText = `${totalAns} / ${questions.length} પૂર્ણ`;
+}
+
+function jumpToQuestion(idx) {
+    currentQ = idx;
+    loadQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ૪. પ્રશ્ન લોડિંગ અને નેવિગેશન */
+function loadQuestion() {
+    const q = questions[currentQ];
+    document.getElementById("qProgress").innerText = `પ્રશ્ન ${currentQ + 1} / ${questions.length}`;
+    document.getElementById("unitBadge").innerText = `📘 ${q.unit}`;
+    document.getElementById("questionText").innerText = q.q;
+
+    const flagBtn = document.getElementById("flagBtn");
+    if (flaggedQuestions[currentQ]) {
+        flagBtn.className = "btn-flag active-flag";
+        flagBtn.innerHTML = '<i class="fa-solid fa-bookmark"></i> Flag કરેલ છે 🚩';
+    } else {
+        flagBtn.className = "btn-flag";
+        flagBtn.innerHTML = '<i class="fa-regular fa-bookmark"></i> Flag (રિવ્યુ માટે)';
+    }
+
+    const optContainer = document.getElementById("optionsContainer");
+    optContainer.innerHTML = "";
+
+    q.options.forEach((opt, idx) => {
+        const label = document.createElement("label");
+        label.className = "option-label";
+        const isChecked = userAnswers[currentQ] === idx ? "checked" : "";
+        label.innerHTML = `
+            <input type="radio" name="opt" value="${idx}" ${isChecked} onchange="onOptionSelect(${idx})">
+            <span><strong>(${String.fromCharCode(65 + idx)})</strong> ${opt}</span>
+        `;
+        optContainer.appendChild(label);
+    });
+
+    document.getElementById("prevBtn").style.visibility = (currentQ === 0) ? "hidden" : "visible";
+    document.getElementById("nextBtn").innerHTML = (currentQ === questions.length - 1) 
+        ? '<i class="fa-solid fa-flag-checkered"></i> કસોટી પૂર્ણ કરો' 
+        : 'આગળ <i class="fa-solid fa-arrow-right"></i>';
+
+    updatePaletteStats();
+}
+
+function onOptionSelect(idx) {
+    userAnswers[currentQ] = idx;
+    updatePaletteStats();
+}
+
+function toggleFlagCurrentQuestion() {
+    flaggedQuestions[currentQ] = !flaggedQuestions[currentQ];
+    loadQuestion();
+}
+
+function prevQuestion() {
+    if (currentQ > 0) {
+        currentQ--;
+        loadQuestion();
+    }
+}
+
+function nextQuestion() {
+    if (currentQ < questions.length - 1) {
+        currentQ++;
+        loadQuestion();
+    } else {
+        confirmSubmitQuiz();
+    }
+}
+
+function confirmSubmitQuiz() {
+    const unans = userAnswers.filter(a => a === null).length;
+    const flagCount = flaggedQuestions.filter(f => f === true).length;
+    
+    let msg = "શું આપ ખરેખર કસોટી સબમિટ કરવા માંગો છો?";
+    if (unans > 0 || flagCount > 0) {
+        msg = `ધ્યાન આપો:\n- ${unans} પ્રશ્નોના ઉત્તર બાકી છે.\n- ${flagCount} પ્રશ્નો Flag કરેલા છે.\n\nશું આપ કસોટી સબમિટ કરવા માંગો છો?`;
+    }
+    
+    if (confirm(msg)) {
+        submitQuiz();
+    }
+}
+
+/* ૫. સબમિશન અને પરિણામ દર્શન */
+function submitQuiz() {
+    clearInterval(timerInterval);
+    const elapsed = Math.floor((new Date() - startTime) / 1000);
+    const mins = Math.floor(elapsed / 60);
+    const secs = elapsed % 60;
+    const formattedTime = `${mins} મિનિટ ${secs} સેકન્ડ`;
+
+    let score = 0;
+    let wrongIndices = [];
+    questions.forEach((q, i) => {
+        if (userAnswers[i] === q.ans) {
+            score++;
+        } else {
+            wrongIndices.push(i);
+        }
+    });
+    const percent = ((score / questions.length) * 100).toFixed(2);
+    const flagCount = flaggedQuestions.filter(f => f === true).length;
+
+    document.getElementById("quizScreen").style.display = "none";
+    document.getElementById("resultScreen").style.display = "block";
+
+    document.getElementById("resName").innerText = studentName;
+    document.getElementById("resPhone").innerText = studentPhone;
+    document.getElementById("resTime").innerText = `${mins}m ${secs}s`;
+    document.getElementById("resScore").innerText = `${score} / ${questions.length}`;
+    document.getElementById("resPercent").innerText = `${percent}% ગુણાંક`;
+    document.getElementById("resCorrectCount").innerText = score;
+    document.getElementById("resWrongCount").innerText = questions.length - score;
+    document.getElementById("resFlagCount").innerText = flagCount;
+
+    renderWrongQuestions(wrongIndices);
+    renderFullAnswerKey();
+    renderBlankPaper();
+    prepareAndSendBackendResult(score, percent, formattedTime);
+}
+
+function switchResultTab(tabName) {
+    document.getElementById("tabBtnWrong").classList.remove("active-tab");
+    document.getElementById("tabBtnAnswers").classList.remove("active-tab");
+    document.getElementById("tabBtnBlank").classList.remove("active-tab");
+
+    document.getElementById("tabContentWrong").style.display = "none";
+    document.getElementById("tabContentAnswers").style.display = "none";
+    document.getElementById("tabContentBlank").style.display = "none";
+
+    if (tabName === "wrong") {
+        document.getElementById("tabBtnWrong").classList.add("active-tab");
+        document.getElementById("tabContentWrong").style.display = "block";
+    } else if (tabName === "answers") {
+        document.getElementById("tabBtnAnswers").classList.add("active-tab");
+        document.getElementById("tabContentAnswers").style.display = "block";
+    } else if (tabName === "blank") {
+        document.getElementById("tabBtnBlank").classList.add("active-tab");
+        document.getElementById("tabContentBlank").style.display = "block";
+    }
+}
+
+function renderWrongQuestions(wrongIndices) {
+    const container = document.getElementById("wrongQuestionsList");
+    container.innerHTML = "";
+
+    if (wrongIndices.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 35px; background: var(--container-bg); border-radius: 12px; border: 2px solid #10b981;">
+                <i class="fa-solid fa-circle-check fa-3x" style="color: #10b981; margin-bottom: 12px;"></i>
+                <h3 style="color: #065f46; font-size: 18px;">અભિનંદન! તમારો એક પણ પ્રશ્ન ખોટો પડ્યો નથી!</h3>
+                <p style="color: var(--subheading-color); font-size: 13.5px; margin-top: 6px;">આપે ૧૧૦ માંથી ૧૧૦ સંપૂર્ણ ગુણ મેળવી શ્રેષ્ઠ પ્રદર્શન કરેલ છે.</p>
+            </div>
+        `;
+        return;
+    }
+
+    wrongIndices.forEach((i) => {
+        const q = questions[i];
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી (ખાલી છોડેલ)";
+        const correctChoiceText = q.options[q.ans];
+
+        const item = document.createElement("div");
+        item.className = "review-item is-wrong";
+        item.innerHTML = `
+            <p style="font-weight: 800; font-size: 15px; margin-bottom: 8px;">
+                ${q.q}
+            </p>
+            <p style="margin: 4px 0; font-weight: 700; color: #b91c1c;">
+                ❌ તમારો ઉત્તર: ${userChoiceText}
+            </p>
+            <p style="margin: 4px 0; font-weight: 700; color: #047857;">
+                ✅ સાચો ઉત્તર: <strong>(${String.fromCharCode(65 + q.ans)}) ${correctChoiceText}</strong>
+            </p>
+            <div class="exp-box">
+                <div style="font-size: 11.5px; font-weight: 800; color: #2563eb; margin-bottom: 3px;">📘 ${q.unit}</div>
+                <strong>વિગતવાર સમજૂતી:</strong> ${q.exp}
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function renderFullAnswerKey() {
+    const container = document.getElementById("allAnswersList");
+    container.innerHTML = "";
+
+    questions.forEach((q, i) => {
+        const isCorrect = (userAnswers[i] === q.ans);
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી";
+        const correctChoiceText = q.options[q.ans];
+
+        const item = document.createElement("div");
+        item.className = "review-item " + (isCorrect ? "is-correct" : "is-wrong");
+        item.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+                <span style="font-weight: 800; font-size: 15px;">${q.q}</span>
+                <span style="font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 6px; background:${isCorrect ? '#10b981' : '#ef4444'}; color:white; white-space:nowrap;">
+                    ${isCorrect ? '✅ સાચો' : '❌ ખોટો'}
+                </span>
+            </div>
+            <div style="margin: 6px 0; font-size: 13.5px;">
+                ${q.options.map((opt, oIdx) => `
+                    <div style="padding: 2px 0; ${oIdx === q.ans ? 'font-weight:bold; color:#047857;' : ''}">
+                        (${String.fromCharCode(65 + oIdx)}) ${opt} ${oIdx === q.ans ? '⭐ (સાચો ઉત્તર)' : ''}
+                    </div>
+                `).join('')}
+            </div>
+            <p style="margin: 6px 0; font-weight: 700;">
+                તમે પસંદ કરેલ જવાબ: <span style="color:${isCorrect ? '#047857' : '#b91c1c'};">${userChoiceText}</span>
+            </p>
+            <div class="exp-box">
+                <div style="font-size: 11.5px; font-weight: 800; color: #2563eb; margin-bottom: 3px;">📘 ${q.unit}</div>
+                <strong>સમજૂતી:</strong> ${q.exp}
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function renderBlankPaper() {
+    const container = document.getElementById("blankQuestionsList");
+    container.innerHTML = `
+        <div style="background: var(--card-gradient); padding: 14px; border-radius: 10px; margin-bottom: 14px; border: 1.5px solid var(--border-color); text-align: center;">
+            <h3 style="color: var(--heading-color); font-size: 16px; font-weight: 800;">📝 મૂળ પ્રશ્નપત્ર (Offline / Practice View)</h3>
+            <p style="color: var(--subheading-color); font-size: 12.5px;">આ પ્રશ્નપત્રમાં કોઈપણ જવાબ ટીક કરેલ નથી. તમે સ્વ-અધ્યયન કે પુનરાવર્તન માટે તેનો ઉપયોગ કરી શકો છો.</p>
+        </div>
+    `;
+
+    questions.forEach((q) => {
+        const box = document.createElement("div");
+        box.className = "blank-q-card";
+        box.innerHTML = `
+            <div style="font-weight: 800; font-size: 14.5px; margin-bottom: 8px; color: var(--heading-color);">${q.q}</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 13.5px; color: var(--text-color);">
+                ${q.options.map((opt, oIdx) => `
+                    <div style="background: var(--option-bg); padding: 7px 10px; border-radius: 6px; border: 1px solid var(--border-color);">
+                        <strong>(${String.fromCharCode(65 + oIdx)})</strong> ${opt}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        container.appendChild(box);
+    });
+}
+
+function prepareAndSendBackendResult(score, percent, formattedTime) {
+    let emailReviewHtml = "";
+    
+    questions.forEach((q, i) => {
+        const isCorrect = (userAnswers[i] === q.ans);
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી";
+        const correctChoiceText = q.options[q.ans];
+
+        emailReviewHtml += `
+            <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding: 12px; margin-bottom: 12px; background-color: ${isCorrect ? '#f0fdf4' : '#fff1f2'};">
+                <p style="margin: 0 0 6px 0; font-weight: bold; color: #1e293b;">${q.q}</p>
+                <p style="margin: 3px 0; color: ${isCorrect ? '#166534' : '#9f1239'};">
+                    <strong>પરીક્ષાર્થીનો ઉત્તર:</strong> ${userChoiceText} ${isCorrect ? '✅' : '❌'}
+                </p>
+                ${!isCorrect ? `<p style="margin: 3px 0; color: #166534; font-weight: bold;"><strong>સાચો ઉત્તર:</strong> (${String.fromCharCode(65 + q.ans)}) ${correctChoiceText}</p>` : ''}
+                <div style="background-color: #f8fafc; padding: 8px; border-radius: 4px; margin-top: 6px; font-size: 12.5px; border-left: 3px solid #2563eb;">
+                    <div style="color: #1e40af; font-weight: bold; margin-bottom: 2px;">📘 ${q.unit}</div>
+                    <strong>સમજૂતી:</strong> ${q.exp}
+                </div>
+            </div>
+        `;
+    });
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+            action: "submitResult",
+            dateTime: new Date().toLocaleString('gu-IN', { timeZone: 'Asia/Kolkata' }),
+            name: studentName,
+            phone: studentPhone,
+            email: studentEmail,
+            timeTaken: formattedTime,
+            score: `${score} / ${questions.length}`,
+            percentage: `${percent}%`,
+            subject: "ES-112 ગણિતનું અધ્યાપન: શિક્ષણ પદ્ધતિ, પ્રયુક્તિઓ, સૂત્રો, પાઠ આયોજન અને TLM (૧૧૦ HOTS)",
+            detailedReviewHtml: emailReviewHtml,
+            repoName: "maths",
+            testFileName: "es112_maths_methodology_110q.html",
+            testUploadDate: new Date().toISOString().split('T')[0]
+        })
+    });
+}
+</script>
+</body>
+</html>
