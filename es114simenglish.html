@@ -1,0 +1,2378 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPSC Class 1-2: ELT High-Difficulty Questions | ૧૦૦ પ્રશ્નો</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+            --header-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
+            --card-gradient: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 50%, #fdf2f8 100%);
+            --bg-color: #f1f5f9;
+            --container-bg: #ffffff;
+            --text-color: #0f172a;
+            --heading-color: #1e3a8a;
+            --subheading-color: #64748b;
+            --border-color: #cbd5e1;
+            --card-border: #e2e8f0;
+            --option-bg: #f8fafc;
+            --option-hover: #ede9fe;
+            --option-border: #cbd5e1;
+            --badge-bg: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            --correct-bg: #ecfdf5;
+            --correct-border: #34d399;
+            --correct-text: #065f46;
+            --wrong-bg: #fff1f2;
+            --wrong-border: #fb7185;
+            --wrong-text: #9f1239;
+            --exp-box-bg: #f8fafc;
+            --input-bg: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.12), 0 8px 10px -6px rgba(30, 58, 138, 0.08);
+            
+            /* Status Colors */
+            --color-answered: #10b981;
+            --color-flagged: #f59e0b;
+            --color-unanswered: #94a3b8;
+            --color-current: #2563eb;
+        }
+
+        body.dark-mode {
+            --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #ec4899 100%);
+            --header-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            --card-gradient: linear-gradient(135deg, #1e1b4b 0%, #1e293b 50%, #0f172a 100%);
+            --bg-color: #030712;
+            --container-bg: #0b1329;
+            --text-color: #f8fafc;
+            --heading-color: #93c5fd;
+            --subheading-color: #94a3b8;
+            --border-color: #334155;
+            --card-border: #1e293b;
+            --option-bg: #1e293b;
+            --option-hover: #2e1065;
+            --option-border: #475569;
+            --badge-bg: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --correct-bg: #064e3b;
+            --correct-border: #059669;
+            --correct-text: #a7f3d0;
+            --wrong-bg: #881337;
+            --wrong-border: #e11d48;
+            --wrong-text: #fecdd3;
+            --exp-box-bg: #0f172a;
+            --input-bg: #1e293b;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            font-family: 'Noto Sans Gujarati', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            padding: 14px; 
+            display: flex; 
+            justify-content: center; 
+            transition: all 0.3s ease;
+            min-height: 100vh;
+        }
+
+        .container { 
+            background-color: var(--container-bg); 
+            max-width: 1000px; 
+            width: 100%; 
+            border-radius: 18px; 
+            box-shadow: var(--shadow); 
+            padding: 24px; 
+            position: relative;
+            border: 1.5px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 6px; }
+            .container { padding: 14px; border-radius: 12px; }
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-pill {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 800;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn {
+            background: var(--option-bg);
+            color: var(--text-color);
+            border: 1.5px solid var(--border-color);
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 20px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .theme-toggle-btn:hover {
+            transform: scale(1.04);
+            border-color: #3b82f6;
+        }
+
+        .banner-title {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 900;
+            margin: 5px 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .banner-sub {
+            color: var(--subheading-color);
+            text-align: center;
+            font-size: 13.5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Login Screen */
+        #loginScreen {
+            max-width: 480px;
+            margin: 15px auto;
+            background: var(--card-gradient);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1.5px solid var(--border-color);
+        }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-weight: 700; margin-bottom: 6px; font-size: 13.5px; color: var(--heading-color); }
+        input[type="text"], input[type="tel"], input[type="email"] { 
+            width: 100%; 
+            padding: 11px 14px; 
+            border: 1.5px solid var(--border-color); 
+            border-radius: 8px; 
+            font-size: 14.5px; 
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        input:focus { outline: none; border-color: #2563eb; }
+
+        .btn-gradient { 
+            background: var(--primary-gradient); 
+            color: white; 
+            border: none; 
+            padding: 12px 18px; 
+            font-size: 15px; 
+            font-weight: 800; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            width: 100%; 
+            transition: all 0.25s; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            font-family: inherit;
+        }
+        .btn-gradient:hover { opacity: 0.95; transform: translateY(-1.5px); }
+        .btn-gradient:disabled { background: #94a3b8; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        .otp-box { 
+            background: var(--container-bg); 
+            border: 2px dashed #3b82f6; 
+            padding: 16px; 
+            border-radius: 10px; 
+            margin-top: 16px; 
+            display: none; 
+            text-align: center;
+        }
+
+        /* Test Main Layout: Single column (Questions on Top, Palette at Bottom) */
+        .quiz-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .quiz-main-card {
+            background: var(--container-bg);
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .quiz-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1.5px solid var(--border-color); 
+            padding-bottom: 12px; 
+            margin-bottom: 18px; 
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .timer-badge { 
+            font-size: 15px; 
+            font-weight: 800; 
+            color: #ef4444; 
+            background: #fee2e2;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        body.dark-mode .timer-badge { background: #450a0a; color: #fca5a5; }
+
+        .unit-badge { 
+            display: inline-block; 
+            background: var(--badge-bg); 
+            color: white; 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 12px; 
+            font-weight: 700; 
+            margin-bottom: 14px; 
+        }
+
+        .question-text {
+            font-size: 18px;
+            line-height: 1.65;
+            margin-bottom: 22px;
+            font-weight: 700;
+            color: var(--text-color);
+            white-space: pre-wrap;
+            tab-size: 4;
+        }
+
+        .option-label { 
+            display: flex;
+            align-items: center;
+            background: var(--option-bg); 
+            padding: 14px 18px; 
+            margin-bottom: 12px; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            line-height: 1.5; 
+            border: 1.5px solid var(--option-border); 
+            transition: all 0.2s;
+            font-size: 15.5px;
+        }
+        .option-label:hover { 
+            background: var(--option-hover); 
+            border-color: #3b82f6;
+            transform: translateX(4px);
+        }
+        .option-label input[type="radio"] {
+            margin-right: 14px;
+            transform: scale(1.25);
+            accent-color: #2563eb;
+            cursor: pointer;
+        }
+
+        .quiz-actions-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1.5px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .nav-buttons-group {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-prev, .btn-next, .btn-flag {
+            padding: 10px 18px;
+            font-size: 14.5px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: inherit;
+        }
+        .btn-prev { background: #64748b; color: white; }
+        .btn-prev:hover { background: #475569; }
+        .btn-next { background: var(--primary-gradient); color: white; }
+        .btn-next:hover { opacity: 0.95; }
+
+        .btn-flag {
+            background: #fef3c7;
+            color: #b45309;
+            border: 1.5px solid #f59e0b;
+        }
+        body.dark-mode .btn-flag {
+            background: #451a03;
+            color: #fde68a;
+            border-color: #d97706;
+        }
+        .btn-flag.active-flag {
+            background: #f59e0b;
+            color: white;
+            border-color: #b45309;
+        }
+
+        /* Question Palette at the Bottom */
+        .palette-bottom-card {
+            background: var(--card-gradient);
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .palette-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--heading-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .legend-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 12px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-dot { width: 11px; height: 11px; border-radius: 50%; }
+
+        /* Multi-column grid for 100 questions */
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+            gap: 8px;
+            max-height: 250px;
+            overflow-y: auto;
+            padding: 6px 4px;
+        }
+        .q-pill {
+            padding: 8px 0;
+            border-radius: 7px;
+            font-size: 12.5px;
+            font-weight: 800;
+            text-align: center;
+            cursor: pointer;
+            border: 1.5px solid var(--border-color);
+            background: var(--container-bg);
+            color: var(--text-color);
+            transition: all 0.15s ease;
+            position: relative;
+        }
+        .q-pill:hover { transform: scale(1.08); z-index: 2; }
+        .q-pill.status-current {
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 2.5px #2563eb;
+            font-weight: 900;
+        }
+        .q-pill.status-answered {
+            background: #10b981 !important;
+            color: white !important;
+            border-color: #059669 !important;
+        }
+        .q-pill.status-flagged {
+            background: #f59e0b !important;
+            color: white !important;
+            border-color: #d97706 !important;
+        }
+        .q-pill.status-flagged::after {
+            content: '🚩';
+            position: absolute;
+            top: -6px;
+            right: -3px;
+            font-size: 9px;
+        }
+
+        /* Result Screen Styles */
+        .result-summary-card {
+            background: var(--card-gradient);
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .score-pill {
+            display: inline-block;
+            font-size: 32px;
+            font-weight: 900;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 6px 0;
+        }
+
+        .res-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 14px;
+        }
+        @media (max-width: 600px) {
+            .res-stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .res-stat-box {
+            padding: 8px;
+            border-radius: 8px;
+            font-weight: 700;
+            color: white;
+            font-size: 12px;
+        }
+
+        /* Result Tabs Navigation */
+        .result-tabs-nav {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        .res-tab-btn {
+            padding: 9px 16px;
+            font-size: 13.5px;
+            font-weight: 800;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1.5px solid var(--border-color);
+            background: var(--option-bg);
+            color: var(--text-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .res-tab-btn:hover { border-color: #2563eb; }
+        .res-tab-btn.active-tab {
+            background: var(--primary-gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Review Item Style */
+        .review-item {
+            padding: 16px;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            border: 1.5px solid var(--card-border);
+            transition: all 0.2s;
+            background: var(--container-bg);
+        }
+        .review-item.is-correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+            color: var(--correct-text);
+        }
+        .review-item.is-wrong {
+            background-color: var(--wrong-bg);
+            border-color: var(--wrong-border);
+            color: var(--wrong-text);
+        }
+
+        .exp-box {
+            background: var(--exp-box-bg);
+            color: var(--text-color);
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 13.5px;
+            line-height: 1.5;
+            border-left: 4px solid #2563eb;
+        }
+
+        .blank-q-card {
+            background: var(--container-bg);
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+
+        .msg-box {
+            display: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .msg-error { background-color: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+        .msg-info { background-color: #dcfce7; color: #166534; border: 1px solid #4ade80; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- હેડર અને થીમ ટોગલ -->
+    <header class="header-top">
+        <span class="tag-pill"><i class="fa-solid fa-leaf"></i> GPSC Class 1-2: ELT High-Difficulty Questions</span>
+        <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleDarkMode()">
+            <i class="fa-solid fa-moon"></i> ડાર્ક મોડ
+        </button>
+    </header>
+
+    <!-- નોટિસ બોક્સ -->
+    <div id="noticeMsg" class="msg-box"></div>
+
+    <!-- ૧. પ્રવેશ અને OTP સ્ક્રીન -->
+    <section id="loginScreen">
+        <div style="text-align: center; margin-bottom: 18px;">
+            <div style="font-size: 32px; color: #2563eb; margin-bottom: 4px;"><i class="fa-solid fa-earth-asia"></i></div>
+            <h1 class="banner-title" style="font-size: 20px;">GPSC Class 1-2: ELT (English) પ્રશ્નો</h1>
+            <p class="banner-sub" style="margin-bottom: 10px;">GPSC પરીક્ષા પદ્ધતિ અનુસાર વાંચન, તર્ક, યાદશક્તિ અને વિશ્લેષણ શક્તિ આધારિત ૧૦૦ પ્રશ્નો</p>
+        </div>
+
+        <div class="form-group">
+            <label for="name">👤 પૂરું નામ:</label>
+            <input type="text" id="name" placeholder="તમારું પૂરું નામ દાખલ કરો">
+        </div>
+        <div class="form-group">
+            <label for="phone">📱 મોબાઇલ નંબર:</label>
+            <input type="tel" id="phone" placeholder="૧૦ અંકનો સાચો મોબાઇલ નંબર" maxlength="10">
+        </div>
+        <div class="form-group">
+            <label for="email">📧 ઇમેઇલ આઇડી:</label>
+            <input type="email" id="email" placeholder="તમારું સાચું ઈમેઈલ આઈડી લખો">
+        </div>
+
+        <button id="getOtpBtn" class="btn-gradient" onclick="requestOTP()">
+            <i class="fa-solid fa-paper-plane"></i> OTP મેળવો અને આગળ વધો
+        </button>
+
+        <div id="otpContainer" class="otp-box">
+            <p style="margin: 0 0 10px 0; color: var(--heading-color); font-weight: 700; font-size: 13px;">
+                📩 આપના ઈમેઈલ પર ૪ અંકનો સુરક્ષિત OTP મોકલવામાં આવ્યો છે:
+            </p>
+            <div class="form-group" style="max-width: 200px; margin: 0 auto 12px auto;">
+                <input type="text" id="otpInput" placeholder="૪ અંક OTP" maxlength="4" style="text-align: center; font-size: 20px; letter-spacing: 5px; font-weight: 800;">
+            </div>
+            <button id="verifyBtn" class="btn-gradient" onclick="verifyAndStart()" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                <i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો
+            </button>
+        </div>
+    </section>
+
+    <!-- ૨. મોક ટેસ્ટ સ્ક્રીન (ઉપર પ્રશ્ન અને વિકલ્પ, નીચે પેલેટ) -->
+    <section id="quizScreen" style="display: none;">
+        <div class="quiz-layout">
+            <!-- Top Section: Main Question Card -->
+            <div class="quiz-main-card">
+                <div>
+                    <div class="quiz-header">
+                        <div>
+                            <span id="qProgress" style="font-weight: 800; font-size: 16px; color: var(--heading-color);">પ્રશ્ન ૧ / ૧૦૦</span>
+                        </div>
+                        <div class="timer-badge">
+                            <i class="fa-regular fa-clock"></i> <span id="timerDisplay">૦૦:૦૦</span>
+                        </div>
+                    </div>
+                    <div class="question-box">
+                        <div id="unitBadge" class="unit-badge"></div>
+                        <div id="questionText" class="question-text"></div>
+                        <div id="optionsContainer"></div>
+                    </div>
+                </div>
+
+                <div class="quiz-actions-bar">
+                    <button id="flagBtn" class="btn-flag" onclick="toggleFlagCurrentQuestion()">
+                        <i class="fa-regular fa-bookmark"></i> Flag (રિવ્યુ માટે)
+                    </button>
+                    <div class="nav-buttons-group">
+                        <button id="prevBtn" class="btn-prev" onclick="prevQuestion()"><i class="fa-solid fa-arrow-left"></i> પાછળ</button>
+                        <button id="nextBtn" class="btn-next" onclick="nextQuestion()">આગળ <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Question Palette, Status Legend & Submit Button -->
+            <div class="palette-bottom-card">
+                <div class="palette-title">
+                    <span><i class="fa-solid fa-table-cells"></i> પ્રશ્ન પેલેટ (૧૦૦ પ્રશ્નોની સ્થિતિ)</span>
+                    <span id="answeredCountBadge" style="font-size: 12px; background: #10b981; color: white; padding: 4px 10px; border-radius: 12px;">0 / 100 પૂર્ણ</span>
+                </div>
+
+                <div class="legend-grid">
+                    <div class="legend-item"><div class="legend-dot" style="background:#10b981;"></div> જવાબ આપેલ</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b;"></div> Flag / રિવ્યુ</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#94a3b8;"></div> બાકી પ્રશ્ન</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#2563eb;"></div> ચાલુ પ્રશ્ન</div>
+                </div>
+
+                <div class="palette-grid" id="questionGridContainer"></div>
+
+                <div style="text-align: right; margin-top: 6px;">
+                    <button class="btn-gradient" onclick="confirmSubmitQuiz()" style="max-width: 280px; margin-left: auto; background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); padding: 11px 18px; font-size: 14.5px;">
+                        <i class="fa-solid fa-circle-check"></i> કસોટી સબમિટ કરો
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ૩. પરિણામ સ્ક્રીન (Multi-Tab Review System) -->
+    <section id="resultScreen" style="display: none;">
+        <div class="result-summary-card">
+            <h2 style="color: var(--heading-color); font-size: 20px; font-weight: 900; margin-bottom: 6px;">
+                🎉 કસોટી મૂલ્યાંકન અહેવાલ
+            </h2>
+            <p style="margin: 3px 0; font-size: 14px;"><strong>પરીક્ષાર્થી:</strong> <span id="resName"></span> | <strong>સંપર્ક:</strong> <span id="resPhone"></span></p>
+            <p style="margin: 3px 0; font-size: 13px; color: var(--subheading-color);"><strong>વિષય:</strong> GPSC Class 1-2: ELT | 100 Questions</p>
+            
+            <div class="score-pill" id="resScore">0 / 100</div>
+            <div style="font-size: 17px; font-weight: 800; color: #10b981;" id="resPercent">0%</div>
+
+            <div class="res-stats-grid">
+                <div class="res-stat-box" style="background:#10b981;">
+                    <div>સાચા ઉત્તર</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resCorrectCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#ef4444;">
+                    <div>ખોટા ઉત્તર</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resWrongCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#f59e0b;">
+                    <div>રિવ્યુ/Flagged</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resFlagCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#2563eb;">
+                    <div>લીધેલો સમય</div>
+                    <div style="font-size: 15px; font-weight: 900; margin-top: 2px;" id="resTime">00:00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ૩ અલગ ટેબ (વિભાગો) -->
+        <div class="result-tabs-nav">
+            <button class="res-tab-btn active-tab" id="tabBtnWrong" onclick="switchResultTab('wrong')">
+                <i class="fa-solid fa-triangle-exclamation" style="color: #ef4444;"></i> ❌ માત્ર ખોટા પડેલા પ્રશ્નો
+            </button>
+            <button class="res-tab-btn" id="tabBtnAnswers" onclick="switchResultTab('answers')">
+                <i class="fa-solid fa-square-check" style="color: #10b981;"></i> 📋 ઉત્તરવહી & સમજૂતી
+            </button>
+            <button class="res-tab-btn" id="tabBtnBlank" onclick="switchResultTab('blank')">
+                <i class="fa-solid fa-file-lines" style="color: #2563eb;"></i> 📝 મૂળ પ્રશ્નપત્ર (પ્રેક્ટિસ)
+            </button>
+        </div>
+
+        <!-- ટેબ ૧: માત્ર ખોટા પડેલા પ્રશ્નો -->
+        <div id="tabContentWrong">
+            <div id="wrongQuestionsList"></div>
+        </div>
+
+        <!-- ટેબ ૨: આપેલા જવાબો સાથેનું પ્રશ્નપત્ર -->
+        <div id="tabContentAnswers" style="display: none;">
+            <div id="allAnswersList"></div>
+        </div>
+
+        <!-- ટેબ ૩: મૂળ પ્રશ્નપત્ર (Blank Question Paper) -->
+        <div id="tabContentBlank" style="display: none;">
+            <div id="blankQuestionsList"></div>
+        </div>
+    </section>
+</div>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz-khogtnFjvjzRuv_ieBYJfx0TAxluM9OfoXlf72h9Yce14rdQu9_Xbmx3fnprk5Q30g/exec";
+
+// ૧૦૦ ઉચ્ચ કઠિનતામૂલ્ય (HOT) પ્રશ્નોનો ડેટાસેટ (કોર્સ-૧(અ): બોધ અને જ્ઞાન તથા રમતો)
+const questions = [
+  {
+    "q": "Consider the following statements regarding the 'Arbitrary' nature of language:1. There is a logical and inherent relationship between a word and the object it represents.2. The choice of a word for a particular referent is purely based on social convention.3. Duality and displacement are sub-components of the arbitrary nature of language.Which of the statements given above is/are correct?",
+    "options": [
+      "1 and 2 only",
+      "2 only",
+      "2 and 3 only",
+      "1, 2, and 3"
+    ],
+    "ans": 1,
+    "unit": "Unit 1",
+    "exp": "Language is arbitrary because there is no inherent or logical relation between words and their meanings (e.g., calling a female human 'woman' in English and 'aurat' in Urdu). It is purely conventional. Duality and displacement are separate characteristics, not sub-components of arbitrariness."
+  },
+  {
+    "q": "Which of the following is TRUE about the Language Education Policy of Gujarat regarding the English language?",
+    "options": [
+      "It is taught as the first language for native Gujarati speakers.",
+      "Native Gujarati speakers learn it as a second language at the 'Lower Level'.",
+      "Non-native speakers learn it as a third language at the 'Lower Level'.",
+      "English is completely optional from primary to secondary education."
+    ],
+    "ans": 1,
+    "unit": "Unit 2",
+    "exp": "In Gujarat, English is offered as a second language at the Lower Level for native Gujarati speakers, while for non-native speakers, it is offered as a first language at the Higher Level from the pre-primary stage."
+  },
+  {
+    "q": "Under the 'Three Language Formula' recommended by the Kothari Commission, what is the language requirement structure for classes V to VII?",
+    "options": [
+      "Only the regional language is taught.",
+      "Two languages are taught: Regional language + Hindi or English.",
+      "Three languages are taught: Regional language + Hindi + English.",
+      "Regional language + A classical European language."
+    ],
+    "ans": 1,
+    "unit": "Unit 2",
+    "exp": "According to the Kothari Commission: Classes 1-4 have one language (Regional). Classes 5-7 have two languages (Regional + Hindi/English). Classes 8-10 have three languages."
+  },
+  {
+    "q": "Palmer defines language learning as essentially a 'habit-forming process'. Which of the following activities best aligns with this principle in English Language Teaching?",
+    "options": [
+      "Memorizing extensive grammar rules from a textbook deductively.",
+      "Translating classical English literature into the mother tongue.",
+      "Intensive pattern drills, repetition, and practice in meaningful contexts.",
+      "Focusing exclusively on silent reading without oral practice."
+    ],
+    "ans": 2,
+    "unit": "Unit 10",
+    "exp": "The principle of habit formation relies on drill, practice, and repetition. Language is a skill subject, and forming automatic speech habits requires constant and meaningful practice."
+  },
+  {
+    "q": "In Bloom's Taxonomy, which educational domain is primarily concerned with physical or manual skills, such as articulation and manipulation in speaking and writing?",
+    "options": [
+      "Cognitive Domain",
+      "Affective Domain",
+      "Psychomotor Domain",
+      "Comprehension Domain"
+    ],
+    "ans": 2,
+    "unit": "Unit 4",
+    "exp": "Bloom's Taxonomy divides objectives into Cognitive (knowledge/thinking), Affective (feeling/attitudes), and Psychomotor (doing/physical skills like articulation, manipulation, imitation)."
+  },
+  {
+    "q": "According to Harold D. Lasswell’s model of communication ('Who says what, in which channel, to whom with what effect?'), the 'to whom' corresponds to which component in the classroom communication process?",
+    "options": [
+      "The Source / Encoder",
+      "The Medium / Channel",
+      "The Decoder / Destination",
+      "The Feedback / Reaction"
+    ],
+    "ans": 2,
+    "unit": "Unit 5",
+    "exp": "'Who' is the sender (teacher), 'what' is the message, 'channel' is the medium, 'to whom' is the receiver/decoder (pupil), and 'what effect' is the feedback/learning."
+  },
+  {
+    "q": "A student is listening to a weather report on the radio while having breakfast. She is not actively trying to memorize the details but just getting a general idea. What kind of listening does this exemplify?",
+    "options": [
+      "Intensive listening",
+      "Extensive listening",
+      "Critical listening",
+      "Therapeutic listening"
+    ],
+    "ans": 1,
+    "unit": "Unit 6",
+    "exp": "Extensive listening is done for general information or pleasure (like weather reports or general news), whereas intensive listening focuses on specific details (like directions to a house)."
+  },
+  {
+    "q": "Which of the following speaking activities is specifically designed to allow students to 'explore their inner resources, empathize with others, and use their own experiences as scaffolds' by putting themselves in an imaginary character's shoes?",
+    "options": [
+      "Jigsaw listening",
+      "Role Play",
+      "Picture Narrating",
+      "External Mingle"
+    ],
+    "ans": 1,
+    "unit": "Unit 7",
+    "exp": "Role play allows students to be creative and put themselves in another person's place, acquiring nonverbal nuances and dealing with affective issues while producing the target language."
+  },
+  {
+    "q": "During the 'Structuring Stage' of the reading process, a learner primarily:",
+    "options": [
+      "Recognizes the graphic counterparts of phonological items (words).",
+      "Comprehends the serious and jocular use of a word in an overall discourse.",
+      "Sees the syntactic relationships of the items and understands structural meanings.",
+      "Translates printed symbols into auditory signs."
+    ],
+    "ans": 2,
+    "unit": "Unit 8",
+    "exp": "The reading process has three stages: Recognition (recognizing graphic words), Structuring (seeing syntactic relationships), and Interpretation (comprehending overall context and nuance)."
+  },
+  {
+    "q": "Which method of teaching reading argues that 'the eye neither reads words nor sentences in one attempt, but finds moving in jerks more comfortable, noting a unit at a time'?",
+    "options": [
+      "Alphabetic Method",
+      "Phonic Method",
+      "Palmer's Phrase Method",
+      "Ryburn's Sentence Method"
+    ],
+    "ans": 2,
+    "unit": "Unit 8",
+    "exp": "Palmer's Phrase Method is based on the biological process of reading where the eye moves in jerks and spans a phrase at a time, making it psychologically comfortable."
+  },
+  {
+    "q": "The process of writing is divided into three stages: Manipulation, Structuring, and Communication. What does 'Manipulation' refer to in this specific context?",
+    "options": [
+      "Organizing letters into words and words into phrases.",
+      "The psychomotor ability to form letters of the alphabet.",
+      "Selecting appropriate structures for the target audience.",
+      "Using complex syntax to alter the meaning of a sentence."
+    ],
+    "ans": 1,
+    "unit": "Unit 9",
+    "exp": "Manipulation is the most rudimentary stage in writing, referring to the physical/psychomotor ability to form the graphic symbols/letters of the alphabet."
+  },
+  {
+    "q": "Which of the following is a major psychological and linguistic limitation of the Grammar Translation Method (GTM)?",
+    "options": [
+      "It completely ignores the mother tongue of the learner.",
+      "It violates the natural sequence of language learning (LSRW) by prioritizing reading and writing.",
+      "It demands highly trained, fluent native-speaking teachers to implement.",
+      "It relies heavily on expensive audio-visual aids."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "GTM is an unnatural method because it skips Listening and Speaking, starting directly with Reading and Writing, which contradicts the natural LSRW acquisition sequence."
+  },
+  {
+    "q": "In the Direct Method of teaching English, how is grammar primarily taught?",
+    "options": [
+      "Deductively, by presenting rules first.",
+      "Through direct translation of structural words.",
+      "Inductively, where learners frame rules from the language they learn.",
+      "Grammar is completely ignored in favor of literature."
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "In the Direct Method, grammar is taught inductively. Students are exposed to the language directly and frame the rules themselves based on their comprehension of patterns."
+  },
+  {
+    "q": "Who among the following propounded the Bilingual Method, which allows restricted use of the mother tongue to explain meanings and concepts?",
+    "options": [
+      "Dr. Michael West",
+      "C.J. Dodson",
+      "H.E. Palmer",
+      "J.A. Bright"
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "Prof. C.J. Dodson of Wales devised the Bilingual Method, serving as a midway approach between the Grammar Translation Method and the Direct Method."
+  },
+  {
+    "q": "Dr. Michael West's 'New Method' emphasizes which specific skill above all others for Indian students learning English?",
+    "options": [
+      "Conversational Speaking",
+      "Loud and Silent Reading",
+      "Writing and Composition",
+      "Listening Comprehension"
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "Dr. West believed that Indian students have an 'acquisition-poor environment' for speaking, hence Reading (both loud and silent) is easier and more useful to acquire first."
+  },
+  {
+    "q": "When selecting structures for the 'Structural Approach', the criterion of 'Productivity' refers to:",
+    "options": [
+      "The ease with which a structure can be demonstrated in class.",
+      "The capacity of a structure to generate a large number of sentences.",
+      "The simplicity of the form and meaning of the structure.",
+      "The immediate real-life usefulness of the structure to the learner."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "Productivity in the Structural Approach means that a structure (e.g., 'has to') has a high scope for producing/generating many different sentences."
+  },
+  {
+    "q": "Which of the following statements is INCORRECT regarding Communicative Language Teaching (CLT)?",
+    "options": [
+      "Meaning and contextualization are of paramount importance.",
+      "Dialogues are generally not memorized blindly.",
+      "The use of the mother tongue is strictly banned and heavily penalized.",
+      "Fluency, acceptable language, and appropriateness are primary goals."
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "In CLT, there is no strict ban on the use of the mother tongue (unlike the Direct Method). Careful and judicious use of the mother tongue or translation may be made to clarify meaning."
+  },
+  {
+    "q": "In Task-Based Language Teaching (TBLT), how are tasks primarily assessed in the classroom?",
+    "options": [
+      "Based purely on the grammatical accuracy of the students' output.",
+      "Based on their outcome and whether the communicative goal of the task was achieved.",
+      "Based on the amount of native language used during the task.",
+      "Based strictly on the pronunciation of individual vocabulary words."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "The priority in a TBLT class is achieving the goal of the task. Meaning is primary, and tasks are assessed based on their functional outcome rather than strict linguistic form."
+  },
+  {
+    "q": "When teaching a poetry lesson to SL/FL learners, the teacher should AVOID:",
+    "options": [
+      "Providing a model recitation with proper rhythm and intonation.",
+      "Focusing heavily on teaching grammar structures and word-by-word meanings.",
+      "Creating a proper atmosphere using pre-reciting sessions.",
+      "Encouraging individual or chorus recitation for enjoyment."
+    ],
+    "ans": 1,
+    "unit": "Unit 13",
+    "exp": "The aim of teaching poetry is aesthetic appreciation and enjoyment. The teacher should avoid word-by-word meaning translation and should not make language/grammar teaching prominent."
+  },
+  {
+    "q": "The 'Inductive-Deductive Method' of teaching grammar encompasses both approaches. What does the 'Inductive' part specifically involve?",
+    "options": [
+      "Providing the definition/rule first, followed by examples.",
+      "Providing numerous examples first, and helping students formulate the rule from them.",
+      "Teaching grammar strictly through translation of a prose text.",
+      "Making students memorize rules without providing any examples."
+    ],
+    "ans": 1,
+    "unit": "Unit 13",
+    "exp": "In the Inductive method, the teacher gives multiple examples first and then helps students deduce and formulate the grammatical rule themselves."
+  },
+  {
+    "q": "Which technique is most appropriate and effective for teaching abstract vocabulary words like 'prefer' or 'honest' in an English classroom?",
+    "options": [
+      "Showing actual concrete objects or 3D models.",
+      "Using Flashcards with pictures.",
+      "Using verbal contexts and illustrative sentences.",
+      "Drawing simple stick figures on the blackboard."
+    ],
+    "ans": 2,
+    "unit": "Unit 13",
+    "exp": "Abstract words cannot be easily shown via objects or pictures. Verbal context (e.g., 'I like tea more than coffee' -> 'I prefer tea to coffee') is the best device for abstract vocabulary."
+  },
+  {
+    "q": "According to Herbart's Five Step System for teaching prose, which step immediately follows 'Presentation'?",
+    "options": [
+      "Statement of Aim",
+      "Application",
+      "Generalization",
+      "Comparison and Association"
+    ],
+    "ans": 3,
+    "unit": "Unit 13",
+    "exp": "Herbart's Five Steps are: 1. Statement of Aim, 2. Presentation, 3. Comparison and Association, 4. Generalization, 5. Application."
+  },
+  {
+    "q": "In Activity-Based Learning (ABL) implemented in India, what term is used to describe a small unit of the curriculum comprising a group of Self Learning Materials (SLM) that a child must finish?",
+    "options": [
+      "Milestone",
+      "Blueprint",
+      "Matrix",
+      "Benchmark"
+    ],
+    "ans": 0,
+    "unit": "Unit 11",
+    "exp": "Under the ABL system, the curriculum is divided into small units called 'milestones'. A child completes a group of study cards to achieve a milestone before taking an Exam Card."
+  },
+  {
+    "q": "Which of the following is considered an electronic 'Audio' aid that specifically helps in self-examination, self-criticism, and self-education for speech and pronunciation training?",
+    "options": [
+      "Epidiascope",
+      "Tape Recorder",
+      "Slide Projector",
+      "Flash Cards"
+    ],
+    "ans": 1,
+    "unit": "Unit 12",
+    "exp": "Tape recorders are highly useful for training the ear, developing listening skills, and allowing students to record and evaluate their own pronunciation (self-examination)."
+  },
+  {
+    "q": "According to the principles of Technology Enabled Language Learning, Computer Assisted Language Learning (CALL) allows learners to:",
+    "options": [
+      "Learn strictly at the uniform pace set by the fastest learner in the class.",
+      "Record responses, identify errors, and learn asynchronously at their own pace.",
+      "Completely replace human interaction in communicative tasks.",
+      "Focus exclusively on translation exercises into the mother tongue."
+    ],
+    "ans": 1,
+    "unit": "Unit 12",
+    "exp": "CALL systems allow weak learners to learn at their own pace, providing facilities to record responses, listen back, identify errors, and get repetitive drills without human judgment."
+  },
+  {
+    "q": "Which of the following principles of foreign language teaching focuses on shifting words that are merely understood by the learner into words that are constantly used in speaking and writing?",
+    "options": [
+      "Principle of Exposure",
+      "Principle of Habit Formation",
+      "Principle of Passive and Active Vocabulary",
+      "Principle of Naturalness"
+    ],
+    "ans": 2,
+    "unit": "Unit 10",
+    "exp": "Passive vocabulary includes words recognized but seldom used, while active vocabulary includes words constantly used. The teacher's conscious effort must be to bring words from passive to active vocabulary."
+  },
+  {
+    "q": "J.A. Bright found through an experiment that a certain sequence of language skills makes learning easier because associations between symbols and sounds can be established. What was this altered sequence?",
+    "options": [
+      "Listening - Speaking - Reading - Writing",
+      "Listening - Speaking - Writing - Reading",
+      "Speaking - Listening - Reading - Writing",
+      "Reading - Writing - Listening - Speaking"
+    ],
+    "ans": 1,
+    "unit": "Unit 10",
+    "exp": "While the natural/classical order is LSRW, J.A. Bright's experiment showed that reading becomes easier when writing is learnt BEFORE reading (LSWR) to build symbol-sound associations."
+  },
+  {
+    "q": "In the context of the Structural Approach, what does the criterion of 'Teachability' mean when selecting structures for the syllabus?",
+    "options": [
+      "The structure has a high capacity to produce a large number of sentences.",
+      "The form and meaning of the structure are simple for the learner to memorize.",
+      "The structure gives more scope for easy demonstration in the classroom.",
+      "The structure is highly useful in the real-world situations of the learners."
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "Teachability refers to how easily a structure can be demonstrated or taught by the teacher in a classroom setting."
+  },
+  {
+    "q": "Which of the following is considered a major DEMERIT of the Communicative Approach (CLT) in the Indian context?",
+    "options": [
+      "It completely bans the use of the mother tongue, alienating rural students.",
+      "It ignores fluency and appropriateness, focusing only on grammatical accuracy.",
+      "It is difficult to organize group work and face-to-face discussions in overcrowded and unwieldy classrooms.",
+      "It relies heavily on rote memorization of dialogues and rigid pattern drills."
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "CLT relies on pair/group work and interactive tasks, which are logistically very difficult to manage in overcrowded Indian classrooms with fixed, unwieldy benches."
+  },
+  {
+    "q": "According to the principles of teaching prose, what is the fundamental difference between teaching a 'Biography' and teaching a 'Play'?",
+    "options": [
+      "Biographies aim at vocabulary expansion, while plays aim solely at silent reading.",
+      "Biographies expose learners to great lives to mould character, while plays primarily provide opportunities for self-expression and conversational speaking.",
+      "Biographies focus on sentence structures, while plays are used exclusively for grammar translation.",
+      "There is no specific difference; both share the exact same specific aims."
+    ],
+    "ans": 1,
+    "unit": "Unit 13",
+    "exp": "The specific aims of a biography include exposure to great men and molding character, whereas a play provides opportunities for playing roles, self-expression, and conversational English."
+  },
+  {
+    "q": "While teaching abstract vocabulary such as 'prefer' or 'honest', which technique is considered the most effective by ELT experts?",
+    "options": [
+      "Showing actual 3D models or realia.",
+      "Drawing simple sketches on the blackboard.",
+      "Using verbal contexts and illustrative sentences.",
+      "Using phonetic transcription exclusively."
+    ],
+    "ans": 2,
+    "unit": "Unit 13",
+    "exp": "Abstract words cannot be shown physically. Verbal context (e.g., 'I like tea more than coffee' -> 'I prefer tea to coffee') is highly effective for explaining such words."
+  },
+  {
+    "q": "In the 'Reference or Correlation Method' (also known as the Incidental Method) of teaching grammar, how is grammar imparted to the students?",
+    "options": [
+      "Through a dedicated grammar textbook focusing on rules first.",
+      "By memorizing paradigms and conjugation tables daily.",
+      "Incidentally, while teaching the prose textbook, translating a passage, or doing composition.",
+      "Through rigorous audio-lingual pattern drills."
+    ],
+    "ans": 2,
+    "unit": "Unit 13",
+    "exp": "The Reference/Correlation method teaches grammar incidentally while the teacher is dealing with a text, translation, or composition. It is not taught as a separate, isolated subject."
+  },
+  {
+    "q": "A teacher is conducting a reading lesson. She instructs the students to read a chapter rapidly to locate a specific date and the name of a character without reading every single word. Which sub-skill of reading is she promoting?",
+    "options": [
+      "Extensive reading for pleasure",
+      "Scanning",
+      "Skimming",
+      "Reading aloud for pronunciation"
+    ],
+    "ans": 1,
+    "unit": "Unit 8",
+    "exp": "Scanning is a technique used to read quickly to find specific information (like a date, name, or number) without reading the entire text deeply."
+  },
+  {
+    "q": "Which of the following is a primary characteristic of 'Extensive Reading'?",
+    "options": [
+      "It is done mostly for loud reading practice in the early stages of schooling.",
+      "It focuses heavily on analyzing grammar and syntax in a short text.",
+      "It is an advanced stage of silent reading aimed at expanding vocabulary, gathering information, and reading independently.",
+      "It requires the teacher to explain every difficult word before the student reads."
+    ],
+    "ans": 2,
+    "unit": "Unit 8",
+    "exp": "Extensive reading is wide reading for information or pleasure. It emphasizes vocabulary expansion, advanced comprehension, and independent silent reading at a higher speed."
+  },
+  {
+    "q": "What is the main argument supporting Palmer's 'Phrase Method' of teaching reading?",
+    "options": [
+      "Children learn best by mastering individual phonetic sounds first.",
+      "The eye reads comfortably by moving in jerks, taking in a phrase at a time rather than word-by-word.",
+      "Complete sentences are too complex for beginners to grasp visually.",
+      "Alphabets must be memorized before moving to syllables."
+    ],
+    "ans": 1,
+    "unit": "Unit 8",
+    "exp": "Palmer's Phrase Method is based on the biological process of reading, where the eye does not read single words or whole sentences continuously, but moves in jerks, grasping a phrase per eye span."
+  },
+  {
+    "q": "In the context of teaching composition, which of the following represents the logical sequence of progression for a second language learner?",
+    "options": [
+      "Free written -> Guided written -> Oral composition",
+      "Guided oral -> Free oral -> Guided written -> Free written",
+      "Free oral -> Guided written -> Free written -> Guided oral",
+      "Guided written -> Free written -> Guided oral -> Free oral"
+    ],
+    "ans": 1,
+    "unit": "Unit 13",
+    "exp": "Composition should begin with the power of speech long before it is written. It progresses from guided oral to free oral, and then shifts to guided written before finally reaching free written composition."
+  },
+  {
+    "q": "A teacher wants to transition students from Print Script to Cursive Script smoothly. What is the recommended pedagogical strategy?",
+    "options": [
+      "Force students to use full cursive with intricate loops from day one.",
+      "Teach print and cursive simultaneously on the same blackboard.",
+      "Adopt a transitional script by removing unnecessary loops from cursive letters, bringing them closer to print.",
+      "Completely abandon print script and penalize its use."
+    ],
+    "ans": 2,
+    "unit": "Unit 9",
+    "exp": "Introducing cursive directly can be difficult. It is advised to adopt a script that acts as a bridge by removing unnecessary loops from cursive letters, making the transition from print easier."
+  },
+  {
+    "q": "Which of the following correctly describes 'Jigsaw Listening'?",
+    "options": [
+      "The teacher dictates a passage while students write it down word-for-word.",
+      "Different groups listen to different parts of a story, then members exchange information to piece the whole story together.",
+      "Students listen to a sports commentary and fill out a static chart.",
+      "The teacher reads a poem and students repeat it in a chorus."
+    ],
+    "ans": 1,
+    "unit": "Unit 6",
+    "exp": "In jigsaw listening, the class is divided into groups, each listening to a part of an audio. They then regroup and share their missing sequences to solve a mystery or complete a story."
+  },
+  {
+    "q": "What is the primary focus of 'Therapeutic (Empathetic) Listening'?",
+    "options": [
+      "Evaluating the logical validity of the speaker's arguments.",
+      "Enjoying the sensory impression and beauty of a poem.",
+      "Grasping the meaning and emotions conveyed by the speaker without evaluating or judging.",
+      "Following specific route maps based on spoken instructions."
+    ],
+    "ans": 2,
+    "unit": "Unit 6",
+    "exp": "Therapeutic or empathetic listening enables the listener to grasp the meaning and emotions conveyed externally without evaluating, judging, or criticizing the speaker."
+  },
+  {
+    "q": "Which of the following is NOT an advantage of the 'Bilingual Method'?",
+    "options": [
+      "It saves time, energy, and labor for the teacher.",
+      "It guarantees the complete elimination of mother tongue influence on English pronunciation.",
+      "It does not require highly specialized or specially trained teachers.",
+      "It allows the teacher to explain abstract concepts quickly using the mother tongue."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "A demerit of the Bilingual Method is that students might pay more attention to mother-tongue sounds and their English pronunciation may become defective. It does not eliminate MT influence."
+  },
+  {
+    "q": "In the mental process of speaking, what occurs immediately after the mind receives a stimulus to speak?",
+    "options": [
+      "The vocal cords vibrate to produce sound.",
+      "The mind selects an apt medium for the message.",
+      "The mind collects contents from stored memories and known language to form the message.",
+      "The speech organs shape sounds into recognizable speech."
+    ],
+    "ans": 2,
+    "unit": "Unit 7",
+    "exp": "In the mental process of speaking, once the mind finds a stimulus, it starts to collect contents from stored memories and known language before constructing the format and choosing the medium."
+  },
+  {
+    "q": "What is 'Communication Apprehension' in the context of an English speaking class?",
+    "options": [
+      "A teaching strategy where the teacher intentionally creates stress to motivate students.",
+      "A student's lack of confidence and fear of negative evaluation or making mistakes when speaking.",
+      "The physical inability to articulate English vowel sounds.",
+      "A highly advanced stage of free oral composition."
+    ],
+    "ans": 1,
+    "unit": "Unit 7",
+    "exp": "Communication apprehension occurs due to lack of confidence, shyness, and the fear of making mistakes or being laughed at, leading students to keep silent."
+  },
+  {
+    "q": "Which of the following best defines the 'Eclectic Approach' in English Language Teaching?",
+    "options": [
+      "Rigidly adhering to the Direct Method regardless of the classroom context.",
+      "Completely ignoring grammar and focusing solely on literature.",
+      "Choosing and accepting freely from various methods to suit the classroom dynamics and learners' needs.",
+      "Using only electronic multimedia aids to teach the entire syllabus."
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "The Eclectic Approach implies that no single method is perfect. The teacher flexibly selects the best aspects of various methods (GTM, Direct, Structural, etc.) based on time, material, and student standard."
+  },
+  {
+    "q": "In 'Cooperative Language Learning' (CLL), what is the fundamental requirement for group activities?",
+    "options": [
+      "One dominant student must complete the task for the entire group.",
+      "Learning is dependent on the socially structured exchange of information, where each learner is accountable for their own and others' learning.",
+      "The teacher must heavily dictate every step of the group interaction.",
+      "Mother tongue must be used exclusively to ensure cooperation."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "CLL involves structured exchange where learners are accountable for their own learning and motivated to increase the learning of their peers in the group."
+  },
+  {
+    "q": "What is the specific role of a 'Pre-reciting session' in teaching a poetry lesson?",
+    "options": [
+      "To test the students on the grammatical structures used in the poem.",
+      "To make students memorize the poem before understanding it.",
+      "To create a proper atmosphere and context by telling something about the poem in simple English.",
+      "To conduct a rigorous spelling test of difficult poetic words."
+    ],
+    "ans": 2,
+    "unit": "Unit 13",
+    "exp": "The pre-reciting session (Step I) involves the teacher creating the proper atmosphere/environment for the poem by giving background or context in simple English before the actual recitation."
+  },
+  {
+    "q": "A teacher provides the sentence pattern 'S + V + O' and heavily drills the structure: 'I play cricket', 'She sings a song'. Which approach is the teacher utilizing?",
+    "options": [
+      "Grammar Translation Method",
+      "Structural Approach",
+      "Eclectic Approach",
+      "Bilingual Method"
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "The Structural Approach emphasizes the mastery of graded structures or sentence patterns through repetitive oral drills to form language habits."
+  },
+  {
+    "q": "The use of Computer Assisted Language Learning (CALL) primarily offers which unique advantage over traditional teacher-led drilling?",
+    "options": [
+      "It completely eliminates the need for any curriculum planning.",
+      "It allows asynchronous learning, enabling students to practice, record responses, and self-correct at their own individual pace.",
+      "It forces all students to learn at the exact same speed.",
+      "It only focuses on written translation tasks."
+    ],
+    "ans": 1,
+    "unit": "Unit 12",
+    "exp": "CALL systems empower weak learners to practice at their own pace, providing tools to record audio, identify errors without peer pressure, and control their learning path."
+  },
+  {
+    "q": "When preparing a lesson plan for prose according to Herbart's steps, at which stage does the teacher actually test if the students can use the learned vocabulary/structures in new sentences?",
+    "options": [
+      "Statement of Aim",
+      "Presentation",
+      "Application",
+      "Comparison"
+    ],
+    "ans": 2,
+    "unit": "Unit 13",
+    "exp": "'Application' is the final stage where students apply the generalized knowledge (vocabulary, structures) to new situations or exercises to prove their understanding."
+  },
+  {
+    "q": "Which characteristic of good handwriting refers to the consistent proportion between the height and breadth of letters in a line?",
+    "options": [
+      "Distinctiveness",
+      "Legibility",
+      "Uniformity",
+      "Spacing"
+    ],
+    "ans": 2,
+    "unit": "Unit 9",
+    "exp": "Uniformity means the letters in each line should be uniform in size, maintaining a consistent proportion between their height and breadth."
+  },
+  {
+    "q": "What is a major disadvantage of using the 'Informal Method' of teaching grammar?",
+    "options": [
+      "It relies too heavily on rote memorization of rules.",
+      "Students do not get systematized or structured knowledge of grammar rules.",
+      "It strictly follows the 'rule first, example later' deduction sequence.",
+      "It completely alienates primary level students."
+    ],
+    "ans": 1,
+    "unit": "Unit 13",
+    "exp": "The Informal Method teaches grammar through continuous usage while reading/writing without emphasizing rules. The limitation is that students don't gain a systematized, complete knowledge of grammar."
+  },
+  {
+    "q": "In language teaching, the 'Cognitive Domain' of Bloom's Taxonomy involves which of the following sequences of objectives?",
+    "options": [
+      "Receiving, Responding, Valuing, Organization, Characterization",
+      "Knowledge, Comprehension, Application, Analysis, Synthesis, Evaluation",
+      "Imitation, Manipulation, Precision, Articulation, Naturalization",
+      "Listening, Speaking, Reading, Writing"
+    ],
+    "ans": 1,
+    "unit": "Unit 4",
+    "exp": "The Cognitive Domain relates to knowledge and intellectual skills, structured sequentially from Knowledge to Evaluation in Bloom's Taxonomy."
+  },
+  {
+    "q": "Which reading strategy emphasizes the expansion of vocabulary, advanced comprehension skills, and independent silent reading over a large amount of text?",
+    "options": [
+      "Intensive Reading",
+      "Skimming",
+      "Extensive Reading",
+      "Scanning"
+    ],
+    "ans": 2,
+    "unit": "Unit 8",
+    "exp": "Extensive reading (reading for information/pleasure) involves reading wide fields of texts independently to expand vocabulary and increase reading speed."
+  },
+  {
+    "q": "According to David Nunan, the Communicative Approach is not merely a system of rules. What is its primary focus?",
+    "options": [
+      "Strict adherence to grammatical translation.",
+      "A system of human interaction, behaviors, and expressions in speech and writing.",
+      "The mechanical drilling of phonetic sounds.",
+      "The exclusive study of classical English literature."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "Nunan states that the communicative approach focuses on human interaction and the appropriate use of language in various social behaviors and expressions, rather than just grammatical rules."
+  },
+  {
+    "q": "In the context of English language teaching, what is 'Lingua phone' primarily used for?",
+    "options": [
+      "Teaching advanced grammar rules deductively.",
+      "Projecting visual images and charts onto a screen.",
+      "Providing recorded speeches of great personalities to train students in listening and speaking.",
+      "Generating automated text-based essays."
+    ],
+    "ans": 2,
+    "unit": "Unit 12",
+    "exp": "Lingua phone uses records (audio) of speeches by great personalities to help students train force their ear, improve pronunciation, and become good speakers."
+  },
+  {
+    "q": "Which characteristic of a good handwriting ensures that there is a consistent proportion between the height and breadth of letters in a line?",
+    "options": [
+      "Legibility",
+      "Spacing",
+      "Uniformity",
+      "Distinctiveness"
+    ],
+    "ans": 2,
+    "unit": "Unit 9",
+    "exp": "Uniformity dictates that letters in each line should be uniform in size, maintaining a consistent proportion between their height and breadth."
+  },
+  {
+    "q": "The 'Audio-Lingual Method' is heavily influenced by which psychological theory of learning?",
+    "options": [
+      "Constructivism",
+      "Behaviorism",
+      "Cognitivism",
+      "Humanism"
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "The Audio-Lingual Method is based on the behaviorist theory of language learning, emphasizing habit formation through repetitive pattern practice, drilling, and memorization."
+  },
+  {
+    "q": "When selecting structures for teaching in the Structural Approach, the criterion of 'Simplicity' refers to:",
+    "options": [
+      "The ability of the structure to be easily demonstrated in class.",
+      "The capacity of the structure to produce many sentences.",
+      "The simplicity of both the form and the meaning of the structure.",
+      "The relevance of the structure to the learner's daily life."
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "Simplicity means that the form and meaning of the structure should be simple (e.g., 'they are playing' vs. a complex conditional sentence)."
+  },
+  {
+    "q": "In the process of writing, what is the ultimate goal achieved during the 'Communication' stage?",
+    "options": [
+      "The psychomotor ability to form letters physically.",
+      "Organizing letters into isolated words.",
+      "Selecting appropriate structures and vocabulary in the overall context for a specific audience.",
+      "Translating mother-tongue sentences directly into English."
+    ],
+    "ans": 2,
+    "unit": "Unit 9",
+    "exp": "The Communication stage is the highest level of writing where the writer selects appropriate language forms, styles, and conventions depending on the subject matter and audience (e.g., a business letter vs. a story)."
+  },
+  {
+    "q": "Which of the following barriers to listening is classified as a 'Cognitive Factor'?",
+    "options": [
+      "Poor classroom lighting or uncomfortable temperature.",
+      "The speaker's disorganized presentation or monotone voice.",
+      "The disparity between brain processing speed (400-800 words/min) and normal speech rate (125-175 words/min).",
+      "The physical illness or drowsiness of the student."
+    ],
+    "ans": 2,
+    "unit": "Unit 6",
+    "exp": "Cognitive factors relate to mental processes. Because our brains process information much faster than people speak, listeners can easily become distracted by passing thoughts."
+  },
+  {
+    "q": "What is the main objective of teaching 'Prose' as a skill subject in an ESL/EFL classroom?",
+    "options": [
+      "To promote rote memorization of factual questions and answers.",
+      "To develop reading with comprehension, enrich vocabulary, and acquire linguistic items (structures, clauses).",
+      "To exclusively develop aesthetic appreciation and emotional sensitivity.",
+      "To teach English grammar purely deductively."
+    ],
+    "ans": 1,
+    "unit": "Unit 13",
+    "exp": "Teaching prose is not for memorizing Q&A but for intensive study of language, structures, and vocabulary. It means teaching reading with comprehension to develop overall language ability."
+  },
+  {
+    "q": "Which teaching aid is most effective for conducting 'minimal pair drills' and teaching 'mechanics of writing by drawing strokes'?",
+    "options": [
+      "Lingua phone",
+      "Charts",
+      "Tape Recorder",
+      "Filmstrips"
+    ],
+    "ans": 1,
+    "unit": "Unit 12",
+    "exp": "Charts are cost-effective aids useful for minimal pair drills, teaching structures via substitution tables, and teaching writing mechanics by drawing strokes."
+  },
+  {
+    "q": "In the context of English language teaching in Gujarat, which program was initiated by the government specifically to improve the English proficiency of youth?",
+    "options": [
+      "KMPF (Knowledge Management Program for Faculty)",
+      "SCOPE (The Society For Creation and Opportunity through Proficiency in English)",
+      "DELL (Digital English Language Laboratory)",
+      "All of the above"
+    ],
+    "ans": 3,
+    "unit": "Unit 2",
+    "exp": "The Education Department of Gujarat initiated DELL, SCOPE, and KMPF to enhance the English proficiency of students and faculty in the state."
+  },
+  {
+    "q": "According to the principles of teaching English, what does 'Principle of Proportion' imply?",
+    "options": [
+      "Spending equal time on grammar and literature.",
+      "Giving due and appropriate emphasis to all four aspects/skills (LSRW) so that no skill is over-emphasized or neglected.",
+      "Dividing the class equally into active and passive learners.",
+      "Using mother tongue exactly 50% of the time during instruction."
+    ],
+    "ans": 1,
+    "unit": "Unit 10",
+    "exp": "The principle of proper proportion means that all items and aspects of the language (LSRW) must receive an appropriate degree of attention to form a harmonious whole."
+  },
+  {
+    "q": "A teacher divides the class into groups and gives them controversial statements like 'People learn best when they read vs. People learn best when they travel'. Each group must defend their idea. Which speaking activity is this?",
+    "options": [
+      "Role Play",
+      "Jigsaw Listening",
+      "Discussion (Agree/Disagree)",
+      "Picture Narrating"
+    ],
+    "ans": 2,
+    "unit": "Unit 7",
+    "exp": "This is an agree/disagree discussion activity that fosters critical thinking, quick decision-making, and teaches students how to express and justify themselves politely."
+  },
+  {
+    "q": "Which of the following is a key characteristic of the 'Alphabetic Method' of teaching reading?",
+    "options": [
+      "It focuses entirely on the phonetic sounds of letters rather than their names.",
+      "It introduces complete sentences first, then breaks them down.",
+      "Names of letters are given first, then syllables, and lastly the word with its pronunciation.",
+      "It relies on visual recognition of whole words using flashcards (Look and Say)."
+    ],
+    "ans": 2,
+    "unit": "Unit 8",
+    "exp": "In the Alphabetic Method, students learn the names of the letters first, combine them into syllables, and then form words. It is considered psychologically unsound and limits reading fluency."
+  },
+  {
+    "q": "What is a major disadvantage of Dr. West's New Method?",
+    "options": [
+      "It neglects reading comprehension entirely.",
+      "It overemphasizes speaking and neglects passive vocabulary.",
+      "It creates a clear-cut distinction between speaking and reading, which is psychologically unsound for developing productive skills.",
+      "It demands the use of highly expensive language laboratories."
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "Dr. West overemphasized passive reading and neglected speaking, grammar, and composition. Separating reading entirely from speaking is practically difficult and pedagogically unsound."
+  },
+  {
+    "q": "In evaluating a student's listening skills, the ability to 'distinguish facts from opinions' aligns with which specific type of listening?",
+    "options": [
+      "Comprehensive listening",
+      "Appreciative listening",
+      "Discriminative listening",
+      "Therapeutic listening"
+    ],
+    "ans": 2,
+    "unit": "Unit 6",
+    "exp": "Discriminative listening develops logical thinking, sensitizes the listener to arguments, and enables them to distinguish facts from opinions."
+  },
+  {
+    "q": "According to the 'Bilingual Method', who is permitted to use the mother tongue in the English classroom?",
+    "options": [
+      "Only the students, when they cannot express themselves in English.",
+      "Both the teacher and the students, freely.",
+      "Only the teacher, and strictly for explaining word meanings or difficult areas.",
+      "Neither the teacher nor the students."
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "In the Bilingual Method, the mother tongue is restricted to the teacher only. It is used to provide equivalents and explain difficult areas without duplicating real-life situations."
+  },
+  {
+    "q": "Which of the following writing activities falls under 'Guided Written Composition'?",
+    "options": [
+      "Writing a creative original short story based on a student's imagination.",
+      "Filling in blanks in a paragraph where sentence structures and vocabulary are provided.",
+      "Participating in a free group discussion on a controversial topic.",
+      "Delivering an impromptu speech on current affairs."
+    ],
+    "ans": 1,
+    "unit": "Unit 13",
+    "exp": "Guided composition involves providing the students with scaffolds like outlines, vocabulary, or fill-in-the-blanks, whereas free composition relies entirely on the student's original thought and structure."
+  },
+  {
+    "q": "In the context of ELT, what does 'CALL' stand for?",
+    "options": [
+      "Communicative Audio Language Learning",
+      "Computer Assisted Language Learning",
+      "Cooperative Active Language Learning",
+      "Cognitive Applied Language Learning"
+    ],
+    "ans": 1,
+    "unit": "Unit 12",
+    "exp": "CALL stands for Computer Assisted Language Learning, a system that integrates technology to help learners practice and evaluate their language skills autonomously."
+  },
+  {
+    "q": "When a teacher uses the 'Look and Say Method' for teaching reading, what is the primary sequence of action?",
+    "options": [
+      "The teacher teaches the sound of each alphabet letter separately.",
+      "The teacher writes words/shows flashcards, reads them, and students observe and repeat the whole word.",
+      "The teacher translates whole sentences into the mother tongue.",
+      "Students silently read a long passage for comprehension."
+    ],
+    "ans": 1,
+    "unit": "Unit 8",
+    "exp": "The Look and Say (Word Method) involves presenting a whole word visually (via blackboard or flashcards). The teacher reads it, and students observe and repeat it as a complete unit."
+  },
+  {
+    "q": "A major principle of the 'Communicative Approach' is 'appropriateness'. What does this mean?",
+    "options": [
+      "Using completely error-free grammar at all times.",
+      "Knowing what to say, how to say it, and to whom it is appropriate to use specific forms depending on the social context.",
+      "Translating English texts appropriately into the regional language.",
+      "Memorizing dialogues perfectly without missing a word."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "Communicative competence involves not just grammatical knowledge, but social skills—understanding the context, register, and appropriateness of language for different audiences and situations."
+  },
+  {
+    "q": "Which factor primarily determines the 'Eye Span' of a reader during the biological process of reading?",
+    "options": [
+      "The number of words a reader can process during a single stop/fixation of the eyeballs.",
+      "The physical distance between the reader's eyes and the book.",
+      "The ability to read out loud without stuttering.",
+      "The font size of the text being read."
+    ],
+    "ans": 0,
+    "unit": "Unit 8",
+    "exp": "Our eyeballs move in jerks and stop momentarily. The number of words a person can read in one complete movement/stop of the eyeballs is called the 'eye span', distinguishing fast readers from slow ones."
+  },
+  {
+    "q": "According to the principles of teaching poetry, what should be the teacher's approach towards the 'moral' of a poem?",
+    "options": [
+      "The moral should be the central focus of the entire lesson.",
+      "The teacher should dictate the moral for students to memorize for exams.",
+      "The moral of the poem should be avoided, as the primary aim is aesthetic enjoyment.",
+      "The moral should be translated word-by-word into the mother tongue."
+    ],
+    "ans": 2,
+    "unit": "Unit 13",
+    "exp": "While teaching poetry for language and appreciation, the teacher should focus on the music and rhythm. The direct preaching of the 'moral' should be avoided."
+  },
+  {
+    "q": "In the context of English language teaching in India, why is the Direct Method often considered difficult to implement successfully?",
+    "options": [
+      "It strictly bans the use of audio-visual aids.",
+      "It is unnatural and starts directly with reading and writing.",
+      "It demands highly competent teachers, linguistically qualitative students, and small class sizes, which are rare in overcrowded Indian schools.",
+      "It relies entirely on deductive grammar teaching, which bores students."
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "The Direct Method requires teachers fluent in English, active student participation, and individual attention. Overcrowded classes and varying teacher competence in India make it very difficult to execute properly."
+  },
+  {
+    "q": "According to the 'Principle of Naturalness' in foreign language teaching, what is the fundamental reason a mother tongue is learnt more easily than a foreign language?",
+    "options": [
+      "The grammatical rules of the mother tongue are genetically inherited.",
+      "A natural environment with constant exposure and use exists for the mother tongue.",
+      "The mother tongue always has a simpler phonetic structure.",
+      "Children do not need to practice habit formation for their mother tongue."
+    ],
+    "ans": 1,
+    "unit": "Unit 10",
+    "exp": "The mother tongue is easily learnt because it is spoken in the family and neighborhood, providing a natural environment and constant exposure, which a foreign language lacks in a classroom."
+  },
+  {
+    "q": "Which method of teaching reading completely relies on 'one sound for one letter' rule, making it problematic for a language like English where letters have multiple sounds?",
+    "options": [
+      "Alphabetic Method",
+      "Phonic Method",
+      "Phonetic Method",
+      "Word Method"
+    ],
+    "ans": 1,
+    "unit": "Unit 8",
+    "exp": "The Phonic Method is based on the sounds of letters, where the rule is generally one sound for one letter. This does not go well with English, which is not highly phonetic."
+  },
+  {
+    "q": "In a communicative language classroom, the teacher acts primarily as a:",
+    "options": [
+      "Strict disciplinarian focusing on deductive grammar.",
+      "Dominant speaker controlling all dialogue.",
+      "Facilitator of learning and communication.",
+      "Translator of native language phrases."
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "In the Communicative Approach, the teacher is a facilitator of learning. Drill is marginal, and the focus is on motivating learners to interact in pairs or groups."
+  },
+  {
+    "q": "Which characteristic of Activity-Based Learning (ABL) sets it apart from traditional didactic instruction?",
+    "options": [
+      "Students learn strictly about the content, ignoring the process.",
+      "Students construct mental models to solve problems by doing or seeing something done.",
+      "The curriculum relies entirely on teacher lectures and extensive note-taking.",
+      "Activities are purely theoretical without the use of manipulative materials."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "In ABL, students are actively engaged in doing. They learn the process to solve a problem (constructing mental models) and simultaneously learn the content."
+  },
+  {
+    "q": "What is the primary purpose of 'Scanning' in reading?",
+    "options": [
+      "To appreciate the aesthetic beauty of the literary text.",
+      "To extract the central theme or gist of a paragraph.",
+      "To locate specific facts, figures, or information quickly without reading every word.",
+      "To critically evaluate the author's arguments and biases."
+    ],
+    "ans": 2,
+    "unit": "Unit 8",
+    "exp": "Scanning is used to find specific information quickly, such as a name in a directory or a date in a text, without reading the text comprehensively."
+  },
+  {
+    "q": "Which teaching method explicitly aims to achieve 'Bilingualism in the strictest form in the long run'?",
+    "options": [
+      "Direct Method",
+      "Bilingual Method",
+      "Grammar Translation Method",
+      "Audio-Lingual Method"
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "According to C.J. Dodson, one of the main objectives of the Bilingual Method is to achieve strict bilingualism in the long run by using the mother tongue as a bridge to the target language."
+  },
+  {
+    "q": "According to the 'Principle of Proper Order', what is the widely accepted classical sequence for teaching language skills?",
+    "options": [
+      "Reading, Writing, Listening, Speaking",
+      "Listening, Speaking, Reading, Writing",
+      "Speaking, Listening, Writing, Reading",
+      "Writing, Reading, Speaking, Listening"
+    ],
+    "ans": 1,
+    "unit": "Unit 10",
+    "exp": "The natural or classical order of learning the four basic language skills is Listening (1), Speaking (2), Reading (3), and Writing (4)."
+  },
+  {
+    "q": "Which of the following best describes 'Task-Based Language Teaching (TBLT)'?",
+    "options": [
+      "It is an approach where grammar structures are explicitly taught before any task is given.",
+      "It emphasizes meaning over form, allowing students to use any language constructs they know to achieve a practical goal.",
+      "It relies heavily on rote memorization of dialogues related to daily tasks.",
+      "It is a teacher-centered approach where the outcome of the task is irrelevant."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "TBLT is student-centered, emphasizes meaning over form, and allows learners to use whatever grammar/vocabulary they want to accomplish a real-world task, assessing them on the outcome."
+  },
+  {
+    "q": "In the context of teaching composition, what does 'Syntax' as a sub-skill primarily refer to?",
+    "options": [
+      "The originality and clarity of the subject matter.",
+      "The correct spelling and spacing of words.",
+      "The appropriate word order and sentence structure.",
+      "The justification and reasons for writing."
+    ],
+    "ans": 2,
+    "unit": "Unit 9",
+    "exp": "Syntax is a sub-skill of writing that deals with how words combine to form phrases and sentences, specifically concerning word order and sentence structure."
+  },
+  {
+    "q": "Which visual aid is considered a highly time-saving device specifically for teaching grammar structures using 'Substitution Tables'?",
+    "options": [
+      "Flash Cards",
+      "Charts",
+      "Models",
+      "Filmstrips"
+    ],
+    "ans": 1,
+    "unit": "Unit 12",
+    "exp": "Charts are cost-effective and highly time-saving for teaching structures via substitution tables, as they can be prepared in advance and reused."
+  },
+  {
+    "q": "What is a major disadvantage of using the 'Audio-Lingual Method'?",
+    "options": [
+      "It completely neglects the development of oral skills.",
+      "It is highly teacher-dominated, making learners passive and restricting their analytical learning.",
+      "It bans the use of visual aids for teaching vocabulary.",
+      "It focuses too much on meaning and neglects language forms entirely."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "The Audio-Lingual Method relies on behaviorist drilling and pattern practice, meaning it is guided learning dominated by the teacher. Learners are passive and lack scope for analytical learning."
+  },
+  {
+    "q": "When teaching poetry for language acquisition, why is it recommended to choose poems that are humorous or highly rhythmic?",
+    "options": [
+      "They provide the most complex grammatical structures for deep analysis.",
+      "They enchant children and create a favorable, interested attitude towards the language.",
+      "They eliminate the need for any pre-reciting explanation.",
+      "They are the only poems that contain explicit moral lessons."
+    ],
+    "ans": 1,
+    "unit": "Unit 13",
+    "exp": "Rhyme and rhythmic activities enchant children. If the poem is humorous, students show much interest, which the teacher can exploit to teach language effectively through positive attitude."
+  },
+  {
+    "q": "In the context of reading, what does 'Eye Span' refer to?",
+    "options": [
+      "The total time a student can read without getting tired.",
+      "The number of words a reader can process in a single complete movement/fixation of the eyeballs.",
+      "The distance maintained between the book and the reader's eyes.",
+      "The ability to read in a dimly lit room."
+    ],
+    "ans": 1,
+    "unit": "Unit 8",
+    "exp": "Eye span is the number of words one can read during the brief stop (fixation) at the end of each eyeball jump. A wider eye span distinguishes a fast reader."
+  },
+  {
+    "q": "Which approach is defined by the assumption that language can best be learnt when its need is felt in a specific situation, establishing a concrete relationship between explanation and content?",
+    "options": [
+      "Grammar Translation Method",
+      "Dr. West's New Method",
+      "Structural Approach",
+      "Phonic Method"
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "B.D. Srivastava defines the Structural Approach as essentially a situational approach where language is best learnt in meaningful situations, establishing a concrete relation between explanation and content."
+  },
+  {
+    "q": "What is the primary difference between 'Intensive Reading' and 'Extensive Reading'?",
+    "options": [
+      "Intensive reading is for general pleasure, while extensive reading is for grammatical analysis.",
+      "Intensive reading focuses on deep comprehension, gathering facts, and critical analysis, while extensive reading focuses on reading widely for information and vocabulary expansion.",
+      "Intensive reading is only done aloud, while extensive reading is only done silently.",
+      "Intensive reading is for beginners, while extensive reading is strictly for university students."
+    ],
+    "ans": 1,
+    "unit": "Unit 8",
+    "exp": "Intensive reading is 'critical reading' (analyzing facts, preparing for exams), whereas extensive reading is 'reading for information/pleasure' over a large field to increase speed and vocabulary."
+  },
+  {
+    "q": "In a classroom, a student who is overly anxious or excited finds it difficult to concentrate on the teacher's lesson. This represents which type of listening barrier?",
+    "options": [
+      "Environmental Factor",
+      "Speaker Factor",
+      "Physical Factor",
+      "Psychological Factor"
+    ],
+    "ans": 3,
+    "unit": "Unit 6",
+    "exp": "Psychological state (relating to the mind), such as being overly excited, anxious, or depressed, causes concentration to waver, acting as a mental/psychological barrier to listening."
+  },
+  {
+    "q": "According to the 'Principle of Motivation' in language teaching, creating a clear-cut goal for students to achieve falls under which technique?",
+    "options": [
+      "Arousing technique",
+      "Expectancy technique",
+      "Incentive technique",
+      "Disciplinary technique"
+    ],
+    "ans": 1,
+    "unit": "Unit 10",
+    "exp": "The expectancy technique involves formulating clear-cut goals for students so they know what they are expected to achieve, thereby motivating them."
+  },
+  {
+    "q": "Which of the following is considered a 'Productive Skill' in language learning?",
+    "options": [
+      "Listening",
+      "Reading",
+      "Writing",
+      "Comprehension"
+    ],
+    "ans": 2,
+    "unit": "Unit 5 & 9",
+    "exp": "Listening and reading are receptive/passive skills because learners receive language. Speaking and writing are productive/active skills because learners must produce language."
+  },
+  {
+    "q": "When an English teacher uses 'Realia' or actual objects to teach vocabulary, which teaching principle is being strongly utilized?",
+    "options": [
+      "Principle of Translation",
+      "Principle of Habit Formation",
+      "Principle of Context and Situation",
+      "Principle of Deductive Grammar"
+    ],
+    "ans": 2,
+    "unit": "Unit 13 & 3",
+    "exp": "Using realia/objects creates a direct bond between the object and the English word in a realistic situation, adhering to the principle of context/situation rather than rote translation."
+  },
+  {
+    "q": "What is the primary role of the 'Mother Tongue' in the Direct Method of teaching English?",
+    "options": [
+      "It is used extensively by the teacher to explain grammar rules.",
+      "It is strictly restrained and avoided to encourage thinking directly in English.",
+      "It is used interchangeably with English by students for all discussions.",
+      "It is used to translate every single phrase word-for-word."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "The Direct Method completely restrains the use of the mother tongue. English is taught through English to create a direct bond between experience and expression."
+  },
+  {
+    "q": "In writing, the ability to organize ideas into paragraphs, select sub-topics, and maintain relevance falls under which sub-skill?",
+    "options": [
+      "Syntax",
+      "Visual perception",
+      "Organization",
+      "Grammar"
+    ],
+    "ans": 2,
+    "unit": "Unit 9",
+    "exp": "Organization as a sub-skill of writing involves selecting topics, sub-topics, and organizing ideas systematically into paragraphs."
+  },
+  {
+    "q": "Which of the following methods of teaching reading is highly complicated, minute, and requires high proficiency in phonetics from the teacher, utilizing tapes and phonetic exercises?",
+    "options": [
+      "The Word Method",
+      "The Sentence Method",
+      "The Phonetic Method",
+      "The Alphabetic Method"
+    ],
+    "ans": 2,
+    "unit": "Unit 8",
+    "exp": "The Phonetic Method is delicate and complicated. It uses tapes, records, and phonetic exercises, requiring very high proficiency in phonetics which is often not available with average teachers."
+  },
+  {
+    "q": "What is a major disadvantage of using the 'Grammar Translation Method' regarding language acquisition?",
+    "options": [
+      "It fails to build the student's vocabulary.",
+      "It does not allow for pattern practice or habit formation, preventing students from thinking in English.",
+      "It demands highly advanced audio-visual technology.",
+      "It is too difficult to implement in crowded classrooms."
+    ],
+    "ans": 1,
+    "unit": "Unit 11",
+    "exp": "Because GTM relies on translation, there is no room for pattern practice or oral habit formation. Students think in their mother tongue and then translate, rather than thinking in English."
+  },
+  {
+    "q": "According to the 'Eclectic Approach', what should be the sole, ultimate aim of the teacher, regardless of the combination of methods used?",
+    "options": [
+      "Ensuring strict adherence to deductive grammar.",
+      "Completing the syllabus in the shortest time possible.",
+      "Developing the four language skills (LSRW) in their natural order among the students.",
+      "Completely eliminating the use of the mother tongue."
+    ],
+    "ans": 2,
+    "unit": "Unit 11",
+    "exp": "In the Eclectic Approach, whatever method the teacher adopts, the sole aim should be developing the four language skills (LSRW) effectively among the students."
+  },
+  {
+    "q": "Which of the following is an example of an 'Electronic Audio-Visual Aid' that uniquely changes the status quo of the classroom by making the educator and children 'peers' who share and discuss the viewing experience?",
+    "options": [
+      "Tape Recorder",
+      "Lingua phone",
+      "Flash Cards",
+      "Television / Educational TV programs"
+    ],
+    "ans": 3,
+    "unit": "Unit 12",
+    "exp": "Educational television programs change the status quo. Instead of the teacher just imparting knowledge, both teacher and students view the program together as peers, sparking small group discussions afterward."
+  }
+];
+
+let studentName = "", studentPhone = "", studentEmail = "";
+let currentQ = 0;
+let userAnswers = new Array(questions.length).fill(null);
+let flaggedQuestions = new Array(questions.length).fill(false);
+let startTime, timerInterval;
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    const btn = document.getElementById("themeToggleBtn");
+    btn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i> લાઈટ મોડ' : '<i class="fa-solid fa-moon"></i> ડાર્ક મોડ';
+}
+
+function showNotice(msg, type = "info") {
+    const box = document.getElementById("noticeMsg");
+    box.className = "msg-box " + (type === "error" ? "msg-error" : "msg-info");
+    box.innerText = msg;
+    box.style.display = "block";
+    setTimeout(() => { box.style.display = "none"; }, 6000);
+}
+
+/* ૧. ઑથેન્ટિકેશન & OTP */
+function requestOTP() {
+    studentName = document.getElementById("name").value.trim();
+    studentPhone = document.getElementById("phone").value.trim();
+    studentEmail = document.getElementById("email").value.trim();
+
+    if (!studentName || studentPhone.length < 10 || !studentEmail.includes("@")) {
+        showNotice("કૃપા કરીને પૂરું નામ, ૧૦ અંકનો સાચો મોબાઇલ નંબર અને માન્ય ઇમેઇલ દાખલ કરો.", "error");
+        return;
+    }
+
+    const btn = document.getElementById("getOtpBtn");
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> OTP મોકલાઈ રહ્યો છે...';
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+            action: "sendOTP",
+            name: studentName,
+            email: studentEmail
+        })
+    })
+    .then(function() {
+        showNotice("આપના ઈમેઈલ પર ૪ અંકનો OTP મોકલવામાં આવ્યો છે. ઇનબોક્સ/સ્પામ તપાસો.", "info");
+        document.getElementById("otpContainer").style.display = "block";
+        btn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> OTP ફરીથી મોકલો';
+        btn.disabled = false;
+    })
+    .catch(function() {
+        showNotice("OTP મોકલવામાં ક્ષતિ આવી. ફરી પ્રયાસ કરો.", "error");
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> OTP મેળવો અને આગળ વધો';
+    });
+}
+
+function verifyAndStart() {
+    const enteredOTP = document.getElementById("otpInput").value.trim();
+    if (enteredOTP.length !== 4) {
+        showNotice("કૃપા કરીને ૪ અંકનો સાચો OTP દાખલ કરો.", "error");
+        return;
+    }
+
+    const vBtn = document.getElementById("verifyBtn");
+    vBtn.disabled = true;
+    vBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ચકાસણી ચાલુ છે...';
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({
+            action: "verifyOTP",
+            email: studentEmail,
+            otp: enteredOTP
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === "success" && data.verified) {
+            document.getElementById("loginScreen").style.display = "none";
+            document.getElementById("quizScreen").style.display = "block";
+            initQuestionPalette();
+            startTime = new Date();
+            timerInterval = setInterval(updateTimer, 1000);
+            loadQuestion();
+        } else {
+            showNotice("ખોટો OTP અથવા સમય વીતી ગયો છે! ફરી ચકાસો.", "error");
+            vBtn.disabled = false;
+            vBtn.innerHTML = '<i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો';
+        }
+    })
+    .catch(() => {
+        showNotice("ચકાસણીમાં ભૂલ થઈ. ફરી પ્રયાસ કરો.", "error");
+        vBtn.disabled = false;
+        vBtn.innerHTML = '<i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો';
+    });
+}
+
+/* ૨. ટાઈમર */
+function updateTimer() {
+    const elapsed = Math.floor((new Date() - startTime) / 1000);
+    const mins = String(Math.floor(elapsed / 60)).padStart(2, '0');
+    const secs = String(elapsed % 60).padStart(2, '0');
+    document.getElementById("timerDisplay").innerText = `${mins}:${secs}`;
+}
+
+/* ૩. પ્રશ્ન પેલેટ (Question Palette 1-100) */
+function initQuestionPalette() {
+    const container = document.getElementById("questionGridContainer");
+    container.innerHTML = "";
+    for (let i = 0; i < questions.length; i++) {
+        const pill = document.createElement("div");
+        pill.className = "q-pill";
+        pill.id = `qPill_${i}`;
+        pill.innerText = i + 1;
+        pill.onclick = () => jumpToQuestion(i);
+        container.appendChild(pill);
+    }
+    updatePaletteStats();
+}
+
+function updatePaletteStats() {
+    let answered = 0;
+    for (let i = 0; i < questions.length; i++) {
+        const pill = document.getElementById(`qPill_${i}`);
+        if (!pill) continue;
+        pill.className = "q-pill";
+        
+        if (i === currentQ) {
+            pill.classList.add("status-current");
+        }
+        if (flaggedQuestions[i]) {
+            pill.classList.add("status-flagged");
+        } else if (userAnswers[i] !== null) {
+            pill.classList.add("status-answered");
+            answered++;
+        }
+    }
+    const totalAns = userAnswers.filter(a => a !== null).length;
+    document.getElementById("answeredCountBadge").innerText = `${totalAns} / ${questions.length} પૂર્ણ`;
+}
+
+function jumpToQuestion(idx) {
+    currentQ = idx;
+    loadQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ૪. પ્રશ્ન લોડિંગ અને Flagging */
+function loadQuestion() {
+    const q = questions[currentQ];
+    document.getElementById("qProgress").innerText = `પ્રશ્ન ${currentQ + 1} / ${questions.length}`;
+    document.getElementById("unitBadge").innerText = `📘 ${q.unit}`;
+    document.getElementById("questionText").innerText = q.q;
+
+    // Flag button update
+    const flagBtn = document.getElementById("flagBtn");
+    if (flaggedQuestions[currentQ]) {
+        flagBtn.className = "btn-flag active-flag";
+        flagBtn.innerHTML = '<i class="fa-solid fa-bookmark"></i> Flag કરેલ છે 🚩';
+    } else {
+        flagBtn.className = "btn-flag";
+        flagBtn.innerHTML = '<i class="fa-regular fa-bookmark"></i> Flag (રિવ્યુ માટે)';
+    }
+
+    const optContainer = document.getElementById("optionsContainer");
+    optContainer.innerHTML = "";
+
+    q.options.forEach((opt, idx) => {
+        const label = document.createElement("label");
+        label.className = "option-label";
+        const isChecked = userAnswers[currentQ] === idx ? "checked" : "";
+        label.innerHTML = `
+            <input type="radio" name="opt" value="${idx}" ${isChecked} onchange="onOptionSelect(${idx})">
+            <span><strong>(${String.fromCharCode(65 + idx)})</strong> ${opt}</span>
+        `;
+        optContainer.appendChild(label);
+    });
+
+    document.getElementById("prevBtn").style.visibility = (currentQ === 0) ? "hidden" : "visible";
+    document.getElementById("nextBtn").innerHTML = (currentQ === questions.length - 1) 
+        ? '<i class="fa-solid fa-flag-checkered"></i> કસોટી પૂર્ણ કરો' 
+        : 'આગળ <i class="fa-solid fa-arrow-right"></i>';
+
+    updatePaletteStats();
+}
+
+function onOptionSelect(idx) {
+    userAnswers[currentQ] = idx;
+    updatePaletteStats();
+}
+
+function toggleFlagCurrentQuestion() {
+    flaggedQuestions[currentQ] = !flaggedQuestions[currentQ];
+    loadQuestion();
+}
+
+function prevQuestion() {
+    if (currentQ > 0) {
+        currentQ--;
+        loadQuestion();
+    }
+}
+
+function nextQuestion() {
+    if (currentQ < questions.length - 1) {
+        currentQ++;
+        loadQuestion();
+    } else {
+        confirmSubmitQuiz();
+    }
+}
+
+function confirmSubmitQuiz() {
+    const unans = userAnswers.filter(a => a === null).length;
+    const flagCount = flaggedQuestions.filter(f => f === true).length;
+    
+    let msg = "શું આપ ખરેખર કસોટી સબમિટ કરવા માંગો છો?";
+    if (unans > 0 || flagCount > 0) {
+        msg = `ધ્યાન આપો:
+- ${unans} પ્રશ્નોના ઉત્તર બાકી છે.
+- ${flagCount} પ્રશ્નો Flag કરેલા છે.
+
+શું આપ કસોટી સબમિટ કરવા માંગો છો?`;
+    }
+    
+    if (confirm(msg)) {
+        submitQuiz();
+    }
+}
+
+/* ૫. સબમિશન અને પરિણામ */
+function submitQuiz() {
+    clearInterval(timerInterval);
+    const elapsed = Math.floor((new Date() - startTime) / 1000);
+    const mins = Math.floor(elapsed / 60);
+    const secs = elapsed % 60;
+    const formattedTime = `${mins} મિનિટ ${secs} સેકન્ડ`;
+
+    let score = 0;
+    let wrongIndices = [];
+    questions.forEach((q, i) => {
+        if (userAnswers[i] === q.ans) {
+            score++;
+        } else {
+            wrongIndices.push(i);
+        }
+    });
+    const percent = ((score / questions.length) * 100).toFixed(2);
+    const flagCount = flaggedQuestions.filter(f => f === true).length;
+
+    document.getElementById("quizScreen").style.display = "none";
+    document.getElementById("resultScreen").style.display = "block";
+
+    document.getElementById("resName").innerText = studentName;
+    document.getElementById("resPhone").innerText = studentPhone;
+    document.getElementById("resTime").innerText = `${mins}m ${secs}s`;
+    document.getElementById("resScore").innerText = `${score} / ${questions.length}`;
+    document.getElementById("resPercent").innerText = `${percent}% ગુણાંક`;
+    document.getElementById("resCorrectCount").innerText = score;
+    document.getElementById("resWrongCount").innerText = questions.length - score;
+    document.getElementById("resFlagCount").innerText = flagCount;
+
+    // ૧. માત્ર ખોટા પડેલા પ્રશ્નો રેન્ડર કરવા
+    renderWrongQuestions(wrongIndices);
+
+    // ૨. આપેલા જવાબો સાથેનું સંપૂર્ણ પ્રશ્નપત્ર
+    renderFullAnswerKey();
+
+    // ૩. મૂળ પ્રશ્નપત્ર (Blank Question Paper)
+    renderBlankPaper();
+
+    // ૪. Apps Script માટે HTML રિવ્યુ પેક કરવો
+    prepareAndSendBackendResult(score, percent, formattedTime);
+}
+
+function switchResultTab(tabName) {
+    document.getElementById("tabBtnWrong").classList.remove("active-tab");
+    document.getElementById("tabBtnAnswers").classList.remove("active-tab");
+    document.getElementById("tabBtnBlank").classList.remove("active-tab");
+
+    document.getElementById("tabContentWrong").style.display = "none";
+    document.getElementById("tabContentAnswers").style.display = "none";
+    document.getElementById("tabContentBlank").style.display = "none";
+
+    if (tabName === "wrong") {
+        document.getElementById("tabBtnWrong").classList.add("active-tab");
+        document.getElementById("tabContentWrong").style.display = "block";
+    } else if (tabName === "answers") {
+        document.getElementById("tabBtnAnswers").classList.add("active-tab");
+        document.getElementById("tabContentAnswers").style.display = "block";
+    } else if (tabName === "blank") {
+        document.getElementById("tabBtnBlank").classList.add("active-tab");
+        document.getElementById("tabContentBlank").style.display = "block";
+    }
+}
+
+function renderWrongQuestions(wrongIndices) {
+    const container = document.getElementById("wrongQuestionsList");
+    container.innerHTML = "";
+
+    if (wrongIndices.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 35px; background: var(--container-bg); border-radius: 12px; border: 2px solid #10b981;">
+                <i class="fa-solid fa-circle-check fa-3x" style="color: #10b981; margin-bottom: 12px;"></i>
+                <h3 style="color: #065f46; font-size: 18px;">અભિનંદન! તમારો એક પણ પ્રશ્ન ખોટો પડ્યો નથી!</h3>
+                <p style="color: var(--subheading-color); font-size: 13.5px; margin-top: 6px;">આપે ૧૦૦ માંથી ૧૦૦ સંપૂર્ણ ગુણ મેળવી શ્રેષ્ઠ પ્રદર્શન કરેલ છે.</p>
+            </div>
+        `;
+        return;
+    }
+
+    wrongIndices.forEach((i) => {
+        const q = questions[i];
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી (ખાલી છોડેલ)";
+        const correctChoiceText = q.options[q.ans];
+
+        const item = document.createElement("div");
+        item.className = "review-item is-wrong";
+        item.innerHTML = `
+            <p style="font-weight: 800; font-size: 15px; margin-bottom: 8px; white-space: pre-wrap; tab-size: 4;">${q.q}</p>
+            <p style="margin: 4px 0; font-weight: 700; color: #b91c1c;">
+                ❌ તમારો ઉત્તર: ${userChoiceText}
+            </p>
+            <p style="margin: 4px 0; font-weight: 700; color: #047857;">
+                ✅ સાચો ઉત્તર: <strong>(${String.fromCharCode(65 + q.ans)}) ${correctChoiceText}</strong>
+            </p>
+            <div class="exp-box">
+                <div style="font-size: 11.5px; font-weight: 800; color: #2563eb; margin-bottom: 3px;">📘 ${q.unit}</div>
+                <strong>વિગતવાર સમજૂતી:</strong> ${q.exp}
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function renderFullAnswerKey() {
+    const container = document.getElementById("allAnswersList");
+    container.innerHTML = "";
+
+    questions.forEach((q, i) => {
+        const isCorrect = (userAnswers[i] === q.ans);
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી";
+        const correctChoiceText = q.options[q.ans];
+
+        const item = document.createElement("div");
+        item.className = "review-item " + (isCorrect ? "is-correct" : "is-wrong");
+        item.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+                <span style="font-weight: 800; font-size: 15px; white-space: pre-wrap; tab-size: 4;">${q.q}</span>
+                <span style="font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 6px; background:${isCorrect ? '#10b981' : '#ef4444'}; color:white; white-space:nowrap;">
+                    ${isCorrect ? '✅ સાચો' : '❌ ખોટો'}
+                </span>
+            </div>
+            <div style="margin: 6px 0; font-size: 13.5px;">
+                ${q.options.map((opt, oIdx) => `
+                    <div style="padding: 2px 0; ${oIdx === q.ans ? 'font-weight:bold; color:#047857;' : ''}">
+                        (${String.fromCharCode(65 + oIdx)}) ${opt} ${oIdx === q.ans ? '⭐ (સાચો ઉત્તર)' : ''}
+                    </div>
+                `).join('')}
+            </div>
+            <p style="margin: 6px 0; font-weight: 700;">
+                તમે પસંદ કરેલ જવાબ: <span style="color:${isCorrect ? '#047857' : '#b91c1c'};">${userChoiceText}</span>
+            </p>
+            <div class="exp-box">
+                <div style="font-size: 11.5px; font-weight: 800; color: #2563eb; margin-bottom: 3px;">📘 ${q.unit}</div>
+                <strong>સમજૂતી:</strong> ${q.exp}
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function renderBlankPaper() {
+    const container = document.getElementById("blankQuestionsList");
+    container.innerHTML = `
+        <div style="background: var(--card-gradient); padding: 14px; border-radius: 10px; margin-bottom: 14px; border: 1.5px solid var(--border-color); text-align: center;">
+            <h3 style="color: var(--heading-color); font-size: 16px; font-weight: 800;">📝 મૂળ પ્રશ્નપત્ર (Offline / Practice View)</h3>
+            <p style="color: var(--subheading-color); font-size: 12.5px;">આ પ્રશ્નપત્રમાં કોઈપણ જવાબ ટીક કરેલ નથી. તમે સ્વ-અધ્યયન કે પુનરાવર્તન માટે તેનો ઉપયોગ કરી શકો છો.</p>
+        </div>
+    `;
+
+    questions.forEach((q, i) => {
+        const box = document.createElement("div");
+        box.className = "blank-q-card";
+        box.innerHTML = `
+            <div style="font-weight: 800; font-size: 14.5px; margin-bottom: 8px; color: var(--heading-color); white-space: pre-wrap; tab-size: 4;">${q.q}</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 13.5px; color: var(--text-color);">
+                ${q.options.map((opt, oIdx) => `
+                    <div style="background: var(--option-bg); padding: 7px 10px; border-radius: 6px; border: 1px solid var(--border-color);">
+                        <strong>(${String.fromCharCode(65 + oIdx)})</strong> ${opt}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        container.appendChild(box);
+    });
+}
+
+function prepareAndSendBackendResult(score, percent, formattedTime) {
+    let emailReviewHtml = "";
+    
+    questions.forEach((q, i) => {
+        const isCorrect = (userAnswers[i] === q.ans);
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી";
+        const correctChoiceText = q.options[q.ans];
+
+        emailReviewHtml += `
+            <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding: 12px; margin-bottom: 12px; background-color: ${isCorrect ? '#f0fdf4' : '#fff1f2'};">
+                <p style="margin: 0 0 6px 0; font-weight: bold; color: #1e293b; white-space: pre-wrap;">${q.q}</p>
+                <p style="margin: 3px 0; color: ${isCorrect ? '#166534' : '#9f1239'};">
+                    <strong>પરીક્ષાર્થીનો ઉત્તર:</strong> ${userChoiceText} ${isCorrect ? '✅' : '❌'}
+                </p>
+                ${!isCorrect ? `<p style="margin: 3px 0; color: #166534; font-weight: bold;"><strong>સાચો ઉત્તર:</strong> (${String.fromCharCode(65 + q.ans)}) ${correctChoiceText}</p>` : ''}
+                <div style="background-color: #f8fafc; padding: 8px; border-radius: 4px; margin-top: 6px; font-size: 12.5px; border-left: 3px solid #2563eb;">
+                    <div style="color: #1e40af; font-weight: bold; margin-bottom: 2px;">📘 ${q.unit}</div>
+                    <strong>સમજૂતી:</strong> ${q.exp}
+                </div>
+            </div>
+        `;
+    });
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+            action: "submitResult",
+            dateTime: new Date().toLocaleString('gu-IN', { timeZone: 'Asia/Kolkata' }),
+            name: studentName,
+            phone: studentPhone,
+            email: studentEmail,
+            timeTaken: formattedTime,
+            score: `${score} / ${questions.length}`,
+            percentage: `${percent}%`,
+            subject: "TET 1 પર્યાવરણ (EVS) - ધોરણ 5 (પ્રકરણ 1 થી 9)",
+            detailedReviewHtml: emailReviewHtml,
+            repoName: "pro",
+            testFileName: "gpsc_elt_test.html",
+            testUploadDate: "2026-11-15"
+        })
+    });
+}
+</script>
+</body>
+</html>
