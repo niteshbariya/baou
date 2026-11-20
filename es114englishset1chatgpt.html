@@ -1,0 +1,2378 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TET-1 સ્પેશિયલ: English Pedagogy (ES-114 - Stage 1) | ૧૦૦ પ્રશ્નો</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+            --header-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
+            --card-gradient: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 50%, #fdf2f8 100%);
+            --bg-color: #f1f5f9;
+            --container-bg: #ffffff;
+            --text-color: #0f172a;
+            --heading-color: #1e3a8a;
+            --subheading-color: #64748b;
+            --border-color: #cbd5e1;
+            --card-border: #e2e8f0;
+            --option-bg: #f8fafc;
+            --option-hover: #ede9fe;
+            --option-border: #cbd5e1;
+            --badge-bg: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            --correct-bg: #ecfdf5;
+            --correct-border: #34d399;
+            --correct-text: #065f46;
+            --wrong-bg: #fff1f2;
+            --wrong-border: #fb7185;
+            --wrong-text: #9f1239;
+            --exp-box-bg: #f8fafc;
+            --input-bg: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.12), 0 8px 10px -6px rgba(30, 58, 138, 0.08);
+            
+            /* Status Colors */
+            --color-answered: #10b981;
+            --color-flagged: #f59e0b;
+            --color-unanswered: #94a3b8;
+            --color-current: #2563eb;
+        }
+
+        body.dark-mode {
+            --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #ec4899 100%);
+            --header-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            --card-gradient: linear-gradient(135deg, #1e1b4b 0%, #1e293b 50%, #0f172a 100%);
+            --bg-color: #030712;
+            --container-bg: #0b1329;
+            --text-color: #f8fafc;
+            --heading-color: #93c5fd;
+            --subheading-color: #94a3b8;
+            --border-color: #334155;
+            --card-border: #1e293b;
+            --option-bg: #1e293b;
+            --option-hover: #2e1065;
+            --option-border: #475569;
+            --badge-bg: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --correct-bg: #064e3b;
+            --correct-border: #059669;
+            --correct-text: #a7f3d0;
+            --wrong-bg: #881337;
+            --wrong-border: #e11d48;
+            --wrong-text: #fecdd3;
+            --exp-box-bg: #0f172a;
+            --input-bg: #1e293b;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            font-family: 'Noto Sans Gujarati', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
+            padding: 14px; 
+            display: flex; 
+            justify-content: center; 
+            transition: all 0.3s ease;
+            min-height: 100vh;
+        }
+
+        .container { 
+            background-color: var(--container-bg); 
+            max-width: 1000px; 
+            width: 100%; 
+            border-radius: 18px; 
+            box-shadow: var(--shadow); 
+            padding: 24px; 
+            position: relative;
+            border: 1.5px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 6px; }
+            .container { padding: 14px; border-radius: 12px; }
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-pill {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 800;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-toggle-btn {
+            background: var(--option-bg);
+            color: var(--text-color);
+            border: 1.5px solid var(--border-color);
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 20px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .theme-toggle-btn:hover {
+            transform: scale(1.04);
+            border-color: #3b82f6;
+        }
+
+        .banner-title {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 900;
+            margin: 5px 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .banner-sub {
+            color: var(--subheading-color);
+            text-align: center;
+            font-size: 13.5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Login Screen */
+        #loginScreen {
+            max-width: 480px;
+            margin: 15px auto;
+            background: var(--card-gradient);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1.5px solid var(--border-color);
+        }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-weight: 700; margin-bottom: 6px; font-size: 13.5px; color: var(--heading-color); }
+        input[type="text"], input[type="tel"], input[type="email"] { 
+            width: 100%; 
+            padding: 11px 14px; 
+            border: 1.5px solid var(--border-color); 
+            border-radius: 8px; 
+            font-size: 14.5px; 
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        input:focus { outline: none; border-color: #2563eb; }
+
+        .btn-gradient { 
+            background: var(--primary-gradient); 
+            color: white; 
+            border: none; 
+            padding: 12px 18px; 
+            font-size: 15px; 
+            font-weight: 800; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            width: 100%; 
+            transition: all 0.25s; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            font-family: inherit;
+        }
+        .btn-gradient:hover { opacity: 0.95; transform: translateY(-1.5px); }
+        .btn-gradient:disabled { background: #94a3b8; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        .otp-box { 
+            background: var(--container-bg); 
+            border: 2px dashed #3b82f6; 
+            padding: 16px; 
+            border-radius: 10px; 
+            margin-top: 16px; 
+            display: none; 
+            text-align: center;
+        }
+
+        /* Test Main Layout: Single column (Questions on Top, Palette at Bottom) */
+        .quiz-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .quiz-main-card {
+            background: var(--container-bg);
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .quiz-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1.5px solid var(--border-color); 
+            padding-bottom: 12px; 
+            margin-bottom: 18px; 
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .timer-badge { 
+            font-size: 15px; 
+            font-weight: 800; 
+            color: #ef4444; 
+            background: #fee2e2;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        body.dark-mode .timer-badge { background: #450a0a; color: #fca5a5; }
+
+        .unit-badge { 
+            display: inline-block; 
+            background: var(--badge-bg); 
+            color: white; 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 12px; 
+            font-weight: 700; 
+            margin-bottom: 14px; 
+        }
+
+        .question-text {
+            font-size: 18px;
+            line-height: 1.65;
+            margin-bottom: 22px;
+            font-weight: 700;
+            color: var(--text-color);
+            white-space: pre-wrap;
+            tab-size: 4;
+        }
+
+        .option-label { 
+            display: flex;
+            align-items: center;
+            background: var(--option-bg); 
+            padding: 14px 18px; 
+            margin-bottom: 12px; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            line-height: 1.5; 
+            border: 1.5px solid var(--option-border); 
+            transition: all 0.2s;
+            font-size: 15.5px;
+        }
+        .option-label:hover { 
+            background: var(--option-hover); 
+            border-color: #3b82f6;
+            transform: translateX(4px);
+        }
+        .option-label input[type="radio"] {
+            margin-right: 14px;
+            transform: scale(1.25);
+            accent-color: #2563eb;
+            cursor: pointer;
+        }
+
+        .quiz-actions-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1.5px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .nav-buttons-group {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-prev, .btn-next, .btn-flag {
+            padding: 10px 18px;
+            font-size: 14.5px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: inherit;
+        }
+        .btn-prev { background: #64748b; color: white; }
+        .btn-prev:hover { background: #475569; }
+        .btn-next { background: var(--primary-gradient); color: white; }
+        .btn-next:hover { opacity: 0.95; }
+
+        .btn-flag {
+            background: #fef3c7;
+            color: #b45309;
+            border: 1.5px solid #f59e0b;
+        }
+        body.dark-mode .btn-flag {
+            background: #451a03;
+            color: #fde68a;
+            border-color: #d97706;
+        }
+        .btn-flag.active-flag {
+            background: #f59e0b;
+            color: white;
+            border-color: #b45309;
+        }
+
+        /* Question Palette at the Bottom */
+        .palette-bottom-card {
+            background: var(--card-gradient);
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .palette-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--heading-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .legend-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 12px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-dot { width: 11px; height: 11px; border-radius: 50%; }
+
+        /* Multi-column grid for 100 questions */
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+            gap: 8px;
+            max-height: 250px;
+            overflow-y: auto;
+            padding: 6px 4px;
+        }
+        .q-pill {
+            padding: 8px 0;
+            border-radius: 7px;
+            font-size: 12.5px;
+            font-weight: 800;
+            text-align: center;
+            cursor: pointer;
+            border: 1.5px solid var(--border-color);
+            background: var(--container-bg);
+            color: var(--text-color);
+            transition: all 0.15s ease;
+            position: relative;
+        }
+        .q-pill:hover { transform: scale(1.08); z-index: 2; }
+        .q-pill.status-current {
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 2.5px #2563eb;
+            font-weight: 900;
+        }
+        .q-pill.status-answered {
+            background: #10b981 !important;
+            color: white !important;
+            border-color: #059669 !important;
+        }
+        .q-pill.status-flagged {
+            background: #f59e0b !important;
+            color: white !important;
+            border-color: #d97706 !important;
+        }
+        .q-pill.status-flagged::after {
+            content: '🚩';
+            position: absolute;
+            top: -6px;
+            right: -3px;
+            font-size: 9px;
+        }
+
+        /* Result Screen Styles */
+        .result-summary-card {
+            background: var(--card-gradient);
+            border: 2px solid var(--border-color);
+            padding: 20px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .score-pill {
+            display: inline-block;
+            font-size: 32px;
+            font-weight: 900;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 6px 0;
+        }
+
+        .res-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 14px;
+        }
+        @media (max-width: 600px) {
+            .res-stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .res-stat-box {
+            padding: 8px;
+            border-radius: 8px;
+            font-weight: 700;
+            color: white;
+            font-size: 12px;
+        }
+
+        /* Result Tabs Navigation */
+        .result-tabs-nav {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        .res-tab-btn {
+            padding: 9px 16px;
+            font-size: 13.5px;
+            font-weight: 800;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1.5px solid var(--border-color);
+            background: var(--option-bg);
+            color: var(--text-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .res-tab-btn:hover { border-color: #2563eb; }
+        .res-tab-btn.active-tab {
+            background: var(--primary-gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Review Item Style */
+        .review-item {
+            padding: 16px;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            border: 1.5px solid var(--card-border);
+            transition: all 0.2s;
+            background: var(--container-bg);
+        }
+        .review-item.is-correct {
+            background-color: var(--correct-bg);
+            border-color: var(--correct-border);
+            color: var(--correct-text);
+        }
+        .review-item.is-wrong {
+            background-color: var(--wrong-bg);
+            border-color: var(--wrong-border);
+            color: var(--wrong-text);
+        }
+
+        .exp-box {
+            background: var(--exp-box-bg);
+            color: var(--text-color);
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 13.5px;
+            line-height: 1.5;
+            border-left: 4px solid #2563eb;
+        }
+
+        .blank-q-card {
+            background: var(--container-bg);
+            border: 1.5px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+
+        .msg-box {
+            display: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .msg-error { background-color: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+        .msg-info { background-color: #dcfce7; color: #166534; border: 1px solid #4ade80; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- હેડર અને થીમ ટોગલ -->
+    <header class="header-top">
+        <span class="tag-pill"><i class="fa-solid fa-book-open"></i> TET-1 સ્પેશિયલ: English Pedagogy (ES-114 - Stage 1)</span>
+        <button id="themeToggleBtn" class="theme-toggle-btn" onclick="toggleDarkMode()">
+            <i class="fa-solid fa-moon"></i> ડાર્ક મોડ
+        </button>
+    </header>
+
+    <!-- નોટિસ બોક્સ -->
+    <div id="noticeMsg" class="msg-box"></div>
+
+    <!-- ૧. પ્રવેશ અને OTP સ્ક્રીન -->
+    <section id="loginScreen">
+        <div style="text-align: center; margin-bottom: 18px;">
+            <div style="font-size: 32px; color: #2563eb; margin-bottom: 4px;"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h1 class="banner-title" style="font-size: 20px;">TET-1 English Pedagogy (ES-114) - Stage 1</h1>
+            <p class="banner-sub" style="margin-bottom: 10px;">ES-114 (Teaching of English) ના તમામ ૧૭ યુનિટ આધારિત ૧૦૦ Advanced HOTS પ્રશ્નો</p>
+        </div>
+
+        <div class="form-group">
+            <label for="name">👤 પૂરું નામ:</label>
+            <input type="text" id="name" placeholder="તમારું પૂરું નામ દાખલ કરો">
+        </div>
+        <div class="form-group">
+            <label for="phone">📱 મોબાઇલ નંબર:</label>
+            <input type="tel" id="phone" placeholder="૧૦ અંકનો સાચો મોબાઇલ નંબર" maxlength="10">
+        </div>
+        <div class="form-group">
+            <label for="email">📧 ઇમેઇલ આઇડી:</label>
+            <input type="email" id="email" placeholder="તમારું સાચું ઈમેઈલ આઈડી લખો">
+        </div>
+
+        <button id="getOtpBtn" class="btn-gradient" onclick="requestOTP()">
+            <i class="fa-solid fa-paper-plane"></i> OTP મેળવો અને આગળ વધો
+        </button>
+
+        <div id="otpContainer" class="otp-box">
+            <p style="margin: 0 0 10px 0; color: var(--heading-color); font-weight: 700; font-size: 13px;">
+                📩 આપના ઈમેઈલ પર ૪ અંકનો સુરક્ષિત OTP મોકલવામાં આવ્યો છે:
+            </p>
+            <div class="form-group" style="max-width: 200px; margin: 0 auto 12px auto;">
+                <input type="text" id="otpInput" placeholder="૪ અંક OTP" maxlength="4" style="text-align: center; font-size: 20px; letter-spacing: 5px; font-weight: 800;">
+            </div>
+            <button id="verifyBtn" class="btn-gradient" onclick="verifyAndStart()" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                <i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો
+            </button>
+        </div>
+    </section>
+
+    <!-- ૨. મોક ટેસ્ટ સ્ક્રીન (ઉપર પ્રશ્ન અને વિકલ્પ, નીચે પેલેટ) -->
+    <section id="quizScreen" style="display: none;">
+        <div class="quiz-layout">
+            <!-- Top Section: Main Question Card -->
+            <div class="quiz-main-card">
+                <div>
+                    <div class="quiz-header">
+                        <div>
+                            <span id="qProgress" style="font-weight: 800; font-size: 16px; color: var(--heading-color);">પ્રશ્ન ૧ / ૧૦૦</span>
+                        </div>
+                        <div class="timer-badge">
+                            <i class="fa-regular fa-clock"></i> <span id="timerDisplay">૦૦:૦૦</span>
+                        </div>
+                    </div>
+                    <div class="question-box">
+                        <div id="unitBadge" class="unit-badge"></div>
+                        <div id="questionText" class="question-text"></div>
+                        <div id="optionsContainer"></div>
+                    </div>
+                </div>
+
+                <div class="quiz-actions-bar">
+                    <button id="flagBtn" class="btn-flag" onclick="toggleFlagCurrentQuestion()">
+                        <i class="fa-regular fa-bookmark"></i> Flag (રિવ્યુ માટે)
+                    </button>
+                    <div class="nav-buttons-group">
+                        <button id="prevBtn" class="btn-prev" onclick="prevQuestion()"><i class="fa-solid fa-arrow-left"></i> પાછળ</button>
+                        <button id="nextBtn" class="btn-next" onclick="nextQuestion()">આગળ <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Question Palette, Status Legend & Submit Button -->
+            <div class="palette-bottom-card">
+                <div class="palette-title">
+                    <span><i class="fa-solid fa-table-cells"></i> પ્રશ્ન પેલેટ (૧૦૦ પ્રશ્નોની સ્થિતિ)</span>
+                    <span id="answeredCountBadge" style="font-size: 12px; background: #10b981; color: white; padding: 4px 10px; border-radius: 12px;">0 / 100 પૂર્ણ</span>
+                </div>
+
+                <div class="legend-grid">
+                    <div class="legend-item"><div class="legend-dot" style="background:#10b981;"></div> જવાબ આપેલ</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b;"></div> Flag / રિવ્યુ</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#94a3b8;"></div> બાકી પ્રશ્ન</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#2563eb;"></div> ચાલુ પ્રશ્ન</div>
+                </div>
+
+                <div class="palette-grid" id="questionGridContainer"></div>
+
+                <div style="text-align: right; margin-top: 6px;">
+                    <button class="btn-gradient" onclick="confirmSubmitQuiz()" style="max-width: 280px; margin-left: auto; background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); padding: 11px 18px; font-size: 14.5px;">
+                        <i class="fa-solid fa-circle-check"></i> કસોટી સબમિટ કરો
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ૩. પરિણામ સ્ક્રીન (Multi-Tab Review System) -->
+    <section id="resultScreen" style="display: none;">
+        <div class="result-summary-card">
+            <h2 style="color: var(--heading-color); font-size: 20px; font-weight: 900; margin-bottom: 6px;">
+                🎉 કસોટી મૂલ્યાંકન અહેવાલ
+            </h2>
+            <p style="margin: 3px 0; font-size: 14px;"><strong>પરીક્ષાર્થી:</strong> <span id="resName"></span> | <strong>સંપર્ક:</strong> <span id="resPhone"></span></p>
+            <p style="margin: 3px 0; font-size: 13px; color: var(--subheading-color);"><strong>વિષય:</strong> TET-1 English Pedagogy (ES-114 - Stage 1) | ૧૦૦ પ્રશ્નો</p>
+            
+            <div class="score-pill" id="resScore">0 / 100</div>
+            <div style="font-size: 17px; font-weight: 800; color: #10b981;" id="resPercent">0%</div>
+
+            <div class="res-stats-grid">
+                <div class="res-stat-box" style="background:#10b981;">
+                    <div>સાચા ઉત્તર</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resCorrectCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#ef4444;">
+                    <div>ખોટા ઉત્તર</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resWrongCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#f59e0b;">
+                    <div>રિવ્યુ/Flagged</div>
+                    <div style="font-size: 18px; font-weight: 900;" id="resFlagCount">0</div>
+                </div>
+                <div class="res-stat-box" style="background:#2563eb;">
+                    <div>લીધેલો સમય</div>
+                    <div style="font-size: 15px; font-weight: 900; margin-top: 2px;" id="resTime">00:00</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ૩ અલગ ટેબ (વિભાગો) -->
+        <div class="result-tabs-nav">
+            <button class="res-tab-btn active-tab" id="tabBtnWrong" onclick="switchResultTab('wrong')">
+                <i class="fa-solid fa-triangle-exclamation" style="color: #ef4444;"></i> ❌ માત્ર ખોટા પડેલા પ્રશ્નો
+            </button>
+            <button class="res-tab-btn" id="tabBtnAnswers" onclick="switchResultTab('answers')">
+                <i class="fa-solid fa-square-check" style="color: #10b981;"></i> 📋 ઉત્તરવહી & સમજૂતી
+            </button>
+            <button class="res-tab-btn" id="tabBtnBlank" onclick="switchResultTab('blank')">
+                <i class="fa-solid fa-file-lines" style="color: #2563eb;"></i> 📝 મૂળ પ્રશ્નપત્ર (પ્રેક્ટિસ)
+            </button>
+        </div>
+
+        <!-- ટેબ ૧: માત્ર ખોટા પડેલા પ્રશ્નો -->
+        <div id="tabContentWrong">
+            <div id="wrongQuestionsList"></div>
+        </div>
+
+        <!-- ટેબ ૨: આપેલા જવાબો સાથેનું પ્રશ્નપત્ર -->
+        <div id="tabContentAnswers" style="display: none;">
+            <div id="allAnswersList"></div>
+        </div>
+
+        <!-- ટેબ ૩: મૂળ પ્રશ્નપત્ર (Blank Question Paper) -->
+        <div id="tabContentBlank" style="display: none;">
+            <div id="blankQuestionsList"></div>
+        </div>
+    </section>
+</div>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz-khogtnFjvjzRuv_ieBYJfx0TAxluM9OfoXlf72h9Yce14rdQu9_Xbmx3fnprk5Q30g/exec";
+
+// ૧૦૦ Advanced HOTS પ્રશ્નોનો ડેટાસેટ (TET-1 English Pedagogy | ES-114 - Teaching of English)
+const questions = [
+  {
+    "q": "Q001. A teacher asks learners why the same object is called “water”, “paani” and “jal” in different languages. Which inference most directly follows from this comparison?",
+    "options": [
+      "The relationship between a word and its meaning is conventional rather than naturally fixed.",
+      "The meaning of a word is determined by the physical properties of the object alone.",
+      "Every language uses different sounds but preserves an identical vocabulary system.",
+      "Language differences arise mainly because writing systems represent sounds differently."
+    ],
+    "ans": 0,
+    "unit": "Unit 1 – Language: Concept, Nature and Characteristics",
+    "exp": "The different labels for the same referent illustrate arbitrariness: there is no inherent bond between a particular word-form and its meaning. Once a community accepts a form, convention stabilises its use. Chapter: Unit 1 – Language: Concept, Nature and Characteristics."
+  },
+  {
+    "q": "Q002. A child who has never heard a particular sentence can understand and produce it by combining familiar words according to familiar rules. Which feature of language is best demonstrated?",
+    "options": [
+      "Displacement, because the sentence may refer to an absent event.",
+      "Productivity, because limited elements generate novel meaningful utterances.",
+      "Duality, because each sentence must contain both speech and writing.",
+      "Conventionality, because every new sentence must first be socially approved."
+    ],
+    "ans": 1,
+    "unit": "Unit 1 – Language: Concept, Nature and Characteristics",
+    "exp": "Productivity/creativity enables speakers to form and understand utterances they have not previously encountered by recombining linguistic elements under rules. Chapter: Unit 1 – Language: Concept, Nature and Characteristics."
+  },
+  {
+    "q": "Q003. A community discusses yesterday’s meeting, tomorrow’s plan and an event taking place thousands of kilometres away. Which property explains the ability to refer beyond the immediate here-and-now?",
+    "options": [
+      "Duality",
+      "Vocality",
+      "Displacement",
+      "Arbitrariness"
+    ],
+    "ans": 2,
+    "unit": "Unit 1 – Language: Concept, Nature and Characteristics",
+    "exp": "Displacement is the capacity to communicate about things removed in time or space, including past, future and distant events. Chapter: Unit 1 – Language: Concept, Nature and Characteristics."
+  },
+  {
+    "q": "Q004. A school introduces a written code before learners have developed the ability to distinguish and produce the corresponding speech sounds. Which assumption conflicts most directly with the module’s account of language?",
+    "options": [
+      "Writing is a graphic representation that historically follows speech.",
+      "Speech is primary, while writing is a secondary representation.",
+      "Written symbols can preserve language after it has been spoken.",
+      "A script is a necessary condition for a language to exist."
+    ],
+    "ans": 3,
+    "unit": "Unit 1 – Language: Concept, Nature and Characteristics",
+    "exp": "The module treats speech as primary and writing as a later graphic representation; some languages are oral and have no script. Therefore, the assumption that a script is necessary is incorrect. Chapter: Unit 1 – Language: Concept, Nature and Characteristics."
+  },
+  {
+    "q": "Q005. A teacher claims that a language with fewer speakers is inherently inferior to one used internationally. Which response best reflects the module’s position?",
+    "options": [
+      "Languages should be ranked by the number of technical terms they contain.",
+      "A language’s communicative range may differ, but each language expresses its community’s cultural experience.",
+      "A language becomes complete only after it develops a standard written form.",
+      "The number of speakers determines the logical quality of a language."
+    ],
+    "ans": 1,
+    "unit": "Unit 1 – Language: Concept, Nature and Characteristics",
+    "exp": "The module rejects grading languages as inherently better or worse. Languages may differ in refinement, growth and application, but each is a manifestation of its community’s culture. Chapter: Unit 1 – Language: Concept, Nature and Characteristics."
+  },
+  {
+    "q": "Q006. A learner translates an idiom word-for-word and loses its cultural implication. Which misconception should the teacher address first?",
+    "options": [
+      "Every language has exact equivalents for expressions in another language.",
+      "Translation should preserve grammatical structure even when meaning changes.",
+      "Words with similar meanings are always interchangeable.",
+      "Language is a collection of labels independent of social experience."
+    ],
+    "ans": 0,
+    "unit": "Unit 1 – Language: Concept, Nature and Characteristics",
+    "exp": "The module explains that languages express distinct socio-cultural patterns; exact equivalents across languages do not generally exist, though a nearest approximation may be possible. Chapter: Unit 1 – Language: Concept, Nature and Characteristics."
+  },
+  {
+    "q": "Q007. A student says, “Please close the window,” while another says, “The room is getting cold.” In the given context, both utterances are intended to make someone close the window. Which language function is foregrounded?",
+    "options": [
+      "Informative, because both statements report a condition.",
+      "Expressive, because both reveal the speaker’s feelings.",
+      "Directive, because both are intended to bring about an action.",
+      "Phatic, because both merely maintain social contact."
+    ],
+    "ans": 2,
+    "unit": "Unit 1 – Language: Concept, Nature and Characteristics",
+    "exp": "The directive function is used to influence action and is commonly expressed through requests and commands. The second utterance has an indirect directive force in context. Chapter: Unit 1 – Language: Concept, Nature and Characteristics."
+  },
+  {
+    "q": "Q008. Which statement best reconciles the claims that language is non-instinctive and that humans possess an innate capacity for language?",
+    "options": [
+      "A child inherits a complete language system biologically, but learns its accent socially.",
+      "Humans have an innate capacity to acquire language, but a particular language is acquired through social exposure.",
+      "Language is instinctive in childhood but becomes conventional in adulthood.",
+      "The capacity for language is learned, whereas vocabulary is biologically inherited."
+    ],
+    "ans": 1,
+    "unit": "Unit 1 – Language: Concept, Nature and Characteristics",
+    "exp": "Non-instinctive refers to the fact that a particular language is not biologically inherited; it is acquired in a community. The human capacity to learn language is distinct from inheriting a specific language. Chapter: Unit 1 – Language: Concept, Nature and Characteristics."
+  },
+  {
+    "q": "Q009. Which sequence correctly matches the early periods in the history of English teaching in India as described in the module?",
+    "options": [
+      "1765–1813: limited official interest; 1813–1834: Charter education clause and growing demand; later developments followed institutional expansion.",
+      "1765–1813: compulsory English in all schools; 1813–1834: complete replacement of Indian languages.",
+      "1765–1813: English as the sole university medium; 1813–1834: abolition of missionary schools.",
+      "1765–1813: Kothari Commission reforms; 1813–1834: Gujarat’s three-language policy."
+    ],
+    "ans": 0,
+    "unit": "Unit 2 – History, Status and Problems of English in India and Gujarat",
+    "exp": "The module divides the pre-independence history into periods. It notes limited official interest during 1765–1813 and the 1813 Charter renewal with an education clause, alongside growing demand for English teaching. Chapter: Unit 2 – History, Status and Problems of English in India and Gujarat."
+  },
+  {
+    "q": "Q010. A school has adequate textbooks but continues to rely almost entirely on translation and grammar explanation. Learners can explain rules but cannot communicate in familiar situations. Which problem identified in the module is most directly reflected?",
+    "options": [
+      "Excessive use of audio-visual aids",
+      "Overemphasis on the old Translation-cum-Grammar method",
+      "Overuse of learner-centred pair work",
+      "Insufficient emphasis on written examinations"
+    ],
+    "ans": 1,
+    "unit": "Unit 2 – History, Status and Problems of English in India and Gujarat",
+    "exp": "The module identifies continued dependence on the old Translation-cum-Grammar method as a problem; it can produce knowledge about rules without adequate communicative ability. Chapter: Unit 2 – History, Status and Problems of English in India and Gujarat."
+  },
+  {
+    "q": "Q011. A district wants to improve English teaching but has large classes, limited equipment and few opportunities for learners to use English outside school. Which response is most consistent with the problems and remedies discussed in the unit?",
+    "options": [
+      "Postpone oral work until every school has a language laboratory.",
+      "Increase rule memorisation because classroom conditions cannot be changed.",
+      "Use locally available low-cost materials and create structured opportunities for meaningful language practice.",
+      "Restrict English to textbook translation so that classroom management remains simple."
+    ],
+    "ans": 2,
+    "unit": "Unit 2 – History, Status and Problems of English in India and Gujarat",
+    "exp": "The unit discusses shortages of resources and limited use of available aids. Low-cost pictures, charts, models and purposeful classroom practice are practical ways to improve instruction despite constraints. Chapter: Unit 2 – History, Status and Problems of English in India and Gujarat."
+  },
+  {
+    "q": "Q012. Which interpretation best captures the module’s account of the place of English in post-independence India?",
+    "options": [
+      "English is presented only as a colonial remnant with no contemporary educational role.",
+      "English is treated as a language that should replace all regional languages.",
+      "English is useful only for elite employment and has no role in national communication.",
+      "English continues to have educational, professional and wider communicative importance, while regional languages also require development."
+    ],
+    "ans": 3,
+    "unit": "Unit 2 – History, Status and Problems of English in India and Gujarat",
+    "exp": "The unit presents debates about English after independence but recognises its continuing role in higher education, international relations, employment and communication, without denying the importance of Indian languages. Chapter: Unit 2 – History, Status and Problems of English in India and Gujarat."
+  },
+  {
+    "q": "Q013. A teacher argues that English should be taught only after learners have mastered every grammatical feature of their mother tongue. Which assumption is least compatible with the module’s discussion of language learning and ELT?",
+    "options": [
+      "Prior language experience can influence further language learning.",
+      "Learners need meaningful opportunities to use the target language.",
+      "Language learning can be supported through graded practice and exposure.",
+      "Complete mastery of the first language is an absolute prerequisite for beginning another language."
+    ],
+    "ans": 3,
+    "unit": "Unit 2 – History, Status and Problems of English in India and Gujarat",
+    "exp": "The module recognises the influence of prior experience but does not make complete mastery of the mother tongue an absolute prerequisite for learning another language. Chapter: Unit 2 – History, Status and Problems of English in India and Gujarat."
+  },
+  {
+    "q": "Q014. Which policy-related distinction should a candidate maintain when interpreting the unit’s discussion of English in India?",
+    "options": [
+      "The historical role of English, its present official/educational use and the state’s language-education policy are related but separate questions.",
+      "The historical introduction of English automatically determines every current classroom method.",
+      "The status of English in India and the medium of instruction in every school are identical matters.",
+      "The Gujarat policy is simply another name for the Kothari Commission."
+    ],
+    "ans": 0,
+    "unit": "Unit 2 – History, Status and Problems of English in India and Gujarat",
+    "exp": "The unit separately treats historical development, the Kothari Commission’s recommendations, Gujarat’s language-education policy and present ELT issues. These should not be conflated. Chapter: Unit 2 – History, Status and Problems of English in India and Gujarat."
+  },
+  {
+    "q": "Q015. A teacher presents a new structure, gives learners several meaningful chances to use it, and revisits it in later lessons. Which principle is most clearly embodied?",
+    "options": [
+      "Language learning as a skill requiring repeated practice",
+      "Language learning as the memorisation of isolated definitions",
+      "The principle that one exposure guarantees mastery",
+      "The principle that grammar should be taught without use"
+    ],
+    "ans": 0,
+    "unit": "Unit 3 – Principles and Factors Affecting Language Learning",
+    "exp": "The unit stresses that language is a skill developed through exercise and continuous practice, not merely through knowing meanings or rules. Chapter: Unit 3 – Principles and Factors Affecting Language Learning."
+  },
+  {
+    "q": "Q016. Two learners receive the same instruction. One progresses faster because of richer prior exposure to languages and cultures. Which factor best explains the difference described in the module?",
+    "options": [
+      "Only chronological age",
+      "Previous experience and exposure",
+      "The physical size of the classroom",
+      "The number of written tests completed"
+    ],
+    "ans": 1,
+    "unit": "Unit 3 – Principles and Factors Affecting Language Learning",
+    "exp": "The unit identifies previous experience, including exposure to different countries, languages and cultures, as a factor that can strengthen readiness for further language learning. Chapter: Unit 3 – Principles and Factors Affecting Language Learning."
+  },
+  {
+    "q": "Q017. A teacher notices that a learner understands a language pattern but avoids speaking because classmates laugh at mistakes. Which response addresses the most relevant learning factor?",
+    "options": [
+      "Increase the number of surprise tests.",
+      "Correct every error publicly to prevent repetition.",
+      "Create a supportive atmosphere that reduces anxiety and encourages participation.",
+      "Replace all speaking tasks with silent copying."
+    ],
+    "ans": 2,
+    "unit": "Unit 3 – Principles and Factors Affecting Language Learning",
+    "exp": "Affective conditions such as confidence, motivation and anxiety influence participation. A supportive environment helps learners take risks and practise the language. Chapter: Unit 3 – Principles and Factors Affecting Language Learning."
+  },
+  {
+    "q": "Q018. Which classroom design best reflects the unit’s emphasis on creativity and learner participation?",
+    "options": [
+      "The teacher supplies fixed answers and learners reproduce them verbatim.",
+      "Learners work in pairs to develop different endings to a story and explain their choices.",
+      "Learners copy a model paragraph without discussing its meaning.",
+      "The teacher avoids open-ended tasks because they may produce varied responses."
+    ],
+    "ans": 1,
+    "unit": "Unit 3 – Principles and Factors Affecting Language Learning",
+    "exp": "The unit describes creative classrooms as environments in which learners express ideas, think beyond fixed patterns and participate actively. Pair/group tasks also increase language practice. Chapter: Unit 3 – Principles and Factors Affecting Language Learning."
+  },
+  {
+    "q": "Q019. A learner’s progress is slower than that of peers despite regular attendance. The teacher investigates cognitive ability, motivation, prior experience and the learning environment before deciding on support. What is the strongest pedagogical justification?",
+    "options": [
+      "Language learning is affected by multiple interacting factors, so a single-cause explanation is inadequate.",
+      "Language learning depends exclusively on intelligence.",
+      "A learner’s progress is fixed at birth and cannot be influenced by teaching.",
+      "Attendance is the only valid measure of language-learning capacity."
+    ],
+    "ans": 0,
+    "unit": "Unit 3 – Principles and Factors Affecting Language Learning",
+    "exp": "The unit discusses several factors affecting language learning, including experience and cognition. Diagnosing a difficulty requires considering more than one variable. Chapter: Unit 3 – Principles and Factors Affecting Language Learning."
+  },
+  {
+    "q": "Q020. Which statement most accurately distinguishes learning a language as a skill from learning it as a body of information?",
+    "options": [
+      "Knowing grammatical terminology is sufficient evidence of communicative competence.",
+      "A skill grows through use and exercise; information about rules alone does not ensure performance.",
+      "Skill development occurs before exposure and does not require feedback.",
+      "A language skill is acquired mainly by memorising translations."
+    ],
+    "ans": 1,
+    "unit": "Unit 3 – Principles and Factors Affecting Language Learning",
+    "exp": "The unit explicitly compares language with skills such as painting and dancing: ability grows through exercise rather than merely knowing meanings or rules. Chapter: Unit 3 – Principles and Factors Affecting Language Learning."
+  },
+  {
+    "q": "Q021. A teacher uses group discussion, role-play and short creative tasks rather than relying solely on lecture. Which combined outcomes are most consistent with the unit?",
+    "options": [
+      "More passive listening and less independent thinking",
+      "Fewer opportunities for language use but greater accuracy",
+      "Greater participation, language practice, confidence and independent thinking",
+      "Guaranteed elimination of every grammatical error"
+    ],
+    "ans": 2,
+    "unit": "Unit 3 – Principles and Factors Affecting Language Learning",
+    "exp": "The unit associates group activities with increased language practice, confidence and independent thinking. These activities support participation rather than guaranteeing error-free performance. Chapter: Unit 3 – Principles and Factors Affecting Language Learning."
+  },
+  {
+    "q": "Q022. A teacher writes: “By the end of the lesson, learners will be able to identify the main idea in a short paragraph and justify it with two details.” Why is this stronger than “Learners will understand reading”?",
+    "options": [
+      "It describes an observable performance that can be assessed.",
+      "It states a broad aspiration without specifying learner behaviour.",
+      "It focuses on the teacher’s activity rather than the learner’s outcome.",
+      "It confuses a long-term aim with a textbook topic."
+    ],
+    "ans": 0,
+    "unit": "Unit 4 – Introduction to Objectives",
+    "exp": "An objective should specify an intended learner outcome in a form that can guide teaching and assessment. Identifying and justifying the main idea are observable performances. Chapter: Unit 4 – Introduction to Objectives."
+  },
+  {
+    "q": "Q023. Which relationship between an aim and an objective is most accurate in the unit’s framing?",
+    "options": [
+      "An aim is a small classroom task, whereas an objective is the entire educational philosophy.",
+      "An aim is the broad goal; objectives express more specific intentions or steps towards achieving it.",
+      "An aim and an objective are interchangeable labels for a test question.",
+      "Objectives are written only after evaluation and have no role in planning."
+    ],
+    "ans": 1,
+    "unit": "Unit 4 – Introduction to Objectives",
+    "exp": "The unit distinguishes the aim as the goal to be achieved from objectives as intentions or more specific steps that guide progress towards that goal. Chapter: Unit 4 – Introduction to Objectives."
+  },
+  {
+    "q": "Q024. A teacher’s broad aim is to develop communicative competence. Which objective is best aligned with that aim?",
+    "options": [
+      "Learners will copy the definition of communication five times.",
+      "Learners will memorise the page number of the dialogue.",
+      "Learners will participate in a short information-gap exchange, asking for and giving missing details.",
+      "Learners will listen silently while the teacher reads the dialogue."
+    ],
+    "ans": 2,
+    "unit": "Unit 4 – Introduction to Objectives",
+    "exp": "The information-gap exchange requires learners to use language to obtain and convey information, making it directly aligned with communicative competence. Chapter: Unit 4 – Introduction to Objectives."
+  },
+  {
+    "q": "Q025. A lesson objective states that learners will “appreciate English”. The teacher wants to assess whether the objective has been achieved. What is the most defensible next step?",
+    "options": [
+      "Treat attendance as proof of appreciation.",
+      "Replace the objective with a list of textbook pages.",
+      "Use an unrelated spelling test.",
+      "Reformulate the objective into observable evidence, such as willingness to participate or a reasoned response to a text."
+    ],
+    "ans": 3,
+    "unit": "Unit 4 – Introduction to Objectives",
+    "exp": "Vague intentions are difficult to assess. The objective should be expressed through observable evidence appropriate to the intended learning outcome. Chapter: Unit 4 – Introduction to Objectives."
+  },
+  {
+    "q": "Q026. A learner receives a spoken instruction, interprets it, asks for clarification and then acts on it. Which feature makes this an instance of successful communication rather than mere message transmission?",
+    "options": [
+      "The receiver understands and responds to the message.",
+      "The sender speaks for a long time.",
+      "The message contains technical vocabulary.",
+      "The receiver remains silent until the next lesson."
+    ],
+    "ans": 0,
+    "unit": "Unit 5 – Introduction of Communication",
+    "exp": "The unit describes communication as successful when the receiver acknowledges, understands and responds to the message, shaping behaviour or learning. Chapter: Unit 5 – Introduction of Communication."
+  },
+  {
+    "q": "Q027. A teacher gives accurate information, but background noise prevents learners from hearing it. Which part of the communication process is most directly disrupted?",
+    "options": [
+      "The sender’s intention",
+      "The channel or medium through which the message is transmitted",
+      "The receiver’s cultural identity alone",
+      "The feedback after the lesson"
+    ],
+    "ans": 1,
+    "unit": "Unit 5 – Introduction of Communication",
+    "exp": "Noise interferes with transmission through the channel and can prevent the receiver from receiving the intended message. Chapter: Unit 5 – Introduction of Communication."
+  },
+  {
+    "q": "Q028. During a discussion, a learner’s facial expression and gesture communicate disagreement even before the learner speaks. Which interpretation is most appropriate?",
+    "options": [
+      "Communication is necessarily verbal and spoken.",
+      "Non-verbal signs are irrelevant unless translated into words.",
+      "Communication may include non-verbal signs as well as spoken or written language.",
+      "A message exists only when it is recorded in writing."
+    ],
+    "ans": 2,
+    "unit": "Unit 5 – Introduction of Communication",
+    "exp": "The unit includes signs, symbols, visualisation and observation in communication, showing that communication is not limited to spoken words. Chapter: Unit 5 – Introduction of Communication."
+  },
+  {
+    "q": "Q029. A teacher uses unfamiliar technical terms with beginners. The message is grammatically correct, yet learners misunderstand it. Which improvement best addresses the problem?",
+    "options": [
+      "Increase the speed of delivery.",
+      "Use more complex sentences to maintain accuracy.",
+      "Remove feedback so learners do not interrupt.",
+      "Adapt language to the receiver, communicate clearly and check understanding."
+    ],
+    "ans": 3,
+    "unit": "Unit 5 – Introduction of Communication",
+    "exp": "Effective communication requires clarity, simplicity and attention to the receiver. Feedback helps establish whether the message has been understood. Chapter: Unit 5 – Introduction of Communication."
+  },
+  {
+    "q": "Q030. Which sequence best represents a basic communication cycle in a classroom?",
+    "options": [
+      "Sender forms a message → message is transmitted through a channel → receiver interprets it → feedback is provided.",
+      "Receiver evaluates a test → sender selects a grade → message is forgotten → channel closes.",
+      "Channel creates an idea → receiver sends it to nobody → sender interprets silence as learning.",
+      "Feedback occurs before any message is formed and replaces the receiver."
+    ],
+    "ans": 0,
+    "unit": "Unit 5 – Introduction of Communication",
+    "exp": "Communication involves a source/sender, message, channel, receiver and feedback. Feedback completes the interaction by indicating how the message has been received. Chapter: Unit 5 – Introduction of Communication."
+  },
+  {
+    "q": "Q031. A learner can repeat every word in a recording but cannot identify the speaker’s purpose. Which distinction is most relevant?",
+    "options": [
+      "Hearing and listening are identical processes.",
+      "Listening requires active interpretation, whereas mere hearing may involve only receiving sound.",
+      "Listening is limited to recognising individual phonemes.",
+      "Understanding a speaker’s purpose is a reading sub-skill only."
+    ],
+    "ans": 1,
+    "unit": "Unit 6 – Skill of Listening",
+    "exp": "Listening is an active process involving attention, interpretation and understanding; simply receiving or repeating sounds does not demonstrate full listening comprehension. Chapter: Unit 6 – Skill of Listening."
+  },
+  {
+    "q": "Q032. Before playing an audio passage, a teacher asks learners to predict its topic from the title and a picture. What is the main instructional value of this step?",
+    "options": [
+      "It replaces the need to listen to the passage.",
+      "It assesses handwriting before listening begins.",
+      "It activates prior knowledge and prepares learners to listen purposefully.",
+      "It guarantees that every learner will understand every detail."
+    ],
+    "ans": 2,
+    "unit": "Unit 6 – Skill of Listening",
+    "exp": "Pre-listening preparation activates background knowledge and gives learners a purpose or expectation for listening. Chapter: Unit 6 – Skill of Listening."
+  },
+  {
+    "q": "Q033. During the first listening, learners are asked to choose the best summary from four options. During the second, they complete a table with exact times and places. Which progression is being used?",
+    "options": [
+      "Detailed listening before global understanding",
+      "Dictation followed by pronunciation drilling",
+      "Silent reading followed by free writing",
+      "Listening for gist followed by listening for specific details"
+    ],
+    "ans": 3,
+    "unit": "Unit 6 – Skill of Listening",
+    "exp": "The first task requires an overall understanding (gist); the second requires selective attention to particular pieces of information. Chapter: Unit 6 – Skill of Listening."
+  },
+  {
+    "q": "Q034. A learner becomes distracted by an unfamiliar accent and stops following the message. Which teacher response is most pedagogically sound?",
+    "options": [
+      "Provide varied listening exposure and guide learners to use context rather than treating accent difference as a failure.",
+      "Insist that only one accent is legitimate.",
+      "Avoid all listening material spoken by unfamiliar speakers.",
+      "Ask learners to memorise the recording without interpreting it."
+    ],
+    "ans": 0,
+    "unit": "Unit 6 – Skill of Listening",
+    "exp": "Varied listening materials and contextual listening can help learners cope with differences in speech. The aim is comprehension, not dependence on a single accent. Chapter: Unit 6 – Skill of Listening."
+  },
+  {
+    "q": "Q035. Which classroom behaviour most clearly indicates attentive listening rather than passive silence?",
+    "options": [
+      "Looking at the textbook while ignoring the speaker",
+      "Maintaining attention, identifying key points and responding appropriately",
+      "Waiting for the speaker to finish without processing the message",
+      "Copying every word without distinguishing important information"
+    ],
+    "ans": 1,
+    "unit": "Unit 6 – Skill of Listening",
+    "exp": "Effective listening involves attention, comprehension and an appropriate response; silence alone is not proof of listening. Chapter: Unit 6 – Skill of Listening."
+  },
+  {
+    "q": "Q036. A teacher wants to diagnose whether learners struggle with sound discrimination or with understanding a complete message. Which assessment design is most informative?",
+    "options": [
+      "Give only a long written essay.",
+      "Ask learners to copy a passage from the board.",
+      "Use a short sound-discrimination task and a separate meaning-focused listening task.",
+      "Assess only their ability to speak loudly."
+    ],
+    "ans": 2,
+    "unit": "Unit 6 – Skill of Listening",
+    "exp": "Separating recognition of sounds from comprehension of connected speech helps identify the source of difficulty. The unit treats listening as involving sub-skills and barriers. Chapter: Unit 6 – Skill of Listening."
+  },
+  {
+    "q": "Q037. A learner produces grammatically accurate sentences but speaks so slowly and hesitantly that conversation repeatedly breaks down. Which speaking dimension needs particular attention?",
+    "options": [
+      "Fluency and continuity of speech",
+      "Handwriting and spelling",
+      "Silent reading speed",
+      "Recognition of punctuation"
+    ],
+    "ans": 0,
+    "unit": "Unit 7 – Skill of Speaking",
+    "exp": "Speaking involves more than grammatical correctness; fluency, intelligibility and the ability to sustain communication are important dimensions. Chapter: Unit 7 – Skill of Speaking."
+  },
+  {
+    "q": "Q038. A teacher wants learners to practise asking for and giving information rather than merely reciting a dialogue. Which activity is most suitable?",
+    "options": [
+      "Choral repetition of the same dialogue without variation",
+      "An information-gap task in which each learner holds different information",
+      "Copying a dialogue and underlining verbs",
+      "Listening to a recorded conversation without responding"
+    ],
+    "ans": 1,
+    "unit": "Unit 7 – Skill of Speaking",
+    "exp": "An information-gap task creates a genuine communicative need and requires learners to ask, answer and exchange information. Chapter: Unit 7 – Skill of Speaking."
+  },
+  {
+    "q": "Q039. Which sequence most logically describes the speaking process?",
+    "options": [
+      "Evaluation → silence → memorisation → articulation",
+      "Reading → copying → translation → dictation",
+      "Planning/formulating an idea → organising language → articulating it → monitoring or responding",
+      "Pronunciation drilling → handwriting → silent reading → grading"
+    ],
+    "ans": 2,
+    "unit": "Unit 7 – Skill of Speaking",
+    "exp": "Speaking requires conceptual preparation, linguistic formulation and articulation, followed by monitoring and adjustment in interaction. Chapter: Unit 7 – Skill of Speaking."
+  },
+  {
+    "q": "Q040. A learner avoids speaking because the teacher interrupts after every minor grammatical error. What is the best immediate adjustment?",
+    "options": [
+      "Correct every error more quickly.",
+      "Remove all speaking tasks until accuracy is perfect.",
+      "Allow only memorised speeches.",
+      "Use supportive speaking opportunities and provide selective feedback without destroying fluency."
+    ],
+    "ans": 3,
+    "unit": "Unit 7 – Skill of Speaking",
+    "exp": "Overcorrection can inhibit participation. A supportive atmosphere and appropriately timed feedback help learners develop confidence and speaking ability. Chapter: Unit 7 – Skill of Speaking."
+  },
+  {
+    "q": "Q041. A teacher evaluates a role-play only for pronunciation and ignores whether the learner responds appropriately to the partner. What important aspect is omitted?",
+    "options": [
+      "Interactional appropriateness and communicative response",
+      "The number of words in the textbook",
+      "The learner’s handwriting speed",
+      "The visual quality of the classroom chart"
+    ],
+    "ans": 0,
+    "unit": "Unit 7 – Skill of Speaking",
+    "exp": "Speaking is interactive. Appropriate turn-taking, responding to a partner and achieving the communicative purpose are central to effective speaking. Chapter: Unit 7 – Skill of Speaking."
+  },
+  {
+    "q": "Q042. A learner reads a passage quickly to decide whether it discusses climate change or water conservation. Which reading strategy is being used?",
+    "options": [
+      "Scanning for a date",
+      "Skimming for the overall topic",
+      "Intensive reading for every grammatical form",
+      "Reading aloud for pronunciation"
+    ],
+    "ans": 1,
+    "unit": "Unit 8 – Skill of Reading",
+    "exp": "Skimming involves rapid reading to obtain the general idea or overall topic, rather than locating one exact detail. Chapter: Unit 8 – Skill of Reading."
+  },
+  {
+    "q": "Q043. A learner searches a timetable to find the departure time of a particular bus without reading every entry. Which strategy is most appropriate?",
+    "options": [
+      "Extensive reading",
+      "Predictive reading",
+      "Scanning for specific information",
+      "Intensive reading of the whole timetable"
+    ],
+    "ans": 2,
+    "unit": "Unit 8 – Skill of Reading",
+    "exp": "Scanning is used to locate specific information quickly, such as a time, name or number. Chapter: Unit 8 – Skill of Reading."
+  },
+  {
+    "q": "Q044. A teacher asks learners to infer the meaning of an unfamiliar word from the surrounding sentences before consulting a dictionary. Which reading process is encouraged?",
+    "options": [
+      "Word-by-word decoding without context",
+      "Memorisation of dictionary entries",
+      "Translation of the whole paragraph",
+      "Use of contextual clues and prediction"
+    ],
+    "ans": 3,
+    "unit": "Unit 8 – Skill of Reading",
+    "exp": "Readers use context and prediction to construct meaning and infer unfamiliar vocabulary. This supports comprehension beyond isolated word recognition. Chapter: Unit 8 – Skill of Reading."
+  },
+  {
+    "q": "Q045. Which classroom sequence best supports the development of reading in a new text?",
+    "options": [
+      "Prepare learners and activate prior knowledge → guide initial reading → check comprehension and extend response",
+      "Begin with a detailed test → provide the text → explain the answers → end the lesson",
+      "Translate every sentence first → ask learners to memorise it → prohibit independent reading",
+      "Ask learners to read aloud repeatedly without a purpose or comprehension task"
+    ],
+    "ans": 0,
+    "unit": "Unit 8 – Skill of Reading",
+    "exp": "Reading instruction benefits from preparation, purposeful reading and follow-up comprehension/response activities. Chapter: Unit 8 – Skill of Reading."
+  },
+  {
+    "q": "Q046. A learner reads a novel for pleasure over several days, choosing the pace and reading broadly for enjoyment. Which type of reading is most clearly represented?",
+    "options": [
+      "Intensive reading",
+      "Extensive reading",
+      "Scanning",
+      "Phonetic decoding"
+    ],
+    "ans": 1,
+    "unit": "Unit 8 – Skill of Reading",
+    "exp": "Extensive reading involves reading longer texts, often for pleasure or general understanding, with attention to overall meaning rather than detailed analysis of every item. Chapter: Unit 8 – Skill of Reading."
+  },
+  {
+    "q": "Q047. A teacher asks learners to read a short paragraph closely, identify how pronouns refer to earlier nouns and explain the author’s choice of tense. Which approach is being used?",
+    "options": [
+      "Extensive reading",
+      "Skimming",
+      "Intensive reading",
+      "Scanning"
+    ],
+    "ans": 2,
+    "unit": "Unit 8 – Skill of Reading",
+    "exp": "Intensive reading involves close examination of a short text for detailed understanding of language and meaning. Chapter: Unit 8 – Skill of Reading."
+  },
+  {
+    "q": "Q048. A learner reads each word correctly but cannot explain the relationship between two paragraphs. Which conclusion is most defensible?",
+    "options": [
+      "Accurate word recognition alone does not guarantee comprehension of textual organisation.",
+      "Reading comprehension is determined only by pronunciation.",
+      "Paragraph relationships are unrelated to reading.",
+      "The learner must be assessed only on handwriting."
+    ],
+    "ans": 0,
+    "unit": "Unit 8 – Skill of Reading",
+    "exp": "Reading involves constructing meaning across sentences and paragraphs. Decoding individual words is necessary but insufficient for understanding relationships and overall organisation. Chapter: Unit 8 – Skill of Reading."
+  },
+  {
+    "q": "Q049. A learner writes a paragraph, rereads it, rearranges two sentences and then corrects punctuation. Which view of writing does this behaviour demonstrate?",
+    "options": [
+      "Writing as a one-step act of copying",
+      "Writing as a process involving drafting, revising and editing",
+      "Writing as the mechanical production of letters only",
+      "Writing as an activity that must be completed before ideas are formed"
+    ],
+    "ans": 1,
+    "unit": "Unit 9 – Skill of Writing",
+    "exp": "The unit treats writing as a process with stages and sub-skills. Revising content and editing mechanics are distinct but related parts of composing. Chapter: Unit 9 – Skill of Writing."
+  },
+  {
+    "q": "Q050. Which feedback is most useful when a learner’s paragraph contains relevant ideas but lacks logical order?",
+    "options": [
+      "“Your handwriting is untidy.”",
+      "“Memorise the model paragraph exactly.”",
+      "“Group related ideas and arrange them so each sentence develops the previous one.”",
+      "“Avoid using connecting words because they make writing longer.”"
+    ],
+    "ans": 2,
+    "unit": "Unit 9 – Skill of Writing",
+    "exp": "The feedback targets organisation and coherence, important aspects of writing beyond handwriting or mechanical accuracy. Chapter: Unit 9 – Skill of Writing."
+  },
+  {
+    "q": "Q051. A teacher evaluates a written composition only for spelling and punctuation. Which major dimension is being neglected?",
+    "options": [
+      "Mechanical accuracy",
+      "Legibility",
+      "Letter formation",
+      "Content, organisation and communicative purpose"
+    ],
+    "ans": 3,
+    "unit": "Unit 9 – Skill of Writing",
+    "exp": "Writing ability includes idea development, organisation, coherence and purpose as well as mechanics such as spelling and punctuation. Chapter: Unit 9 – Skill of Writing."
+  },
+  {
+    "q": "Q052. A learner can form letters neatly but cannot maintain consistent spacing or alignment. Which aspect of good handwriting needs attention?",
+    "options": [
+      "The mechanics and visual consistency of handwriting",
+      "The learner’s ability to infer meaning",
+      "The use of oral intonation",
+      "The selection of a reading strategy"
+    ],
+    "ans": 0,
+    "unit": "Unit 9 – Skill of Writing",
+    "exp": "Good handwriting includes legibility and consistency in letter formation, spacing and alignment. Chapter: Unit 9 – Skill of Writing."
+  },
+  {
+    "q": "Q053. Why should a teacher provide writing tasks for real or clearly imagined audiences rather than only copying exercises?",
+    "options": [
+      "Because copying always develops composition automatically.",
+      "Because purpose and audience give writing a communicative function and guide choices of content and form.",
+      "Because writing should never involve grammar or mechanics.",
+      "Because audience awareness removes the need for revision."
+    ],
+    "ans": 1,
+    "unit": "Unit 9 – Skill of Writing",
+    "exp": "Writing is purposeful communication. Audience and purpose influence the selection and organisation of ideas and language. Chapter: Unit 9 – Skill of Writing."
+  },
+  {
+    "q": "Q054. A teacher introduces a new structure through a familiar classroom situation before asking learners to formulate a rule. Which teaching maxim is most closely reflected?",
+    "options": [
+      "Proceed from abstract to unfamiliar without examples.",
+      "Proceed from known to unknown and concrete experience towards understanding.",
+      "Teach all rules before presenting any language use.",
+      "Separate language forms from situations in which they occur."
+    ],
+    "ans": 1,
+    "unit": "Unit 10 – Principles of Teaching English",
+    "exp": "General teaching maxims include moving from known to unknown and using concrete/familiar contexts to support understanding. Chapter: Unit 10 – Principles of Teaching English."
+  },
+  {
+    "q": "Q055. A teacher spends most of the period explaining the rules of the past tense, but learners never use the tense to describe past events. Which principle has been most seriously neglected?",
+    "options": [
+      "Language is a skill subject and requires practice in use.",
+      "Grammar terminology is the only valid learning outcome.",
+      "Writing is the only primary form of language.",
+      "Learners should avoid communication until rules are mastered."
+    ],
+    "ans": 0,
+    "unit": "Unit 10 – Principles of Teaching English",
+    "exp": "The unit stresses language as a skill that grows through exercise. Knowing rules without using the language does not develop practical ability. Chapter: Unit 10 – Principles of Teaching English."
+  },
+  {
+    "q": "Q056. Which lesson sequence best demonstrates a graded and systematic progression?",
+    "options": [
+      "Begin with the most complex structure, then move randomly between unrelated topics.",
+      "Introduce all exceptions before the basic pattern.",
+      "Start with familiar, simple language, practise it, and gradually move to more complex use.",
+      "Teach only what learners already know and never extend it."
+    ],
+    "ans": 2,
+    "unit": "Unit 10 – Principles of Teaching English",
+    "exp": "Effective language teaching proceeds systematically and grades learning from familiar/simple material towards more complex content. Chapter: Unit 10 – Principles of Teaching English."
+  },
+  {
+    "q": "Q057. A teacher wants to maximise learner participation. Which classroom arrangement is most consistent with the principles described in the unit?",
+    "options": [
+      "Teacher lecture throughout, with no learner response",
+      "Individual copying for the entire lesson",
+      "Only teacher demonstration, without learner practice",
+      "A mix of pair/group activities and individual practice with purposeful teacher guidance"
+    ],
+    "ans": 3,
+    "unit": "Unit 10 – Principles of Teaching English",
+    "exp": "The unit emphasises learner involvement and participation. Pair and group activities provide opportunities for practice and interaction. Chapter: Unit 10 – Principles of Teaching English."
+  },
+  {
+    "q": "Q058. A teacher uses a familiar object to introduce a new word, then asks learners to use the word in several meaningful sentences. Which combination is most evident?",
+    "options": [
+      "Contextual presentation and practice",
+      "Translation and rote memorisation only",
+      "Testing before instruction",
+      "Silent reading and copying only"
+    ],
+    "ans": 0,
+    "unit": "Unit 10 – Principles of Teaching English",
+    "exp": "Presenting language in a meaningful context and then providing opportunities for use supports understanding and skill development. Chapter: Unit 10 – Principles of Teaching English."
+  },
+  {
+    "q": "Q059. Which statement best explains why a principle is not identical to a rigid classroom script?",
+    "options": [
+      "A principle is a general guiding truth that a teacher applies appropriately to particular learners and situations.",
+      "A principle dictates one identical activity for every learner and every lesson.",
+      "A principle is simply a list of textbook answers.",
+      "A principle replaces the teacher’s professional judgement."
+    ],
+    "ans": 0,
+    "unit": "Unit 10 – Principles of Teaching English",
+    "exp": "The unit describes principles/maxims as general rules or truths that guide effective teaching. Their application requires the teacher to adapt them to the particular situation. Chapter: Unit 10 – Principles of Teaching English."
+  },
+  {
+    "q": "Q060. A teacher introduces vocabulary, grammar and pronunciation in disconnected exercises, with no opportunity to combine them in communication. What is the most significant limitation?",
+    "options": [
+      "The lesson has too much meaningful language use.",
+      "The lesson fails to help learners integrate language elements as usable skills.",
+      "The lesson gives excessive attention to learner interaction.",
+      "The lesson necessarily develops fluency more quickly."
+    ],
+    "ans": 1,
+    "unit": "Unit 10 – Principles of Teaching English",
+    "exp": "Language is a skill subject; elements of language should contribute to the learner’s ability to use language meaningfully rather than remain isolated facts. Chapter: Unit 10 – Principles of Teaching English."
+  },
+  {
+    "q": "Q061. A teacher explains grammar rules in the learners’ first language, asks them to translate sentences and gives substantial attention to written exercises. Which method is most clearly indicated?",
+    "options": [
+      "Direct Method",
+      "Audio-Lingual Method",
+      "Grammar-Translation Method",
+      "Situational Approach"
+    ],
+    "ans": 2,
+    "unit": "Unit 11 – Methods of Teaching English",
+    "exp": "The Grammar-Translation Method relies heavily on explicit grammar explanation, translation and written language work. Chapter: Unit 11 – Methods of Teaching English."
+  },
+  {
+    "q": "Q062. A teacher introduces the word “apple” by showing an apple, naming it in English and eliciting oral sentences without translating it. Which method is most closely represented?",
+    "options": [
+      "Grammar-Translation Method",
+      "Direct Method",
+      "Bilingual Method",
+      "Lecture-cum-translation method"
+    ],
+    "ans": 1,
+    "unit": "Unit 11 – Methods of Teaching English",
+    "exp": "The Direct Method uses the target language directly and employs objects, actions and situations to establish meaning without relying on translation. Chapter: Unit 11 – Methods of Teaching English."
+  },
+  {
+    "q": "Q063. A teacher first gives a short explanation in the mother tongue, then immediately provides the English expression and practises it in context. Which method best fits this procedure?",
+    "options": [
+      "Direct Method",
+      "Audio-Lingual Method",
+      "Grammar-Translation Method",
+      "Bilingual Method"
+    ],
+    "ans": 3,
+    "unit": "Unit 11 – Methods of Teaching English",
+    "exp": "The Bilingual Method makes controlled use of the mother tongue to convey meaning while ensuring practice in the target language. Chapter: Unit 11 – Methods of Teaching English."
+  },
+  {
+    "q": "Q064. Which classroom practice most strongly reflects the Audio-Lingual Method?",
+    "options": [
+      "Pattern drills, repetition and habit formation through listening and speaking practice",
+      "Extended translation of literary passages",
+      "Learner discovery of grammar through silent reading only",
+      "Unstructured free writing before oral exposure"
+    ],
+    "ans": 0,
+    "unit": "Unit 11 – Methods of Teaching English",
+    "exp": "The Audio-Lingual Method gives importance to listening and speaking, repetition, pattern practice and the formation of language habits. Chapter: Unit 11 – Methods of Teaching English."
+  },
+  {
+    "q": "Q065. A teacher presents “This is a pen”, “This is a book” and “This is a bag” using objects, then guides learners to substitute new nouns in the same pattern. Which orientation is most evident?",
+    "options": [
+      "Literary appreciation alone",
+      "Structural practice through a meaningful situation",
+      "Translation of isolated sentences",
+      "Phonetic transcription without meaning"
+    ],
+    "ans": 1,
+    "unit": "Unit 11 – Methods of Teaching English",
+    "exp": "The structural orientation focuses on teaching language patterns and structures through graded practice, often in meaningful situations. Chapter: Unit 11 – Methods of Teaching English."
+  },
+  {
+    "q": "Q066. Which statement best distinguishes an approach from a method?",
+    "options": [
+      "An approach is a set of classroom steps, whereas a method is a theory of language.",
+      "Both terms always mean the same thing.",
+      "An approach provides broader assumptions or principles; a method organises teaching procedures based on them.",
+      "A method concerns only assessment, while an approach concerns only textbooks."
+    ],
+    "ans": 2,
+    "unit": "Unit 11 – Methods of Teaching English",
+    "exp": "The unit distinguishes the broader theoretical orientation or set of assumptions (approach) from the organised procedures used in teaching (method). Chapter: Unit 11 – Methods of Teaching English."
+  },
+  {
+    "q": "Q067. A teacher wants learners to use English to complete a real-life task, negotiate meaning and focus on successful communication. Which orientation is most consistent with this purpose?",
+    "options": [
+      "Grammar-Translation orientation",
+      "A purely memorisation-based orientation",
+      "A pronunciation-only drill orientation",
+      "Communicative orientation"
+    ],
+    "ans": 3,
+    "unit": "Unit 11 – Methods of Teaching English",
+    "exp": "A communicative orientation prioritises meaningful language use and interaction to achieve communicative purposes. Chapter: Unit 11 – Methods of Teaching English."
+  },
+  {
+    "q": "Q068. A method produces good results in one class but fails in another because the learners’ age, needs and proficiency differ. What is the most defensible conclusion?",
+    "options": [
+      "No method is universally effective without regard to context; teachers must consider learners and objectives.",
+      "The first class must have used an incorrect textbook.",
+      "The second class should be excluded from language learning.",
+      "A method is effective only when it is never adapted."
+    ],
+    "ans": 0,
+    "unit": "Unit 11 – Methods of Teaching English",
+    "exp": "The unit’s discussion of good methods and approaches implies that teaching choices must be judged in relation to learners, objectives and classroom conditions. Chapter: Unit 11 – Methods of Teaching English."
+  },
+  {
+    "q": "Q069. Which limitation is most likely when a class relies exclusively on translation and written grammar exercises?",
+    "options": [
+      "Learners receive extensive spontaneous interaction.",
+      "Learners may know rules but have limited practice in listening and speaking.",
+      "Learners necessarily acquire natural pronunciation.",
+      "Learners develop all four skills equally."
+    ],
+    "ans": 1,
+    "unit": "Unit 11 – Methods of Teaching English",
+    "exp": "Grammar-Translation can give attention to grammar and written work but may not provide sufficient oral and communicative practice. Chapter: Unit 11 – Methods of Teaching English."
+  },
+  {
+    "q": "Q070. A teacher chooses a method only because it is fashionable, without considering the stated objectives or the learners’ needs. Which professional principle is violated?",
+    "options": [
+      "Methods should be selected in relation to aims, learners and teaching conditions.",
+      "All methods are equally suitable for every objective.",
+      "Teaching methods should be independent of learner characteristics.",
+      "A method should be selected before the teacher knows the lesson content."
+    ],
+    "ans": 0,
+    "unit": "Unit 11 – Methods of Teaching English",
+    "exp": "A good method is purposeful and appropriate to the objectives, learners and context; popularity alone is not a sound selection criterion. Chapter: Unit 11 – Methods of Teaching English."
+  },
+  {
+    "q": "Q071. A teacher uses flashcards to introduce new vocabulary and a chart to show relationships among words. Which classification best describes these materials?",
+    "options": [
+      "Teacher-made instructional aids",
+      "Electronic instructional aids",
+      "Assessment instruments",
+      "Language laboratory equipment"
+    ],
+    "ans": 0,
+    "unit": "Unit 12 – Instructional Aids",
+    "exp": "Flashcards and charts are listed among teacher-made aids, along with pictures, models and blackboard sketches. Chapter: Unit 12 – Instructional Aids."
+  },
+  {
+    "q": "Q072. A school uses a tape recorder to provide repeated listening practice with recorded dialogues. Which category does the device belong to in the unit’s classification?",
+    "options": [
+      "Teacher-made visual aid",
+      "Electronic aid",
+      "Printed textbook aid",
+      "Natural object aid"
+    ],
+    "ans": 1,
+    "unit": "Unit 12 – Instructional Aids",
+    "exp": "Tape recorders are included among electronic aids in the unit’s classification. Chapter: Unit 12 – Instructional Aids."
+  },
+  {
+    "q": "Q073. Which use of a language laboratory is pedagogically strongest?",
+    "options": [
+      "Playing recordings while learners do unrelated written work",
+      "Using the room only for examinations",
+      "Providing focused listening and speaking practice with opportunities for repetition and feedback",
+      "Replacing all teacher-learner interaction permanently"
+    ],
+    "ans": 2,
+    "unit": "Unit 12 – Instructional Aids",
+    "exp": "A language laboratory supports language practice, particularly listening and speaking, through recorded or technology-enabled activities. It supplements rather than eliminates teaching. Chapter: Unit 12 – Instructional Aids."
+  },
+  {
+    "q": "Q074. A teacher has no projector or computer but uses locally prepared picture cards and a blackboard sketch to explain a story. Which inference is most appropriate?",
+    "options": [
+      "Effective instructional aids must be expensive.",
+      "Only electronic aids can support language learning.",
+      "Teaching aids are useful only when they reproduce a textbook page.",
+      "Low-cost teacher-made aids can support understanding when selected purposefully."
+    ],
+    "ans": 3,
+    "unit": "Unit 12 – Instructional Aids",
+    "exp": "The unit includes teacher-made aids such as pictures, charts and blackboard sketches; their educational value depends on purposeful use, not cost. Chapter: Unit 12 – Instructional Aids."
+  },
+  {
+    "q": "Q075. A teacher uses multimedia with animation, sound and text. Learners enjoy it but cannot identify the lesson’s language objective. What should the teacher do?",
+    "options": [
+      "Select and organise media around the learning objective rather than using technology for novelty.",
+      "Increase the number of effects to maintain attention.",
+      "Remove all learner tasks because multimedia itself teaches.",
+      "Use the same media regardless of the content."
+    ],
+    "ans": 0,
+    "unit": "Unit 12 – Instructional Aids",
+    "exp": "Instructional aids and multimedia should serve the teaching-learning purpose. Attractive presentation alone does not guarantee learning. Chapter: Unit 12 – Instructional Aids."
+  },
+  {
+    "q": "Q076. A teacher begins a prose lesson by preparing learners for the topic, develops comprehension through guided reading and then checks understanding through questions and discussion. Which principle is most evident?",
+    "options": [
+      "Teaching prose as a sequence of isolated grammar rules",
+      "Teaching prose through preparation, presentation and comprehension work",
+      "Teaching prose only through translation of every word",
+      "Teaching prose without reference to meaning"
+    ],
+    "ans": 1,
+    "unit": "Unit 13 – Teaching of English Language",
+    "exp": "The unit treats teaching of prose as a planned process in which preparation and presentation support comprehension and response. Chapter: Unit 13 – Teaching of English Language."
+  },
+  {
+    "q": "Q077. A teacher asks learners to notice repeated sound patterns, imagery and emotional effect in a poem before discussing its central idea. Which focus is most appropriate?",
+    "options": [
+      "Treating poetry as a prose passage to be translated sentence by sentence",
+      "Memorising the poet’s biography before reading",
+      "Attending to the distinctive language, rhythm, imagery and feeling of poetry",
+      "Assessing only the number of unfamiliar words"
+    ],
+    "ans": 2,
+    "unit": "Unit 13 – Teaching of English Language",
+    "exp": "Poetry teaching should attend to its distinctive aesthetic features, including sound, rhythm, imagery and emotional response, alongside meaning. Chapter: Unit 13 – Teaching of English Language."
+  },
+  {
+    "q": "Q078. A teacher introduces a new word through an object, uses it in a sentence, contrasts it with a related word and revisits it in later tasks. Which vocabulary-teaching principle is best illustrated?",
+    "options": [
+      "Teach words only through dictionary definitions.",
+      "Present words without context to avoid interference.",
+      "Avoid recycling vocabulary after first exposure.",
+      "Establish meaning in context and reinforce use through repeated meaningful encounters."
+    ],
+    "ans": 3,
+    "unit": "Unit 13 – Teaching of English Language",
+    "exp": "Vocabulary learning is strengthened when words are presented meaningfully and revisited in use rather than treated as isolated definitions. Chapter: Unit 13 – Teaching of English Language."
+  },
+  {
+    "q": "Q079. A teacher asks learners to compare “She goes” and “They go” in meaningful sentences, notice the pattern and then use it in new examples. Which grammar-teaching orientation is most apparent?",
+    "options": [
+      "Inductive discovery of a grammatical pattern from examples",
+      "Deductive explanation followed only by copying",
+      "Translation without attention to form",
+      "Assessment before any language exposure"
+    ],
+    "ans": 0,
+    "unit": "Unit 13 – Teaching of English Language",
+    "exp": "Learners infer the rule from examples and apply it in new contexts; this is an inductive orientation to grammar teaching. Chapter: Unit 13 – Teaching of English Language."
+  },
+  {
+    "q": "Q080. Which task best integrates the teaching of composition with communicative purpose?",
+    "options": [
+      "Copying a model essay word for word",
+      "Writing a short invitation for a real school event, considering audience, purpose and necessary details",
+      "Listing ten grammar rules without using them",
+      "Reading a paragraph aloud without producing a text"
+    ],
+    "ans": 1,
+    "unit": "Unit 13 – Teaching of English Language",
+    "exp": "Composition involves creating a purposeful text for an audience. A real invitation gives learners a clear communicative purpose and content requirements. Chapter: Unit 13 – Teaching of English Language."
+  },
+  {
+    "q": "Q081. A curriculum committee selects language content, sequences it, identifies learning experiences and plans evaluation. Which understanding of curriculum is reflected?",
+    "options": [
+      "Curriculum is limited to the printed textbook.",
+      "Curriculum is a planned educational experience, not merely a list of topics.",
+      "Curriculum is identical to the annual examination paper.",
+      "Curriculum refers only to the teacher’s personal teaching style."
+    ],
+    "ans": 1,
+    "unit": "Unit 14 – Curriculum Development (Construction)",
+    "exp": "Curriculum development involves planned content, learning experiences and evaluation; it extends beyond the textbook alone. Chapter: Unit 14 – Curriculum Development (Construction)."
+  },
+  {
+    "q": "Q082. A curriculum includes attractive activities but ignores learners’ developmental level and local context. Which principle of curriculum development is most clearly neglected?",
+    "options": [
+      "Relevance to learners’ needs, abilities and context",
+      "The use of a fixed textbook in every school",
+      "The exclusion of evaluation",
+      "The separation of objectives from content"
+    ],
+    "ans": 0,
+    "unit": "Unit 14 – Curriculum Development (Construction)",
+    "exp": "A sound curriculum should be appropriate to learners and their context, while aligning objectives, content, experiences and evaluation. Chapter: Unit 14 – Curriculum Development (Construction)."
+  },
+  {
+    "q": "Q083. A textbook contains accurate information but offers no progression, few meaningful exercises and no provision for different learner needs. What is the best evaluation?",
+    "options": [
+      "Accuracy alone makes it an ideal textbook.",
+      "A textbook should be judged only by the number of pages.",
+      "It falls short of the characteristics of a good textbook because organisation and learning support also matter.",
+      "The absence of activities is desirable because learners should discover everything independently."
+    ],
+    "ans": 2,
+    "unit": "Unit 14 – Curriculum Development (Construction)",
+    "exp": "The unit discusses characteristics of a good textbook; accuracy is important but so are organisation, graded presentation, useful activities and suitability for learners. Chapter: Unit 14 – Curriculum Development (Construction)."
+  },
+  {
+    "q": "Q084. Which sequence is the most defensible for curriculum construction?",
+    "options": [
+      "Choose examinations → ignore objectives → select unrelated content → teach",
+      "Select textbook → copy its chapters → determine aims after teaching",
+      "Choose activities first → omit learner analysis → assess only attendance",
+      "Identify needs and aims → formulate objectives → select/organise content and experiences → plan evaluation"
+    ],
+    "ans": 3,
+    "unit": "Unit 14 – Curriculum Development (Construction)",
+    "exp": "Curriculum development is systematic: needs and aims inform objectives, which guide the selection and organisation of content and learning experiences, followed by evaluation. Chapter: Unit 14 – Curriculum Development (Construction)."
+  },
+  {
+    "q": "Q085. A curriculum is revised after teachers’ feedback shows that the planned speaking activities are unrealistic for the available class size. What does this illustrate?",
+    "options": [
+      "Curriculum development is responsive and may be improved through feedback and evaluation.",
+      "A curriculum must never change after approval.",
+      "Teacher feedback is unrelated to curriculum quality.",
+      "Classroom conditions should be ignored during curriculum construction."
+    ],
+    "ans": 0,
+    "unit": "Unit 14 – Curriculum Development (Construction)",
+    "exp": "Curriculum development should consider practical conditions and feedback; evaluation can reveal limitations that require revision. Chapter: Unit 14 – Curriculum Development (Construction)."
+  },
+  {
+    "q": "Q086. Which teacher quality is most important when adapting a prescribed English textbook without abandoning its learning objectives?",
+    "options": [
+      "Ability to dictate every paragraph",
+      "Professional understanding of learners, subject matter and appropriate teaching strategies",
+      "Preference for using one method in every situation",
+      "Avoidance of assessment and feedback"
+    ],
+    "ans": 1,
+    "unit": "Unit 14 – Curriculum Development (Construction)",
+    "exp": "The unit includes qualities of a good English language teacher; subject knowledge, understanding of learners and sound pedagogical judgement are central to effective adaptation. Chapter: Unit 14 – Curriculum Development (Construction)."
+  },
+  {
+    "q": "Q087. A textbook’s exercises mainly test recall, although the curriculum expects learners to interpret, communicate and create. What is the central issue?",
+    "options": [
+      "The textbook has too many illustrations.",
+      "The textbook is necessarily too short.",
+      "There is a mismatch between the intended curriculum outcomes and the learning/assessment opportunities in the textbook.",
+      "Recall is the only valid outcome in language education."
+    ],
+    "ans": 2,
+    "unit": "Unit 14 – Curriculum Development (Construction)",
+    "exp": "A good textbook should support the curriculum’s objectives. If activities assess only recall while the curriculum expects higher-order language use, alignment is weak. Chapter: Unit 14 – Curriculum Development (Construction)."
+  },
+  {
+    "q": "Q088. A trainee teaches a five-minute lesson to a small group, focuses only on questioning skill, receives feedback and reteaches the lesson. Which process is most characteristic of microteaching?",
+    "options": [
+      "A full-period lecture to a large class without feedback",
+      "A scaled-down teaching situation focused on a specific skill, followed by feedback and reteaching",
+      "An annual examination of subject knowledge",
+      "A lesson observation with no opportunity to practise"
+    ],
+    "ans": 1,
+    "unit": "Unit 15 – Micro Teaching",
+    "exp": "Microteaching reduces the scale of teaching and concentrates on a particular teaching skill, with feedback and an opportunity to improve through reteaching. Chapter: Unit 15 – Micro Teaching."
+  },
+  {
+    "q": "Q089. Why is the lesson shortened and the number of learners reduced during microteaching?",
+    "options": [
+      "To remove the need for planning",
+      "To make assessment impossible",
+      "To isolate and practise a specific teaching skill under manageable conditions",
+      "To ensure that the trainee never interacts with learners"
+    ],
+    "ans": 2,
+    "unit": "Unit 15 – Micro Teaching",
+    "exp": "Microteaching simplifies the teaching situation so that a trainee can concentrate on a particular skill and receive focused feedback. Chapter: Unit 15 – Micro Teaching."
+  },
+  {
+    "q": "Q090. A trainee receives feedback that questions were too vague, revises them and teaches the same skill again. Which element of microteaching is most directly demonstrated?",
+    "options": [
+      "The feedback–replanning–reteaching cycle",
+      "The replacement of practice with theory",
+      "The final summative examination",
+      "The avoidance of self-evaluation"
+    ],
+    "ans": 0,
+    "unit": "Unit 15 – Micro Teaching",
+    "exp": "Feedback is used to improve performance through replanning and reteaching; this cycle is a defining feature of microteaching. Chapter: Unit 15 – Micro Teaching."
+  },
+  {
+    "q": "Q091. A trainee practises set induction, explanation and questioning together in a full lesson after practising them separately. What does this represent?",
+    "options": [
+      "The elimination of teaching skills",
+      "The integration of separately practised teaching skills",
+      "The replacement of microteaching by dictation",
+      "The assessment of learners’ handwriting"
+    ],
+    "ans": 1,
+    "unit": "Unit 15 – Micro Teaching",
+    "exp": "The unit discusses integration of skills: separately developed teaching skills are brought together in a more complete teaching performance. Chapter: Unit 15 – Micro Teaching."
+  },
+  {
+    "q": "Q092. A teacher enters class with a list of activities but has not identified the intended learning outcomes or how learning will be checked. What is the principal weakness?",
+    "options": [
+      "The plan contains too many learning objectives.",
+      "The plan has no connection with the curriculum.",
+      "The plan is activity-centred without alignment among objectives, teaching-learning activities and evaluation.",
+      "The plan includes learner participation."
+    ],
+    "ans": 2,
+    "unit": "Unit 16 – Lesson Planning",
+    "exp": "A good lesson plan aligns objectives, content, activities, resources and evaluation. Activities alone do not establish what learners should achieve or how achievement will be judged. Chapter: Unit 16 – Lesson Planning."
+  },
+  {
+    "q": "Q093. Which feature most clearly distinguishes a lesson plan from a unit plan?",
+    "options": [
+      "A lesson plan addresses a specific teaching period or lesson, while a unit plan organises related learning over a broader sequence.",
+      "A lesson plan covers the entire academic year, while a unit plan covers five minutes.",
+      "A lesson plan is used only for examinations, while a unit plan is used only for homework.",
+      "There is no difference in scope or purpose."
+    ],
+    "ans": 0,
+    "unit": "Unit 16 – Lesson Planning",
+    "exp": "The unit discusses lesson plans and unit plans as related but different planning frameworks. A lesson plan is narrower and more immediate; a unit plan covers a larger body of related content. Chapter: Unit 16 – Lesson Planning."
+  },
+  {
+    "q": "Q094. A teacher plans a story lesson but allocates no time for learners to respond or ask questions. Which characteristic of a good lesson plan is most clearly missing?",
+    "options": [
+      "A fixed sequence of teacher monologue",
+      "Flexibility and provision for learner participation",
+      "A long list of textbook references",
+      "An assessment unrelated to the lesson"
+    ],
+    "ans": 1,
+    "unit": "Unit 16 – Lesson Planning",
+    "exp": "A good lesson plan should be purposeful yet flexible and should provide for active learner participation and response. Chapter: Unit 16 – Lesson Planning."
+  },
+  {
+    "q": "Q095. During a lesson, learners complete the planned task much faster than expected. The teacher moves to an extension activity that still serves the objective. What does this demonstrate?",
+    "options": [
+      "Failure to follow the plan",
+      "Abandonment of the lesson objective",
+      "Appropriate flexibility within planned teaching",
+      "A need to repeat the same task regardless of progress"
+    ],
+    "ans": 2,
+    "unit": "Unit 16 – Lesson Planning",
+    "exp": "Lesson planning provides direction but should allow the teacher to respond to learners’ pace while maintaining the intended outcomes. Chapter: Unit 16 – Lesson Planning."
+  },
+  {
+    "q": "Q096. A teacher gives a short test before instruction to identify what learners already know and where support is needed. Which type of evaluation is most appropriate?",
+    "options": [
+      "Summative evaluation",
+      "Diagnostic evaluation",
+      "Placement by attendance",
+      "Norm-referenced ranking only"
+    ],
+    "ans": 1,
+    "unit": "Unit 17 – Evaluation of ELT",
+    "exp": "Diagnostic evaluation identifies learners’ prior knowledge, strengths and difficulties so that instruction can be planned appropriately. Chapter: Unit 17 – Evaluation of ELT."
+  },
+  {
+    "q": "Q097. A teacher checks learners’ progress during a unit, gives feedback and modifies subsequent lessons. Which type of evaluation is being used?",
+    "options": [
+      "Formative evaluation",
+      "Only summative evaluation",
+      "A final certification examination",
+      "A test used solely to rank schools"
+    ],
+    "ans": 0,
+    "unit": "Unit 17 – Evaluation of ELT",
+    "exp": "Formative evaluation takes place during the learning process and provides feedback that can improve teaching and learning. Chapter: Unit 17 – Evaluation of ELT."
+  },
+  {
+    "q": "Q098. At the end of a term, learners complete an examination used to report their overall achievement. Which interpretation is most accurate?",
+    "options": [
+      "It is diagnostic because it precedes all teaching.",
+      "It is formative because it changes every classroom interaction.",
+      "It is summative because it judges achievement at the end of an instructional period.",
+      "It is informal observation because it uses written questions."
+    ],
+    "ans": 2,
+    "unit": "Unit 17 – Evaluation of ELT",
+    "exp": "Summative evaluation is conducted at the end of a course or instructional period to judge overall achievement. Chapter: Unit 17 – Evaluation of ELT."
+  },
+  {
+    "q": "Q099. A test gives nearly identical scores when administered again under similar conditions, but it does not adequately measure speaking ability even though speaking is the stated objective. Which judgement is best?",
+    "options": [
+      "The test is valid but unreliable.",
+      "The test is reliable in consistency but lacks validity for the intended speaking construct.",
+      "The test is both valid and reliable because scores are stable.",
+      "Reliability and validity are unrelated to assessment."
+    ],
+    "ans": 1,
+    "unit": "Unit 17 – Evaluation of ELT",
+    "exp": "Reliability concerns consistency of results; validity concerns whether the tool measures what it is intended to measure. A stable written test may still fail to assess speaking. Chapter: Unit 17 – Evaluation of ELT."
+  },
+  {
+    "q": "Q100. A teacher wants an ideal question paper. Which combination best supports that aim?",
+    "options": [
+      "Only difficult questions, all from one small section, with ambiguous wording",
+      "Questions selected randomly without reference to objectives",
+      "A paper based only on memory, with no clear instructions",
+      "Balanced coverage, clear wording, appropriate difficulty, alignment with objectives and a fair marking scheme"
+    ],
+    "ans": 3,
+    "unit": "Unit 17 – Evaluation of ELT",
+    "exp": "An ideal question paper should represent the course objectives and content fairly, use clear questions and an appropriate range of difficulty, and support consistent marking. Chapter: Unit 17 – Evaluation of ELT."
+  }
+];
+
+let studentName = "", studentPhone = "", studentEmail = "";
+let currentQ = 0;
+let userAnswers = new Array(questions.length).fill(null);
+let flaggedQuestions = new Array(questions.length).fill(false);
+let startTime, timerInterval;
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    const btn = document.getElementById("themeToggleBtn");
+    btn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i> લાઈટ મોડ' : '<i class="fa-solid fa-moon"></i> ડાર્ક મોડ';
+}
+
+function showNotice(msg, type = "info") {
+    const box = document.getElementById("noticeMsg");
+    box.className = "msg-box " + (type === "error" ? "msg-error" : "msg-info");
+    box.innerText = msg;
+    box.style.display = "block";
+    setTimeout(() => { box.style.display = "none"; }, 6000);
+}
+
+/* ૧. ઑથેન્ટિકેશન & OTP */
+function requestOTP() {
+    studentName = document.getElementById("name").value.trim();
+    studentPhone = document.getElementById("phone").value.trim();
+    studentEmail = document.getElementById("email").value.trim();
+
+    if (!studentName || studentPhone.length < 10 || !studentEmail.includes("@")) {
+        showNotice("કૃપા કરીને પૂરું નામ, ૧૦ અંકનો સાચો મોબાઇલ નંબર અને માન્ય ઇમેઇલ દાખલ કરો.", "error");
+        return;
+    }
+
+    const btn = document.getElementById("getOtpBtn");
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> OTP મોકલાઈ રહ્યો છે...';
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+            action: "sendOTP",
+            name: studentName,
+            email: studentEmail
+        })
+    })
+    .then(function() {
+        showNotice("આપના ઈમેઈલ પર ૪ અંકનો OTP મોકલવામાં આવ્યો છે. ઇનબોક્સ/સ્પામ તપાસો.", "info");
+        document.getElementById("otpContainer").style.display = "block";
+        btn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> OTP ફરીથી મોકલો';
+        btn.disabled = false;
+    })
+    .catch(function() {
+        showNotice("OTP મોકલવામાં ક્ષતિ આવી. ફરી પ્રયાસ કરો.", "error");
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> OTP મેળવો અને આગળ વધો';
+    });
+}
+
+function verifyAndStart() {
+    const enteredOTP = document.getElementById("otpInput").value.trim();
+    if (enteredOTP.length !== 4) {
+        showNotice("કૃપા કરીને ૪ અંકનો સાચો OTP દાખલ કરો.", "error");
+        return;
+    }
+
+    const vBtn = document.getElementById("verifyBtn");
+    vBtn.disabled = true;
+    vBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ચકાસણી ચાલુ છે...';
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({
+            action: "verifyOTP",
+            email: studentEmail,
+            otp: enteredOTP
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === "success" && data.verified) {
+            document.getElementById("loginScreen").style.display = "none";
+            document.getElementById("quizScreen").style.display = "block";
+            initQuestionPalette();
+            startTime = new Date();
+            timerInterval = setInterval(updateTimer, 1000);
+            loadQuestion();
+        } else {
+            showNotice("ખોટો OTP અથવા સમય વીતી ગયો છે! ફરી ચકાસો.", "error");
+            vBtn.disabled = false;
+            vBtn.innerHTML = '<i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો';
+        }
+    })
+    .catch(() => {
+        showNotice("ચકાસણીમાં ભૂલ થઈ. ફરી પ્રયાસ કરો.", "error");
+        vBtn.disabled = false;
+        vBtn.innerHTML = '<i class="fa-solid fa-unlock-keyhole"></i> OTP ચકાસો અને મોક ટેસ્ટ શરૂ કરો';
+    });
+}
+
+/* ૨. ટાઈમર */
+function updateTimer() {
+    const elapsed = Math.floor((new Date() - startTime) / 1000);
+    const mins = String(Math.floor(elapsed / 60)).padStart(2, '0');
+    const secs = String(elapsed % 60).padStart(2, '0');
+    document.getElementById("timerDisplay").innerText = `${mins}:${secs}`;
+}
+
+/* ૩. પ્રશ્ન પેલેટ (Question Palette 1-100) */
+function initQuestionPalette() {
+    const container = document.getElementById("questionGridContainer");
+    container.innerHTML = "";
+    for (let i = 0; i < questions.length; i++) {
+        const pill = document.createElement("div");
+        pill.className = "q-pill";
+        pill.id = `qPill_${i}`;
+        pill.innerText = i + 1;
+        pill.onclick = () => jumpToQuestion(i);
+        container.appendChild(pill);
+    }
+    updatePaletteStats();
+}
+
+function updatePaletteStats() {
+    let answered = 0;
+    for (let i = 0; i < questions.length; i++) {
+        const pill = document.getElementById(`qPill_${i}`);
+        if (!pill) continue;
+        pill.className = "q-pill";
+        
+        if (i === currentQ) {
+            pill.classList.add("status-current");
+        }
+        if (flaggedQuestions[i]) {
+            pill.classList.add("status-flagged");
+        } else if (userAnswers[i] !== null) {
+            pill.classList.add("status-answered");
+            answered++;
+        }
+    }
+    const totalAns = userAnswers.filter(a => a !== null).length;
+    document.getElementById("answeredCountBadge").innerText = `${totalAns} / ${questions.length} પૂર્ણ`;
+}
+
+function jumpToQuestion(idx) {
+    currentQ = idx;
+    loadQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ૪. પ્રશ્ન લોડિંગ અને Flagging */
+function loadQuestion() {
+    const q = questions[currentQ];
+    document.getElementById("qProgress").innerText = `પ્રશ્ન ${currentQ + 1} / ${questions.length}`;
+    document.getElementById("unitBadge").innerText = `📘 ${q.unit}`;
+    document.getElementById("questionText").innerText = q.q;
+
+    // Flag button update
+    const flagBtn = document.getElementById("flagBtn");
+    if (flaggedQuestions[currentQ]) {
+        flagBtn.className = "btn-flag active-flag";
+        flagBtn.innerHTML = '<i class="fa-solid fa-bookmark"></i> Flag કરેલ છે 🚩';
+    } else {
+        flagBtn.className = "btn-flag";
+        flagBtn.innerHTML = '<i class="fa-regular fa-bookmark"></i> Flag (રિવ્યુ માટે)';
+    }
+
+    const optContainer = document.getElementById("optionsContainer");
+    optContainer.innerHTML = "";
+
+    q.options.forEach((opt, idx) => {
+        const label = document.createElement("label");
+        label.className = "option-label";
+        const isChecked = userAnswers[currentQ] === idx ? "checked" : "";
+        label.innerHTML = `
+            <input type="radio" name="opt" value="${idx}" ${isChecked} onchange="onOptionSelect(${idx})">
+            <span><strong>(${String.fromCharCode(65 + idx)})</strong> ${opt}</span>
+        `;
+        optContainer.appendChild(label);
+    });
+
+    document.getElementById("prevBtn").style.visibility = (currentQ === 0) ? "hidden" : "visible";
+    document.getElementById("nextBtn").innerHTML = (currentQ === questions.length - 1) 
+        ? '<i class="fa-solid fa-flag-checkered"></i> કસોટી પૂર્ણ કરો' 
+        : 'આગળ <i class="fa-solid fa-arrow-right"></i>';
+
+    updatePaletteStats();
+}
+
+function onOptionSelect(idx) {
+    userAnswers[currentQ] = idx;
+    updatePaletteStats();
+}
+
+function toggleFlagCurrentQuestion() {
+    flaggedQuestions[currentQ] = !flaggedQuestions[currentQ];
+    loadQuestion();
+}
+
+function prevQuestion() {
+    if (currentQ > 0) {
+        currentQ--;
+        loadQuestion();
+    }
+}
+
+function nextQuestion() {
+    if (currentQ < questions.length - 1) {
+        currentQ++;
+        loadQuestion();
+    } else {
+        confirmSubmitQuiz();
+    }
+}
+
+function confirmSubmitQuiz() {
+    const unans = userAnswers.filter(a => a === null).length;
+    const flagCount = flaggedQuestions.filter(f => f === true).length;
+    
+    let msg = "શું આપ ખરેખર કસોટી સબમિટ કરવા માંગો છો?";
+    if (unans > 0 || flagCount > 0) {
+        msg = `ધ્યાન આપો:
+- ${unans} પ્રશ્નોના ઉત્તર બાકી છે.
+- ${flagCount} પ્રશ્નો Flag કરેલા છે.
+
+શું આપ કસોટી સબમિટ કરવા માંગો છો?`;
+    }
+    
+    if (confirm(msg)) {
+        submitQuiz();
+    }
+}
+
+/* ૫. સબમિશન અને પરિણામ */
+function submitQuiz() {
+    clearInterval(timerInterval);
+    const elapsed = Math.floor((new Date() - startTime) / 1000);
+    const mins = Math.floor(elapsed / 60);
+    const secs = elapsed % 60;
+    const formattedTime = `${mins} મિનિટ ${secs} સેકન્ડ`;
+
+    let score = 0;
+    let wrongIndices = [];
+    questions.forEach((q, i) => {
+        if (userAnswers[i] === q.ans) {
+            score++;
+        } else {
+            wrongIndices.push(i);
+        }
+    });
+    const percent = ((score / questions.length) * 100).toFixed(2);
+    const flagCount = flaggedQuestions.filter(f => f === true).length;
+
+    document.getElementById("quizScreen").style.display = "none";
+    document.getElementById("resultScreen").style.display = "block";
+
+    document.getElementById("resName").innerText = studentName;
+    document.getElementById("resPhone").innerText = studentPhone;
+    document.getElementById("resTime").innerText = `${mins}m ${secs}s`;
+    document.getElementById("resScore").innerText = `${score} / ${questions.length}`;
+    document.getElementById("resPercent").innerText = `${percent}% ગુણાંક`;
+    document.getElementById("resCorrectCount").innerText = score;
+    document.getElementById("resWrongCount").innerText = questions.length - score;
+    document.getElementById("resFlagCount").innerText = flagCount;
+
+    // ૧. માત્ર ખોટા પડેલા પ્રશ્નો રેન્ડર કરવા
+    renderWrongQuestions(wrongIndices);
+
+    // ૨. આપેલા જવાબો સાથેનું સંપૂર્ણ પ્રશ્નપત્ર
+    renderFullAnswerKey();
+
+    // ૩. મૂળ પ્રશ્નપત્ર (Blank Question Paper)
+    renderBlankPaper();
+
+    // ૪. Apps Script માટે HTML રિવ્યુ પેક કરવો
+    prepareAndSendBackendResult(score, percent, formattedTime);
+}
+
+function switchResultTab(tabName) {
+    document.getElementById("tabBtnWrong").classList.remove("active-tab");
+    document.getElementById("tabBtnAnswers").classList.remove("active-tab");
+    document.getElementById("tabBtnBlank").classList.remove("active-tab");
+
+    document.getElementById("tabContentWrong").style.display = "none";
+    document.getElementById("tabContentAnswers").style.display = "none";
+    document.getElementById("tabContentBlank").style.display = "none";
+
+    if (tabName === "wrong") {
+        document.getElementById("tabBtnWrong").classList.add("active-tab");
+        document.getElementById("tabContentWrong").style.display = "block";
+    } else if (tabName === "answers") {
+        document.getElementById("tabBtnAnswers").classList.add("active-tab");
+        document.getElementById("tabContentAnswers").style.display = "block";
+    } else if (tabName === "blank") {
+        document.getElementById("tabBtnBlank").classList.add("active-tab");
+        document.getElementById("tabContentBlank").style.display = "block";
+    }
+}
+
+function renderWrongQuestions(wrongIndices) {
+    const container = document.getElementById("wrongQuestionsList");
+    container.innerHTML = "";
+
+    if (wrongIndices.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; padding: 35px; background: var(--container-bg); border-radius: 12px; border: 2px solid #10b981;">
+                <i class="fa-solid fa-circle-check fa-3x" style="color: #10b981; margin-bottom: 12px;"></i>
+                <h3 style="color: #065f46; font-size: 18px;">અભિનંદન! તમારો એક પણ પ્રશ્ન ખોટો પડ્યો નથી!</h3>
+                <p style="color: var(--subheading-color); font-size: 13.5px; margin-top: 6px;">આપે ૧૦૦ માંથી ૧૦૦ સંપૂર્ણ ગુણ મેળવી શ્રેષ્ઠ પ્રદર્શન કરેલ છે.</p>
+            </div>
+        `;
+        return;
+    }
+
+    wrongIndices.forEach((i) => {
+        const q = questions[i];
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી (ખાલી છોડેલ)";
+        const correctChoiceText = q.options[q.ans];
+
+        const item = document.createElement("div");
+        item.className = "review-item is-wrong";
+        item.innerHTML = `
+            <p style="font-weight: 800; font-size: 15px; margin-bottom: 8px; white-space: pre-wrap; tab-size: 4;">${q.q}</p>
+            <p style="margin: 4px 0; font-weight: 700; color: #b91c1c;">
+                ❌ તમારો ઉત્તર: ${userChoiceText}
+            </p>
+            <p style="margin: 4px 0; font-weight: 700; color: #047857;">
+                ✅ સાચો ઉત્તર: <strong>(${String.fromCharCode(65 + q.ans)}) ${correctChoiceText}</strong>
+            </p>
+            <div class="exp-box">
+                <div style="font-size: 11.5px; font-weight: 800; color: #2563eb; margin-bottom: 3px;">📘 ${q.unit}</div>
+                <strong>વિગતવાર સમજૂતી:</strong> ${q.exp}
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function renderFullAnswerKey() {
+    const container = document.getElementById("allAnswersList");
+    container.innerHTML = "";
+
+    questions.forEach((q, i) => {
+        const isCorrect = (userAnswers[i] === q.ans);
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી";
+        const correctChoiceText = q.options[q.ans];
+
+        const item = document.createElement("div");
+        item.className = "review-item " + (isCorrect ? "is-correct" : "is-wrong");
+        item.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+                <span style="font-weight: 800; font-size: 15px; white-space: pre-wrap; tab-size: 4;">${q.q}</span>
+                <span style="font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 6px; background:${isCorrect ? '#10b981' : '#ef4444'}; color:white; white-space:nowrap;">
+                    ${isCorrect ? '✅ સાચો' : '❌ ખોટો'}
+                </span>
+            </div>
+            <div style="margin: 6px 0; font-size: 13.5px;">
+                ${q.options.map((opt, oIdx) => `
+                    <div style="padding: 2px 0; ${oIdx === q.ans ? 'font-weight:bold; color:#047857;' : ''}">
+                        (${String.fromCharCode(65 + oIdx)}) ${opt} ${oIdx === q.ans ? '⭐ (સાચો ઉત્તર)' : ''}
+                    </div>
+                `).join('')}
+            </div>
+            <p style="margin: 6px 0; font-weight: 700;">
+                તમે પસંદ કરેલ જવાબ: <span style="color:${isCorrect ? '#047857' : '#b91c1c'};">${userChoiceText}</span>
+            </p>
+            <div class="exp-box">
+                <div style="font-size: 11.5px; font-weight: 800; color: #2563eb; margin-bottom: 3px;">📘 ${q.unit}</div>
+                <strong>સમજૂતી:</strong> ${q.exp}
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function renderBlankPaper() {
+    const container = document.getElementById("blankQuestionsList");
+    container.innerHTML = `
+        <div style="background: var(--card-gradient); padding: 14px; border-radius: 10px; margin-bottom: 14px; border: 1.5px solid var(--border-color); text-align: center;">
+            <h3 style="color: var(--heading-color); font-size: 16px; font-weight: 800;">📝 મૂળ પ્રશ્નપત્ર (Offline / Practice View)</h3>
+            <p style="color: var(--subheading-color); font-size: 12.5px;">આ પ્રશ્નપત્રમાં કોઈપણ જવાબ ટીક કરેલ નથી. તમે સ્વ-અધ્યયન કે પુનરાવર્તન માટે તેનો ઉપયોગ કરી શકો છો.</p>
+        </div>
+    `;
+
+    questions.forEach((q, i) => {
+        const box = document.createElement("div");
+        box.className = "blank-q-card";
+        box.innerHTML = `
+            <div style="font-weight: 800; font-size: 14.5px; margin-bottom: 8px; color: var(--heading-color); white-space: pre-wrap; tab-size: 4;">${q.q}</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 13.5px; color: var(--text-color);">
+                ${q.options.map((opt, oIdx) => `
+                    <div style="background: var(--option-bg); padding: 7px 10px; border-radius: 6px; border: 1px solid var(--border-color);">
+                        <strong>(${String.fromCharCode(65 + oIdx)})</strong> ${opt}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        container.appendChild(box);
+    });
+}
+
+function prepareAndSendBackendResult(score, percent, formattedTime) {
+    let emailReviewHtml = "";
+    
+    questions.forEach((q, i) => {
+        const isCorrect = (userAnswers[i] === q.ans);
+        const userChoiceText = userAnswers[i] !== null ? q.options[userAnswers[i]] : "જવાબ આપ્યો નથી";
+        const correctChoiceText = q.options[q.ans];
+
+        emailReviewHtml += `
+            <div style="border: 1px solid #cbd5e1; border-radius: 6px; padding: 12px; margin-bottom: 12px; background-color: ${isCorrect ? '#f0fdf4' : '#fff1f2'};">
+                <p style="margin: 0 0 6px 0; font-weight: bold; color: #1e293b; white-space: pre-wrap;">${q.q}</p>
+                <p style="margin: 3px 0; color: ${isCorrect ? '#166534' : '#9f1239'};">
+                    <strong>પરીક્ષાર્થીનો ઉત્તર:</strong> ${userChoiceText} ${isCorrect ? '✅' : '❌'}
+                </p>
+                ${!isCorrect ? `<p style="margin: 3px 0; color: #166534; font-weight: bold;"><strong>સાચો ઉત્તર:</strong> (${String.fromCharCode(65 + q.ans)}) ${correctChoiceText}</p>` : ''}
+                <div style="background-color: #f8fafc; padding: 8px; border-radius: 4px; margin-top: 6px; font-size: 12.5px; border-left: 3px solid #2563eb;">
+                    <div style="color: #1e40af; font-weight: bold; margin-bottom: 2px;">📘 ${q.unit}</div>
+                    <strong>સમજૂતી:</strong> ${q.exp}
+                </div>
+            </div>
+        `;
+    });
+
+    fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+            action: "submitResult",
+            dateTime: new Date().toLocaleString('gu-IN', { timeZone: 'Asia/Kolkata' }),
+            name: studentName,
+            phone: studentPhone,
+            email: studentEmail,
+            timeTaken: formattedTime,
+            score: `${score} / ${questions.length}`,
+            percentage: `${percent}%`,
+            subject: "TET-1 English Pedagogy (ES-114 - Stage 1)",
+            detailedReviewHtml: emailReviewHtml,
+            repoName: "pro",
+            testFileName: "es114englishset1.html",
+            testUploadDate: "2026-11-20"
+        })
+    });
+}
+</script>
+</body>
+</html>
